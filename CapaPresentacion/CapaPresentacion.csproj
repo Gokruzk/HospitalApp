@@ -76,5 +76,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CData\CapaDatos.csproj">
+      <Project>{ebf6b795-5259-4fe5-8e42-c5ea9f37b09b}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CLogic\CapaLogica.csproj">
+      <Project>{da4dc785-78f0-4d54-9830-6cb5b5a41010}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{be0f0cae-1b40-46b5-87d7-b3e07a5603a8}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
