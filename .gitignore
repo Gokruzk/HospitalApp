@@ -15,6 +15,7 @@
 *.pdb
 *.txt
 *.dll
+/CData/CBD.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
