@@ -10,10 +10,9 @@ namespace Entidades
 
     public class Persona
     {
-        public string Nombre { get; set; }
         public string Cedula { get; set; }
+        public string Nombre { get; set; }
         public string NumSegSocial { get; set; }
-        public int ID { get; set; }
         public int Direccion { get; set; }
     }
 
@@ -34,6 +33,40 @@ namespace Entidades
 
     public class Paciente : Persona
     {
-        public int Medico { get; set; }
+        public string Medico { get; set; }
+    }
+
+    public class Poblacion
+    {
+        public int PID { get; set; }
+        public string Descripcion { get; set; }
+    }
+
+    public class Direcciones
+    {
+        public int DirID { get; set; }
+        public string Direccion { get; set; }
+        public string Telefono { get; set; }
+        public string Provincia { get; set; }
+        public string CodigoPostal { get; set; }
+
+    }
+
+    public class Horarios
+    {
+        public int HorID { get; set; }
+        public string CedulaMedico { get; set; }
+        public string DiaSemana { get; set; }
+        public DateTime HoraInicio { get; set; }
+        public DateTime HoraFin { get; set; }
+    }
+
+    public class Vacaciones
+    {
+        public int VID { get; set; }
+        public string Cedula { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+        public string Estado { get; set; }
     }
 }
