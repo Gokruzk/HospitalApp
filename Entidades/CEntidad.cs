@@ -49,7 +49,6 @@ namespace Entidades
         public string Telefono { get; set; }
         public string Provincia { get; set; }
         public string CodigoPostal { get; set; }
-
     }
 
     public class Horarios
