@@ -41,7 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClOperaciones.cs" />
+    <Compile Include="ClOperacionesEmpleado.cs" />
+    <Compile Include="ClOperacionesGenerales.cs" />
+    <Compile Include="ClOperacionesHorario.cs" />
+    <Compile Include="ClOperacionesMedico.cs" />
+    <Compile Include="ClOperacionesPaciente.cs" />
+    <Compile Include="ClOperacionesPersona.cs" />
+    <Compile Include="ClOperacionesVacacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -21,10 +21,7 @@ namespace CapaPresentacion
         }
 
         Medico objMedico = new Medico();
-        Direcciones objDireccion = new Direcciones();
-        Poblacion objPoblacion  = new Poblacion();
-
-        ClOperaciones objOperaciones = new ClOperaciones();
+        ClOperacionesMedico objOperaciones = new ClOperacionesMedico();
 
         private void txtNIF_TextChanged(object sender, EventArgs e)
         {
@@ -38,37 +35,42 @@ namespace CapaPresentacion
 
         private void btnIngresarM_Click(object sender, EventArgs e)
         {
-            /*objMedico.Nombre = txtNombre.Text;
+            /*
+            objMedico.Nombre = txtNombre.Text;
             objMedico.Cedula = txtNIF.Text;
             objMedico.NumSegSocial = txtSeguridadSocial.Text;
             objMedico.NumColegiado = txtNumColegiado.Text;
             objMedico.Tipo = comboBoxTipoMed.Text;
+            objMedico.FechaA = DateTime.Now.AddDays(-6);
+            objMedico.FechaB = DateTime.Now;
+            objMedico.Poblacion = 1; //debe ser de un combobox;
+            objMedico.Direccion = txtDireccion.Text;
 
-            objDireccion.Direccion = txtDireccion.Text;
-            objDireccion.Telefono = txtTelefono.Text;
-            objDireccion.Provincia = comboBoxProvincia.Text;
-            objDireccion.CodigoPostal = txtCodigoPostal.Text;
+            //MessageBox.Show(objOperaciones.ActualizarMedico(objMedico).ToString());
+            string estado = objOperaciones.RegistrarMedico(objMedico).ToString();
+            if(estado == "CORRECTO")
+                MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            */
 
-            objPoblacion.Descripcion = txtPoblacion.Text;*/
-
-            objMedico.Nombre = "Prueba";
-            objMedico.Cedula = "0604401919";
-            objMedico.NumSegSocial = "578-13-8383";
+            objMedico.Nombre = "FernandoNovillo";
+            objMedico.Cedula = "0602926925";
+            objMedico.NumSegSocial = "546-53-9380";
             objMedico.NumColegiado = "123456789";
             objMedico.Tipo = "Médico Sustituto";
             objMedico.FechaA = DateTime.Now.AddDays(-6);
             objMedico.FechaB = DateTime.Now;
             objMedico.Poblacion = 1;
-            objMedico.Direccion = 1;
+            objMedico.Direccion = "es por alla cerca de aquí";
 
-            objDireccion.Direccion = "por ahi";
-            objDireccion.Telefono = "0994637276";
-            objDireccion.Provincia = "Chimborazo";
-            objDireccion.CodigoPostal = "12345";
-
-            objPoblacion.Descripcion = "no se qué va aquí";
-
-            MessageBox.Show(objOperaciones.RegistrarMedico(objMedico, objDireccion, objPoblacion).ToString());
+            //string estado = objOperaciones.ActualizarMedico(objMedico);
+            //string estado = objOperaciones.EliminarMedico(objMedico);
+            string estado = objOperaciones.EliminarMedico(objMedico.Cedula);
+            if (estado == "CORRECTO")
+                MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
