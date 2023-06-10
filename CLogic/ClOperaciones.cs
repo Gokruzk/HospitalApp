@@ -413,7 +413,7 @@ namespace CLogic
             else
                 return 222;
 
-            return -121;
+            return -1290;
         }
 
         //Función de validación de datos PACIENTE

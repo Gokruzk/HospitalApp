@@ -51,7 +51,7 @@ namespace CapaPresentacion
 
             objPoblacion.Descripcion = txtPoblacion.Text;*/
 
-            objMedico.Nombre = "Prueba";
+            objMedico.Nombre = "FernandoNovillo";
             objMedico.Cedula = "0604401919";
             objMedico.NumSegSocial = "578-13-8383";
             objMedico.NumColegiado = "123456789";
@@ -63,12 +63,12 @@ namespace CapaPresentacion
 
             objDireccion.Direccion = "por ahi";
             objDireccion.Telefono = "0994637276";
-            objDireccion.Provincia = "Chimborazo";
+            objDireccion.Provincia = "Pichincha";
             objDireccion.CodigoPostal = "12345";
 
             objPoblacion.Descripcion = "no se qué va aquí";
 
-            MessageBox.Show(objOperaciones.RegistrarMedico(objMedico, objDireccion, objPoblacion).ToString());
+            MessageBox.Show(objOperaciones.ActualizarMedico(objMedico, objDireccion, objPoblacion).ToString());
         }
     }
 }
