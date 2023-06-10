@@ -16,5 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void BtnIngresarPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace CData
         string BDD = "HOSPITAL";
         //Editar las variables según su configuración de SQL SERVER
         public string NIGSERVER = "DESKTOP-2U77OBE\\SQLEXPRESS", NIGPSW = "nigel123";
-        string FERSERVER = "", FERPSW = "";
+        string FERSERVER = "COMTEX765", FERPSW = "12 fer 13";
         string CRISSERVER = "", CRISPSW = "";
         string KEVSERVER = "", KEVPSW = "";
         string SERVER = "", SKYPSW = "";
