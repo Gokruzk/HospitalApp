@@ -14,6 +14,23 @@ namespace CLogic
     {
         ClDatos objDatos = new ClDatos();
 
+        string[] errores = { "Cédula no valida.",
+                             "Nombre invalido, recuerde que debe ingresar el nombre sin dígitos o caracteres especiales.",
+                             "Número de seguro social invalido.",
+                             "Error, por favor ingrese correctamente la dirección.",
+                             "Número de teléfono invalido, recuerde que el número de teléfono tiene que contener la cantidad correcta de dígitos al igual que registrarlo sin el código de país.",
+                             "La provincia ingresada no existe, por favor ingresar una de las 24 provincias del país.",
+                             "Código postal invalido, recuerde que debe contener la cantidad correcta de dígitos.",
+                             "Tipo de empleado inexistente.",
+                             "Descripción requerida.",
+                             "Tipo de medico inexistente.",
+                             "El medico tiene que ser sustituto para registrar fecha de alta y baja.",
+                             "Número de colegiado invalido, recuerde ingresar la cantidad correcta de dígitos.",
+                             "Día de la semana inexistente.",
+                             "El dato de finalización no puede ser mayor al de inicio.",
+                             "Estado invalido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada."
+        };
+
         //Validación de datos entidad PERSONA
         private bool ValidarCedula(string cedula)
         {
@@ -46,8 +63,7 @@ namespace CLogic
 
         private bool ValidarNombre(string nombre)
         {
-            if (string.IsNullOrWhiteSpace(nombre) || nombre.Any(char.IsDigit) || Regex.IsMatch(nombre, @"[^\w]"))
-            {
+            if (nombre == "" || nombre.Any(char.IsDigit) || Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$")) {
                 return false;
             }
 
@@ -147,10 +163,7 @@ namespace CLogic
 
         public static bool ValidarCodigoPostal(string codigoPostal)
         {
-            string patron = @"^\d{2}\d{3}$";
-
-            if (Regex.IsMatch(codigoPostal, patron))
-            {
+            if(codigoPostal.Length != 5) {
                 return false;
             }
 
@@ -277,6 +290,7 @@ namespace CLogic
         {
             return numCol.Length == 9;
         }
+
         //Función de validación de datos MEDICO
         public int RegistrarMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
         {
