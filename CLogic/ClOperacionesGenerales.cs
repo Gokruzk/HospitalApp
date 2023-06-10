@@ -14,9 +14,10 @@ namespace CLogic
     {
         ClDatos objDatos = new ClDatos();
 
-        string[] errores = { "Cédula no valida.",
-                             "Nombre invalido, recuerde que debe ingresar el nombre sin dígitos o caracteres especiales.",
-                             "Número de seguro social invalido.",
+        public string[] errores = { 
+                             "Cédula no válida.",
+                             "Nombre inválido, recuerde que debe ingresar el nombre sin dígitos o caracteres especiales.",
+                             "Número de seguro social inválido.",
                              "Error, por favor ingrese correctamente la dirección.",
                              "Número de teléfono invalido, recuerde que el número de teléfono tiene que contener la cantidad correcta de dígitos al igual que registrarlo sin el código de país.",
                              "La provincia ingresada no existe, por favor ingresar una de las 24 provincias del país.",
@@ -28,7 +29,7 @@ namespace CLogic
                              "Número de colegiado invalido, recuerde ingresar la cantidad correcta de dígitos.",
                              "Día de la semana inexistente.",
                              "El dato de finalización no puede ser mayor al de inicio.",
-                             "Estado invalido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada."
+                             "Estado inválido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada."
         };
     }
 }

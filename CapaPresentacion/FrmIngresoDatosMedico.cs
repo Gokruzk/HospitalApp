@@ -48,19 +48,8 @@ namespace CapaPresentacion
 
             objPoblacion.Descripcion = txtPoblacion.Text;*/
 
-            objMedico.Nombre = "Prueba";
-            objMedico.Cedula = "0604401919";
-            objMedico.NumSegSocial = "546-53-9380";
-            objMedico.NumColegiado = "123456789";
-            objMedico.Tipo = "Médico Sustituto";
-            objMedico.FechaA = DateTime.Now.AddDays(-6);
-            objMedico.FechaB = DateTime.Now;
-            objMedico.Poblacion = 1;
-            objMedico.Direccion = "es por alla cerca de aquí";
-
-            MessageBox.Show(objOperaciones.RegistrarMedico(objMedico).ToString());
             objMedico.Nombre = "FernandoNovillo";
-            objMedico.Cedula = "0604401919";
+            objMedico.Cedula = "0602926925";
             objMedico.NumSegSocial = "546-53-9380";
             objMedico.NumColegiado = "123456789";
             objMedico.Tipo = "Médico Sustituto";
@@ -69,7 +58,12 @@ namespace CapaPresentacion
             objMedico.Poblacion = 1;
             objMedico.Direccion = "es por alla cerca de aquí";
 
-            MessageBox.Show(objOperaciones.ActualizarMedico(objMedico).ToString());
+            //MessageBox.Show(objOperaciones.ActualizarMedico(objMedico).ToString());
+            string estado = objOperaciones.RegistrarMedico(objMedico).ToString();
+            if(estado == "CORRECTO")
+                MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
