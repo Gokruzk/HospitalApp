@@ -126,6 +126,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmIngresoDatosEmpleado.resx">
+      <DependentUpon>FrmIngresoDatosEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresoDatosMedico.resx">
+      <DependentUpon>FrmIngresoDatosMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,10 +158,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CData\CapaDatos.csproj">
-      <Project>{ebf6b795-5259-4fe5-8e42-c5ea9f37b09b}</Project>
-      <Name>CapaDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CLogic\CapaLogica.csproj">
       <Project>{da4dc785-78f0-4d54-9830-6cb5b5a41010}</Project>
       <Name>CapaLogica</Name>
