@@ -11,59 +11,79 @@ namespace CLogic
     public class ClOperacionesPaciente
     {
         //Función de validación de datos PACIENTE
-        ClDatos objDatos = new ClDatos();
-        ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClDatos objDatos = new ClDatos();
+        readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
-        public int RegistrarPaciente(Paciente datos)
+        private string ValidarTodoPaciente(Paciente datos)
         {
-            int validaciones = 0;
-
             if (objPersona.ValidarCedula(datos.Cedula))
-            {
-                validaciones++;
-            }
+            {; }
             else
             {
-                return 0;
+                return objMensajes.errores[0];
             }
 
             if (objPersona.ValidarNombre(datos.Nombre))
-            {
-                validaciones++;
-            }
+            {; }
             else
             {
-                return 0;
+                return objMensajes.errores[1];
             }
 
             if (objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-            {
-                validaciones++;
-            }
+            {; }
             else
             {
-                return 0;
+                return objMensajes.errores[2];
             }
 
             if (objPersona.ValidarCedula(datos.Medico))
-            {
-                validaciones++;
-            }
+            {; }
             else
             {
-                return 0;
+                return objMensajes.errores[0];
             }
 
             if (objPersona.ValidarDireccion(datos.Direccion))
-            {
-                validaciones++;
-            }
+            {; }
             else
             {
-                return 0;
+                return objMensajes.errores[3];
             }
 
-            return 0;
+            return objMensajes.errores[15];
+        }
+        public string RegistrarPaciente(Paciente datos)
+        {
+            string validacion = ValidarTodoPaciente(datos);
+
+            if (ValidarTodoPaciente(datos) == "CORRECTO")
+                objDatos.RegistroPaciente(datos);
+
+            return validacion;
+        }
+
+        public string ActualizarPaciente(Paciente datos)
+        {
+            string validacion = ValidarTodoPaciente(datos);
+
+            if (validacion == "CORRECTO")
+                objDatos.UpdatePaciente(datos);
+
+            return validacion;
+        }
+
+        public string EliminarPaciente(string cedula)
+        {
+            if (objPersona.ValidarCedula(cedula))
+            {
+                objDatos.DeletePaciente(cedula);
+            }
+            else
+                return objMensajes.errores[0];
+            
+            return "CORRECTO";
         }
     }
 }
