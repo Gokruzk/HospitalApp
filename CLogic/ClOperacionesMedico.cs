@@ -13,6 +13,7 @@ namespace CLogic
         //Validacion de datos entidad MEDICO
         readonly ClDatos objDatos = new ClDatos();
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
         private bool ValidarTipoMedico(string tipo)
         {
@@ -23,7 +24,7 @@ namespace CLogic
 
         private bool ValidarFechasSutituto(string tipo, DateTime fechaA, DateTime fechaB)
         {
-            if (tipo == "Sustituto")
+            if (tipo == "Médico Sustituto")
                 return DateTime.Compare(fechaA, fechaB) < 0;
 
             return true;
@@ -34,72 +35,80 @@ namespace CLogic
             return numCol.Length == 9;
         }
 
-        private int ValidarTodoMedico(Medico datos)
+        private string ValidarTodoMedico(Medico datos)
         {
-            int validaciones = 0;
-
             if (objPersona.ValidarCedula(datos.Cedula))
-                validaciones++;
+            {
+                ;
+            }
             else
-                return 1;
+                return objMensajes.errores[0];
 
             if (objPersona.ValidarNombre(datos.Nombre))
-                validaciones++;
+            {
+                ;
+            }
             else
-                return 2;
+                return objMensajes.errores[1];
 
             if (objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-                validaciones++;
+            {
+                ;
+            }
             else
-                return 3;
+                return objMensajes.errores[2];
 
             if (objPersona.ValidarDireccion(datos.Direccion))
-                validaciones++;
+            {
+                ;
+            }
             else
-                return 4;
+                return objMensajes.errores[3];
 
             if (ValidarTipoMedico(datos.Tipo))
-                validaciones++;
+            {
+                ;
+            }
             else
-                return 5;
+                return objMensajes.errores[9];
 
             if (ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
-                validaciones++;
+            {
+                ;
+            }
             else
-                return 6;
+                return objMensajes.errores[13];
 
             if (ValidarNumColegiado(datos.NumColegiado))
-                validaciones++;
+            {
+                ;
+            }
+
             else
-                return 7;
+                return objMensajes.errores[11];
 
-
-            return validaciones;
+            return "CORRECTO";
         }
 
         //Función de validación de datos MEDICO
-        public int RegistrarMedico(Medico datos)
+        public string RegistrarMedico(Medico datos)
         {
-            if (ValidarTodoMedico(datos) == 7)
-            {
-                objDatos.RegistroMedico(datos);
-            }
-            else
-                return 111;
+            string validacion = ValidarTodoMedico(datos);
 
-            return -121;
+            if (ValidarTodoMedico(datos) == "CORRECTO")
+                objDatos.RegistroMedico(datos);
+
+            return validacion;
         }
 
-        public int ActualizarMedico(Medico datos)
+        public string ActualizarMedico(Medico datos)
         {
-            Console.WriteLine("Conexión 1 abierta");
-            if (ValidarTodoMedico(datos) == 7)
-                {Console.WriteLine("Conexión 178 abierta");
-                objDatos.UpdateMedico(datos);}
-            else
-                return 222;
+            string validacion = ValidarTodoMedico(datos);
 
-            return -1290;
+            if (validacion == "CORRECTO")
+                objDatos.UpdateMedico(datos);
+
+            return validacion;
         }
 
     }

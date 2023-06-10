@@ -16,8 +16,6 @@ namespace CLogic
         {
             if (cedula.Length != 10 || !int.TryParse(cedula, out int n))
             {
-                Console.WriteLine("cedula");
-
                 return false;
             }
 
@@ -39,7 +37,6 @@ namespace CLogic
 
             else
             {
-                Console.WriteLine("cedula");
                 return false;
             }
         }
@@ -48,7 +45,6 @@ namespace CLogic
         {
             if (string.IsNullOrWhiteSpace(nombre) || nombre.Any(char.IsDigit) || !Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$"))
             {
-                Console.WriteLine("nombre");
                 return false;
             }
 
@@ -57,10 +53,50 @@ namespace CLogic
 
         public bool ValidarNumeroSeguroSocial(string numeroSeguroSocial)
         {
+<<<<<<< HEAD
             if (!Regex.IsMatch(numeroSeguroSocial, "^(?!666|000|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0{4})\\d{4}$")) {
                 return false;
             }
 
+=======
+            if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
+            {
+                return false;
+            }
+
+            if (!Regex.IsMatch(numeroSeguroSocial, @"^\d{9}$") && !Regex.IsMatch(numeroSeguroSocial, @"^\d{3}-\d{2}-\d{4}$"))
+            {
+                return false;
+            }
+
+            int suma = 0;
+
+            for (int i = 0; i < 9; i++)
+            {
+                int digito = int.Parse(numeroSeguroSocial[i].ToString());
+                if (i % 2 == 0)
+                {
+                    digito *= 2;
+                    if (digito > 9)
+                    {
+                        digito = digito % 10 + digito / 10;
+                    }
+                }
+                suma += digito;
+            }
+            int digitoVerificador = (10 - (suma % 10)) % 10;
+
+            int ultimoDigito = int.Parse(numeroSeguroSocial[8].ToString());
+
+            if (digitoVerificador != ultimoDigito)
+            {
+                return false;
+            }
+            if (numeroSeguroSocial.Length != 11)
+            { 
+                return false; 
+            }
+>>>>>>> 75f10858949936b61cd0c092c0410fbab7ee20bf
             return true;
         }
 
@@ -68,7 +104,6 @@ namespace CLogic
         {
             if (string.IsNullOrWhiteSpace(dirrecion) && (!Regex.IsMatch(dirrecion, @"^[a-zA-Z0-9\s-]+$")))
             {
-                Console.WriteLine("direccion");
                 return false;
             }
 
