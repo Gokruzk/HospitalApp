@@ -31,21 +31,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblTituloInicio = new System.Windows.Forms.Label();
             this.GbxRegistros = new System.Windows.Forms.GroupBox();
-            this.GbxModificacion = new System.Windows.Forms.GroupBox();
-            this.GbxEliminacionDatos = new System.Windows.Forms.GroupBox();
-            this.BtnIngresarMedico = new System.Windows.Forms.Button();
-            this.BtnIngresarEmpleado = new System.Windows.Forms.Button();
             this.BtnIngresarPaciente = new System.Windows.Forms.Button();
-            this.GbxBusqueda = new System.Windows.Forms.GroupBox();
-            this.BtnModificarMedico = new System.Windows.Forms.Button();
-            this.BtnModificarEmpleado = new System.Windows.Forms.Button();
+            this.BtnIngresarEmpleado = new System.Windows.Forms.Button();
+            this.BtnIngresarMedico = new System.Windows.Forms.Button();
+            this.GbxModificacion = new System.Windows.Forms.GroupBox();
             this.BtnModificarPaciente = new System.Windows.Forms.Button();
-            this.BtnBuscarMedico = new System.Windows.Forms.Button();
-            this.BtnBuscarEmpleado = new System.Windows.Forms.Button();
-            this.BtnBuscarPaciente = new System.Windows.Forms.Button();
-            this.BtnEliminarMedico = new System.Windows.Forms.Button();
-            this.BtnEliminarEmpleado = new System.Windows.Forms.Button();
+            this.BtnModificarEmpleado = new System.Windows.Forms.Button();
+            this.BtnModificarMedico = new System.Windows.Forms.Button();
+            this.GbxEliminacionDatos = new System.Windows.Forms.GroupBox();
             this.BtnEliminarPaciente = new System.Windows.Forms.Button();
+            this.BtnEliminarEmpleado = new System.Windows.Forms.Button();
+            this.BtnEliminarMedico = new System.Windows.Forms.Button();
+            this.GbxBusqueda = new System.Windows.Forms.GroupBox();
+            this.BtnBuscarPaciente = new System.Windows.Forms.Button();
+            this.BtnBuscarEmpleado = new System.Windows.Forms.Button();
+            this.BtnBuscarMedico = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.GbxRegistros.SuspendLayout();
             this.GbxModificacion.SuspendLayout();
@@ -85,6 +85,34 @@
             this.GbxRegistros.TabStop = false;
             this.GbxRegistros.Text = "Ingreso de Datos";
             // 
+            // BtnIngresarPaciente
+            // 
+            this.BtnIngresarPaciente.Location = new System.Drawing.Point(549, 44);
+            this.BtnIngresarPaciente.Name = "BtnIngresarPaciente";
+            this.BtnIngresarPaciente.Size = new System.Drawing.Size(189, 45);
+            this.BtnIngresarPaciente.TabIndex = 0;
+            this.BtnIngresarPaciente.Text = "Ingresar Paciente";
+            this.BtnIngresarPaciente.UseVisualStyleBackColor = true;
+            // 
+            // BtnIngresarEmpleado
+            // 
+            this.BtnIngresarEmpleado.Location = new System.Drawing.Point(298, 44);
+            this.BtnIngresarEmpleado.Name = "BtnIngresarEmpleado";
+            this.BtnIngresarEmpleado.Size = new System.Drawing.Size(189, 45);
+            this.BtnIngresarEmpleado.TabIndex = 0;
+            this.BtnIngresarEmpleado.Text = "Ingresar Empleado";
+            this.BtnIngresarEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // BtnIngresarMedico
+            // 
+            this.BtnIngresarMedico.Location = new System.Drawing.Point(48, 44);
+            this.BtnIngresarMedico.Name = "BtnIngresarMedico";
+            this.BtnIngresarMedico.Size = new System.Drawing.Size(189, 45);
+            this.BtnIngresarMedico.TabIndex = 0;
+            this.BtnIngresarMedico.Text = "Ingresar Medico";
+            this.BtnIngresarMedico.UseVisualStyleBackColor = true;
+            this.BtnIngresarMedico.Click += new System.EventHandler(this.BtnIngresarMedico_Click);
+            // 
             // GbxModificacion
             // 
             this.GbxModificacion.Controls.Add(this.BtnModificarPaciente);
@@ -97,6 +125,33 @@
             this.GbxModificacion.TabIndex = 1;
             this.GbxModificacion.TabStop = false;
             this.GbxModificacion.Text = "Modificación de Datos";
+            // 
+            // BtnModificarPaciente
+            // 
+            this.BtnModificarPaciente.Location = new System.Drawing.Point(549, 45);
+            this.BtnModificarPaciente.Name = "BtnModificarPaciente";
+            this.BtnModificarPaciente.Size = new System.Drawing.Size(189, 45);
+            this.BtnModificarPaciente.TabIndex = 0;
+            this.BtnModificarPaciente.Text = "Modificar Paciente";
+            this.BtnModificarPaciente.UseVisualStyleBackColor = true;
+            // 
+            // BtnModificarEmpleado
+            // 
+            this.BtnModificarEmpleado.Location = new System.Drawing.Point(294, 45);
+            this.BtnModificarEmpleado.Name = "BtnModificarEmpleado";
+            this.BtnModificarEmpleado.Size = new System.Drawing.Size(199, 45);
+            this.BtnModificarEmpleado.TabIndex = 0;
+            this.BtnModificarEmpleado.Text = "Modificar Empleado";
+            this.BtnModificarEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // BtnModificarMedico
+            // 
+            this.BtnModificarMedico.Location = new System.Drawing.Point(48, 45);
+            this.BtnModificarMedico.Name = "BtnModificarMedico";
+            this.BtnModificarMedico.Size = new System.Drawing.Size(189, 45);
+            this.BtnModificarMedico.TabIndex = 0;
+            this.BtnModificarMedico.Text = "Modificar Medico";
+            this.BtnModificarMedico.UseVisualStyleBackColor = true;
             // 
             // GbxEliminacionDatos
             // 
@@ -111,32 +166,32 @@
             this.GbxEliminacionDatos.TabStop = false;
             this.GbxEliminacionDatos.Text = "Eliminación de Datos";
             // 
-            // BtnIngresarMedico
+            // BtnEliminarPaciente
             // 
-            this.BtnIngresarMedico.Location = new System.Drawing.Point(48, 44);
-            this.BtnIngresarMedico.Name = "BtnIngresarMedico";
-            this.BtnIngresarMedico.Size = new System.Drawing.Size(189, 45);
-            this.BtnIngresarMedico.TabIndex = 0;
-            this.BtnIngresarMedico.Text = "Ingresar Medico";
-            this.BtnIngresarMedico.UseVisualStyleBackColor = true;
+            this.BtnEliminarPaciente.Location = new System.Drawing.Point(549, 45);
+            this.BtnEliminarPaciente.Name = "BtnEliminarPaciente";
+            this.BtnEliminarPaciente.Size = new System.Drawing.Size(189, 45);
+            this.BtnEliminarPaciente.TabIndex = 0;
+            this.BtnEliminarPaciente.Text = "Eliminar Paciente";
+            this.BtnEliminarPaciente.UseVisualStyleBackColor = true;
             // 
-            // BtnIngresarEmpleado
+            // BtnEliminarEmpleado
             // 
-            this.BtnIngresarEmpleado.Location = new System.Drawing.Point(298, 44);
-            this.BtnIngresarEmpleado.Name = "BtnIngresarEmpleado";
-            this.BtnIngresarEmpleado.Size = new System.Drawing.Size(189, 45);
-            this.BtnIngresarEmpleado.TabIndex = 0;
-            this.BtnIngresarEmpleado.Text = "Ingresar Empleado";
-            this.BtnIngresarEmpleado.UseVisualStyleBackColor = true;
+            this.BtnEliminarEmpleado.Location = new System.Drawing.Point(298, 45);
+            this.BtnEliminarEmpleado.Name = "BtnEliminarEmpleado";
+            this.BtnEliminarEmpleado.Size = new System.Drawing.Size(189, 45);
+            this.BtnEliminarEmpleado.TabIndex = 0;
+            this.BtnEliminarEmpleado.Text = "Eliminar Empleado";
+            this.BtnEliminarEmpleado.UseVisualStyleBackColor = true;
             // 
-            // BtnIngresarPaciente
+            // BtnEliminarMedico
             // 
-            this.BtnIngresarPaciente.Location = new System.Drawing.Point(549, 44);
-            this.BtnIngresarPaciente.Name = "BtnIngresarPaciente";
-            this.BtnIngresarPaciente.Size = new System.Drawing.Size(189, 45);
-            this.BtnIngresarPaciente.TabIndex = 0;
-            this.BtnIngresarPaciente.Text = "Ingresar Paciente";
-            this.BtnIngresarPaciente.UseVisualStyleBackColor = true;
+            this.BtnEliminarMedico.Location = new System.Drawing.Point(48, 45);
+            this.BtnEliminarMedico.Name = "BtnEliminarMedico";
+            this.BtnEliminarMedico.Size = new System.Drawing.Size(189, 45);
+            this.BtnEliminarMedico.TabIndex = 0;
+            this.BtnEliminarMedico.Text = "Eliminar Medico";
+            this.BtnEliminarMedico.UseVisualStyleBackColor = true;
             // 
             // GbxBusqueda
             // 
@@ -151,41 +206,14 @@
             this.GbxBusqueda.TabStop = false;
             this.GbxBusqueda.Text = "Búsqueda de Datos";
             // 
-            // BtnModificarMedico
+            // BtnBuscarPaciente
             // 
-            this.BtnModificarMedico.Location = new System.Drawing.Point(48, 45);
-            this.BtnModificarMedico.Name = "BtnModificarMedico";
-            this.BtnModificarMedico.Size = new System.Drawing.Size(189, 45);
-            this.BtnModificarMedico.TabIndex = 0;
-            this.BtnModificarMedico.Text = "Modificar Medico";
-            this.BtnModificarMedico.UseVisualStyleBackColor = true;
-            // 
-            // BtnModificarEmpleado
-            // 
-            this.BtnModificarEmpleado.Location = new System.Drawing.Point(294, 45);
-            this.BtnModificarEmpleado.Name = "BtnModificarEmpleado";
-            this.BtnModificarEmpleado.Size = new System.Drawing.Size(199, 45);
-            this.BtnModificarEmpleado.TabIndex = 0;
-            this.BtnModificarEmpleado.Text = "Modificar Empleado";
-            this.BtnModificarEmpleado.UseVisualStyleBackColor = true;
-            // 
-            // BtnModificarPaciente
-            // 
-            this.BtnModificarPaciente.Location = new System.Drawing.Point(549, 45);
-            this.BtnModificarPaciente.Name = "BtnModificarPaciente";
-            this.BtnModificarPaciente.Size = new System.Drawing.Size(189, 45);
-            this.BtnModificarPaciente.TabIndex = 0;
-            this.BtnModificarPaciente.Text = "Modificar Paciente";
-            this.BtnModificarPaciente.UseVisualStyleBackColor = true;
-            // 
-            // BtnBuscarMedico
-            // 
-            this.BtnBuscarMedico.Location = new System.Drawing.Point(48, 44);
-            this.BtnBuscarMedico.Name = "BtnBuscarMedico";
-            this.BtnBuscarMedico.Size = new System.Drawing.Size(189, 45);
-            this.BtnBuscarMedico.TabIndex = 0;
-            this.BtnBuscarMedico.Text = "Buscar Medico";
-            this.BtnBuscarMedico.UseVisualStyleBackColor = true;
+            this.BtnBuscarPaciente.Location = new System.Drawing.Point(549, 44);
+            this.BtnBuscarPaciente.Name = "BtnBuscarPaciente";
+            this.BtnBuscarPaciente.Size = new System.Drawing.Size(189, 45);
+            this.BtnBuscarPaciente.TabIndex = 0;
+            this.BtnBuscarPaciente.Text = "Buscar Paciente";
+            this.BtnBuscarPaciente.UseVisualStyleBackColor = true;
             // 
             // BtnBuscarEmpleado
             // 
@@ -196,43 +224,16 @@
             this.BtnBuscarEmpleado.Text = "Buscar Empleado";
             this.BtnBuscarEmpleado.UseVisualStyleBackColor = true;
             // 
-            // BtnBuscarPaciente
+            // BtnBuscarMedico
             // 
-            this.BtnBuscarPaciente.Location = new System.Drawing.Point(549, 44);
-            this.BtnBuscarPaciente.Name = "BtnBuscarPaciente";
-            this.BtnBuscarPaciente.Size = new System.Drawing.Size(189, 45);
-            this.BtnBuscarPaciente.TabIndex = 0;
-            this.BtnBuscarPaciente.Text = "Buscar Paciente";
-            this.BtnBuscarPaciente.UseVisualStyleBackColor = true;
+            this.BtnBuscarMedico.Location = new System.Drawing.Point(48, 44);
+            this.BtnBuscarMedico.Name = "BtnBuscarMedico";
+            this.BtnBuscarMedico.Size = new System.Drawing.Size(189, 45);
+            this.BtnBuscarMedico.TabIndex = 0;
+            this.BtnBuscarMedico.Text = "Buscar Medico";
+            this.BtnBuscarMedico.UseVisualStyleBackColor = true;
             // 
-            // BtnEliminarMedico
-            // 
-            this.BtnEliminarMedico.Location = new System.Drawing.Point(48, 45);
-            this.BtnEliminarMedico.Name = "BtnEliminarMedico";
-            this.BtnEliminarMedico.Size = new System.Drawing.Size(189, 45);
-            this.BtnEliminarMedico.TabIndex = 0;
-            this.BtnEliminarMedico.Text = "Eliminar Medico";
-            this.BtnEliminarMedico.UseVisualStyleBackColor = true;
-            // 
-            // BtnEliminarEmpleado
-            // 
-            this.BtnEliminarEmpleado.Location = new System.Drawing.Point(298, 45);
-            this.BtnEliminarEmpleado.Name = "BtnEliminarEmpleado";
-            this.BtnEliminarEmpleado.Size = new System.Drawing.Size(189, 45);
-            this.BtnEliminarEmpleado.TabIndex = 0;
-            this.BtnEliminarEmpleado.Text = "Eliminar Empleado";
-            this.BtnEliminarEmpleado.UseVisualStyleBackColor = true;
-            // 
-            // BtnEliminarPaciente
-            // 
-            this.BtnEliminarPaciente.Location = new System.Drawing.Point(549, 45);
-            this.BtnEliminarPaciente.Name = "BtnEliminarPaciente";
-            this.BtnEliminarPaciente.Size = new System.Drawing.Size(189, 45);
-            this.BtnEliminarPaciente.TabIndex = 0;
-            this.BtnEliminarPaciente.Text = "Eliminar Paciente";
-            this.BtnEliminarPaciente.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,7 +243,7 @@
             this.Controls.Add(this.GbxModificacion);
             this.Controls.Add(this.GbxRegistros);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "FrmMenu";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

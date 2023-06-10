@@ -16,5 +16,11 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void BtnIngresarMedico_Click(object sender, EventArgs e)
+        {
+            FrmIngresoDatosMedico objM = new FrmIngresoDatosMedico();
+            objM.ShowDialog();
+        }
     }
 }
