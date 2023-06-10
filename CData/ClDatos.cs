@@ -130,7 +130,6 @@ namespace CData
             return datoMed;
         }
 
-
         //Empleado
         public List<Empleado> GetEmpleados()
         {
@@ -178,7 +177,7 @@ namespace CData
             }
         }
 
-        public void DeleteEmpleado(int id)
+        public void DeleteEmpleado(string id)
         {
             try
             {
@@ -210,7 +209,7 @@ namespace CData
             }
         }
 
-        public Empleado SearchEmpleado(int id)
+        public Empleado SearchEmpleado(string id)
         {
             Empleado datoEmp = new Empleado();
             try
@@ -297,7 +296,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Pacientes WHERE Cedula = {@id}'";
+                string query = $"DELETE FROM Pacientes WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -324,7 +323,7 @@ namespace CData
             }
         }
 
-        public Paciente SearchPaciente(int id)
+        public Paciente SearchPaciente(string id)
         {
             Paciente datoPac = new Paciente();
             try
@@ -357,6 +356,339 @@ namespace CData
                 Console.WriteLine(e.Message);
             }
             return datoPac;
+        }
+
+        //Poblacion
+        public List<Poblacion> GetPoblaciones()
+        {
+            List<Poblacion> datosPoblaciones = new List<Poblacion>();
+            try
+            {
+                objBD.Abrir();
+                SqlCommand sql = new SqlCommand("SELECT * FROM Poblacion");
+                SqlDataReader reader = sql.ExecuteReader();
+                while (reader.Read())
+                {
+                    Poblacion objEnt = new Poblacion()
+                    {
+                        PID = Convert.ToInt16(reader["id"]),
+                        Descripcion = Convert.ToString(reader["descripcion"])
+                    };
+                    datosPoblaciones.Add(objEnt);
+                }
+            }
+            catch
+            {
+                datosPoblaciones = null;
+                objBD.Cerrar();
+            }
+            return datosPoblaciones;
+        }
+
+        public void RegistroPoblacion(Poblacion datoPob)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"INSERT INTO Poblacion(id, descripcion) VALUES ('{@datoPob.PID}', '{@datoPob.Descripcion}')";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void DeletePoblacion(int id)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"DELETE FROM Poblacion WHERE id = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void UpdatePoblacion(Poblacion datoPob)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"UPDATE Poblaciones SET Descripcion = '{datoPob.Descripcion}' WHERE id = '{@datoPob.PID}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public Poblacion SearchPoblacion(int id)
+        {
+            Poblacion datoPob = new Poblacion();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Poblacion WHERE id = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Poblacion objEnt = new Poblacion()
+                    {
+                        PID = Convert.ToInt16(reader["id"]),
+                        Descripcion = Convert.ToString(reader["descripcion"])
+                    };
+                    datoPob = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                datoPob = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoPob;
+        }
+
+        //Direcciones
+        public List<Direcciones> GetDirecciones()
+        {
+            List<Direcciones> datosDirecciones = new List<Direcciones>();
+            try
+            {
+                objBD.Abrir();
+                SqlCommand sql = new SqlCommand("SELECT * FROM Direcciones");
+                SqlDataReader reader = sql.ExecuteReader();
+                while (reader.Read())
+                {
+                    Direcciones objEnt = new Direcciones()
+                    {
+                        DirID = Convert.ToInt32(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
+                        Telefono = Convert.ToString(reader["Telefono"]),
+                        Provincia = Convert.ToString(reader["Provincia"]),
+                        CodigoPostal = Convert.ToString(reader["CodigoPostal"])
+                    };
+                    datosDirecciones.Add(objEnt);
+                }
+            }
+            catch
+            {
+                datosDirecciones = null;
+                objBD.Cerrar();
+            }
+            return datosDirecciones;
+        }
+
+        public void RegistroDireccion(Direcciones datoDir)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"INSERT INTO Direcciones(DireccionID, Direccion, Telefono, Provincia, CodigoPostal) VALUES ({datoDir.DirID}, '{@datoDir.Direccion}', '{@datoDir.Telefono}', '{@datoDir.Provincia}', '{@datoDir.CodigoPostal}')";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void DeleteDireccion(int id)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"DELETE FROM Direcciones WHERE DireccionID = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void UpdateDireccion(Direcciones datoDir)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"UPDATE Direcciones SET Direccion = '{@datoDir.Direccion}', Telefono = '{@datoDir.Telefono}', Provincia = '{@datoDir.Provincia}', CodigoPostal = '{@datoDir.CodigoPostal}' WHERE DireccionID = '{@datoDir.DirID}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public Direcciones SearchDireccion(int id)
+        {
+            Direcciones datoDir = new Direcciones();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Direcciones WHERE DireccionID = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Direcciones objEnt = new Direcciones()
+                    {
+                        DirID = Convert.ToInt32(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
+                        Telefono = Convert.ToString(reader["Telefono"]),
+                        Provincia = Convert.ToString(reader["Provincia"]),
+                        CodigoPostal = Convert.ToString(reader["CodigoPostal"])
+                    };
+                    datoDir = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                datoDir = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoDir;
+        }
+
+        //Horarios
+        public List<Horarios> GetHorarios()
+        {
+            List<Horarios> datosHorarios = new List<Horarios>();
+            try
+            {
+                objBD.Abrir();
+                SqlCommand sql = new SqlCommand("SELECT * FROM Horarios");
+                SqlDataReader reader = sql.ExecuteReader();
+                while (reader.Read())
+                {
+                    Horarios objEnt = new Horarios()
+                    {
+                        HorID = Convert.ToInt32(reader["HorarioID"]),
+                        CedulaMedico = Convert.ToString(reader["CedulaMedico"]),
+                        DiaSemana = Convert.ToString(reader["DiaSemana"]),
+                        HoraInicio = Convert.ToDateTime(reader["HoraInicio"]),
+                        HoraFin = Convert.ToDateTime(reader["HoraFin"])
+                    };
+                    datosHorarios.Add(objEnt);
+                }
+            }
+            catch
+            {
+                datosHorarios = null;
+                objBD.Cerrar();
+            }
+            return datosHorarios;
+        }
+
+        public void RegistroHorario(Horarios datoHor)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"INSERT INTO Horarios(HorarioID, CedulaMedico, DiaSemana, HoraInicio, HoraFin) VALUES ({datoHor.HorID}, '{@datoHor.CedulaMedico}', '{@datoHor.DiaSemana}', '{datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}')";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void DeleteHorario(int id)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"DELETE FROM Horarios WHERE HorarioID = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void UpdateHorario(Horarios datoHor)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"UPDATE Horarios SET CedulaMedico = '{@datoHor.CedulaMedico}', DiaSemana = '{@datoHor.DiaSemana}', HoraInicio = '{datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', HoraFin = '{datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE HorarioID = '{@datoHor.HorID}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public Horarios SearchHorario(int id)
+        {
+            Horarios datoHor = new Horarios();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Horarios WHERE HorarioID = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Horarios objEnt = new Horarios()
+                    {
+                        HorID = Convert.ToInt32(reader["HorarioID"]),
+                        CedulaMedico = Convert.ToString(reader["CedulaMedico"]),
+                        DiaSemana = Convert.ToString(reader["DiaSemana"]),
+                        HoraInicio = Convert.ToDateTime(reader["HoraInicio"]),
+                        HoraFin = Convert.ToDateTime(reader["HoraFin"])
+                    };
+                    datoHor = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                datoHor = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoHor;
         }
     }
 }
