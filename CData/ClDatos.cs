@@ -24,7 +24,7 @@ namespace CData
                     {
                         Cedula = Convert.ToString(reader["Cedula"]),
                         Nombre = Convert.ToString(reader["Nombre"]),
-                        Direccion = Convert.ToInt16(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         NumColegiado = Convert.ToString(reader["NumeroColegiado"]),
                         Tipo = Convert.ToString(reader["TipoMedico"]),
@@ -48,7 +48,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Medicos(Cedula, Nombre, DireccionID,  NumeroSeguridadSocial, NumeroColegiado, TipoMedico, Poblacion, FechaA, FechaB) VALUES ('{@datoMed.Cedula}','{@datoMed.Nombre}','{@datoMed.Direccion}','{@datoMed.NumSegSocial}','{@datoMed.NumColegiado}','{@datoMed.Tipo}','{@datoMed.Poblacion}','{@datoMed.FechaA}','{@datoMed.FechaB}')";
+                string query = $"INSERT INTO Medicos(Cedula, Nombre, Direccion,  NumeroSeguridadSocial, NumeroColegiado, TipoMedico, Poblacion, FechaA, FechaB) VALUES ('{@datoMed.Cedula}','{@datoMed.Nombre}','{@datoMed.Direccion}','{@datoMed.NumSegSocial}','{@datoMed.NumColegiado}','{@datoMed.Tipo}','{@datoMed.Poblacion}','{@datoMed.FechaA}','{@datoMed.FechaB}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -80,7 +80,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', DireccionID = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '@{datoMed.Tipo}', FechaA = '@{datoMed.FechaA}', FechaB = '@{datoMed.FechaB}', Poblacion = '@{datoMed.Poblacion}' WHERE Cedula = '@{datoMed.Cedula}";
+                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '@{datoMed.Tipo}', FechaA = '@{datoMed.FechaA}', FechaB = '@{datoMed.FechaB}', Poblacion = '@{datoMed.Poblacion}' WHERE Cedula = '@{datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -109,7 +109,7 @@ namespace CData
                     {
                         Cedula = Convert.ToString(reader["Cedula"]),
                         Nombre = Convert.ToString(reader["Nombre"]),
-                        Direccion = Convert.ToInt16(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         NumColegiado = Convert.ToString(reader["NumeroColegiado"]),
                         Tipo = Convert.ToString(reader["TipoMedico"]),
@@ -145,7 +145,7 @@ namespace CData
                     {
                         Cedula = Convert.ToString(reader["Cedula"]),
                         Nombre = Convert.ToString(reader["Nombre"]),
-                        Direccion = Convert.ToInt16(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Tipo = Convert.ToString(reader["Tipo"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"])
@@ -166,7 +166,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Empleados(Cedula, Nombre, DireccionID, NumeroSeguridadSocial, TipoEmpleado, Poblacion) VALUES ('{@datoEmp.Cedula}', {@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}')";
+                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion) VALUES ('{@datoEmp.Cedula}', {@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -198,7 +198,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', DireccionID = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', Tipo = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}' WHERE Cedula = '{@datoEmp.Cedula}'";
+                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', Tipo = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}' WHERE Cedula = '{@datoEmp.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -227,7 +227,7 @@ namespace CData
                     {
                         Cedula = Convert.ToString(reader["Cedula"]),
                         Nombre = Convert.ToString(reader["Nombre"]),
-                        Direccion = Convert.ToInt16(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Tipo = Convert.ToString(reader["Tipo"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"])
@@ -260,7 +260,7 @@ namespace CData
                     {
                         Cedula = Convert.ToString(reader["Cedula"]),
                         Nombre = Convert.ToString(reader["Nombre"]),
-                        Direccion = Convert.ToInt16(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Medico = Convert.ToString(reader["CedulaMedico"])
                     };
@@ -280,7 +280,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Pacientes(Cedula, Nombre, DireccionID, NumeroSeguridadSocial, CedulaMedico) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}')";
+                string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -312,7 +312,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', DireccionID = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}' WHERE Cedula = '{@datoPac.Cedula}'";
+                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}' WHERE Cedula = '{@datoPac.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -341,7 +341,7 @@ namespace CData
                     {
                         Cedula = Convert.ToString(reader["Cedula"]),
                         Nombre = Convert.ToString(reader["Nombre"]),
-                        Direccion = Convert.ToInt16(reader["DireccionID"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Medico = Convert.ToString(reader["CedulaMedico"])
                     };
@@ -463,119 +463,6 @@ namespace CData
                 Console.WriteLine(e.Message);
             }
             return datoPob;
-        }
-
-        //Direcciones
-        public List<Direcciones> GetDirecciones()
-        {
-            List<Direcciones> datosDirecciones = new List<Direcciones>();
-            try
-            {
-                objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Direcciones");
-                SqlDataReader reader = sql.ExecuteReader();
-                while (reader.Read())
-                {
-                    Direcciones objEnt = new Direcciones()
-                    {
-                        DirID = Convert.ToInt16(reader["DireccionID"]),
-                        Direccion = Convert.ToString(reader["Direccion"]),
-                        Telefono = Convert.ToString(reader["Telefono"]),
-                        Provincia = Convert.ToString(reader["Provincia"]),
-                        CodigoPostal = Convert.ToString(reader["CodigoPostal"])
-                    };
-                    datosDirecciones.Add(objEnt);
-                }
-            }
-            catch
-            {
-                datosDirecciones = null;
-                objBD.Cerrar();
-            }
-            return datosDirecciones;
-        }
-
-        public void RegistroDireccion(Direcciones datoDir)
-        {
-            try
-            {
-                objBD.Abrir();
-                string query = $"INSERT INTO Direcciones(DireccionID, Direccion, Telefono, Provincia, CodigoPostal) VALUES ({datoDir.DirID}, '{@datoDir.Direccion}', '{@datoDir.Telefono}', '{@datoDir.Provincia}', '{@datoDir.CodigoPostal}')";
-                SqlCommand sql = new SqlCommand(query, objBD.connect);
-                sql.ExecuteNonQuery();
-                objBD.Cerrar();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        public void DeleteDireccion(int id)
-        {
-            try
-            {
-                objBD.Abrir();
-                string query = $"DELETE FROM Direcciones WHERE DireccionID = '{@id}'";
-                SqlCommand sql = new SqlCommand(query, objBD.connect);
-                sql.ExecuteNonQuery();
-                objBD.Cerrar();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        public void UpdateDireccion(Direcciones datoDir)
-        {
-            try
-            {
-                objBD.Abrir();
-                string query = $"UPDATE Direcciones SET Direccion = '{@datoDir.Direccion}', Telefono = '{@datoDir.Telefono}', Provincia = '{@datoDir.Provincia}', CodigoPostal = '{@datoDir.CodigoPostal}' WHERE DireccionID = '{@datoDir.DirID}'";
-                SqlCommand sql = new SqlCommand(query, objBD.connect);
-                sql.ExecuteNonQuery();
-                objBD.Cerrar();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        public Direcciones SearchDireccion(int id)
-        {
-            Direcciones datoDir = new Direcciones();
-            try
-            {
-                objBD.Abrir();
-                string query = $"SELECT * FROM Direcciones WHERE DireccionID = '{@id}'";
-                SqlCommand sql = new SqlCommand(query, objBD.connect);
-                sql.ExecuteNonQuery();
-
-                SqlDataReader reader = sql.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    Direcciones objEnt = new Direcciones()
-                    {
-                        DirID = Convert.ToInt16(reader["DireccionID"]),
-                        Direccion = Convert.ToString(reader["Direccion"]),
-                        Telefono = Convert.ToString(reader["Telefono"]),
-                        Provincia = Convert.ToString(reader["Provincia"]),
-                        CodigoPostal = Convert.ToString(reader["CodigoPostal"])
-                    };
-                    datoDir = objEnt;
-                }
-                objBD.Cerrar();
-            }
-            catch (Exception e)
-            {
-                datoDir = null;
-                objBD.Cerrar();
-                Console.WriteLine(e.Message);
-            }
-            return datoDir;
         }
 
         //Horarios
