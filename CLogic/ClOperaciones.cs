@@ -63,7 +63,7 @@ namespace CLogic
 
         private bool ValidarNombre(string nombre)
         {
-            if (nombre == "" || nombre.Any(char.IsDigit) /* || Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$") */)
+            if (nombre == "" || nombre.Any(char.IsDigit) || Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$"))
             {
                 return false;
             }
@@ -73,7 +73,7 @@ namespace CLogic
 
         private bool ValidarNumeroSeguroSocial(string numeroSeguroSocial)
         {
-            /* if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
+            if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
             {
                 return false;
             }
@@ -105,7 +105,7 @@ namespace CLogic
             if (digitoVerificador != ultimoDigito)
             {
                 return false;
-            } */
+            } 
             if (numeroSeguroSocial.Length != 11)
                 return false;
             return true;
@@ -295,7 +295,7 @@ namespace CLogic
             return numCol.Length == 9;
         }
 
-        private int ValidarTodoMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
+        private int ValidarTodoMedico(Medico datos)
         {
             int validaciones = 0;
 
@@ -314,91 +314,50 @@ namespace CLogic
             else
                 return 3;
 
-            if (ValidarDireccion(direcciones.Direccion))
+            if (ValidarDireccion(datos.Direccion))
                 validaciones++;
             else
                 return 4;
-            if (ValidarTelefono(direcciones.Telefono))
-                validaciones++;
-            else
-                return 5;
-
-            if (ValidarProvincia(direcciones.Provincia))
-                validaciones++;
-            else
-                return 6;
-
-            if (ValidarCodigoPostal(direcciones.CodigoPostal))
-                validaciones++;
-            else
-                return 7;
 
             if (ValidarTipoMedico(datos.Tipo))
                 validaciones++;
             else
-                return 8;
+                return 5;
 
             if (ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
                 validaciones++;
             else
-                return 9;
+                return 6;
 
             if (ValidarNumColegiado(datos.NumColegiado))
                 validaciones++;
             else
-                return 10;
+                return 7;
 
             if (ValidarNombre(datos.Nombre))
                 validaciones++;
             else
-                return 11;
+                return 8;
 
             if (ValidarNumeroSeguroSocial(datos.NumSegSocial))
                 validaciones++;
             else
-                return 12;
-
-            if (ValidarDireccion(direcciones.Direccion))
-                validaciones++;
-            else
-                return 13;
-
-            if (ValidarTelefono(direcciones.Telefono))
-                validaciones++;
-            else
-                return 14;
-
-            if (ValidarProvincia(direcciones.Provincia))
-                validaciones++;
-            else
-                return 15;
-
-            if (ValidarCodigoPostal(direcciones.CodigoPostal))
-                validaciones++;
-            else
-                return 16;
+                return 9;
 
             if (ValidartipoEmpleado(datos.Tipo))
                 validaciones++;
             else
-                return 17;
-
-            if (ValidarDescripcionPoblacion(poblacion.Descripcion))
-                validaciones++;
-            else
-                return -8;
+                return 10;
 
             return validaciones;
         }
 
         //Función de validación de datos MEDICO
-        public int RegistrarMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
+        public int RegistrarMedico(Medico datos)
         {
-            if (ValidarTodoMedico(datos,direcciones, poblacion) == 18)
+            if (ValidarTodoMedico(datos) == 10)
             {
                 objDatos.RegistroMedico(datos);
-                objDatos.RegistroDireccion(direcciones);
-                objDatos.RegistroPoblacion(poblacion);
             }
             else
                 return 111;
@@ -406,9 +365,9 @@ namespace CLogic
             return -121;
         }
 
-        public int ActualizarMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
+        public int ActualizarMedico(Medico datos)
         {
-            if (ValidarTodoMedico(datos,direcciones, poblacion) == 18)
+            if (ValidarTodoMedico(datos) == 10)
                 objDatos.UpdateMedico(datos);
             else
                 return 222;
@@ -417,7 +376,7 @@ namespace CLogic
         }
 
         //Función de validación de datos PACIENTE
-        public int RegistrarPaciente(Paciente datos, Direcciones direcciones)
+        public int RegistrarPaciente(Paciente datos)
         {
             int validaciones = 0;
 
@@ -457,46 +416,9 @@ namespace CLogic
                 return 0;
             }
 
-            if (ValidarDireccion(direcciones.Direccion))
+            if (ValidarDireccion(datos.Direccion))
             {
                 validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
-
-            if (ValidarTelefono(direcciones.Telefono))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
-
-            if (ValidarProvincia(direcciones.Provincia))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
-
-            if (ValidarCodigoPostal(direcciones.CodigoPostal))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
-
-            if (validaciones == 8)
-            {
-                objDatos.RegistroPaciente(datos);
-                objDatos.RegistroDireccion(direcciones);
             }
             else
             {
