@@ -46,14 +46,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmBuscarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmBuscarEmpleado.Designer.cs">
+      <DependentUpon>FrmBuscarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarMedico.Designer.cs">
+      <DependentUpon>FrmBuscarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPaciente.Designer.cs">
+      <DependentUpon>FrmBuscarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEliminarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEliminarEmpleado.Designer.cs">
+      <DependentUpon>FrmEliminarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEliminarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEliminarMedico.Designer.cs">
+      <DependentUpon>FrmEliminarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEliminarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEliminarPaciente.Designer.cs">
+      <DependentUpon>FrmEliminarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresoDatosEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresoDatosEmpleado.Designer.cs">
+      <DependentUpon>FrmIngresoDatosEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresoDatosMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresoDatosMedico.Designer.cs">
+      <DependentUpon>FrmIngresoDatosMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresoDatosPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresoDatosPaciente.Designer.cs">
+      <DependentUpon>FrmIngresoDatosPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarEmpleado.Designer.cs">
+      <DependentUpon>FrmModificarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarMedico.Designer.cs">
+      <DependentUpon>FrmModificarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarPaciente.Designer.cs">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
