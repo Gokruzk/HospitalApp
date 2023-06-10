@@ -19,8 +19,12 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-        /*Entidades objEntidades = new Entidades();
-        ClOperaciones objOperaciones = new ClOperaciones();*/
+
+        Medico objMedico = new Medico();
+        Direcciones objDireccion = new Direcciones();
+        Poblacion objPoblacion  = new Poblacion();
+
+        ClOperaciones objOperaciones = new ClOperaciones();
 
         private void txtNIF_TextChanged(object sender, EventArgs e)
         {
@@ -34,18 +38,37 @@ namespace CapaPresentacion
 
         private void btnIngresarM_Click(object sender, EventArgs e)
         {
-          /*  objEntidades.IdMedico = txtID.Text;
-            objEntidades.Nombre = txtNombre.Text;
-            objEntidades.Direccion = txtDireccion.Text;
-            objEntidades.Telefono = txtTelefono.Text;
-            objEntidades.Poblacion = txtPoblacion.Text;
-            objEntidades.Provincia = comboBoxProvincia.Text;
-            objEntidades.CodigoPostal = txtCodigoPostal.Text;
-            objEntidades.NIF = txtNIF.Text;
-            objEntidades.NumSegSocial = txtSeguridadSocial.Text;
-            objEntidades.Colegiado = txtNumColegiado.Text;
-            objEntidades.TipoMedico = comboBoxTipoMed.Text;*/
-          
+            /*objMedico.Nombre = txtNombre.Text;
+            objMedico.Cedula = txtNIF.Text;
+            objMedico.NumSegSocial = txtSeguridadSocial.Text;
+            objMedico.NumColegiado = txtNumColegiado.Text;
+            objMedico.Tipo = comboBoxTipoMed.Text;
+
+            objDireccion.Direccion = txtDireccion.Text;
+            objDireccion.Telefono = txtTelefono.Text;
+            objDireccion.Provincia = comboBoxProvincia.Text;
+            objDireccion.CodigoPostal = txtCodigoPostal.Text;
+
+            objPoblacion.Descripcion = txtPoblacion.Text;*/
+
+            objMedico.Nombre = "Prueba";
+            objMedico.Cedula = "0604401919";
+            objMedico.NumSegSocial = "578-13-8383";
+            objMedico.NumColegiado = "123456789";
+            objMedico.Tipo = "Médico Sustituto";
+            objMedico.FechaA = DateTime.Now.AddDays(-6);
+            objMedico.FechaB = DateTime.Now;
+            objMedico.Poblacion = 1;
+            objMedico.Direccion = 1;
+
+            objDireccion.Direccion = "por ahi";
+            objDireccion.Telefono = "0994637276";
+            objDireccion.Provincia = "Chimborazo";
+            objDireccion.CodigoPostal = "12345";
+
+            objPoblacion.Descripcion = "no se qué va aquí";
+
+            MessageBox.Show(objOperaciones.RegistrarMedico(objMedico, objDireccion, objPoblacion).ToString());
         }
     }
 }
