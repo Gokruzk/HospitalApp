@@ -102,6 +102,7 @@
             this.BtnIngresarEmpleado.TabIndex = 0;
             this.BtnIngresarEmpleado.Text = "Ingresar Empleado";
             this.BtnIngresarEmpleado.UseVisualStyleBackColor = true;
+            this.BtnIngresarEmpleado.Click += new System.EventHandler(this.BtnIngresarEmpleado_Click);
             // 
             // BtnIngresarMedico
             // 

@@ -126,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmIngresoDatosEmpleado.resx">
+      <DependentUpon>FrmIngresoDatosEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresoDatosMedico.resx">
       <DependentUpon>FrmIngresoDatosMedico.cs</DependentUpon>
     </EmbeddedResource>

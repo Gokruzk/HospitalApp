@@ -22,5 +22,11 @@ namespace CapaPresentacion
             FrmIngresoDatosMedico objM = new FrmIngresoDatosMedico();
             objM.ShowDialog();
         }
+
+        private void BtnIngresarEmpleado_Click(object sender, EventArgs e)
+        {
+            FrmIngresoDatosEmpleado objEmpl= new FrmIngresoDatosEmpleado();
+            objEmpl.ShowDialog();
+        }
     }
 }
