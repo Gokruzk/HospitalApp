@@ -29,8 +29,8 @@ namespace CData
                         NumColegiado = Convert.ToString(reader["NumeroColegiado"]),
                         Tipo = Convert.ToString(reader["TipoMedico"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
-                        FechaA = Convert.ToString(reader["FechaA"]),
-                        FechaB = Convert.ToString(reader["FechaB"])
+                        FechaA = Convert.ToDateTime(reader["FechaA"]),
+                        FechaB = Convert.ToDateTime(reader["FechaB"])
                     };
                     datosMedicos.Add(objEnt);
                 }
@@ -114,8 +114,8 @@ namespace CData
                         NumColegiado = Convert.ToString(reader["NumeroColegiado"]),
                         Tipo = Convert.ToString(reader["TipoMedico"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
-                        FechaA = Convert.ToString(reader["FechaA"]),
-                        FechaB = Convert.ToString(reader["FechaB"])
+                        FechaA = Convert.ToDateTime(reader["FechaA"]),
+                        FechaB = Convert.ToDateTime(reader["FechaB"])
                     };
                     datoMed = objEnt;
                 }
@@ -478,7 +478,7 @@ namespace CData
                 {
                     Direcciones objEnt = new Direcciones()
                     {
-                        DirID = Convert.ToInt32(reader["DireccionID"]),
+                        DirID = Convert.ToInt16(reader["DireccionID"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
                         Telefono = Convert.ToString(reader["Telefono"]),
                         Provincia = Convert.ToString(reader["Provincia"]),
@@ -559,7 +559,7 @@ namespace CData
                 {
                     Direcciones objEnt = new Direcciones()
                     {
-                        DirID = Convert.ToInt32(reader["DireccionID"]),
+                        DirID = Convert.ToInt16(reader["DireccionID"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
                         Telefono = Convert.ToString(reader["Telefono"]),
                         Provincia = Convert.ToString(reader["Provincia"]),
@@ -591,7 +591,7 @@ namespace CData
                 {
                     Horarios objEnt = new Horarios()
                     {
-                        HorID = Convert.ToInt32(reader["HorarioID"]),
+                        HorID = Convert.ToInt16(reader["HorarioID"]),
                         CedulaMedico = Convert.ToString(reader["CedulaMedico"]),
                         DiaSemana = Convert.ToString(reader["DiaSemana"]),
                         HoraInicio = Convert.ToDateTime(reader["HoraInicio"]),
@@ -672,7 +672,7 @@ namespace CData
                 {
                     Horarios objEnt = new Horarios()
                     {
-                        HorID = Convert.ToInt32(reader["HorarioID"]),
+                        HorID = Convert.ToInt16(reader["HorarioID"]),
                         CedulaMedico = Convert.ToString(reader["CedulaMedico"]),
                         DiaSemana = Convert.ToString(reader["DiaSemana"]),
                         HoraInicio = Convert.ToDateTime(reader["HoraInicio"]),
