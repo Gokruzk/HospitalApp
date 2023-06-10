@@ -38,59 +38,44 @@ namespace CLogic
         private string ValidarTodoMedico(Medico datos)
         {
             if (objPersona.ValidarCedula(datos.Cedula))
-            {
-                ;
-            }
+            {; }
             else
                 return objMensajes.errores[0];
 
             if (objPersona.ValidarNombre(datos.Nombre))
-            {
-                ;
-            }
+            {; }
             else
                 return objMensajes.errores[1];
 
             if (objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-            {
-                ;
-            }
+            {; }
             else
                 return objMensajes.errores[2];
 
             if (objPersona.ValidarDireccion(datos.Direccion))
-            {
-                ;
-            }
+            {; }
             else
                 return objMensajes.errores[3];
 
             if (ValidarTipoMedico(datos.Tipo))
-            {
-                ;
-            }
+            {; }
             else
                 return objMensajes.errores[9];
 
             if (ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
-            {
-                ;
-            }
+            {; }
             else
                 return objMensajes.errores[13];
 
             if (ValidarNumColegiado(datos.NumColegiado))
-            {
-                ;
-            }
+            {; }
 
             else
                 return objMensajes.errores[11];
 
-            return "CORRECTO";
+            return objMensajes.errores[15];
         }
 
-        //Función de validación de datos MEDICO
         public string RegistrarMedico(Medico datos)
         {
             string validacion = ValidarTodoMedico(datos);
@@ -111,5 +96,16 @@ namespace CLogic
             return validacion;
         }
 
+        public string EliminarMedico(string cedula)
+        {
+            if (objPersona.ValidarCedula(cedula))
+            {
+                objDatos.DeleteMedico(cedula);
+            }
+            else
+                return objMensajes.errores[0];
+            
+            return "CORRECTO";
+        }
     }
 }
