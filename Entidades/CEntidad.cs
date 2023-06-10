@@ -13,7 +13,7 @@ namespace Entidades
         public string Cedula { get; set; }
         public string Nombre { get; set; }
         public string NumSegSocial { get; set; }
-        public int Direccion { get; set; }
+        public string Direccion { get; set; }
     }
 
     public class Empleado : Persona
@@ -40,15 +40,6 @@ namespace Entidades
     {
         public int PID { get; set; }
         public string Descripcion { get; set; }
-    }
-
-    public class Direcciones
-    {
-        public int DirID { get; set; }
-        public string Direccion { get; set; }
-        public string Telefono { get; set; }
-        public string Provincia { get; set; }
-        public string CodigoPostal { get; set; }
     }
 
     public class Horarios
