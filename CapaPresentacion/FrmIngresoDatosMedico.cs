@@ -24,7 +24,7 @@ namespace CapaPresentacion
         Direcciones objDireccion = new Direcciones();
         Poblacion objPoblacion  = new Poblacion();
 
-        ClOperaciones objOperaciones = new ClOperaciones();
+        ClOperacionesGenerales objOperaciones = new ClOperacionesGenerales();
 
         private void txtNIF_TextChanged(object sender, EventArgs e)
         {
