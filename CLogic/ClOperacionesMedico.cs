@@ -11,8 +11,9 @@ namespace CLogic
     public class ClOperacionesMedico
     {
         //Validacion de datos entidad MEDICO
-        ClDatos objDatos = new ClDatos();
-        ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClDatos objDatos = new ClDatos();
+        readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
+
         private bool ValidarTipoMedico(string tipo)
         {
             string[] tipoMedico = { "Médico Titular", "Médico Interino", "Médico Sustituto" };
@@ -72,20 +73,6 @@ namespace CLogic
             else
                 return 7;
 
-            if (objPersona.ValidarNombre(datos.Nombre))
-                validaciones++;
-            else
-                return 8;
-
-            if (objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-                validaciones++;
-            else
-                return 9;
-
-            if (ValidarTipoMedico(datos.Tipo))
-                validaciones++;
-            else
-                return 10;
 
             return validaciones;
         }
@@ -93,7 +80,7 @@ namespace CLogic
         //Función de validación de datos MEDICO
         public int RegistrarMedico(Medico datos)
         {
-            if (ValidarTodoMedico(datos) == 10)
+            if (ValidarTodoMedico(datos) == 7)
             {
                 objDatos.RegistroMedico(datos);
             }
@@ -105,8 +92,10 @@ namespace CLogic
 
         public int ActualizarMedico(Medico datos)
         {
-            if (ValidarTodoMedico(datos) == 10)
-                objDatos.UpdateMedico(datos);
+            Console.WriteLine("Conexión 1 abierta");
+            if (ValidarTodoMedico(datos) == 7)
+                {Console.WriteLine("Conexión 178 abierta");
+                objDatos.UpdateMedico(datos);}
             else
                 return 222;
 

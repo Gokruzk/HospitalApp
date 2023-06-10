@@ -16,6 +16,8 @@ namespace CLogic
         {
             if (cedula.Length != 10 || !int.TryParse(cedula, out int n))
             {
+                Console.WriteLine("cedula");
+
                 return false;
             }
 
@@ -37,6 +39,7 @@ namespace CLogic
 
             else
             {
+                Console.WriteLine("cedula");
                 return false;
             }
         }
@@ -45,6 +48,7 @@ namespace CLogic
         {
             if (string.IsNullOrWhiteSpace(nombre) || nombre.Any(char.IsDigit) || !Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$"))
             {
+                Console.WriteLine("nombre");
                 return false;
             }
 
@@ -53,13 +57,15 @@ namespace CLogic
 
         public bool ValidarNumeroSeguroSocial(string numeroSeguroSocial)
         {
-            if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
+            /* if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
             {
+                Console.WriteLine("numero");
                 return false;
             }
 
             if (!Regex.IsMatch(numeroSeguroSocial, @"^\d{9}$") && !Regex.IsMatch(numeroSeguroSocial, @"^\d{3}-\d{2}-\d{4}$"))
             {
+                Console.WriteLine("numero");
                 return false;
             }
 
@@ -84,16 +90,18 @@ namespace CLogic
 
             if (digitoVerificador != ultimoDigito)
             {
+                Console.WriteLine("numero");
                 return false;
             }
             if (numeroSeguroSocial.Length != 11)
-                return false;
+            { Console.WriteLine("numero"); return false; } */
             return true;
         }
         public bool ValidarDireccion(string dirrecion)
         {
             if (string.IsNullOrWhiteSpace(dirrecion) && (!Regex.IsMatch(dirrecion, @"^[a-zA-Z0-9\s-]+$")))
             {
+                Console.WriteLine("direccion");
                 return false;
             }
 

@@ -77,8 +77,10 @@ namespace CData
 
         public void UpdateMedico(Medico datoMed)
         {
+            Console.WriteLine("Conexión 1 abierta");
             try
             {
+                Console.WriteLine("Conexión 2 abierta");
                 objBD.Abrir();
                 string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '@{datoMed.Tipo}', FechaA = '@{datoMed.FechaA}', FechaB = '@{datoMed.FechaB}', Poblacion = '@{datoMed.Poblacion}' WHERE Cedula = '@{datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);

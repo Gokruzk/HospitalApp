@@ -21,10 +21,7 @@ namespace CapaPresentacion
         }
 
         Medico objMedico = new Medico();
-        Direcciones objDireccion = new Direcciones();
-        Poblacion objPoblacion  = new Poblacion();
-
-        ClOperacionesGenerales objOperaciones = new ClOperacionesGenerales();
+        ClOperacionesMedico objOperaciones = new ClOperacionesMedico();
 
         private void txtNIF_TextChanged(object sender, EventArgs e)
         {
@@ -51,24 +48,28 @@ namespace CapaPresentacion
 
             objPoblacion.Descripcion = txtPoblacion.Text;*/
 
-            objMedico.Nombre = "FernandoNovillo";
+            objMedico.Nombre = "Prueba";
             objMedico.Cedula = "0604401919";
-            objMedico.NumSegSocial = "578-13-8383";
+            objMedico.NumSegSocial = "546-53-9380";
             objMedico.NumColegiado = "123456789";
             objMedico.Tipo = "Médico Sustituto";
             objMedico.FechaA = DateTime.Now.AddDays(-6);
             objMedico.FechaB = DateTime.Now;
             objMedico.Poblacion = 1;
-            objMedico.Direccion = 1;
+            objMedico.Direccion = "es por alla cerca de aquí";
 
-            objDireccion.Direccion = "por ahi";
-            objDireccion.Telefono = "0994637276";
-            objDireccion.Provincia = "Pichincha";
-            objDireccion.CodigoPostal = "12345";
+            MessageBox.Show(objOperaciones.RegistrarMedico(objMedico).ToString());
+            objMedico.Nombre = "FernandoNovillo";
+            objMedico.Cedula = "0604401919";
+            objMedico.NumSegSocial = "546-53-9380";
+            objMedico.NumColegiado = "123456789";
+            objMedico.Tipo = "Médico Sustituto";
+            objMedico.FechaA = DateTime.Now.AddDays(-6);
+            objMedico.FechaB = DateTime.Now;
+            objMedico.Poblacion = 1;
+            objMedico.Direccion = "es por alla cerca de aquí";
 
-            objPoblacion.Descripcion = "no se qué va aquí";
-
-            MessageBox.Show(objOperaciones.ActualizarMedico(objMedico, objDireccion, objPoblacion).ToString());
+            MessageBox.Show(objOperaciones.ActualizarMedico(objMedico).ToString());
         }
     }
 }
