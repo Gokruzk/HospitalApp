@@ -47,7 +47,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnRegistrar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,6 @@
             this.label3.Size = new System.Drawing.Size(102, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "DIRECCION";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -230,14 +229,15 @@
             this.textBox10.Size = new System.Drawing.Size(162, 26);
             this.textBox10.TabIndex = 19;
             // 
-            // button1
+            // BtnRegistrar
             // 
-            this.button1.Location = new System.Drawing.Point(734, 457);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 43);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "REGISTRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnRegistrar.Location = new System.Drawing.Point(734, 457);
+            this.BtnRegistrar.Name = "BtnRegistrar";
+            this.BtnRegistrar.Size = new System.Drawing.Size(138, 43);
+            this.BtnRegistrar.TabIndex = 20;
+            this.BtnRegistrar.Text = "REGISTRAR";
+            this.BtnRegistrar.UseVisualStyleBackColor = true;
+            this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // comboBox1
             // 
@@ -278,7 +278,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 511);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
@@ -329,7 +329,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnRegistrar;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }

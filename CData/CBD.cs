@@ -21,7 +21,8 @@ namespace CData
         public CBD()
         {
             //Editar la cadena de conexión con sus variables
-            cadena = $"Data Source= {@FERSERVER};Initial Catalog={@BDD};User ID=sa;Password={@FERPSW}";
+            //cadena = $"Data Source= {@FERSERVER};Initial Catalog={@BDD};User ID=sa;Password={@FERPSW}";
+            cadena = "Data Source = DESKTOP-IUS5G6M; Initial Catalog = HOSPITAL; Integrated Security = True";
             connect.ConnectionString = cadena;
         }
         public void Abrir()

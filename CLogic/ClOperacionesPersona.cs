@@ -57,46 +57,13 @@ namespace CLogic
 
         public bool ValidarNumeroSeguroSocial(string numeroSeguroSocial)
         {
-            /* if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
-            {
-                Console.WriteLine("numero");
+            if (!Regex.IsMatch(numeroSeguroSocial, "^(?!666|000|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0{4})\\d{4}$")) {
                 return false;
             }
 
-            if (!Regex.IsMatch(numeroSeguroSocial, @"^\d{9}$") && !Regex.IsMatch(numeroSeguroSocial, @"^\d{3}-\d{2}-\d{4}$"))
-            {
-                Console.WriteLine("numero");
-                return false;
-            }
-
-            int suma = 0;
-
-            for (int i = 0; i < 9; i++)
-            {
-                int digito = int.Parse(numeroSeguroSocial[i].ToString());
-                if (i % 2 == 0)
-                {
-                    digito *= 2;
-                    if (digito > 9)
-                    {
-                        digito = digito % 10 + digito / 10;
-                    }
-                }
-                suma += digito;
-            }
-            int digitoVerificador = (10 - (suma % 10)) % 10;
-
-            int ultimoDigito = int.Parse(numeroSeguroSocial[8].ToString());
-
-            if (digitoVerificador != ultimoDigito)
-            {
-                Console.WriteLine("numero");
-                return false;
-            }
-            if (numeroSeguroSocial.Length != 11)
-            { Console.WriteLine("numero"); return false; } */
             return true;
         }
+
         public bool ValidarDireccion(string dirrecion)
         {
             if (string.IsNullOrWhiteSpace(dirrecion) && (!Regex.IsMatch(dirrecion, @"^[a-zA-Z0-9\s-]+$")))
