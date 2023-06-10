@@ -265,12 +265,12 @@ namespace CLogic
             return tipoMedico.Contains(tipo);
         }
 
-        public bool ValidarFechasSutituto(string tipo, string fechaA, string fechaB)
+        public bool ValidarFechasSutituto(string tipo, DateTime fechaA, DateTime fechaB)
         {
             if (tipo == "Sustituto")
-                return fechaA.Length > 0 && fechaB.Length > 0;
+                return DateTime.Compare(fechaA, fechaB) < 0;
 
-            return true; ;
+            return true;
         }
 
         public bool ValidarNumColegiado(string numCol)
@@ -547,5 +547,105 @@ namespace CLogic
             return 0;
         }
 
+        //Validación de datos entidad HORARIOS
+        public bool ValidarDia(string dia)
+        {
+            string[] diaSemana = { "Lunes", "Martes", "Miércoles", "Jueves", "Sábado", "Viernes", "Domingo" };
+
+            return diaSemana.Contains(dia);
+        }
+
+        public bool ValidarHoras(DateTime horaI, DateTime horaF)
+        {
+            return DateTime.Compare(horaI, horaF) < 0;
+        }
+
+        //Función de validación de datos Horario
+        public int RegistrarHorario(Horarios datos)
+        {
+            int validaciones = 0;
+
+            if (ValidarCedula(datos.CedulaMedico))
+            {
+                validaciones++;
+            }
+            else
+            {
+                return 0;
+            }
+
+            if (ValidarDia(datos.DiaSemana))
+            {
+                validaciones++;
+            }
+            else
+            {
+                return 0;
+            }
+
+            if (ValidarHoras(datos.HoraInicio, datos.HoraFin))
+            {
+                validaciones++;
+            }
+            else
+            {
+                return 0;
+            }
+
+            if (validaciones == 3)
+            {
+                objDatos.RegistroHorario(datos);
+            }
+            return 0;
+        }
+
+        //Validación de datos entidad VACACIONES
+        public bool ValidarEstado(string estado)
+        {
+            string[] estadosVa = { "Planificadas", "Realizadas" };
+
+            return estadosVa.Contains(estado);
+        }
+
+
+        //Función de validación de datos Horario
+        public int RegistrarVacacion(Vacaciones datos)
+        {
+            int validaciones = 0;
+
+            if (ValidarCedula(datos.Cedula))
+            {
+                validaciones++;
+            }
+            else
+            {
+                return 0;
+            }
+
+            if (ValidarEstado(datos.Estado))
+            {
+                validaciones++;
+            }
+            else
+            {
+                return 0;
+            }
+
+            if (ValidarHoras(datos.FechaInicio, datos.FechaFin))
+            {
+                validaciones++;
+            }
+            else
+            {
+                return 0;
+            }
+
+
+            if (validaciones == 3)
+            {
+                //objDatos.RegistroHorario(datos);
+            }
+            return 0;
+        }
     }
 }

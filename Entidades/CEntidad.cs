@@ -25,8 +25,8 @@ namespace Entidades
     public class Medico : Persona
     {
         public string Tipo { get; set; }
-        public string FechaA { get; set; }
-        public string FechaB { get; set; }
+        public DateTime FechaA { get; set; }
+        public DateTime FechaB { get; set; }
         public string NumColegiado { get; set; }
         public int Poblacion { get; set; }
     }
