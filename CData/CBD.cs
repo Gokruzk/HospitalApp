@@ -12,7 +12,7 @@ namespace CData
         string BDD = "HOSPITAL";
         //Editar las variables según su configuración de SQL SERVER
         public string NIGSERVER = "DESKTOP-2U77OBE\\SQLEXPRESS", NIGPSW = "nigel123";
-        string FERSERVER = "", FERPSW = "";
+        public string FERSERVER = "COMTEX765", FERPSW = "12 fer 13";
         string CRISSERVER = "", CRISPSW = "";
         string KEVSERVER = "", KEVPSW = "";
         string SERVER = "", SKYPSW = "";
@@ -21,7 +21,7 @@ namespace CData
         public CBD()
         {
             //Editar la cadena de conexión con sus variables
-            cadena = $"Data Source= {@NIGSERVER};Initial Catalog={@BDD};User ID=sa;Password={@NIGPSW}";
+            cadena = $"Data Source= {@FERSERVER};Initial Catalog={@BDD};User ID=sa;Password={@FERPSW}";
             connect.ConnectionString = cadena;
         }
         public void Abrir()

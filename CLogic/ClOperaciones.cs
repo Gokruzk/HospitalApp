@@ -14,6 +14,23 @@ namespace CLogic
     {
         ClDatos objDatos = new ClDatos();
 
+        string[] errores = { "Cédula no valida.",
+                             "Nombre invalido, recuerde que debe ingresar el nombre sin dígitos o caracteres especiales.",
+                             "Número de seguro social invalido.",
+                             "Error, por favor ingrese correctamente la dirección.",
+                             "Número de teléfono invalido, recuerde que el número de teléfono tiene que contener la cantidad correcta de dígitos al igual que registrarlo sin el código de país.",
+                             "La provincia ingresada no existe, por favor ingresar una de las 24 provincias del país.",
+                             "Código postal invalido, recuerde que debe contener la cantidad correcta de dígitos.",
+                             "Tipo de empleado inexistente.",
+                             "Descripción requerida.",
+                             "Tipo de medico inexistente.",
+                             "El medico tiene que ser sustituto para registrar fecha de alta y baja.",
+                             "Número de colegiado invalido, recuerde ingresar la cantidad correcta de dígitos.",
+                             "Día de la semana inexistente.",
+                             "El dato de finalización no puede ser mayor al de inicio.",
+                             "Estado invalido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada."
+        };
+
         //Validación de datos entidad PERSONA
         private bool ValidarCedula(string cedula)
         {
@@ -46,7 +63,7 @@ namespace CLogic
 
         private bool ValidarNombre(string nombre)
         {
-            if (string.IsNullOrWhiteSpace(nombre) || nombre.Any(char.IsDigit) || Regex.IsMatch(nombre, @"[^\w]"))
+            if (nombre == "" || nombre.Any(char.IsDigit) /* || Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$") */)
             {
                 return false;
             }
@@ -56,7 +73,7 @@ namespace CLogic
 
         private bool ValidarNumeroSeguroSocial(string numeroSeguroSocial)
         {
-            if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
+            /* if ((numeroSeguroSocial.Length != 9) || (!numeroSeguroSocial.All(char.IsDigit)))
             {
                 return false;
             }
@@ -88,7 +105,9 @@ namespace CLogic
             if (digitoVerificador != ultimoDigito)
             {
                 return false;
-            }
+            } */
+            if (numeroSeguroSocial.Length != 11)
+                return false;
             return true;
         }
 
@@ -147,9 +166,7 @@ namespace CLogic
 
         public static bool ValidarCodigoPostal(string codigoPostal)
         {
-            string patron = @"^\d{2}\d{3}$";
-
-            if (Regex.IsMatch(codigoPostal, patron))
+            if (codigoPostal.Length != 5)
             {
                 return false;
             }
@@ -258,14 +275,14 @@ namespace CLogic
         }
 
         //Validacion de datos entidad MEDICO
-        public bool ValidarTipoMedico(string tipo)
+        private bool ValidarTipoMedico(string tipo)
         {
-            string[] tipoMedico = { "Titular", "Interino", "Sustituto" };
+            string[] tipoMedico = { "Médico Titular", "Médico Interino", "Médico Sustituto" };
 
             return tipoMedico.Contains(tipo);
         }
 
-        public bool ValidarFechasSutituto(string tipo, DateTime fechaA, DateTime fechaB)
+        private bool ValidarFechasSutituto(string tipo, DateTime fechaA, DateTime fechaB)
         {
             if (tipo == "Sustituto")
                 return DateTime.Compare(fechaA, fechaB) < 0;
@@ -273,188 +290,130 @@ namespace CLogic
             return true;
         }
 
-        public bool ValidarNumColegiado(string numCol)
+        private bool ValidarNumColegiado(string numCol)
         {
             return numCol.Length == 9;
         }
-        //Función de validación de datos MEDICO
-        public int RegistrarMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
+
+        private int ValidarTodoMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
         {
             int validaciones = 0;
 
             if (ValidarCedula(datos.Cedula))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 1;
 
             if (ValidarNombre(datos.Nombre))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 2;
 
             if (ValidarNumeroSeguroSocial(datos.NumSegSocial))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 3;
 
             if (ValidarDireccion(direcciones.Direccion))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 4;
             if (ValidarTelefono(direcciones.Telefono))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 5;
 
             if (ValidarProvincia(direcciones.Provincia))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 6;
 
             if (ValidarCodigoPostal(direcciones.CodigoPostal))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 7;
 
             if (ValidarTipoMedico(datos.Tipo))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 8;
 
             if (ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 9;
 
             if (ValidarNumColegiado(datos.NumColegiado))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 10;
 
             if (ValidarNombre(datos.Nombre))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 11;
 
             if (ValidarNumeroSeguroSocial(datos.NumSegSocial))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 12;
 
             if (ValidarDireccion(direcciones.Direccion))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 13;
 
             if (ValidarTelefono(direcciones.Telefono))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 14;
 
             if (ValidarProvincia(direcciones.Provincia))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 15;
 
             if (ValidarCodigoPostal(direcciones.CodigoPostal))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 16;
 
             if (ValidartipoEmpleado(datos.Tipo))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return 17;
 
             if (ValidarDescripcionPoblacion(poblacion.Descripcion))
-            {
                 validaciones++;
-            }
             else
-            {
-                return 0;
-            }
+                return -8;
 
-            if (validaciones == 18)
+            return validaciones;
+        }
+
+        //Función de validación de datos MEDICO
+        public int RegistrarMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
+        {
+            if (ValidarTodoMedico(datos,direcciones, poblacion) == 18)
             {
                 objDatos.RegistroMedico(datos);
                 objDatos.RegistroDireccion(direcciones);
                 objDatos.RegistroPoblacion(poblacion);
             }
             else
-            {
-                return 0;
-            }
+                return 111;
 
-            return 0;
+            return -121;
+        }
+
+        public int ActualizarMedico(Medico datos, Direcciones direcciones, Poblacion poblacion)
+        {
+            if (ValidarTodoMedico(datos,direcciones, poblacion) == 18)
+                objDatos.UpdateMedico(datos);
+            else
+                return 222;
+
+            return -121;
         }
 
         //Función de validación de datos PACIENTE
