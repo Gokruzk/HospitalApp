@@ -76,7 +76,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -92,7 +92,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -108,7 +108,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -146,7 +146,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoMed = null;
                 objBD.Cerrar();
@@ -187,7 +187,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoMed = null;
                 objBD.Cerrar();
@@ -260,7 +260,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -276,7 +276,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -292,7 +292,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -327,7 +327,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoEmp = null;
                 objBD.Cerrar();
@@ -365,7 +365,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoEmp = null;
                 objBD.Cerrar();
@@ -437,7 +437,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -453,7 +453,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -469,7 +469,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -503,7 +503,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoPac = null;
                 objBD.Cerrar();
@@ -540,7 +540,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoPac = null;
                 objBD.Cerrar();
@@ -575,7 +575,7 @@ namespace CData
             return datosPoblaciones;
         }
 
-        public void RegistroPoblacion(Poblacion datoPob)
+        public string RegistroPoblacion(Poblacion datoPob)
         {
             try
             {
@@ -585,10 +585,15 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                if (e.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
             }
+            return "CORRECTO";
         }
 
         public void DeletePoblacion(int id)
@@ -601,7 +606,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -617,7 +622,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -646,7 +651,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoPob = null;
                 objBD.Cerrar();
@@ -685,7 +690,7 @@ namespace CData
             return datosHorarios;
         }
 
-        public void RegistroHorario(Horarios datoHor)
+        public string RegistroHorario(Horarios datoHor)
         {
             try
             {
@@ -695,10 +700,15 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                if (e.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
             }
+            return "CORRECTO";
         }
 
         public void DeleteHorario(int id)
@@ -711,7 +721,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -727,7 +737,7 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -759,7 +769,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoHor = null;
                 objBD.Cerrar();
@@ -798,7 +808,7 @@ namespace CData
             return datosVacaciones;
         }
 
-        public void RegistroVacacion(Vacaciones datoVac)
+        public string RegistroVacacion(Vacaciones datoVac)
         {
             try
             {
@@ -808,27 +818,32 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                if (e.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
             }
+            return "CORRECTO";
         }
 
-        public void DeleteVacacion(int id)
-        {
-            try
-            {
-                objBD.Abrir();
-                string query = $"DELETE FROM Vacaciones WHERE VacacionesID = '{@id}'";
-                SqlCommand sql = new SqlCommand(query, objBD.connect);
-                sql.ExecuteNonQuery();
-                objBD.Cerrar();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
+        // public void DeleteVacacion(int id)
+        // {
+        //     try
+        //     {
+        //         objBD.Abrir();
+        //         string query = $"DELETE FROM Vacaciones WHERE VacacionesID = '{@id}'";
+        //         SqlCommand sql = new SqlCommand(query, objBD.connect);
+        //         sql.ExecuteNonQuery();
+        //         objBD.Cerrar();
+        //     }
+        //     catch (SqlException e)
+        //     {
+        //         Console.WriteLine(e.Message);
+        //     }
+        // }
 
         public void UpdateVacacion(Vacaciones datoVac)
         {
@@ -840,19 +855,19 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
         }
 
-        public Vacaciones SearchVacacion(int id)
+        public Vacaciones SearchVacacionCedula(string id)
         {
             Vacaciones datoVac = new Vacaciones();
             try
             {
                 objBD.Abrir();
-                string query = $"SELECT * FROM Vacaciones WHERE VacacionesID = '{@id}'";
+                string query = $"SELECT * FROM Vacaciones WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -872,7 +887,7 @@ namespace CData
                 }
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 datoVac = null;
                 objBD.Cerrar();
@@ -881,5 +896,177 @@ namespace CData
             return datoVac;
         }
 
+        public Vacaciones SearchVacacionEstado(int id)
+        {
+            Vacaciones datoVac = new Vacaciones();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Vacaciones WHERE Estado = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Vacaciones objEnt = new Vacaciones()
+                    {
+                        VID = Convert.ToInt32(reader["VacacionesID"]),
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
+                        FechaFin = Convert.ToDateTime(reader["FechaFin"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
+                    };
+                    datoVac = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (SqlException e)
+            {
+                datoVac = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoVac;
+        }
+
+        //Consulta
+        public List<Consulta> GetConsultas()
+        {
+            List<Consulta> datosConsultas = new List<Consulta>();
+            try
+            {
+                objBD.Abrir();
+                SqlCommand sql = new SqlCommand("SELECT * FROM Consultas");
+                SqlDataReader reader = sql.ExecuteReader();
+                while (reader.Read())
+                {
+                    Consulta objEnt = new Consulta()
+                    {
+                        CID = Convert.ToInt32(reader["ConsultaID"]),
+                        Descripcion = Convert.ToString(reader["Descripcion"]),
+                        Medico = Convert.ToString(reader["Medico"]),
+                        Paciente = Convert.ToString(reader["Paciente"]),
+                        Fecha = Convert.ToDateTime(reader["Fecha"])
+                    };
+                    datosConsultas.Add(objEnt);
+                }
+            }
+            catch
+            {
+                datosConsultas = null;
+                objBD.Cerrar();
+            }
+            return datosConsultas;
+        }
+
+        public string RegistroConsulta(Consulta datoConsulta)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"INSERT INTO Consultas(Descripcion, Medico, Paciente, Fecha) VALUES ('{@datoConsulta.Descripcion}', '{@datoConsulta.Medico}', '{@datoConsulta.Paciente}', '{@datoConsulta.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}')";
+
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
+            }
+            return "CORRECTO";
+        }
+
+        public void UpdateConsulta(Consulta datoConsulta)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"UPDATE Consultas SET Descripcion = '{@datoConsulta.Descripcion}', Medico = '{@datoConsulta.Medico}', Paciente = '{@datoConsulta.Paciente}', Fecha = '{@datoConsulta.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE ConsultaID = '{@datoConsulta.CID}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public Consulta SearchConsultaPaciente(string id)
+        {
+            Consulta datoConsulta = new Consulta();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Consultas WHERE Paciente = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Consulta objEnt = new Consulta()
+                    {
+                        CID = Convert.ToInt32(reader["ConsultaID"]),
+                        Descripcion = Convert.ToString(reader["Descripcion"]),
+                        Medico = Convert.ToString(reader["Medico"]),
+                        Paciente = Convert.ToString(reader["Paciente"]),
+                        Fecha = Convert.ToDateTime(reader["Fecha"])
+                    };
+                    datoConsulta = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (SqlException e)
+            {
+                datoConsulta = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoConsulta;
+        }
+
+        public Consulta SearchConsultaMedico(string id)
+        {
+            Consulta datoConsulta = new Consulta();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Consultas WHERE Medico = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Consulta objEnt = new Consulta()
+                    {
+                        CID = Convert.ToInt32(reader["ConsultaID"]),
+                        Descripcion = Convert.ToString(reader["Descripcion"]),
+                        Medico = Convert.ToString(reader["Medico"]),
+                        Paciente = Convert.ToString(reader["Paciente"]),
+                        Fecha = Convert.ToDateTime(reader["Fecha"])
+                    };
+                    datoConsulta = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (SqlException e)
+            {
+                datoConsulta = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoConsulta;
+        }
     }
 }
