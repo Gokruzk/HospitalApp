@@ -79,7 +79,6 @@ namespace CapaPresentacion
             CmbTipoModificar.Enabled = true;
             txtNumColegiado.Enabled = true;
             CmbPoblacionModificar.Enabled = true;
-            GbxTipo.Enabled = true;
             dateTimePickerFecAlta.Enabled = true;
             dateTimePickerFecBaja.Enabled = true;
             CmbHabDes.Enabled = true;
