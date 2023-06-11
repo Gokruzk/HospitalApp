@@ -98,5 +98,15 @@ namespace CLogic
 
             return "CORRECTO";
         }
+
+        public Medico CargarMedicoCedula(string cedula)
+        {
+            return objDatos.SearchMedico(cedula);
+        }
+
+        public Medico CargarMedicoNS(string numSeg)
+        {
+            return objDatos.SearchMedicoNS(numSeg);
+        }
     }
 }

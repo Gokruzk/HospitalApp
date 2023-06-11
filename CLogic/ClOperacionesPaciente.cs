@@ -72,5 +72,15 @@ namespace CLogic
 
             return "CORRECTO";
         }
+
+        public Paciente CargarPacienteCedula(string cedula)
+        {
+            return objDatos.SearchPaciente(cedula);
+        }
+
+        public Paciente CargarPacienteNS(string numSeg)
+        {
+            return objDatos.SearchPacienteNS(numSeg);
+        }
     }
 }

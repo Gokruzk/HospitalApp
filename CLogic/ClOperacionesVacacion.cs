@@ -14,7 +14,6 @@ namespace CLogic
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClDatos objDatos = new ClDatos();
-        readonly ClOperacionesEstadoVacacion objEstado = new ClOperacionesEstadoVacacion();
 
         //Validación de datos entidad VACACIONES
         private bool ValidarEstadoVacacion(int estado)
@@ -50,13 +49,24 @@ namespace CLogic
 
             if (ValidarTodoVacacion(datos) == "CORRECTO")
             {
-                string estado = "";//objDatos.RegistroVacacion();
+                objDatos.RegistroVacacion(datos);
 
-                if (estado == "CORRECTO")
-                    return estado;
+                /* if (estado == "CORRECTO")
+                    return estado; */
             }
 
             return validacion;
         }
+
+        public Vacaciones CargarVacacionesCedula(string cedula)
+        {
+            return objDatos.SearchVacacionCedula(cedula);
+        }
+
+        public Vacaciones CargarVacacionesEstado(int estado)
+        {
+            return objDatos.SearchVacacionEstado(estado);
+        }
+
     }
 }
