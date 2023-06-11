@@ -70,7 +70,7 @@ namespace CLogic
             {
                 string estado = objDatos.RegistroMedico(datos);
 
-                if (estado == "CORRECTO")
+                if (estado == "2627")
                     return estado;
             }
 

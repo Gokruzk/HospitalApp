@@ -45,7 +45,7 @@ namespace CLogic
             if (ValidarTodoPaciente(datos) == "CORRECTO")
             {
                 string estado = objDatos.RegistroPaciente(datos);
-                if(estado == "CORRECTO")
+                if(estado == "2627")
                     return estado;
             }
             return validacion;
