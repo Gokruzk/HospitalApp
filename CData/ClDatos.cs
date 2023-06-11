@@ -971,7 +971,6 @@ namespace CData
             {
                 objBD.Abrir();
                 string query = $"INSERT INTO Consultas(Descripcion, Medico, Paciente, Fecha) VALUES ('{@datoConsulta.Descripcion}', '{@datoConsulta.Medico}', '{@datoConsulta.Paciente}', '{@datoConsulta.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}')";
-
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
