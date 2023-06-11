@@ -29,7 +29,8 @@ namespace CLogic
                                     "El dato de finalización no puede ser mayor al de inicio.",
                                     "Estado inválido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada.",
                                     "CORRECTO",
-                                    "La cédula digitada ya se encuentra en la base de datos"
+                                    "La cédula digitada ya se encuentra en la base de datos",
+                                    "El empleado no puede ser menor de edad"
         };
     }
 }

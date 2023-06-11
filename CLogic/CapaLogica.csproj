@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClOperacionesEmpleado.cs" />
+    <Compile Include="ClOperacionesEstadoVacacion.cs" />
     <Compile Include="ClOperacionesGenerales.cs" />
     <Compile Include="ClOperacionesHorario.cs" />
     <Compile Include="ClOperacionesMedico.cs" />
