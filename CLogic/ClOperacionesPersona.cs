@@ -40,6 +40,13 @@ namespace CLogic
             }
         }
 
+        public bool ValidarEstado(int estado)
+        {
+            int[] tipo = { 1, 2 };
+
+            return tipo.Contains(estado);
+        }
+
         public bool ValidarNombre(string nombre)
         {
             if (string.IsNullOrWhiteSpace(nombre) || nombre.Any(char.IsDigit) || !Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$"))

@@ -228,7 +228,6 @@ namespace CapaPresentacion
         {
             try
             {
-                Console.WriteLine(dateTimePickerFecAlta.Value.ToString() + " -- " + dateTimePickerFecBaja.Value.ToString() + " -- " + dateTimePickerFecNac.Value.ToString());
                 objMedico.Nombre = txtNombre.Text;
                 objMedico.Cedula = TxtCedula.Text;
                 objMedico.NumSegSocial = TxtNumSegSocial.Text;

@@ -20,7 +20,7 @@ namespace CLogic
             "Error, por favor ingrese correctamente la dirección.", //3
             "Número de teléfono invalido, recuerde que el número de teléfono tiene que contener la cantidad correcta de dígitos al igual que registrarlo sin el código de país.", //4
             "La provincia ingresada no existe, por favor ingresar una de las 24 provincias del país.", //5
-            "Código postal invalido, recuerde que debe contener la cantidad correcta de dígitos.", //6
+            "Estado inválido, recuerde ingresar si el estado de la persona es Habilitado o No habilitado", //6
             "Tipo de empleado inexistente.",//7
             "Descripción requerida.",//8
             "Tipo de medico inexistente.",//9

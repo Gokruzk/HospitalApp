@@ -42,9 +42,9 @@ namespace CLogic
             return objDatos.RegistroMedico(datos);
         }
 
-        public string ActualizarMedico(Medico datos)
+        public void ActualizarMedico(Medico datos)
         {
-            return "CORRECTO"; //objDatos.UpdateMedico(datos);
+            objDatos.UpdateMedico(datos);
         }
 
         public string EliminarMedico(string cedula)
@@ -77,6 +77,7 @@ namespace CLogic
 
         public Medico CargarMedicoNS(string numSeg)
         {
+            Console.WriteLine("" + numSeg);
             return objDatos.SearchMedicoNS(numSeg);
         }
     }

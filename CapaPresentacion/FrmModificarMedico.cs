@@ -102,7 +102,7 @@ namespace CapaPresentacion
         {
             try
             {
-                if(CmbCampo.SelectedItem.ToString() == "CÉDULA") //|| CmbCampo.SelectedItem.ToString() == "NUM.SEGURIDAD SOCIAL")
+                if(CmbCampo.SelectedIndex == 0) //|| CmbCampo.SelectedItem.ToString() == "NUM.SEGURIDAD SOCIAL")
                 {
                     objMedico = objOperacionesMedico.CargarMedicoCedula(TxtEleccion.Text);
 
@@ -111,8 +111,18 @@ namespace CapaPresentacion
                         visibilizar();
                         asignar();
                     }
-                }    
-               
+                }
+                if (CmbCampo.SelectedIndex == 1)
+                {
+                    objMedico = objOperacionesMedico.CargarMedicoNS(TxtEleccion.Text);
+
+                    if (objMedico != null)
+                    {
+                        visibilizar();
+                        asignar();
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -122,12 +132,21 @@ namespace CapaPresentacion
 
         private void txtNombreModificar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-
-
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarNombre(txtNombreModificar.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[1], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        dateTimePickerFecNac.Focus();
+                }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dateTimePickerFecNac_KeyPress(object sender, KeyPressEventArgs e)
@@ -148,66 +167,78 @@ namespace CapaPresentacion
 
         private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                try
+                if (e.KeyChar == (char)Keys.Enter)
                 {
-                    TxtNumSegSocial.Focus();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error TxtDireccion: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarDireccion(txtDireccion.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[3], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        TxtNumSegSocial.Focus();
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void TxtNumSegSocial_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                try
+                if (e.KeyChar == (char)Keys.Enter)
                 {
-                    CmbTipoModificar.Focus();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error TxtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarNumeroSeguroSocial(TxtNumSegSocial.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[2], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        CmbTipoModificar.Focus();
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error TxtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CmbTipoModificar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                try
+                if (e.KeyChar == (char)Keys.Enter)
                 {
-                    txtNumColegiado.Focus();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error CmbTipoModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    if (!objOperacionesMedico.ValidarTipoMedico(CmbTipoModificar.SelectedIndex + 1))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[9], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        txtNumColegiado.Focus();
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error CmbTipoModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtNumColegiado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                try
+                if (e.KeyChar == (char)Keys.Enter)
                 {
-                    CmbPoblacionModificar.Focus();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error TxtNumeroColediado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    if (!objOperacionesMedico.ValidarNumColegiado(txtNumColegiado.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[11], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        CmbPoblacionModificar.Focus();
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error TxtNumeroColediado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CmbPoblacionModificar_KeyPress(object sender, KeyPressEventArgs e)
@@ -228,18 +259,14 @@ namespace CapaPresentacion
 
         private void dateTimePickerFecAlta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                try
-                {
-                    dateTimePickerFecBaja.Focus();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error DateTimeFechaAlta: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                dateTimePickerFecBaja.Focus();
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error DateTimeFechaAlta: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dateTimePickerFecBaja_KeyPress(object sender, KeyPressEventArgs e)
@@ -264,7 +291,14 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    BtnModificar.Focus();
+                    if (e.KeyChar == (char)Keys.Enter)
+                    {
+                        e.Handled = true;
+                        if (!objOperacionesPersona.ValidarEstado(CmbHabDes.SelectedIndex + 1)) 
+                            MessageBox.Show($"Error --: " + objMensajes.errores[6], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                            BtnModificar.Focus(); ;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -278,7 +312,36 @@ namespace CapaPresentacion
         {
             try
             {
+                try
+                {
+                    objMedico.Nombre = txtNombreModificar.Text;
+                    objMedico.NumSegSocial = TxtNumSegSocial.Text;
+                    objMedico.NumColegiado = txtNumColegiado.Text;
+                    objMedico.Tipo = CmbTipoModificar.SelectedIndex + 1;
 
+                    if (objMedico.Tipo == 3)
+                    {
+                        objMedico.FechaA = dateTimePickerFecAlta.Value;
+                        objMedico.FechaB = dateTimePickerFecBaja.Value;
+                    }
+                    else
+                    {
+                        objMedico.FechaA = DateTime.Now;
+                        objMedico.FechaB = DateTime.Now;
+                    }
+                    objMedico.FechaNacimiento = dateTimePickerFecNac.Value;
+
+                    objMedico.Poblacion = CmbPoblacionModificar.SelectedIndex + 1; //debe ser de un combobox;
+                    objMedico.Estado = CmbHabDes.SelectedIndex + 1;
+                    objMedico.Direccion = txtDireccion.Text;
+
+                    objOperacionesMedico.ActualizarMedico(objMedico);
+                        MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -311,6 +374,17 @@ namespace CapaPresentacion
                 CmbTipoModificar.Items.Add(tipo);
 
 
+        }
+
+        private void dateTimePickerFecBaja_CloseUp(object sender, EventArgs e)
+        {
+            if (!objOperacionesMedico.ValidarFechasSutituto(CmbTipoModificar.SelectedIndex + 1, dateTimePickerFecAlta.Value, dateTimePickerFecBaja.Value))
+            {
+                MessageBox.Show($"Error --: " + objMensajes.errores[13], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dateTimePickerFecBaja.Value = DateTime.Today;
+            }
+            else
+                dateTimePickerFecAlta.Focus();
         }
     }
 }

@@ -143,6 +143,7 @@
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecBaja.TabIndex = 91;
+            this.dateTimePickerFecBaja.CloseUp += new System.EventHandler(this.dateTimePickerFecBaja_CloseUp);
             this.dateTimePickerFecBaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecBaja_KeyPress);
             // 
             // dateTimePickerFecAlta
@@ -342,6 +343,9 @@
             // 
             this.CmbHabDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbHabDes.FormattingEnabled = true;
+            this.CmbHabDes.Items.AddRange(new object[] {
+            "Habilitado",
+            "No habilitado"});
             this.CmbHabDes.Location = new System.Drawing.Point(346, 484);
             this.CmbHabDes.Name = "CmbHabDes";
             this.CmbHabDes.Size = new System.Drawing.Size(244, 37);

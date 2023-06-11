@@ -109,7 +109,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA.ToShortDateString()}', FechaB = '{@datoMed.FechaB.ToShortDateString()}', Estado = '{@datoMed.Estado}' FechaNacimiento = '{@datoMed.FechaNacimiento.ToShortDateString()}' WHERE Cedula = '{@datoMed.Cedula}'";
+                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA.ToShortDateString()}', FechaB = '{@datoMed.FechaB.ToShortDateString()}', Estado = '{@datoMed.Estado}', FechaNacimiento = '{@datoMed.FechaNacimiento.ToShortDateString()}' WHERE Cedula = '{@datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
