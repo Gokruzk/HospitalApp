@@ -28,7 +28,8 @@ namespace CLogic
                                     "Día de la semana inexistente.",
                                     "El dato de finalización no puede ser mayor al de inicio.",
                                     "Estado inválido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada.",
-                                    "CORRECTO"
+                                    "CORRECTO",
+                                    "La cédula digitada ya se encuentra en la base de datos"
         };
     }
 }
