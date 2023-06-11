@@ -20,7 +20,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        readonly Paciente objMedico = new Paciente();
+        readonly Paciente objPaciente = new Paciente();
         readonly ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
         readonly ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
@@ -28,12 +28,59 @@ namespace CapaPresentacion
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarCedula(TxtCedula.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[0], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        TxtNombre.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                objPaciente.Nombre = txtNombre.Text;
+                objPaciente.Cedula = TxtCedula.Text;
+                objPaciente.NumSegSocial = TxtNumSegSocial.Text;
+                objPaciente.NumColegiado = txtNumColegiado.Text;
+                objPaciente.Tipo = CmbTipo.SelectedIndex + 1;
 
+                if (objPaciente.Tipo == 3)
+                {
+                    objPaciente.FechaA = dateTimePickerFecAlta.Value;
+                    objPaciente.FechaB = dateTimePickerFecBaja.Value;
+                }
+                else
+                {
+                    objPaciente.FechaA = DateTime.Now;
+                    objPaciente.FechaB = DateTime.Now;
+                }
+                objPaciente.FechaNacimiento = dateTimePickerFecNac.Value;
+
+                objPaciente.Poblacion = CmbPoblacion.SelectedIndex + 1; //debe ser de un combobox;
+                objPaciente.Estado = 1;
+                objPaciente.Direccion = TxtDireccion.Text;
+
+                string estado = objOperacionesPaciente.RegistrarPaciente(objPaciente).ToString();
+                if (estado == "CORRECTO")
+                    MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CmbMedicoAsignado_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,6 +94,46 @@ namespace CapaPresentacion
 
             foreach (string tipo in tipos)
                 CmbMedicoAsignado.Items.Add(tipo);
+
+            CmbMedicoAsignado.SelectedIndex = 0;
+        }
+
+        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarDireccion(TxtDireccion.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[3], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        TxtNumSegSocial.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtNumSegSocial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarNumeroSeguroSocial(TxtNumSegSocial.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[2], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        BtnRegistrar.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error TxtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -83,6 +83,7 @@
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
             this.TxtNumSegSocial.Size = new System.Drawing.Size(243, 34);
             this.TxtNumSegSocial.TabIndex = 73;
+            this.TxtNumSegSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumSegSocial_KeyPress);
             // 
             // TxtDireccion
             // 
@@ -92,6 +93,7 @@
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(772, 34);
             this.TxtDireccion.TabIndex = 72;
+            this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
             // lblIngresarPaciente
             // 
@@ -183,6 +185,7 @@
             // 
             // CmbMedicoAsignado
             // 
+            this.CmbMedicoAsignado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbMedicoAsignado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.CmbMedicoAsignado.FormattingEnabled = true;
             this.CmbMedicoAsignado.Location = new System.Drawing.Point(347, 417);
