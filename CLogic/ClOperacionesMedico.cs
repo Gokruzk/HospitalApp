@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,7 +67,12 @@ namespace CLogic
             string validacion = ValidarTodoMedico(datos);
 
             if (ValidarTodoMedico(datos) == "CORRECTO")
-                objDatos.RegistroMedico(datos);
+            {
+                string estado = objDatos.RegistroMedico(datos);
+
+                if (estado == "CORRECTO")
+                    return estado;
+            }
 
             return validacion;
         }

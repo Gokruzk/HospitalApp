@@ -20,8 +20,9 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        Medico objMedico = new Medico();
-        ClOperacionesMedico objOperaciones = new ClOperacionesMedico();
+        readonly Medico objMedico = new Medico();
+        readonly ClOperacionesMedico objOperaciones = new ClOperacionesMedico();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
         private void txtNIF_TextChanged(object sender, EventArgs e)
         {
@@ -64,11 +65,13 @@ namespace CapaPresentacion
             objMedico.Poblacion = 1;
             objMedico.Direccion = "es por alla cerca de aquí";
 
-            string estado = objOperaciones.ActualizarMedico(objMedico);
-            //string estado = objOperaciones.RegistrarMedico(objMedico);
+            //string estado = objOperaciones.ActualizarMedico(objMedico);
+            string estado = objOperaciones.RegistrarMedico(objMedico);
             //string estado = objOperaciones.EliminarMedico(objMedico.Cedula);
             if (estado == "CORRECTO")
                 MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if(estado == "2627")
+                MessageBox.Show(objMensajes.errores[16], "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

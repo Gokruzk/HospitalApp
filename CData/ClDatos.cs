@@ -43,7 +43,7 @@ namespace CData
             return datosMedicos;
         }
 
-        public void RegistroMedico(Medico datoMed)
+        public string RegistroMedico(Medico datoMed)
         {
             try
             {
@@ -53,10 +53,15 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                Console.WriteLine(e.Message);
+                if (ex.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
             }
+            return "CORRECTO";
         }
 
         public void DeleteMedico(string id)
@@ -275,7 +280,7 @@ namespace CData
             return datosPacientes;
         }
 
-        public void RegistroPaciente(Paciente datoPac)
+        public string RegistroPaciente(Paciente datoPac)
         {
             try
             {
@@ -285,10 +290,15 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                Console.WriteLine(e.Message);
+                if (ex.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
             }
+            return "CORRECTO";
         }
 
         public void DeletePaciente(string id)
