@@ -3,6 +3,7 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -56,6 +57,26 @@ namespace CLogic
             return validacion;
         }
 
+        public string EliminarEmpleado(string cedula) {
+            if (objPersona.ValidarCedula(cedula)) {
+                objDatos.DeleteEmpleado(cedula);
+
+            } else
+                return objMensajes.errores[0];
+
+            return "CORRECTO";
+        }
+
+        public string EliminarEmpleadoNumSocial(string numeroSeguroSocial) {
+            if (objPersona.ValidarNumeroSeguroSocial(numeroSeguroSocial)) {
+                objDatos.DeleteEmpleadoNS(numeroSeguroSocial);
+
+            } else
+                return objMensajes.errores[2];
+
+            return "CORRECTO";
+        }
+
         public string ActualizarEmpleado(Empleado datos)
         {
             string validacion = ValidarTodoEmpleado(datos);
@@ -66,17 +87,12 @@ namespace CLogic
             return validacion;
         }
 
-        public string EliminarEmpleado(string cedula)
-        {
-            if (objPersona.ValidarCedula(cedula))
-            {
-                objDatos.DeleteEmpleado(cedula);
+        public Empleado BuscarEmpleado(string cedula) {
+            return objDatos.SearchEmpleado(cedula);
+        }
 
-            }
-            else
-                return objMensajes.errores[0];
-
-            return "CORRECTO";
+        public Empleado BuscarEmpleadoNumSocial(string numeroSeguroSocial) {
+            return objDatos.SearchEmpleadoNS(numeroSeguroSocial);
         }
     }
 }

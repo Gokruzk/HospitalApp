@@ -8,27 +8,23 @@ using System.Threading.Tasks;
 
 namespace CLogic
 {
-    public class ClOperacionesHorario
-    {
+    public class ClOperacionesHorario {
         //Validación de datos entidad HORARIOS
         readonly ClDatos objDatos = new ClDatos();
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
-        public bool ValidarDia(string dia)
-        {
+        public bool ValidarDia(string dia) {
             string[] diaSemana = { "Lunes", "Martes", "Miércoles", "Jueves", "Sábado", "Viernes", "Domingo" };
 
             return diaSemana.Contains(dia);
         }
 
-        public bool ValidarHoras(DateTime horaI, DateTime horaF)
-        {
+        public bool ValidarHoras(DateTime horaI, DateTime horaF) {
             return DateTime.Compare(horaI, horaF) < 0;
         }
 
-        public string ValidarTodoHorario(Horarios datos)
-        {
+        public string ValidarTodoHorario(Horarios datos) {
             if (!objPersona.ValidarCedula(datos.CedulaMedico))
                 return objMensajes.errores[0];
 
@@ -50,6 +46,10 @@ namespace CLogic
             return validacion;
         }
 
+        public void EliminarHorario(int id) {
+            objDatos.DeleteHorario(id);
+        }
+
         public string ActualizarHorario(Horarios datos) {
             string validacion = ValidarTodoHorario(datos);
 
@@ -59,9 +59,8 @@ namespace CLogic
             return validacion;
         }
 
-        public string EliminarHorario(int id) {
-            //Falta xd
-            return "CORRECTO";
+        public Horarios BuscarHorario(int id) {
+            return objDatos.SearchHorario(id);
         }
     }
 }
