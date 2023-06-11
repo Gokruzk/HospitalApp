@@ -262,7 +262,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Empleados WHERE Cedula = '{@id}'";
+                string query = $"UPDATE Empleado SET Estado = 2 WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -279,7 +279,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Empleados WHERE NumeroSeguridadSocial = '{@ns}'";
+                string query = $"UPDATE Empleado SET Estado = 2 WHERE NumeroSeguridadSocial = '{@ns}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -447,7 +447,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Pacientes WHERE Cedula = '{@id}'";
+                string query = $"UPDATE Pacientes SET Estado = 2 WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -464,7 +464,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Pacientes WHERE NumeroSeguridadSocial = '{@ns}'";
+                string query = $"UPDATE Pacientes SET Estado = 2 WHERE NumeroSeguridadSocial = '{@ns}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
