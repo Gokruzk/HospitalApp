@@ -166,20 +166,22 @@ namespace CData
             return datosEmpleados;
         }
 
-        public void RegistroEmpleado(Empleado datoEmp)
+        public string RegistroEmpleado(Empleado datoEmp)
         {
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion) VALUES ('{@datoEmp.Cedula}', {@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}')";
+                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}', '{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}', '{@datoEmp.Tipo}', '{@datoEmp.Poblacion}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
+            } catch (SqlException ex) {
+                if (ex.Number == 2627) {
+                    return "2627";
+                }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+
+            return "CORRECTO";
         }
 
         public void DeleteEmpleado(string id)
