@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblColegio = new System.Windows.Forms.Label();
             this.txtNumColegiado = new System.Windows.Forms.TextBox();
@@ -58,8 +59,13 @@
             this.lblINgresarMEdico = new System.Windows.Forms.Label();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnRegistrar = new System.Windows.Forms.Button();
+            this.hOSPITALDataSet = new CapaPresentacion.HOSPITALDataSet();
+            this.tipoMedicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoMedicoTableAdapter = new CapaPresentacion.HOSPITALDataSetTableAdapters.TipoMedicoTableAdapter();
             this.GbxTipo.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hOSPITALDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoMedicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProvincia
@@ -88,7 +94,7 @@
             // 
             this.txtNumColegiado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.txtNumColegiado.Location = new System.Drawing.Point(399, 420);
-            this.txtNumColegiado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumColegiado.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumColegiado.Name = "txtNumColegiado";
             this.txtNumColegiado.Size = new System.Drawing.Size(199, 35);
             this.txtNumColegiado.TabIndex = 19;
@@ -123,7 +129,7 @@
             "Tungurahua",
             "Zamora Chinchipe"});
             this.comboBoxProvincia.Location = new System.Drawing.Point(349, 1094);
-            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(193, 27);
             this.comboBoxProvincia.TabIndex = 20;
@@ -132,7 +138,7 @@
             // 
             this.txtNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreModificar.Location = new System.Drawing.Point(253, 175);
-            this.txtNombreModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreModificar.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreModificar.Name = "txtNombreModificar";
             this.txtNombreModificar.Size = new System.Drawing.Size(772, 34);
             this.txtNombreModificar.TabIndex = 64;
@@ -141,7 +147,7 @@
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCedula.Location = new System.Drawing.Point(560, 122);
-            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(243, 34);
             this.TxtCedula.TabIndex = 63;
@@ -150,7 +156,7 @@
             // 
             this.TxtNumSegSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumSegSocial.Location = new System.Drawing.Point(355, 347);
-            this.TxtNumSegSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtNumSegSocial.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
             this.TxtNumSegSocial.Size = new System.Drawing.Size(243, 34);
             this.TxtNumSegSocial.TabIndex = 62;
@@ -159,7 +165,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(253, 281);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(772, 34);
             this.textBox1.TabIndex = 61;
@@ -212,7 +218,7 @@
             // 
             this.dateTimePickerFecNac.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.dateTimePickerFecNac.Location = new System.Drawing.Point(415, 226);
-            this.dateTimePickerFecNac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecNac.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecNac.TabIndex = 66;
@@ -236,9 +242,9 @@
             this.GbxTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GbxTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.GbxTipo.Location = new System.Drawing.Point(48, 482);
-            this.GbxTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.GbxTipo.Name = "GbxTipo";
-            this.GbxTipo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxTipo.Padding = new System.Windows.Forms.Padding(4);
             this.GbxTipo.Size = new System.Drawing.Size(531, 156);
             this.GbxTipo.TabIndex = 67;
             this.GbxTipo.TabStop = false;
@@ -248,7 +254,7 @@
             // 
             this.radioButtonSustituto.AutoSize = true;
             this.radioButtonSustituto.Location = new System.Drawing.Point(153, 107);
-            this.radioButtonSustituto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonSustituto.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonSustituto.Name = "radioButtonSustituto";
             this.radioButtonSustituto.Size = new System.Drawing.Size(225, 32);
             this.radioButtonSustituto.TabIndex = 0;
@@ -260,7 +266,7 @@
             // 
             this.radioButtonTitular.AutoSize = true;
             this.radioButtonTitular.Location = new System.Drawing.Point(32, 53);
-            this.radioButtonTitular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonTitular.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonTitular.Name = "radioButtonTitular";
             this.radioButtonTitular.Size = new System.Drawing.Size(199, 32);
             this.radioButtonTitular.TabIndex = 0;
@@ -272,7 +278,7 @@
             // 
             this.radioButtonInterino.AutoSize = true;
             this.radioButtonInterino.Location = new System.Drawing.Point(288, 53);
-            this.radioButtonInterino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonInterino.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonInterino.Name = "radioButtonInterino";
             this.radioButtonInterino.Size = new System.Drawing.Size(213, 32);
             this.radioButtonInterino.TabIndex = 0;
@@ -284,7 +290,7 @@
             // 
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.dateTimePickerFecAlta.Location = new System.Drawing.Point(643, 526);
-            this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
             this.dateTimePickerFecAlta.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecAlta.TabIndex = 66;
@@ -293,7 +299,7 @@
             // 
             this.dateTimePickerFecBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.dateTimePickerFecBaja.Location = new System.Drawing.Point(643, 607);
-            this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecBaja.TabIndex = 66;
@@ -336,17 +342,18 @@
             this.CmbPoblacionModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbPoblacionModificar.FormattingEnabled = true;
             this.CmbPoblacionModificar.Location = new System.Drawing.Point(815, 418);
-            this.CmbPoblacionModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbPoblacionModificar.Margin = new System.Windows.Forms.Padding(4);
             this.CmbPoblacionModificar.Name = "CmbPoblacionModificar";
             this.CmbPoblacionModificar.Size = new System.Drawing.Size(244, 37);
             this.CmbPoblacionModificar.TabIndex = 68;
             // 
             // CmbTipoModificar
             // 
+            this.CmbTipoModificar.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tipoMedicoBindingSource, "Descripcion", true));
             this.CmbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbTipoModificar.FormattingEnabled = true;
             this.CmbTipoModificar.Location = new System.Drawing.Point(815, 347);
-            this.CmbTipoModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbTipoModificar.Margin = new System.Windows.Forms.Padding(4);
             this.CmbTipoModificar.Name = "CmbTipoModificar";
             this.CmbTipoModificar.Size = new System.Drawing.Size(244, 37);
             this.CmbTipoModificar.TabIndex = 71;
@@ -388,7 +395,7 @@
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnCancelar.Location = new System.Drawing.Point(580, 668);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(252, 62);
             this.BtnCancelar.TabIndex = 60;
@@ -399,13 +406,27 @@
             // 
             this.BtnRegistrar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnRegistrar.Location = new System.Drawing.Point(320, 670);
-            this.BtnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRegistrar.Name = "BtnRegistrar";
             this.BtnRegistrar.Size = new System.Drawing.Size(252, 62);
             this.BtnRegistrar.TabIndex = 59;
             this.BtnRegistrar.Text = "REGISTRAR";
             this.BtnRegistrar.UseVisualStyleBackColor = true;
             this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
+            // 
+            // hOSPITALDataSet
+            // 
+            this.hOSPITALDataSet.DataSetName = "HOSPITALDataSet";
+            this.hOSPITALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoMedicoBindingSource
+            // 
+            this.tipoMedicoBindingSource.DataMember = "TipoMedico";
+            this.tipoMedicoBindingSource.DataSource = this.hOSPITALDataSet;
+            // 
+            // tipoMedicoTableAdapter
+            // 
+            this.tipoMedicoTableAdapter.ClearBeforeFill = true;
             // 
             // FrmIngresoDatosMedico
             // 
@@ -438,7 +459,7 @@
             this.Controls.Add(this.txtNumColegiado);
             this.Controls.Add(this.lblColegio);
             this.Controls.Add(this.lblProvincia);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmIngresoDatosMedico";
             this.Text = "Ingresar Médico";
             this.Load += new System.EventHandler(this.FrmIngresoDatosMedico_Load);
@@ -446,6 +467,8 @@
             this.GbxTipo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hOSPITALDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoMedicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,5 +505,8 @@
         private System.Windows.Forms.Label lblINgresarMEdico;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnRegistrar;
+        private HOSPITALDataSet hOSPITALDataSet;
+        private System.Windows.Forms.BindingSource tipoMedicoBindingSource;
+        private HOSPITALDataSetTableAdapters.TipoMedicoTableAdapter tipoMedicoTableAdapter;
     }
 }
