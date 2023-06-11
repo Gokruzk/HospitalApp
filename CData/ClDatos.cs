@@ -65,7 +65,7 @@ namespace CData
                 }
                 else
                 {
-                    return ex.Message; 
+                    return ex.Message;
                 }
             }
             objBD.Cerrar();
@@ -77,7 +77,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Medicos WHERE Cedula = '{@id}'";
+                string query = $"UPDATE Medicos SET Estado = 2 WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
             }
@@ -93,7 +93,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Medicos WHERE NumeroSeguridadSocial = '{@ns}'";
+                string query = $"UPDATE Medicos SET Estado = 2 WHERE NumeroSeguridadSocial = '{@ns}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
             }
@@ -150,8 +150,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoMed = objEnt;
-                }
-
+                }else
+                    datoMed = null;
             }
             catch (SqlException e)
             {
@@ -191,8 +191,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoMed = objEnt;
-                }
-
+                }else
+                    datoMed = null;
             }
             catch (SqlException e)
             {
@@ -210,7 +210,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Empleados");
+                SqlCommand sql = new SqlCommand("SELECT * FROM Empleados", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {
@@ -334,8 +334,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoEmp = objEnt;
-                }
-
+                }else
+                    datoEmp = null;    
             }
             catch (SqlException e)
             {
@@ -372,8 +372,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoEmp = objEnt;
-                }
-
+                }else
+                    datoEmp = null;
             }
             catch (SqlException e)
             {
@@ -391,7 +391,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Pacientes");
+                SqlCommand sql = new SqlCommand("SELECT * FROM Pacientes", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {
@@ -435,7 +435,7 @@ namespace CData
                 }
                 else
                 {
-                    return ex.Message; 
+                    return ex.Message;
                 }
             }
             objBD.Cerrar();
@@ -518,8 +518,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoPac = objEnt;
-                }
-
+                }else
+                    datoPac = null;    
             }
             catch (SqlException e)
             {
@@ -555,8 +555,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoPac = objEnt;
-                }
-
+                }else
+                    datoPac = null;
             }
             catch (SqlException e)
             {
@@ -673,13 +673,12 @@ namespace CData
                         Descripcion = Convert.ToString(reader["descripcion"])
                     };
                     datoPob = objEnt;
-                }
-
+                }else
+                    datoPob = null;
             }
             catch (SqlException e)
             {
                 datoPob = null;
-
                 Console.WriteLine(e.Message);
             }
             objBD.Cerrar();
@@ -721,7 +720,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Horarios(HorarioID, CedulaMedico, DiaSemana, HoraInicio, HoraFin) VALUES ({@datoHor.HorID}, '{@datoHor.CedulaMedico}', '{@datoHor.DiaSemana}', '{@datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}')";
+                string query = $"INSERT INTO Horarios(HorarioID, CedulaMedico, DiaSemana, HoraInicio, HoraFin) VALUES ({@datoHor.HorID}, '{@datoHor.CedulaMedico}', '{@datoHor.DiaSemana}', '{@datoHor.HoraInicio.ToShortTimeString()}', '{@datoHor.HoraFin.ToShortTimeString()}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -760,7 +759,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Horarios SET CedulaMedico = '{@datoHor.CedulaMedico}', DiaSemana = '{@datoHor.DiaSemana}', HoraInicio = '{@datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', HoraFin = '{@datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE HorarioID = '{@datoHor.HorID}'";
+                string query = $"UPDATE Horarios SET CedulaMedico = '{@datoHor.CedulaMedico}', DiaSemana = '{@datoHor.DiaSemana}', HoraInicio = '{@datoHor.HoraInicio.ToShortTimeString()}', HoraFin = '{@datoHor.HoraFin.ToShortTimeString()}' WHERE HorarioID = '{@datoHor.HorID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -795,8 +794,8 @@ namespace CData
                         HoraFin = Convert.ToDateTime(reader["HoraFin"])
                     };
                     datoHor = objEnt;
-                }
-
+                }else
+                    datoHor = null;
             }
             catch (SqlException e)
             {
@@ -915,8 +914,8 @@ namespace CData
                         Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datoVac = objEnt;
-                }
-
+                }else
+                    datoVac = null;
             }
             catch (SqlException e)
             {
@@ -950,8 +949,8 @@ namespace CData
                         Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datoVac = objEnt;
-                }
-
+                }else
+                    datoVac = null;    
             }
             catch (SqlException e)
             {
@@ -1054,8 +1053,8 @@ namespace CData
                         Fecha = Convert.ToDateTime(reader["Fecha"])
                     };
                     datoConsulta = objEnt;
-                }
-
+                }else
+                    datoConsulta = null;
             }
             catch (SqlException e)
             {
@@ -1089,7 +1088,8 @@ namespace CData
                         Fecha = Convert.ToDateTime(reader["Fecha"])
                     };
                     datoConsulta = objEnt;
-                }
+                }else
+                    datoConsulta = null;
             }
             catch (SqlException e)
             {
