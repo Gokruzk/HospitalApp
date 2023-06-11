@@ -78,13 +78,6 @@ namespace CapaPresentacion
 
         private void TxtNumSegSocial_KeyPress(object sender, KeyPressEventArgs e)
         {
-<<<<<<< HEAD
-             tiposPoblacion = objCargaPoblacion.CargarPoblaciones();
-
-            foreach(string tipo in tiposPoblacion)
-            {
-                CmbPoblacionModificar.Items.Add(tipo);
-=======
             try
             {
                 CmbTipo.Focus();
@@ -104,7 +97,6 @@ namespace CapaPresentacion
             catch (Exception ex)
             {
                 MessageBox.Show($"Error CmbTipoModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             }
         }
 

@@ -85,12 +85,7 @@
             // txtNumColegiado
             // 
             this.txtNumColegiado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-<<<<<<< HEAD
-            this.txtNumColegiado.Location = new System.Drawing.Point(399, 420);
-            this.txtNumColegiado.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.txtNumColegiado.Location = new System.Drawing.Point(299, 341);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.txtNumColegiado.Name = "txtNumColegiado";
             this.txtNumColegiado.Size = new System.Drawing.Size(150, 29);
             this.txtNumColegiado.TabIndex = 19;
@@ -125,43 +120,24 @@
             "Sucumbíos",
             "Tungurahua",
             "Zamora Chinchipe"});
-<<<<<<< HEAD
-            this.comboBoxProvincia.Location = new System.Drawing.Point(349, 1094);
-            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.comboBoxProvincia.Location = new System.Drawing.Point(262, 889);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(146, 24);
             this.comboBoxProvincia.TabIndex = 20;
             // 
             // txtNombre
             // 
-<<<<<<< HEAD
-            this.txtNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreModificar.Location = new System.Drawing.Point(253, 175);
-            this.txtNombreModificar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombreModificar.Name = "txtNombreModificar";
-            this.txtNombreModificar.Size = new System.Drawing.Size(772, 34);
-            this.txtNombreModificar.TabIndex = 64;
-=======
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(190, 142);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(580, 29);
             this.txtNombre.TabIndex = 64;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             // 
             // TxtCedula
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
-            this.TxtCedula.Location = new System.Drawing.Point(560, 122);
-            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.TxtCedula.Location = new System.Drawing.Point(420, 99);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(183, 29);
             this.TxtCedula.TabIndex = 63;
@@ -170,12 +146,7 @@
             // TxtNumSegSocial
             // 
             this.TxtNumSegSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
-            this.TxtNumSegSocial.Location = new System.Drawing.Point(355, 347);
-            this.TxtNumSegSocial.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.TxtNumSegSocial.Location = new System.Drawing.Point(266, 282);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
             this.TxtNumSegSocial.Size = new System.Drawing.Size(183, 29);
             this.TxtNumSegSocial.TabIndex = 62;
@@ -183,21 +154,12 @@
             // 
             // TxtDireccion
             // 
-<<<<<<< HEAD
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(253, 281);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(772, 34);
-            this.textBox1.TabIndex = 61;
-=======
             this.TxtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDireccion.Location = new System.Drawing.Point(190, 228);
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(580, 29);
             this.TxtDireccion.TabIndex = 61;
             this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             // 
             // LblNumSegSocial
             // 
@@ -246,12 +208,7 @@
             // dateTimePickerFecNac
             // 
             this.dateTimePickerFecNac.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-<<<<<<< HEAD
-            this.dateTimePickerFecNac.Location = new System.Drawing.Point(415, 226);
-            this.dateTimePickerFecNac.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.dateTimePickerFecNac.Location = new System.Drawing.Point(311, 184);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecNac.TabIndex = 66;
@@ -275,17 +232,9 @@
             this.GbxTipo.Controls.Add(this.radioButtonInterino);
             this.GbxTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GbxTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-<<<<<<< HEAD
-            this.GbxTipo.Location = new System.Drawing.Point(48, 482);
-            this.GbxTipo.Margin = new System.Windows.Forms.Padding(4);
-            this.GbxTipo.Name = "GbxTipo";
-            this.GbxTipo.Padding = new System.Windows.Forms.Padding(4);
-            this.GbxTipo.Size = new System.Drawing.Size(531, 156);
-=======
             this.GbxTipo.Location = new System.Drawing.Point(36, 392);
             this.GbxTipo.Name = "GbxTipo";
             this.GbxTipo.Size = new System.Drawing.Size(398, 127);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.GbxTipo.TabIndex = 67;
             this.GbxTipo.TabStop = false;
             this.GbxTipo.Text = "TIPO DE MÉDICO";
@@ -293,12 +242,7 @@
             // radioButtonSustituto
             // 
             this.radioButtonSustituto.AutoSize = true;
-<<<<<<< HEAD
-            this.radioButtonSustituto.Location = new System.Drawing.Point(153, 107);
-            this.radioButtonSustituto.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.radioButtonSustituto.Location = new System.Drawing.Point(115, 87);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.radioButtonSustituto.Name = "radioButtonSustituto";
             this.radioButtonSustituto.Size = new System.Drawing.Size(181, 26);
             this.radioButtonSustituto.TabIndex = 0;
@@ -309,12 +253,7 @@
             // radioButtonTitular
             // 
             this.radioButtonTitular.AutoSize = true;
-<<<<<<< HEAD
-            this.radioButtonTitular.Location = new System.Drawing.Point(32, 53);
-            this.radioButtonTitular.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.radioButtonTitular.Location = new System.Drawing.Point(24, 43);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.radioButtonTitular.Name = "radioButtonTitular";
             this.radioButtonTitular.Size = new System.Drawing.Size(158, 26);
             this.radioButtonTitular.TabIndex = 0;
@@ -325,12 +264,7 @@
             // radioButtonInterino
             // 
             this.radioButtonInterino.AutoSize = true;
-<<<<<<< HEAD
-            this.radioButtonInterino.Location = new System.Drawing.Point(288, 53);
-            this.radioButtonInterino.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.radioButtonInterino.Location = new System.Drawing.Point(216, 43);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.radioButtonInterino.Name = "radioButtonInterino";
             this.radioButtonInterino.Size = new System.Drawing.Size(169, 26);
             this.radioButtonInterino.TabIndex = 0;
@@ -341,12 +275,7 @@
             // dateTimePickerFecAlta
             // 
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-<<<<<<< HEAD
-            this.dateTimePickerFecAlta.Location = new System.Drawing.Point(643, 526);
-            this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.dateTimePickerFecAlta.Location = new System.Drawing.Point(482, 427);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
             this.dateTimePickerFecAlta.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecAlta.TabIndex = 66;
@@ -355,12 +284,7 @@
             // dateTimePickerFecBaja
             // 
             this.dateTimePickerFecBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-<<<<<<< HEAD
-            this.dateTimePickerFecBaja.Location = new System.Drawing.Point(643, 607);
-            this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.dateTimePickerFecBaja.Location = new System.Drawing.Point(482, 493);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecBaja.TabIndex = 66;
@@ -401,15 +325,6 @@
             // 
             // CmbPoblacion
             // 
-<<<<<<< HEAD
-            this.CmbPoblacionModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.CmbPoblacionModificar.FormattingEnabled = true;
-            this.CmbPoblacionModificar.Location = new System.Drawing.Point(815, 418);
-            this.CmbPoblacionModificar.Margin = new System.Windows.Forms.Padding(4);
-            this.CmbPoblacionModificar.Name = "CmbPoblacionModificar";
-            this.CmbPoblacionModificar.Size = new System.Drawing.Size(244, 37);
-            this.CmbPoblacionModificar.TabIndex = 68;
-=======
             this.CmbPoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbPoblacion.FormattingEnabled = true;
             this.CmbPoblacion.Location = new System.Drawing.Point(611, 340);
@@ -417,19 +332,9 @@
             this.CmbPoblacion.Size = new System.Drawing.Size(184, 32);
             this.CmbPoblacion.TabIndex = 68;
             this.CmbPoblacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbPoblacion_KeyPress);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             // 
             // CmbTipo
             // 
-<<<<<<< HEAD
-            this.CmbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.CmbTipoModificar.FormattingEnabled = true;
-            this.CmbTipoModificar.Location = new System.Drawing.Point(815, 347);
-            this.CmbTipoModificar.Margin = new System.Windows.Forms.Padding(4);
-            this.CmbTipoModificar.Name = "CmbTipoModificar";
-            this.CmbTipoModificar.Size = new System.Drawing.Size(244, 37);
-            this.CmbTipoModificar.TabIndex = 71;
-=======
             this.CmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbTipo.FormattingEnabled = true;
             this.CmbTipo.Location = new System.Drawing.Point(611, 282);
@@ -437,7 +342,6 @@
             this.CmbTipo.Size = new System.Drawing.Size(184, 32);
             this.CmbTipo.TabIndex = 71;
             this.CmbTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbTipo_KeyPress);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             // 
             // LblTipo
             // 
@@ -475,12 +379,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-<<<<<<< HEAD
-            this.BtnCancelar.Location = new System.Drawing.Point(580, 668);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.BtnCancelar.Location = new System.Drawing.Point(435, 543);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
             this.BtnCancelar.TabIndex = 60;
@@ -491,12 +390,7 @@
             // BtnRegistrar
             // 
             this.BtnRegistrar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-<<<<<<< HEAD
-            this.BtnRegistrar.Location = new System.Drawing.Point(320, 670);
-            this.BtnRegistrar.Margin = new System.Windows.Forms.Padding(4);
-=======
             this.BtnRegistrar.Location = new System.Drawing.Point(240, 544);
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.BtnRegistrar.Name = "BtnRegistrar";
             this.BtnRegistrar.Size = new System.Drawing.Size(189, 50);
             this.BtnRegistrar.TabIndex = 59;
@@ -535,10 +429,6 @@
             this.Controls.Add(this.txtNumColegiado);
             this.Controls.Add(this.lblColegio);
             this.Controls.Add(this.lblProvincia);
-<<<<<<< HEAD
-            this.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
             this.Name = "FrmIngresoDatosMedico";
             this.Text = "Ingresar Médico";
             this.GbxTipo.ResumeLayout(false);
