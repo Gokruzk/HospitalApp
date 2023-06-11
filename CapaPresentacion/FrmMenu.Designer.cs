@@ -260,6 +260,7 @@
             this.BtnBuscarPaciente.TabIndex = 0;
             this.BtnBuscarPaciente.Text = "Buscar Paciente";
             this.BtnBuscarPaciente.UseVisualStyleBackColor = true;
+            this.BtnBuscarPaciente.Click += new System.EventHandler(this.BtnBuscarPaciente_Click);
             // 
             // BtnBuscarEmpleado
             // 
@@ -280,6 +281,7 @@
             this.BtnBuscarMedico.TabIndex = 0;
             this.BtnBuscarMedico.Text = "Buscar Medico";
             this.BtnBuscarMedico.UseVisualStyleBackColor = true;
+            this.BtnBuscarMedico.Click += new System.EventHandler(this.BtnBuscarMedico_Click);
             // 
             // FrmMenu
             // 

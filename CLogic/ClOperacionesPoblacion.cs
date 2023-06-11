@@ -29,5 +29,12 @@ namespace CLogic
 
             return tipos;
         }
+
+        public string CargarPoblacion(int id)
+        {
+            Poblacion objPoblacion = objDatos.SearchPoblacion(id);
+
+            return objPoblacion.Descripcion;
+        }
     }
 }
