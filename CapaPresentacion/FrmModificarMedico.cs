@@ -111,6 +111,10 @@ namespace CapaPresentacion
                         visibilizar();
                         asignar();
                     }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra a un médico con la cédula ingresada en la base de datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 if (CmbCampo.SelectedIndex == 1)
                 {
@@ -120,6 +124,10 @@ namespace CapaPresentacion
                     {
                         visibilizar();
                         asignar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra a un médico con el NSS ingresado en la base de datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 

@@ -40,5 +40,11 @@ namespace CapaPresentacion
             FrmIngresoDatosPaciente objP = new FrmIngresoDatosPaciente();
             objP.ShowDialog();
         }
+
+        private void BtnModificarPaciente_Click(object sender, EventArgs e)
+        {
+            FrmModificarPaciente ojbP = new FrmModificarPaciente();
+            ojbP.ShowDialog();
+        }
     }
 }

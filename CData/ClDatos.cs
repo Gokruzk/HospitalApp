@@ -519,7 +519,8 @@ namespace CData
                     };
                     datoPac = objEnt;
                 }
-
+                else
+                    datoPac = null;
             }
             catch (SqlException e)
             {
