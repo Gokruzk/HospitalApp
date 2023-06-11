@@ -16,5 +16,41 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void CmbCampo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                TxtEleccion.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error CmbCampo: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtEleccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error TxtElección: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error BtnBuscar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

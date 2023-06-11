@@ -558,19 +558,22 @@ namespace CData
                 objBD.Abrir();
                 SqlCommand sql = new SqlCommand("SELECT * FROM Poblacion", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
+            
                 while (reader.Read())
                 {
                     Poblacion objEnt = new Poblacion()
                     {
-                        PID = Convert.ToInt16(reader["id"]),
+                        PID = Convert.ToInt32(reader["id"]),
                         Descripcion = Convert.ToString(reader["descripcion"])
                     };
                     datosPoblaciones.Add(objEnt);
                 }
+                objBD.Cerrar();
             }
-            catch
+            catch (Exception e)
             {
                 datosPoblaciones = null;
+                Console.WriteLine(e);
                 objBD.Cerrar();
             }
             return datosPoblaciones;

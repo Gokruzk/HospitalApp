@@ -62,6 +62,7 @@
             this.BtnModificar.TabIndex = 40;
             this.BtnModificar.Text = "MODIFICAR";
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // txtNombre
             // 
@@ -70,6 +71,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(580, 29);
             this.txtNombre.TabIndex = 39;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // TxtNumSegSocialModificar
             // 
@@ -78,6 +80,7 @@
             this.TxtNumSegSocialModificar.Name = "TxtNumSegSocialModificar";
             this.TxtNumSegSocialModificar.Size = new System.Drawing.Size(183, 29);
             this.TxtNumSegSocialModificar.TabIndex = 34;
+            this.TxtNumSegSocialModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumSegSocialModificar_KeyPress);
             // 
             // TxtDireccion
             // 
@@ -86,6 +89,7 @@
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(580, 29);
             this.TxtDireccion.TabIndex = 33;
+            this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
             // panel1
             // 
@@ -129,6 +133,7 @@
             this.BtnCancelar.TabIndex = 42;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // CmbPoblacionModificar
             // 
@@ -138,6 +143,7 @@
             this.CmbPoblacionModificar.Name = "CmbPoblacionModificar";
             this.CmbPoblacionModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbPoblacionModificar.TabIndex = 45;
+            this.CmbPoblacionModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbPoblacionModificar_KeyPress);
             // 
             // LblTipo
             // 
@@ -158,6 +164,7 @@
             this.CmbTipo.Name = "CmbTipo";
             this.CmbTipo.Size = new System.Drawing.Size(184, 32);
             this.CmbTipo.TabIndex = 45;
+            this.CmbTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbTipo_KeyPress);
             // 
             // LblPoblacion
             // 
@@ -199,6 +206,7 @@
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecNac.TabIndex = 68;
+            this.dateTimePickerFecNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecNac_KeyPress);
             // 
             // LblFechaNacimiento
             // 
@@ -219,6 +227,7 @@
             this.CmbHabilDeshabil.Name = "CmbHabilDeshabil";
             this.CmbHabilDeshabil.Size = new System.Drawing.Size(184, 32);
             this.CmbHabilDeshabil.TabIndex = 45;
+            this.CmbHabilDeshabil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbHabilDeshabil_KeyPress);
             // 
             // LblEstado
             // 
@@ -242,6 +251,7 @@
             this.CmbCampo.Name = "CmbCampo";
             this.CmbCampo.Size = new System.Drawing.Size(226, 32);
             this.CmbCampo.TabIndex = 111;
+            this.CmbCampo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbCampo_KeyPress);
             // 
             // BtnBuscar
             // 
@@ -252,6 +262,7 @@
             this.BtnBuscar.TabIndex = 110;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtEleccion
             // 
@@ -260,6 +271,7 @@
             this.TxtEleccion.Name = "TxtEleccion";
             this.TxtEleccion.Size = new System.Drawing.Size(183, 29);
             this.TxtEleccion.TabIndex = 109;
+            this.TxtEleccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEleccion_KeyPress);
             // 
             // LblCedula
             // 

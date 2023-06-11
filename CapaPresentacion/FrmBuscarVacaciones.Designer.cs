@@ -38,6 +38,7 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FecInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FecFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVacaciones)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             // TxtCedula
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCedula.Location = new System.Drawing.Point(365, 96);
+            this.TxtCedula.Location = new System.Drawing.Point(257, 104);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(183, 29);
             this.TxtCedula.TabIndex = 78;
@@ -76,7 +77,7 @@
             // 
             this.LblCedula.AutoSize = true;
             this.LblCedula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCedula.Location = new System.Drawing.Point(261, 100);
+            this.LblCedula.Location = new System.Drawing.Point(153, 108);
             this.LblCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblCedula.Name = "LblCedula";
             this.LblCedula.Size = new System.Drawing.Size(96, 22);
@@ -122,12 +123,23 @@
             this.FecFin.HeaderText = "FECHA FIN";
             this.FecFin.Name = "FecFin";
             // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 14.25F);
+            this.BtnBuscar.Location = new System.Drawing.Point(481, 100);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(189, 39);
+            this.BtnBuscar.TabIndex = 111;
+            this.BtnBuscar.Text = "BUSCAR";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            // 
             // FrmBuscarVacaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(832, 433);
+            this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.dataGridViewVacaciones);
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.LblCedula);
@@ -154,5 +166,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FecInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FecFin;
+        private System.Windows.Forms.Button BtnBuscar;
     }
 }

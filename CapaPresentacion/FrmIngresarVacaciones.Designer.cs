@@ -74,6 +74,7 @@
             this.CmbEstado.Name = "CmbEstado";
             this.CmbEstado.Size = new System.Drawing.Size(196, 30);
             this.CmbEstado.TabIndex = 81;
+            this.CmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbEstado_KeyPress);
             // 
             // dateTimePickerFecFin
             // 
@@ -82,6 +83,7 @@
             this.dateTimePickerFecFin.Name = "dateTimePickerFecFin";
             this.dateTimePickerFecFin.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecFin.TabIndex = 79;
+            this.dateTimePickerFecFin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecFin_KeyPress);
             // 
             // LblFechaFin
             // 
@@ -101,6 +103,7 @@
             this.dateTimePickerFecInicio.Name = "dateTimePickerFecInicio";
             this.dateTimePickerFecInicio.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecInicio.TabIndex = 80;
+            this.dateTimePickerFecInicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecInicio_KeyPress);
             // 
             // LblFechaInicio
             // 
@@ -120,6 +123,7 @@
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(196, 29);
             this.TxtCedula.TabIndex = 76;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // LblCedula
             // 
@@ -151,6 +155,7 @@
             this.BtnCancelar.TabIndex = 84;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnRegistrar
             // 
@@ -161,6 +166,7 @@
             this.BtnRegistrar.TabIndex = 83;
             this.BtnRegistrar.Text = "REGISTRAR";
             this.BtnRegistrar.UseVisualStyleBackColor = true;
+            this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // FrmIngresarVacaciones
             // 
