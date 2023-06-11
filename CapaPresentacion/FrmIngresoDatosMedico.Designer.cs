@@ -59,12 +59,9 @@
             this.lblINgresarMEdico = new System.Windows.Forms.Label();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnRegistrar = new System.Windows.Forms.Button();
-            this.hOSPITALDataSet = new CapaPresentacion.HOSPITALDataSet();
             this.tipoMedicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipoMedicoTableAdapter = new CapaPresentacion.HOSPITALDataSetTableAdapters.TipoMedicoTableAdapter();
             this.GbxTipo.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hOSPITALDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoMedicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -414,19 +411,9 @@
             this.BtnRegistrar.UseVisualStyleBackColor = true;
             this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
-            // hOSPITALDataSet
-            // 
-            this.hOSPITALDataSet.DataSetName = "HOSPITALDataSet";
-            this.hOSPITALDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tipoMedicoBindingSource
             // 
             this.tipoMedicoBindingSource.DataMember = "TipoMedico";
-            this.tipoMedicoBindingSource.DataSource = this.hOSPITALDataSet;
-            // 
-            // tipoMedicoTableAdapter
-            // 
-            this.tipoMedicoTableAdapter.ClearBeforeFill = true;
             // 
             // FrmIngresoDatosMedico
             // 
@@ -467,7 +454,6 @@
             this.GbxTipo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hOSPITALDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoMedicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -505,8 +491,6 @@
         private System.Windows.Forms.Label lblINgresarMEdico;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnRegistrar;
-        private HOSPITALDataSet hOSPITALDataSet;
         private System.Windows.Forms.BindingSource tipoMedicoBindingSource;
-        private HOSPITALDataSetTableAdapters.TipoMedicoTableAdapter tipoMedicoTableAdapter;
     }
 }

@@ -33,9 +33,7 @@ namespace CapaPresentacion
 
         private void FrmIngresoDatosMedico_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hOSPITALDataSet.TipoMedico' table. You can move, or remove it, as needed.
-            this.tipoMedicoTableAdapter.Fill(this.hOSPITALDataSet.TipoMedico);
-            tiposPoblacion = objCargaPoblacion.CargarPoblaciones();
+             tiposPoblacion = objCargaPoblacion.CargarPoblaciones();
 
             foreach(string tipo in tiposPoblacion)
             {
