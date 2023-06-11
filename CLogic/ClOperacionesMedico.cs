@@ -69,6 +69,17 @@ namespace CLogic
 
             return tipos;
         }  
+
+        public List<string> CargarNombresMedicos()
+        {
+            List<Medico> objNombresMedicos = objDatos.GetMedicos();
+            List<string> nombres = new List<string>();
+
+            foreach (Medico medico in objNombresMedicos)
+                nombres.Add(medico.Nombre);
+
+            return nombres;
+        }
         
         public Medico CargarMedicoCedula(string cedula)
         {

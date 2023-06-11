@@ -190,6 +190,7 @@
             this.CmbMedicoAsignado.Name = "CmbMedicoAsignado";
             this.CmbMedicoAsignado.Size = new System.Drawing.Size(544, 36);
             this.CmbMedicoAsignado.TabIndex = 80;
+            this.CmbMedicoAsignado.SelectedIndexChanged += new System.EventHandler(this.CmbMedicoAsignado_SelectedIndexChanged);
             // 
             // BtnCancelar
             // 
@@ -238,6 +239,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmIngresoDatosPaciente";
             this.Text = "Ingresar paciente";
+            this.Load += new System.EventHandler(this.FrmIngresoDatosPaciente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

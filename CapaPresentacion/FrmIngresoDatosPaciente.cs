@@ -35,5 +35,18 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void CmbMedicoAsignado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmIngresoDatosPaciente_Load(object sender, EventArgs e)
+        {
+            List<string> tipos = objOperacionesMedico.CargarNombresMedicos();
+
+            foreach (string tipo in tipos)
+                CmbMedicoAsignado.Items.Add(tipo);
+        }
     }
 }

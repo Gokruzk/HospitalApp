@@ -16,10 +16,14 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Medicos");
+                Console.WriteLine("1-------------------");
+                SqlCommand sql = new SqlCommand("SELECT * FROM Medicos", objBD.connect);
+                Console.WriteLine("2-------------------");
                 SqlDataReader reader = sql.ExecuteReader();
+                Console.WriteLine("3-------------------");
                 while (reader.Read())
                 {
+                    Console.WriteLine("5-------------------");
                     Medico objEnt = new Medico()
                     {
                         Cedula = Convert.ToString(reader["Cedula"]),
@@ -34,7 +38,9 @@ namespace CData
                         Estado = Convert.ToInt16(reader["Estado"]),
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
+                    Console.WriteLine("6-------------------");
                     datosMedicos.Add(objEnt);
+                    Console.WriteLine("7-------------------");
                 }
             }
             catch
