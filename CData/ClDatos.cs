@@ -31,7 +31,8 @@ namespace CData
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         FechaA = Convert.ToDateTime(reader["FechaA"]),
                         FechaB = Convert.ToDateTime(reader["FechaB"]),
-                        Estado = Convert.ToInt16(reader["Estado"])
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datosMedicos.Add(objEnt);
                 }
@@ -49,7 +50,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Medicos(Cedula, Nombre, Direccion,  NumeroSeguridadSocial, NumeroColegiado, TipoMedico, Poblacion, FechaA, FechaB, Estado) VALUES ('{@datoMed.Cedula}','{@datoMed.Nombre}','{@datoMed.Direccion}','{@datoMed.NumSegSocial}','{@datoMed.NumColegiado}','{@datoMed.Tipo}','{@datoMed.Poblacion}','{@datoMed.FechaA}','{@datoMed.FechaB}', '{@datoMed.Estado}')";
+                string query = $"INSERT INTO Medicos(Cedula, Nombre, Direccion,  NumeroSeguridadSocial, NumeroColegiado, TipoMedico, Poblacion, FechaA, FechaB, Estado, FechaNacimiento) VALUES ('{@datoMed.Cedula}','{@datoMed.Nombre}','{@datoMed.Direccion}','{@datoMed.NumSegSocial}','{@datoMed.NumColegiado}','{@datoMed.Tipo}','{@datoMed.Poblacion}','{@datoMed.FechaA}','{@datoMed.FechaB}', '{@datoMed.Estado}', '{@datoMed.FechaNacimiento}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -86,7 +87,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}', Estado = '{@datoMed.Estado}' WHERE Cedula = '{@datoMed.Cedula}'";
+                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}', Estado = '{@datoMed.Estado}' FechaNacimiento = '{@datoMed.FechaNacimiento}' WHERE Cedula = '{@datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -122,7 +123,8 @@ namespace CData
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         FechaA = Convert.ToDateTime(reader["FechaA"]),
                         FechaB = Convert.ToDateTime(reader["FechaB"]),
-                        Estado = Convert.ToInt16(reader["Estado"])
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoMed = objEnt;
                 }
@@ -156,7 +158,8 @@ namespace CData
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Tipo = Convert.ToString(reader["Tipo"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
-                        Estado = Convert.ToInt16(reader["Estado"])
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datosEmpleados.Add(objEnt);
                 }
@@ -174,7 +177,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}')";
+                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado, FechaNacimiento) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -208,7 +211,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', Tipo = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', '{@datoEmp.Estado}' WHERE Cedula = '{@datoEmp.Cedula}'";
+                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', Tipo = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', Estado = '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}' WHERE Cedula = '{@datoEmp.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -241,7 +244,8 @@ namespace CData
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Tipo = Convert.ToString(reader["Tipo"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
-                        Estado = Convert.ToInt16(reader["Estado"])
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoEmp = objEnt;
                 }
@@ -274,7 +278,8 @@ namespace CData
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Medico = Convert.ToString(reader["CedulaMedico"]),
-                        Estado = Convert.ToInt16(reader["Estado"])
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datosPacientes.Add(objEnt);
                 }
@@ -292,7 +297,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico, Estado) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}', {@datoPac.Estado})";
+                string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico, Estado, FechaNacimiento) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}', '{@datoPac.Estado}', '{@datoPac.FechaNacimiento}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -329,7 +334,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}', Estado = '{@datoPac.Estado}' WHERE Cedula = '{@datoPac.Cedula}'";
+                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}', Estado = '{@datoPac.Estado}', FechaNacimiento = '{@datoPac.FechaNacimiento}' WHERE Cedula = '{@datoPac.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -361,7 +366,8 @@ namespace CData
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Medico = Convert.ToString(reader["CedulaMedico"]),
-                        Estado = Convert.ToInt16(reader["Estado"])
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoPac = objEnt;
                 }

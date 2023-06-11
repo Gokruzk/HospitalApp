@@ -15,6 +15,7 @@ namespace Entidades
         public string NumSegSocial { get; set; }
         public string Direccion { get; set; }
         public int Estado { get; set; }
+        public DateTime FechaNacimiento { get; set; }
     }
 
     public class Empleado : Persona
