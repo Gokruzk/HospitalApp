@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblColegio = new System.Windows.Forms.Label();
             this.txtNumColegiado = new System.Windows.Forms.TextBox();
@@ -59,10 +58,8 @@
             this.lblINgresarMEdico = new System.Windows.Forms.Label();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnRegistrar = new System.Windows.Forms.Button();
-            this.tipoMedicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GbxTipo.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoMedicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProvincia
@@ -346,7 +343,6 @@
             // 
             // CmbTipoModificar
             // 
-            this.CmbTipoModificar.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tipoMedicoBindingSource, "Descripcion", true));
             this.CmbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbTipoModificar.FormattingEnabled = true;
             this.CmbTipoModificar.Location = new System.Drawing.Point(815, 347);
@@ -411,10 +407,6 @@
             this.BtnRegistrar.UseVisualStyleBackColor = true;
             this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
-            // tipoMedicoBindingSource
-            // 
-            this.tipoMedicoBindingSource.DataMember = "TipoMedico";
-            // 
             // FrmIngresoDatosMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -454,7 +446,6 @@
             this.GbxTipo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoMedicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,6 +482,5 @@
         private System.Windows.Forms.Label lblINgresarMEdico;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnRegistrar;
-        private System.Windows.Forms.BindingSource tipoMedicoBindingSource;
     }
 }
