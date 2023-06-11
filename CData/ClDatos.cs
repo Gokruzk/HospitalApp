@@ -577,7 +577,7 @@ namespace CData
                 {
                     Poblacion objEnt = new Poblacion()
                     {
-                        PID = Convert.ToInt32(reader["id"]),
+                        PID = Convert.ToInt16(reader["id"]),
                         Descripcion = Convert.ToString(reader["descripcion"])
                     };
                     datosPoblaciones.Add(objEnt);
@@ -816,7 +816,7 @@ namespace CData
                 {
                     Vacaciones objEnt = new Vacaciones()
                     {
-                        VID = Convert.ToInt32(reader["VacacionesID"]),
+                        VID = Convert.ToInt16(reader["VacacionesID"]),
                         Cedula = Convert.ToString(reader["Cedula"]),
                         FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
                         FechaFin = Convert.ToDateTime(reader["FechaFin"]),
@@ -904,7 +904,7 @@ namespace CData
                 {
                     Vacaciones objEnt = new Vacaciones()
                     {
-                        VID = Convert.ToInt32(reader["VacacionesID"]),
+                        VID = Convert.ToInt16(reader["VacacionesID"]),
                         Cedula = Convert.ToString(reader["Cedula"]),
                         FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
                         FechaFin = Convert.ToDateTime(reader["FechaFin"]),
@@ -939,7 +939,7 @@ namespace CData
                 {
                     Vacaciones objEnt = new Vacaciones()
                     {
-                        VID = Convert.ToInt32(reader["VacacionesID"]),
+                        VID = Convert.ToInt16(reader["VacacionesID"]),
                         Cedula = Convert.ToString(reader["Cedula"]),
                         FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
                         FechaFin = Convert.ToDateTime(reader["FechaFin"]),
@@ -971,7 +971,7 @@ namespace CData
                 {
                     Consulta objEnt = new Consulta()
                     {
-                        CID = Convert.ToInt32(reader["ConsultaID"]),
+                        CID = Convert.ToInt16(reader["ConsultaID"]),
                         Descripcion = Convert.ToString(reader["Descripcion"]),
                         Medico = Convert.ToString(reader["Medico"]),
                         Paciente = Convert.ToString(reader["Paciente"]),
@@ -1043,7 +1043,7 @@ namespace CData
                 {
                     Consulta objEnt = new Consulta()
                     {
-                        CID = Convert.ToInt32(reader["ConsultaID"]),
+                        CID = Convert.ToInt16(reader["ConsultaID"]),
                         Descripcion = Convert.ToString(reader["Descripcion"]),
                         Medico = Convert.ToString(reader["Medico"]),
                         Paciente = Convert.ToString(reader["Paciente"]),
@@ -1078,7 +1078,7 @@ namespace CData
                 {
                     Consulta objEnt = new Consulta()
                     {
-                        CID = Convert.ToInt32(reader["ConsultaID"]),
+                        CID = Convert.ToInt16(reader["ConsultaID"]),
                         Descripcion = Convert.ToString(reader["Descripcion"]),
                         Medico = Convert.ToString(reader["Medico"]),
                         Paciente = Convert.ToString(reader["Paciente"]),
