@@ -548,6 +548,7 @@ namespace CData
             }
             return datoPac;
         }
+
         //Poblacion
         public List<Poblacion> GetPoblaciones()
         {
@@ -555,7 +556,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Poblacion");
+                SqlCommand sql = new SqlCommand("SELECT * FROM Poblacion", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {
@@ -667,7 +668,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Horarios");
+                SqlCommand sql = new SqlCommand("SELECT * FROM Horarios", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {
@@ -785,7 +786,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Vacaciones");
+                SqlCommand sql = new SqlCommand("SELECT * FROM Vacaciones", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {
@@ -938,7 +939,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                SqlCommand sql = new SqlCommand("SELECT * FROM Consultas");
+                SqlCommand sql = new SqlCommand("SELECT * FROM Consultas", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
                 while (reader.Read())
                 {
