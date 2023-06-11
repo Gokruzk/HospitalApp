@@ -23,6 +23,8 @@ namespace CapaPresentacion
         readonly Medico objMedico = new Medico();
         readonly ClOperacionesMedico objOperaciones = new ClOperacionesMedico();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
+        readonly ClOperacionesPoblacion objCargaPoblacion = new ClOperacionesPoblacion();
+        List<string> tiposPoblacion = new List<string>();
 
         private void txtNIF_TextChanged(object sender, EventArgs e)
         {
@@ -31,7 +33,12 @@ namespace CapaPresentacion
 
         private void FrmIngresoDatosMedico_Load(object sender, EventArgs e)
         {
+            tiposPoblacion = objCargaPoblacion.CargarPoblaciones();
 
+            foreach(string tipo in tiposPoblacion)
+            {
+                CmbPoblacionModificar.Items.Add(tipo);
+            }
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)

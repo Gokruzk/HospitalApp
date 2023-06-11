@@ -48,6 +48,7 @@
     <Compile Include="ClOperacionesMedico.cs" />
     <Compile Include="ClOperacionesPaciente.cs" />
     <Compile Include="ClOperacionesPersona.cs" />
+    <Compile Include="ClOperacionesPoblacion.cs" />
     <Compile Include="ClOperacionesVacacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

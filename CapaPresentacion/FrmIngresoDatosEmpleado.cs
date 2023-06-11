@@ -27,7 +27,7 @@ namespace CapaPresentacion
             objEmpleado.Nombre = "Kevin Tapia";
             objEmpleado.Direccion = "Av. Canonigo Ramos";
             objEmpleado.NumSegSocial = "433-69-6684";
-            objEmpleado.Tipo = "Administrativo";
+            //objEmpleado.Tipo = "Administrativo";
             objEmpleado.Poblacion = 1;
         }
     }
