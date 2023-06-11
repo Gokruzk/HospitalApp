@@ -14,6 +14,7 @@ namespace Entidades
         public string Nombre { get; set; }
         public string NumSegSocial { get; set; }
         public string Direccion { get; set; }
+        public int Estado { get; set; }
     }
 
     public class Empleado : Persona
@@ -57,6 +58,6 @@ namespace Entidades
         public string Cedula { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
-        public string Estado { get; set; }
+        public int Estado { get; set; }
     }
 }
