@@ -44,7 +44,7 @@ namespace CData
             return datosMedicos;
         }
 
-        public void RegistroMedico(Medico datoMed)
+        public string RegistroMedico(Medico datoMed)
         {
             try
             {
@@ -54,10 +54,15 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                Console.WriteLine(e.Message);
+                if (ex.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
             }
+            return "CORRECTO";
         }
 
         public void DeleteMedico(string id)
@@ -164,7 +169,7 @@ namespace CData
             return datosEmpleados;
         }
 
-        public void RegistroEmpleado(Empleado datoEmp)
+        public string RegistroEmpleado(Empleado datoEmp)
         {
             try
             {
@@ -173,11 +178,13 @@ namespace CData
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
+            } catch (SqlException ex) {
+                if (ex.Number == 2627) {
+                    return "2627";
+                }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+
+            return "CORRECTO";
         }
 
         public void DeleteEmpleado(string id)
@@ -280,7 +287,7 @@ namespace CData
             return datosPacientes;
         }
 
-        public void RegistroPaciente(Paciente datoPac)
+        public string RegistroPaciente(Paciente datoPac)
         {
             try
             {
@@ -290,10 +297,15 @@ namespace CData
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                Console.WriteLine(e.Message);
+                if (ex.Number == 2627)
+                {
+                    // Clave primaria duplicada
+                    return "2627";
+                }
             }
+            return "CORRECTO";
         }
 
         public void DeletePaciente(string id)
