@@ -34,8 +34,9 @@ namespace CapaPresentacion
 
         }
 
-        private void btnIngresarM_Click(object sender, EventArgs e)
+        private void BtnIngresar_Click(object sender, EventArgs e)
         {
+
             /*
             objMedico.Nombre = txtNombre.Text;
             objMedico.Cedula = txtNIF.Text;
@@ -57,7 +58,7 @@ namespace CapaPresentacion
 
             objMedico.Nombre = "Fern";
             objMedico.Cedula = "0604401919";
-            objMedico.NumSegSocial  = "546-53-9380";
+            objMedico.NumSegSocial = "546-53-9380";
             objMedico.NumColegiado = "123456789";
             objMedico.Tipo = "Médico Sustituto";
             objMedico.FechaA = DateTime.Now.AddDays(-9);
@@ -70,10 +71,16 @@ namespace CapaPresentacion
             //string estado = objOperaciones.EliminarMedico(objMedico.Cedula);
             if (estado == "CORRECTO")
                 MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else if(estado == "2627")
+            else if (estado == "2627")
                 MessageBox.Show(objMensajes.errores[16], "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void LblTituloInicio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

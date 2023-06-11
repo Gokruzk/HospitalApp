@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBuscarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarConsulta.Designer.cs">
+      <DependentUpon>FrmBuscarConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBuscarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,23 +70,35 @@
     <Compile Include="FrmBuscarPaciente.Designer.cs">
       <DependentUpon>FrmBuscarPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEliminarEmpleado.cs">
+    <Compile Include="FrmBuscarVacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEliminarEmpleado.Designer.cs">
-      <DependentUpon>FrmEliminarEmpleado.cs</DependentUpon>
+    <Compile Include="FrmBuscarVacaciones.Designer.cs">
+      <DependentUpon>FrmBuscarVacaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEliminarMedico.cs">
+    <Compile Include="FrmEliminarConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEliminarMedico.Designer.cs">
-      <DependentUpon>FrmEliminarMedico.cs</DependentUpon>
+    <Compile Include="FrmEliminarConsulta.Designer.cs">
+      <DependentUpon>FrmEliminarConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEliminarPaciente.cs">
+    <Compile Include="FrmEliminarVacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEliminarPaciente.Designer.cs">
-      <DependentUpon>FrmEliminarPaciente.cs</DependentUpon>
+    <Compile Include="FrmEliminarVacaciones.Designer.cs">
+      <DependentUpon>FrmEliminarVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresarConsulta.Designer.cs">
+      <DependentUpon>FrmIngresarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresarVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresarVacaciones.Designer.cs">
+      <DependentUpon>FrmIngresarVacaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmIngresoDatosEmpleado.cs">
       <SubType>Form</SubType>
@@ -106,6 +124,12 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModificarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarConsulta.Designer.cs">
+      <DependentUpon>FrmModificarConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModificarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,10 +148,28 @@
     <Compile Include="FrmModificarPaciente.Designer.cs">
       <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModificarVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarVacaciones.Designer.cs">
+      <DependentUpon>FrmModificarVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBuscarEmpleado.resx">
+      <DependentUpon>FrmBuscarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarMedico.resx">
+      <DependentUpon>FrmBuscarMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarPaciente.resx">
       <DependentUpon>FrmBuscarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarVacaciones.resx">
+      <DependentUpon>FrmBuscarVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresarVacaciones.resx">
+      <DependentUpon>FrmIngresarVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresoDatosEmpleado.resx">
       <DependentUpon>FrmIngresoDatosEmpleado.cs</DependentUpon>
@@ -135,8 +177,23 @@
     <EmbeddedResource Include="FrmIngresoDatosMedico.resx">
       <DependentUpon>FrmIngresoDatosMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresoDatosPaciente.resx">
+      <DependentUpon>FrmIngresoDatosPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarEmpleado.resx">
+      <DependentUpon>FrmModificarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarMedico.resx">
+      <DependentUpon>FrmModificarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarPaciente.resx">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarVacaciones.resx">
+      <DependentUpon>FrmModificarVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
