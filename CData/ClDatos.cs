@@ -80,7 +80,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '@{datoMed.Tipo}', Poblacion = '@{datoMed.Poblacion}', FechaA = '@{datoMed.FechaA}', FechaB = '@{datoMed.FechaB}',  WHERE Cedula = '@{datoMed.Cedula}'";
+                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}', WHERE Cedula = '{@datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -97,7 +97,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"SELECT * FROM Medicos WHERE Cedula = '@{id}";
+                string query = $"SELECT * FROM Medicos WHERE Cedula = '{@id}";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -182,7 +182,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"DELETE FROM Empleados WHERE Cedula = '@{id}'";
+                string query = $"DELETE FROM Empleados WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -422,7 +422,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Poblaciones SET Descripcion = '{datoPob.Descripcion}' WHERE id = '{@datoPob.PID}'";
+                string query = $"UPDATE Poblaciones SET Descripcion = '{@datoPob.Descripcion}' WHERE id = '{@datoPob.PID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -500,7 +500,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Horarios(HorarioID, CedulaMedico, DiaSemana, HoraInicio, HoraFin) VALUES ({datoHor.HorID}, '{@datoHor.CedulaMedico}', '{@datoHor.DiaSemana}', '{datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}')";
+                string query = $"INSERT INTO Horarios(HorarioID, CedulaMedico, DiaSemana, HoraInicio, HoraFin) VALUES ({@datoHor.HorID}, '{@datoHor.CedulaMedico}', '{@datoHor.DiaSemana}', '{@datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -532,7 +532,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Horarios SET CedulaMedico = '{@datoHor.CedulaMedico}', DiaSemana = '{@datoHor.DiaSemana}', HoraInicio = '{datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', HoraFin = '{datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE HorarioID = '{@datoHor.HorID}'";
+                string query = $"UPDATE Horarios SET CedulaMedico = '{@datoHor.CedulaMedico}', DiaSemana = '{@datoHor.DiaSemana}', HoraInicio = '{@datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', HoraFin = '{@datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE HorarioID = '{@datoHor.HorID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
