@@ -218,9 +218,12 @@
             this.dateTimePickerFecNac.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.dateTimePickerFecNac.Location = new System.Drawing.Point(415, 226);
             this.dateTimePickerFecNac.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerFecNac.MaxDate = new System.DateTime(2005, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerFecNac.MinDate = new System.DateTime(1900, 6, 11, 0, 0, 0, 0);
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecNac.TabIndex = 66;
+            this.dateTimePickerFecNac.Value = new System.DateTime(2005, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFecNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecNac_KeyPress);
             // 
             // LblFechaNacimiento
@@ -304,6 +307,7 @@
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecBaja.TabIndex = 66;
+            this.dateTimePickerFecBaja.CloseUp += new System.EventHandler(this.dateTimePickerFecBaja_CloseUp);
             this.dateTimePickerFecBaja.ValueChanged += new System.EventHandler(this.dateTimePickerFecBaja_ValueChanged);
             this.dateTimePickerFecBaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecBaja_KeyPress);
             // 
@@ -360,6 +364,7 @@
             this.CmbTipo.Name = "CmbTipo";
             this.CmbTipo.Size = new System.Drawing.Size(244, 37);
             this.CmbTipo.TabIndex = 71;
+            this.CmbTipo.SelectionChangeCommitted += new System.EventHandler(this.CmbTipo_SelectionChangeCommitted);
             this.CmbTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbTipo_KeyPress);
             // 
             // LblTipo

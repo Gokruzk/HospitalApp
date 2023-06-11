@@ -19,16 +19,27 @@ namespace CapaPresentacion
         {
             InitializeComponent();
 
-
         }
 
         readonly Medico objMedico = new Medico();
         readonly ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
         readonly ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
-        readonly ClOperacionesPoblacion objCargaPoblacion = new ClOperacionesPoblacion();
+        readonly ClOperacionesPoblacion objOperacionesPoblacion = new ClOperacionesPoblacion();
 
-        List<string> tiposPoblacion = new List<string>();
+        
+
+        private void FrmIngresoDatosMedico_Load(object sender, EventArgs e)
+        {
+            List<string> tipos = objOperacionesPoblacion.CargarPoblaciones();
+
+            foreach (string tipo in tipos)
+                CmbPoblacion.Items.Add(tipo);
+            tipos = objOperacionesMedico.CargarTiposMedicos();
+
+            foreach (string tipo in tipos)
+                CmbTipo.Items.Add(tipo);
+        }
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -163,7 +174,7 @@ namespace CapaPresentacion
                 if (e.KeyChar == (char)Keys.Enter)
                 {
                     e.Handled = true;
-                    if (!objOperacionesMedico.ValidarNumColegiado(txtNumColegiado.Text))
+                    if (!objOperacionesPoblacion.ValidarPoblacion(CmbTipo.SelectedIndex + 1))
                         MessageBox.Show($"Error --: " + objMensajes.errores[11], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                         dateTimePickerFecAlta.Focus();
@@ -202,8 +213,15 @@ namespace CapaPresentacion
         private void dateTimePickerFecBaja_ValueChanged(object sender, EventArgs e)
         {
 
+            
+        }
+        private void dateTimePickerFecBaja_CloseUp(object sender, EventArgs e)
+        {
             if (!objOperacionesMedico.ValidarFechasSutituto(CmbTipo.SelectedIndex + 1, dateTimePickerFecAlta.Value, dateTimePickerFecBaja.Value))
+            {
                 MessageBox.Show($"Error --: " + objMensajes.errores[13], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dateTimePickerFecBaja.Value = DateTime.Today;
+            }
             else
                 dateTimePickerFecAlta.Focus();
         }
@@ -216,12 +234,17 @@ namespace CapaPresentacion
                 objMedico.Cedula = TxtCedula.Text;
                 objMedico.NumSegSocial = TxtNumSegSocial.Text;
                 objMedico.NumColegiado = txtNumColegiado.Text;
-                objMedico.Tipo = CmbTipo.SelectedIndex + 1 ;
+                objMedico.Tipo = CmbTipo.SelectedIndex + 1;
 
                 if(objMedico.Tipo == 3)
                 {
                     objMedico.FechaA = dateTimePickerFecAlta.Value;
                     objMedico.FechaB = dateTimePickerFecBaja.Value;
+                }
+                else
+                {
+                    objMedico.FechaA = DateTime.Now;
+                    objMedico.FechaB = DateTime.Now;
                 }
                 objMedico.FechaNacimiento = dateTimePickerFecNac.Value;
                 
@@ -254,12 +277,18 @@ namespace CapaPresentacion
             }
         }
 
-        private void FrmIngresoDatosMedico_Load(object sender, EventArgs e)
+        private void CmbTipo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
+            Console.WriteLine(CmbTipo.SelectedIndex.ToString());
         }
 
         
+
+
+
+
+
+
 
         //private void txtNIF_TextChanged(object sender, EventArgs e)
         //{

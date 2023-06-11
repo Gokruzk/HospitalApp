@@ -31,7 +31,6 @@ namespace CData
             {
                 connect.Open();
                 Console.WriteLine("Conexión abierta");
-
             }
             catch (Exception e)
             {

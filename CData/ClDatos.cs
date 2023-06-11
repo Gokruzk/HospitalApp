@@ -40,8 +40,8 @@ namespace CData
             catch
             {
                 datosMedicos = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosMedicos;
         }
 
@@ -53,16 +53,22 @@ namespace CData
                 string query = $"INSERT INTO Medicos(Cedula, Nombre, Direccion,  NumeroSeguridadSocial, NumeroColegiado, TipoMedico, Poblacion, FechaA, FechaB, Estado, FechaNacimiento) VALUES ('{@datoMed.Cedula}','{@datoMed.Nombre}','{@datoMed.Direccion}','{@datoMed.NumSegSocial}','{@datoMed.NumColegiado}','{@datoMed.Tipo}','{@datoMed.Poblacion}','{@datoMed.FechaA}','{@datoMed.FechaB}', '{@datoMed.Estado}', '{@datoMed.FechaNacimiento}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException ex)
             {
+                Console.WriteLine(ex.Message);
                 if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
                     return "2627";
                 }
+                else
+                {
+                    return ex.Message;
+                }
             }
+            objBD.Cerrar();
             return "CORRECTO";
         }
 
@@ -74,12 +80,12 @@ namespace CData
                 string query = $"DELETE FROM Medicos WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void DeleteMedicoNS(string ns)
@@ -90,12 +96,12 @@ namespace CData
                 string query = $"DELETE FROM Medicos WHERE NumeroSeguridadSocial = '{@ns}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void UpdateMedico(Medico datoMed)
@@ -106,12 +112,13 @@ namespace CData
                 string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}', Estado = '{@datoMed.Estado}' FechaNacimiento = '{@datoMed.FechaNacimiento}' WHERE Cedula = '{@datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public Medico SearchMedico(string id)
@@ -144,14 +151,14 @@ namespace CData
                     };
                     datoMed = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoMed = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoMed;
         }
 
@@ -185,14 +192,14 @@ namespace CData
                     };
                     datoMed = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoMed = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoMed;
         }
 
@@ -224,8 +231,8 @@ namespace CData
             catch
             {
                 datosEmpleados = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosEmpleados;
         }
 
@@ -237,7 +244,7 @@ namespace CData
                 string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado, FechaNacimiento) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+                ;
             }
             catch (SqlException ex)
             {
@@ -246,7 +253,7 @@ namespace CData
                     return "2627";
                 }
             }
-
+            objBD.Cerrar();
             return "CORRECTO";
         }
 
@@ -258,12 +265,13 @@ namespace CData
                 string query = $"DELETE FROM Empleados WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void DeleteEmpleadoNS(string ns)
@@ -274,12 +282,13 @@ namespace CData
                 string query = $"DELETE FROM Empleados WHERE NumeroSeguridadSocial = '{@ns}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void UpdateEmpleado(Empleado datoEmp)
@@ -290,12 +299,13 @@ namespace CData
                 string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', TipoEmpleado = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', Estado = '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}' WHERE Cedula = '{@datoEmp.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public Empleado SearchEmpleado(string id)
@@ -325,14 +335,14 @@ namespace CData
                     };
                     datoEmp = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoEmp = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoEmp;
         }
 
@@ -363,14 +373,14 @@ namespace CData
                     };
                     datoEmp = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoEmp = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoEmp;
         }
 
@@ -401,8 +411,8 @@ namespace CData
             catch
             {
                 datosPacientes = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosPacientes;
         }
 
@@ -414,7 +424,7 @@ namespace CData
                 string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico, Estado, FechaNacimiento) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}', '{@datoPac.Estado}', '{@datoPac.FechaNacimiento}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException ex)
             {
@@ -424,6 +434,7 @@ namespace CData
                     return "2627";
                 }
             }
+            objBD.Cerrar();
             return "CORRECTO";
         }
 
@@ -435,12 +446,13 @@ namespace CData
                 string query = $"DELETE FROM Pacientes WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void DeletePacienteNS(string ns)
@@ -451,12 +463,13 @@ namespace CData
                 string query = $"DELETE FROM Pacientes WHERE NumeroSeguridadSocial = '{@ns}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void UpdatePaciente(Paciente datoPac)
@@ -467,12 +480,13 @@ namespace CData
                 string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}', Estado = '{@datoPac.Estado}', FechaNacimiento = '{@datoPac.FechaNacimiento}' WHERE Cedula = '{@datoPac.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public Paciente SearchPaciente(string id)
@@ -501,14 +515,14 @@ namespace CData
                     };
                     datoPac = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoPac = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoPac;
         }
 
@@ -538,14 +552,14 @@ namespace CData
                     };
                     datoPac = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoPac = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoPac;
         }
 
@@ -558,7 +572,7 @@ namespace CData
                 objBD.Abrir();
                 SqlCommand sql = new SqlCommand("SELECT * FROM Poblacion", objBD.connect);
                 SqlDataReader reader = sql.ExecuteReader();
-            
+
                 while (reader.Read())
                 {
                     Poblacion objEnt = new Poblacion()
@@ -568,14 +582,14 @@ namespace CData
                     };
                     datosPoblaciones.Add(objEnt);
                 }
-                objBD.Cerrar();
+
             }
             catch (Exception e)
             {
                 datosPoblaciones = null;
                 Console.WriteLine(e);
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosPoblaciones;
         }
 
@@ -587,7 +601,7 @@ namespace CData
                 string query = $"INSERT INTO Poblacion(id, descripcion) VALUES ('{@datoPob.PID}', '{@datoPob.Descripcion}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
@@ -597,6 +611,7 @@ namespace CData
                     return "2627";
                 }
             }
+            objBD.Cerrar();
             return "CORRECTO";
         }
 
@@ -608,12 +623,13 @@ namespace CData
                 string query = $"DELETE FROM Poblacion WHERE id = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void UpdatePoblacion(Poblacion datoPob)
@@ -624,12 +640,13 @@ namespace CData
                 string query = $"UPDATE Poblaciones SET Descripcion = '{@datoPob.Descripcion}' WHERE id = '{@datoPob.PID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public Poblacion SearchPoblacion(int id)
@@ -653,14 +670,15 @@ namespace CData
                     };
                     datoPob = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoPob = null;
-                objBD.Cerrar();
+
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoPob;
         }
 
@@ -689,8 +707,8 @@ namespace CData
             catch
             {
                 datosHorarios = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosHorarios;
         }
 
@@ -702,7 +720,7 @@ namespace CData
                 string query = $"INSERT INTO Horarios(HorarioID, CedulaMedico, DiaSemana, HoraInicio, HoraFin) VALUES ({@datoHor.HorID}, '{@datoHor.CedulaMedico}', '{@datoHor.DiaSemana}', '{@datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
@@ -712,6 +730,7 @@ namespace CData
                     return "2627";
                 }
             }
+            objBD.Cerrar();
             return "CORRECTO";
         }
 
@@ -723,12 +742,13 @@ namespace CData
                 string query = $"DELETE FROM Horarios WHERE HorarioID = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public void UpdateHorario(Horarios datoHor)
@@ -739,12 +759,13 @@ namespace CData
                 string query = $"UPDATE Horarios SET CedulaMedico = '{@datoHor.CedulaMedico}', DiaSemana = '{@datoHor.DiaSemana}', HoraInicio = '{@datoHor.HoraInicio.ToString("yyyy-MM-dd HH:mm:ss")}', HoraFin = '{@datoHor.HoraFin.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE HorarioID = '{@datoHor.HorID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public Horarios SearchHorario(int id)
@@ -771,14 +792,14 @@ namespace CData
                     };
                     datoHor = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoHor = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoHor;
         }
 
@@ -807,8 +828,8 @@ namespace CData
             catch
             {
                 datosVacaciones = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosVacaciones;
         }
 
@@ -820,7 +841,7 @@ namespace CData
                 string query = $"INSERT INTO Vacaciones(Cedula, FechaInicio, FechaFin, Estado) VALUES ('{@datoVac.Cedula}', '{@datoVac.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoVac.FechaFin.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoVac.Estado}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
@@ -830,6 +851,7 @@ namespace CData
                     return "2627";
                 }
             }
+            objBD.Cerrar();
             return "CORRECTO";
         }
 
@@ -857,12 +879,13 @@ namespace CData
                 string query = $"UPDATE Vacaciones SET Cedula = '{@datoVac.Cedula}', FechaInicio = '{@datoVac.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss")}', FechaFin = '{@datoVac.FechaFin.ToString("yyyy-MM-dd HH:mm:ss")}', Estado = '{@datoVac.Estado}' WHERE VacacionesID = '{@datoVac.VID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public Vacaciones SearchVacacionCedula(string id)
@@ -889,14 +912,14 @@ namespace CData
                     };
                     datoVac = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoVac = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoVac;
         }
 
@@ -924,14 +947,14 @@ namespace CData
                     };
                     datoVac = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoVac = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoVac;
         }
 
@@ -960,8 +983,8 @@ namespace CData
             catch
             {
                 datosConsultas = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosConsultas;
         }
 
@@ -973,7 +996,7 @@ namespace CData
                 string query = $"INSERT INTO Consultas(Descripcion, Medico, Paciente, Fecha) VALUES ('{@datoConsulta.Descripcion}', '{@datoConsulta.Medico}', '{@datoConsulta.Paciente}', '{@datoConsulta.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
@@ -983,6 +1006,7 @@ namespace CData
                     return "2627";
                 }
             }
+            objBD.Cerrar();
             return "CORRECTO";
         }
 
@@ -994,12 +1018,13 @@ namespace CData
                 string query = $"UPDATE Consultas SET Descripcion = '{@datoConsulta.Descripcion}', Medico = '{@datoConsulta.Medico}', Paciente = '{@datoConsulta.Paciente}', Fecha = '{@datoConsulta.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE ConsultaID = '{@datoConsulta.CID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
         }
 
         public Consulta SearchConsultaPaciente(string id)
@@ -1026,14 +1051,14 @@ namespace CData
                     };
                     datoConsulta = objEnt;
                 }
-                objBD.Cerrar();
+
             }
             catch (SqlException e)
             {
                 datoConsulta = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoConsulta;
         }
 
@@ -1061,14 +1086,13 @@ namespace CData
                     };
                     datoConsulta = objEnt;
                 }
-                objBD.Cerrar();
             }
             catch (SqlException e)
             {
                 datoConsulta = null;
-                objBD.Cerrar();
                 Console.WriteLine(e.Message);
             }
+            objBD.Cerrar();
             return datoConsulta;
         }
 
@@ -1094,8 +1118,8 @@ namespace CData
             catch
             {
                 datosTipoEmpleado = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosTipoEmpleado;
         }
 
@@ -1121,8 +1145,8 @@ namespace CData
             catch
             {
                 datosTipoMedico = null;
-                objBD.Cerrar();
             }
+            objBD.Cerrar();
             return datosTipoMedico;
         }
     }

@@ -27,7 +27,7 @@ namespace CLogic
         {
             if (tipo == 3)
                 return DateTime.Compare(fechaA, fechaB) < 0;
-
+            Console.WriteLine(tipo + " 0000000");
             return true;
         }
 
@@ -45,7 +45,6 @@ namespace CLogic
         public string ActualizarMedico(Medico datos)
         {
             return "CORRECTO"; //objDatos.UpdateMedico(datos);
-
         }
 
         public string EliminarMedico(string cedula)
@@ -60,16 +59,17 @@ namespace CLogic
             return "CORRECTO";
         }
 
-        /* public List<string> CargarTiposMedicos()
+        public List<string> CargarTiposMedicos()
         {
-            List<> objMedicos = objDatos.GetPoblaciones();
+            List<TipoMedico> objTipos = objDatos.GetTipoMedico();
             List<string> tipos = new List<string>();
 
-            foreach(Poblacion poblano in objPoblaciones)
-                tipos.Add(poblano.Descripcion);
+            foreach(Tipo medico in objTipos)
+                tipos.Add(medico.Descripcion);
 
             return tipos;
-        }  */
+        }  
+        
         public Medico CargarMedicoCedula(string cedula)
         {
             return objDatos.SearchMedico(cedula);
