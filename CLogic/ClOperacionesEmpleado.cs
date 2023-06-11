@@ -44,8 +44,12 @@ namespace CLogic
         public string RegistrarEmpleado(Empleado datos) {
             string validacion = ValidarTodoEmpleado(datos);
 
-            if (validacion == "CORRECTO")
-                objDatos.RegistroEmpleado(datos);
+            if (validacion == "CORRECTO") {
+                string estado = objDatos.RegistroEmpleado(datos);
+
+                if (estado == "2627")
+                    return estado;
+            }
 
             return validacion;
         }
@@ -62,6 +66,7 @@ namespace CLogic
         public string EliminarEmpleado(string cedula) {
             if (objPersona.ValidarCedula(cedula)) {
                 objDatos.DeleteEmpleado(cedula);
+
             } else
                 return objMensajes.errores[0];
 
