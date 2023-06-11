@@ -125,23 +125,23 @@ namespace CapaPresentacion
             }
         }
 
-        private void BtnRegistrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        //private void BtnRegistrar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            //objEmpleado.Cedula = "0503959447";
-            //objEmpleado.Nombre = "Kevin Tapia";
-            //objEmpleado.Direccion = "Av. Canonigo Ramos";
-            //objEmpleado.NumSegSocial = "433-69-6684";
-            //objEmpleado.Tipo = "Administrativo";
-            //objEmpleado.Poblacion = 1;
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    //objEmpleado.Cedula = "0503959447";
+        //    //objEmpleado.Nombre = "Kevin Tapia";
+        //    //objEmpleado.Direccion = "Av. Canonigo Ramos";
+        //    //objEmpleado.NumSegSocial = "433-69-6684";
+        //    //objEmpleado.Tipo = "Administrativo";
+        //    //objEmpleado.Poblacion = 1;
+        //}
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
