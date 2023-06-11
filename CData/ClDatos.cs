@@ -80,7 +80,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}', WHERE Cedula = '{@datoMed.Cedula}'";
+                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}' WHERE Cedula = '{@datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
