@@ -1,5 +1,4 @@
 USE HOSPITAL
--- HOSPITAL INSERT
 
 INSERT INTO Poblacion(descripcion) VALUES
             ('Mestiza'),
@@ -17,3 +16,14 @@ INSERT INTO VacacionesEstado(Descripcion) VALUES
             ('Realizada'),
             ('Planificada')
 
+INSERT INTO TipoEmpleado(Descripcion) VALUES
+            ('Administrativo'),
+            ('Celador'),
+            ('Auxiliar de Enfermería'),
+            ('ATS de Zona'),
+            ('ATS')
+
+INSERT INTO TipoMedico(Descripcion) VALUES
+            ('Titular'),
+            ('Interino'),
+            ('Sustituto')
