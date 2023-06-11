@@ -29,16 +29,12 @@
         private void InitializeComponent()
         {
             this.lblModificarMedico = new System.Windows.Forms.Label();
-            this.radioButtonTitular = new System.Windows.Forms.RadioButton();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.CmbTipoModificar = new System.Windows.Forms.ComboBox();
             this.LblTipo = new System.Windows.Forms.Label();
             this.LblPoblacion = new System.Windows.Forms.Label();
             this.CmbPoblacionModificar = new System.Windows.Forms.ComboBox();
-            this.radioButtonSustituto = new System.Windows.Forms.RadioButton();
-            this.radioButtonInterino = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.GbxTipo = new System.Windows.Forms.GroupBox();
             this.dateTimePickerFecBaja = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFecAlta = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFecNac = new System.Windows.Forms.DateTimePicker();
@@ -63,7 +59,6 @@
             this.LblCedula = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.GbxTipo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblModificarMedico
@@ -78,21 +73,10 @@
             this.lblModificarMedico.TabIndex = 1;
             this.lblModificarMedico.Text = "MODIFICAR MÉDICO";
             // 
-            // radioButtonTitular
-            // 
-            this.radioButtonTitular.AutoSize = true;
-            this.radioButtonTitular.Location = new System.Drawing.Point(24, 43);
-            this.radioButtonTitular.Name = "radioButtonTitular";
-            this.radioButtonTitular.Size = new System.Drawing.Size(158, 26);
-            this.radioButtonTitular.TabIndex = 0;
-            this.radioButtonTitular.TabStop = true;
-            this.radioButtonTitular.Text = "Médico Titular";
-            this.radioButtonTitular.UseVisualStyleBackColor = true;
-            // 
             // BtnModificar
             // 
             this.BtnModificar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnModificar.Location = new System.Drawing.Point(232, 584);
+            this.BtnModificar.Location = new System.Drawing.Point(237, 542);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(189, 50);
             this.BtnModificar.TabIndex = 97;
@@ -104,7 +88,7 @@
             // 
             this.CmbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbTipoModificar.FormattingEnabled = true;
-            this.CmbTipoModificar.Location = new System.Drawing.Point(611, 282);
+            this.CmbTipoModificar.Location = new System.Drawing.Point(611, 279);
             this.CmbTipoModificar.Name = "CmbTipoModificar";
             this.CmbTipoModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbTipoModificar.TabIndex = 96;
@@ -114,7 +98,7 @@
             // 
             this.LblTipo.AutoSize = true;
             this.LblTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTipo.Location = new System.Drawing.Point(501, 286);
+            this.LblTipo.Location = new System.Drawing.Point(501, 283);
             this.LblTipo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblTipo.Name = "LblTipo";
             this.LblTipo.Size = new System.Drawing.Size(62, 22);
@@ -125,7 +109,7 @@
             // 
             this.LblPoblacion.AutoSize = true;
             this.LblPoblacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPoblacion.Location = new System.Drawing.Point(471, 344);
+            this.LblPoblacion.Location = new System.Drawing.Point(50, 390);
             this.LblPoblacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblPoblacion.Name = "LblPoblacion";
             this.LblPoblacion.Size = new System.Drawing.Size(132, 22);
@@ -136,33 +120,11 @@
             // 
             this.CmbPoblacionModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbPoblacionModificar.FormattingEnabled = true;
-            this.CmbPoblacionModificar.Location = new System.Drawing.Point(611, 340);
+            this.CmbPoblacionModificar.Location = new System.Drawing.Point(190, 386);
             this.CmbPoblacionModificar.Name = "CmbPoblacionModificar";
             this.CmbPoblacionModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbPoblacionModificar.TabIndex = 93;
             this.CmbPoblacionModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbPoblacionModificar_KeyPress);
-            // 
-            // radioButtonSustituto
-            // 
-            this.radioButtonSustituto.AutoSize = true;
-            this.radioButtonSustituto.Location = new System.Drawing.Point(115, 87);
-            this.radioButtonSustituto.Name = "radioButtonSustituto";
-            this.radioButtonSustituto.Size = new System.Drawing.Size(181, 26);
-            this.radioButtonSustituto.TabIndex = 0;
-            this.radioButtonSustituto.TabStop = true;
-            this.radioButtonSustituto.Text = "Médico Sustituto";
-            this.radioButtonSustituto.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonInterino
-            // 
-            this.radioButtonInterino.AutoSize = true;
-            this.radioButtonInterino.Location = new System.Drawing.Point(216, 43);
-            this.radioButtonInterino.Name = "radioButtonInterino";
-            this.radioButtonInterino.Size = new System.Drawing.Size(169, 26);
-            this.radioButtonInterino.TabIndex = 0;
-            this.radioButtonInterino.TabStop = true;
-            this.radioButtonInterino.Text = "Médico Interino";
-            this.radioButtonInterino.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -174,24 +136,10 @@
             this.panel1.Size = new System.Drawing.Size(877, 78);
             this.panel1.TabIndex = 98;
             // 
-            // GbxTipo
-            // 
-            this.GbxTipo.Controls.Add(this.radioButtonSustituto);
-            this.GbxTipo.Controls.Add(this.radioButtonTitular);
-            this.GbxTipo.Controls.Add(this.radioButtonInterino);
-            this.GbxTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GbxTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.GbxTipo.Location = new System.Drawing.Point(36, 392);
-            this.GbxTipo.Name = "GbxTipo";
-            this.GbxTipo.Size = new System.Drawing.Size(398, 127);
-            this.GbxTipo.TabIndex = 92;
-            this.GbxTipo.TabStop = false;
-            this.GbxTipo.Text = "TIPO";
-            // 
             // dateTimePickerFecBaja
             // 
             this.dateTimePickerFecBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecBaja.Location = new System.Drawing.Point(482, 493);
+            this.dateTimePickerFecBaja.Location = new System.Drawing.Point(515, 419);
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecBaja.TabIndex = 91;
@@ -200,7 +148,7 @@
             // dateTimePickerFecAlta
             // 
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecAlta.Location = new System.Drawing.Point(482, 427);
+            this.dateTimePickerFecAlta.Location = new System.Drawing.Point(515, 353);
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
             this.dateTimePickerFecAlta.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecAlta.TabIndex = 90;
@@ -268,7 +216,7 @@
             // 
             this.LblFechaBaja.AutoSize = true;
             this.LblFechaBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaBaja.Location = new System.Drawing.Point(478, 462);
+            this.LblFechaBaja.Location = new System.Drawing.Point(511, 388);
             this.LblFechaBaja.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblFechaBaja.Name = "LblFechaBaja";
             this.LblFechaBaja.Size = new System.Drawing.Size(172, 22);
@@ -279,7 +227,7 @@
             // 
             this.LblFechaAlta.AutoSize = true;
             this.LblFechaAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaAlta.Location = new System.Drawing.Point(479, 391);
+            this.LblFechaAlta.Location = new System.Drawing.Point(512, 317);
             this.LblFechaAlta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblFechaAlta.Name = "LblFechaAlta";
             this.LblFechaAlta.Size = new System.Drawing.Size(170, 22);
@@ -295,7 +243,7 @@
             this.LblDireccion.Name = "LblDireccion";
             this.LblDireccion.Size = new System.Drawing.Size(126, 22);
             this.LblDireccion.TabIndex = 79;
-            this.LblDireccion.Text = "DIRECCÍON:";
+            this.LblDireccion.Text = "DIRECCIÓN:";
             // 
             // lblNombre
             // 
@@ -374,7 +322,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnCancelar.Location = new System.Drawing.Point(461, 584);
+            this.BtnCancelar.Location = new System.Drawing.Point(466, 542);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
             this.BtnCancelar.TabIndex = 97;
@@ -386,7 +334,7 @@
             // 
             this.CmbHabDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbHabDes.FormattingEnabled = true;
-            this.CmbHabDes.Location = new System.Drawing.Point(343, 535);
+            this.CmbHabDes.Location = new System.Drawing.Point(346, 484);
             this.CmbHabDes.Name = "CmbHabDes";
             this.CmbHabDes.Size = new System.Drawing.Size(184, 32);
             this.CmbHabDes.TabIndex = 93;
@@ -396,7 +344,7 @@
             // 
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstado.Location = new System.Drawing.Point(228, 539);
+            this.LblEstado.Location = new System.Drawing.Point(231, 488);
             this.LblEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblEstado.Name = "LblEstado";
             this.LblEstado.Size = new System.Drawing.Size(97, 22);
@@ -452,7 +400,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(880, 646);
+            this.ClientSize = new System.Drawing.Size(880, 604);
             this.Controls.Add(this.CmbCampo);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtEleccion);
@@ -466,7 +414,6 @@
             this.Controls.Add(this.CmbHabDes);
             this.Controls.Add(this.CmbPoblacionModificar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.GbxTipo);
             this.Controls.Add(this.dateTimePickerFecBaja);
             this.Controls.Add(this.dateTimePickerFecAlta);
             this.Controls.Add(this.dateTimePickerFecNac);
@@ -487,8 +434,6 @@
             this.Text = "Modificar Médico";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.GbxTipo.ResumeLayout(false);
-            this.GbxTipo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,16 +442,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblModificarMedico;
-        private System.Windows.Forms.RadioButton radioButtonTitular;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.ComboBox CmbTipoModificar;
         private System.Windows.Forms.Label LblTipo;
         private System.Windows.Forms.Label LblPoblacion;
         private System.Windows.Forms.ComboBox CmbPoblacionModificar;
-        private System.Windows.Forms.RadioButton radioButtonSustituto;
-        private System.Windows.Forms.RadioButton radioButtonInterino;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox GbxTipo;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecBaja;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecAlta;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecNac;
