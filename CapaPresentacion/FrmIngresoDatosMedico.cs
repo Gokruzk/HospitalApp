@@ -39,7 +39,8 @@ namespace CapaPresentacion
                     e.Handled = true;
                     if (!objOperacionesPersona.ValidarCedula(TxtCedula.Text))
                         MessageBox.Show($"Error --: " + objMensajes.errores[0], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtNombre.Focus();
+                    else
+                        txtNombre.Focus();
                 }
             }
             catch (Exception ex)
@@ -57,7 +58,8 @@ namespace CapaPresentacion
                     e.Handled = true;
                     if (!objOperacionesPersona.ValidarNombre(txtNombre.Text))
                         MessageBox.Show($"Error --: " + objMensajes.errores[1], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dateTimePickerFecNac.Focus();
+                    else
+                        dateTimePickerFecNac.Focus();
                 }
             }
             catch (Exception ex)
@@ -87,7 +89,8 @@ namespace CapaPresentacion
                     e.Handled = true;
                     if (!objOperacionesPersona.ValidarDireccion(TxtDireccion.Text))
                         MessageBox.Show($"Error --: " + objMensajes.errores[3], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    TxtNumSegSocial.Focus();
+                    else
+                        TxtNumSegSocial.Focus();
                 }
             }
             catch (Exception ex)
@@ -105,7 +108,8 @@ namespace CapaPresentacion
                     e.Handled = true;
                     if (!objOperacionesPersona.ValidarNumeroSeguroSocial(TxtNumSegSocial.Text))
                         MessageBox.Show($"Error --: " + objMensajes.errores[2], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    CmbTipo.Focus();
+                    else
+                        CmbTipo.Focus();
                 }
             }
             catch (Exception ex)
@@ -118,7 +122,14 @@ namespace CapaPresentacion
         {
             try
             {
-                txtNumColegiado.Focus();
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesMedico.ValidarTipoMedico(CmbTipo.SelectedIndex + 1))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[9], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        txtNumColegiado.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -130,7 +141,14 @@ namespace CapaPresentacion
         {
             try
             {
-                CmbPoblacion.Focus();
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesMedico.ValidarNumColegiado(txtNumColegiado.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[11], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        CmbPoblacion.Focus();
+                } 
             }
             catch (Exception ex)
             {
@@ -142,7 +160,14 @@ namespace CapaPresentacion
         {
             try
             {
-                dateTimePickerFecAlta.Focus();
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesMedico.ValidarNumColegiado(txtNumColegiado.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[11], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        dateTimePickerFecAlta.Focus();
+                } 
             }
             catch (Exception ex)
             {
@@ -174,11 +199,41 @@ namespace CapaPresentacion
             }
         }
 
+        private void dateTimePickerFecBaja_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (!objOperacionesMedico.ValidarFechasSutituto(CmbTipo.SelectedIndex + 1, dateTimePickerFecAlta.Value, dateTimePickerFecBaja.Value))
+                MessageBox.Show($"Error --: " + objMensajes.errores[13], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                dateTimePickerFecAlta.Focus();
+        }
+
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
+                objMedico.Nombre = txtNombre.Text;
+                objMedico.Cedula = TxtCedula.Text;
+                objMedico.NumSegSocial = TxtNumSegSocial.Text;
+                objMedico.NumColegiado = txtNumColegiado.Text;
+                objMedico.Tipo = CmbTipo.SelectedIndex + 1 ;
 
+                if(objMedico.Tipo == 3)
+                {
+                    objMedico.FechaA = dateTimePickerFecAlta.Value;
+                    objMedico.FechaB = dateTimePickerFecBaja.Value;
+                }
+                objMedico.FechaNacimiento = dateTimePickerFecNac.Value;
+                
+                objMedico.Poblacion = CmbPoblacion.SelectedIndex + 1; //debe ser de un combobox;
+                objMedico.Estado = 1 ;
+                objMedico.Direccion = TxtDireccion.Text;
+
+                string estado = objOperacionesMedico.RegistrarMedico(objMedico).ToString();
+                if (estado == "CORRECTO")
+                    MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -203,6 +258,8 @@ namespace CapaPresentacion
         {
 
         }
+
+        
 
         //private void txtNIF_TextChanged(object sender, EventArgs e)
         //{
@@ -265,4 +322,6 @@ namespace CapaPresentacion
         //}
     }
 }
+
+
 

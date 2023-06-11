@@ -36,55 +36,16 @@ namespace CLogic
             return numCol.Length == 9;
         }
 
-        public string ValidarTodoMedico(Medico datos)
-        {
-            if (!objPersona.ValidarCedula(datos.Cedula))
-                return objMensajes.errores[0];
-
-            if (!objPersona.ValidarNombre(datos.Nombre))
-                return objMensajes.errores[1];
-
-            if (!objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-                return objMensajes.errores[2];
-
-            if (!objPersona.ValidarDireccion(datos.Direccion))
-                return objMensajes.errores[3];
-
-            if (!ValidarTipoMedico(datos.Tipo))
-                return objMensajes.errores[9];
-
-            if (!ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
-                return objMensajes.errores[13];
-
-            if (!ValidarNumColegiado(datos.NumColegiado))
-                return objMensajes.errores[11];
-
-            return objMensajes.errores[15];
-        }
 
         public string RegistrarMedico(Medico datos)
         {
-            string validacion = ValidarTodoMedico(datos);
-
-            if (ValidarTodoMedico(datos) == "CORRECTO")
-            {
-                string estado = objDatos.RegistroMedico(datos);
-
-                if (estado == "2627")
-                    return estado;
-            }
-
-            return validacion;
+            return objDatos.RegistroMedico(datos);
         }
 
         public string ActualizarMedico(Medico datos)
         {
-            string validacion = ValidarTodoMedico(datos);
+            return "CORRECTO"; //objDatos.UpdateMedico(datos);
 
-            if (validacion == "CORRECTO")
-                objDatos.UpdateMedico(datos);
-
-            return validacion;
         }
 
         public string EliminarMedico(string cedula)

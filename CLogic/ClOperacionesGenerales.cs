@@ -12,25 +12,27 @@ namespace CLogic
 {
     public class ClOperacionesGenerales
     {
-        public string[] errores = {
-                                    "Cédula no válida.",
-                                    "Nombre inválido, recuerde que debe ingresar el nombre sin dígitos o caracteres especiales.",
-                                    "Número de seguro social inválido.",
-                                    "Error, por favor ingrese correctamente la dirección.",
-                                    "Número de teléfono invalido, recuerde que el número de teléfono tiene que contener la cantidad correcta de dígitos al igual que registrarlo sin el código de país.",
-                                    "La provincia ingresada no existe, por favor ingresar una de las 24 provincias del país.",
-                                    "Código postal invalido, recuerde que debe contener la cantidad correcta de dígitos.",
-                                    "Tipo de empleado inexistente.",
-                                    "Descripción requerida.",
-                                    "Tipo de medico inexistente.",
-                                    "El medico tiene que ser sustituto para registrar fecha de alta y baja.",
-                                    "Número de colegiado invalido, recuerde ingresar la cantidad correcta de dígitos.",
-                                    "Día de la semana inexistente.",
-                                    "El dato de finalización no puede ser mayor al de inicio.",
-                                    "Estado inválido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada.",
-                                    "CORRECTO",
-                                    "La cédula digitada ya se encuentra en la base de datos",
-                                    "El empleado no puede ser menor de edad"
+        public string[] errores =
+        {
+            "Cédula no válida.", //0
+            "Nombre inválido, recuerde que debe ingresar el nombre sin dígitos o caracteres especiales.", //1
+            "Número de seguro social inválido.", //2
+            "Error, por favor ingrese correctamente la dirección.", //3
+            "Número de teléfono invalido, recuerde que el número de teléfono tiene que contener la cantidad correcta de dígitos al igual que registrarlo sin el código de país.", //4
+            "La provincia ingresada no existe, por favor ingresar una de las 24 provincias del país.", //5
+            "Código postal invalido, recuerde que debe contener la cantidad correcta de dígitos.", //6
+            "Tipo de empleado inexistente.",//7
+            "Descripción requerida.",//8
+            "Tipo de medico inexistente.",//9
+            "El medico tiene que ser sustituto para registrar fecha de alta y baja.", //10
+            "Número de colegiado invalido, recuerde ingresar la cantidad correcta de dígitos.", //11
+            "Día de la semana inexistente.", //12
+            "El dato de finalización no puede ser mayor al de inicio.", //13
+            "Estado inválido, recuerde ingresar si el estado de las vacaciones es Planificada o Realizada.", //14
+            "CORRECTO", //15
+            "La cédula digitada ya se encuentra en la base de datos", //16
+            "El empleado no puede ser menor de edad", //17
+            "La población ingresada es inválida" //18
         };
     }
 }
