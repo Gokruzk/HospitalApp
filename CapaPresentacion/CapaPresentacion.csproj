@@ -82,12 +82,6 @@
     <Compile Include="FrmEliminarConsulta.Designer.cs">
       <DependentUpon>FrmEliminarConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEliminarVacaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEliminarVacaciones.Designer.cs">
-      <DependentUpon>FrmEliminarVacaciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmIngresarConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +150,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBuscarConsulta.resx">
+      <DependentUpon>FrmBuscarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarEmpleado.resx">
       <DependentUpon>FrmBuscarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarVacaciones.resx">
       <DependentUpon>FrmBuscarVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEliminarConsulta.resx">
+      <DependentUpon>FrmEliminarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresarConsulta.resx">
+      <DependentUpon>FrmIngresarConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresarVacaciones.resx">
       <DependentUpon>FrmIngresarVacaciones.cs</DependentUpon>
@@ -182,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarConsulta.resx">
+      <DependentUpon>FrmModificarConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModificarEmpleado.resx">
       <DependentUpon>FrmModificarEmpleado.cs</DependentUpon>

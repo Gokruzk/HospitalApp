@@ -30,17 +30,17 @@
         {
             this.dateTimePickerFecFin = new System.Windows.Forms.DateTimePicker();
             this.lblModificarVacaciones = new System.Windows.Forms.Label();
-            this.BtnResgistrar = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
             this.LblEstado = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblFechaFin = new System.Windows.Forms.Label();
             this.dateTimePickerFecInicio = new System.Windows.Forms.DateTimePicker();
-            this.LblFechaAlta = new System.Windows.Forms.Label();
-            this.TxtCedula = new System.Windows.Forms.TextBox();
+            this.LblFechaInicio = new System.Windows.Forms.Label();
+            this.TxtIdVac = new System.Windows.Forms.TextBox();
             this.LblIdVacaciones = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LblCedula = new System.Windows.Forms.Label();
+            this.TxtCedula = new System.Windows.Forms.TextBox();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,10 +48,9 @@
             // dateTimePickerFecFin
             // 
             this.dateTimePickerFecFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecFin.Location = new System.Drawing.Point(532, 331);
-            this.dateTimePickerFecFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecFin.Location = new System.Drawing.Point(399, 269);
             this.dateTimePickerFecFin.Name = "dateTimePickerFecFin";
-            this.dateTimePickerFecFin.Size = new System.Drawing.Size(416, 31);
+            this.dateTimePickerFecFin.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecFin.TabIndex = 79;
             // 
             // lblModificarVacaciones
@@ -59,32 +58,31 @@
             this.lblModificarVacaciones.AutoSize = true;
             this.lblModificarVacaciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModificarVacaciones.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblModificarVacaciones.Location = new System.Drawing.Point(323, 27);
-            this.lblModificarVacaciones.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblModificarVacaciones.Location = new System.Drawing.Point(242, 22);
+            this.lblModificarVacaciones.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblModificarVacaciones.Name = "lblModificarVacaciones";
-            this.lblModificarVacaciones.Size = new System.Drawing.Size(438, 38);
+            this.lblModificarVacaciones.Size = new System.Drawing.Size(357, 32);
             this.lblModificarVacaciones.TabIndex = 1;
             this.lblModificarVacaciones.Text = "MODIFICAR VACACIONES";
             // 
-            // BtnResgistrar
+            // BtnModificar
             // 
-            this.BtnResgistrar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnResgistrar.Location = new System.Drawing.Point(311, 405);
-            this.BtnResgistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnResgistrar.Name = "BtnResgistrar";
-            this.BtnResgistrar.Size = new System.Drawing.Size(252, 62);
-            this.BtnResgistrar.TabIndex = 83;
-            this.BtnResgistrar.Text = "Modificar";
-            this.BtnResgistrar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Font = new System.Drawing.Font("Rockwell", 14.25F);
+            this.BtnModificar.Location = new System.Drawing.Point(233, 329);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(189, 50);
+            this.BtnModificar.TabIndex = 83;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.UseVisualStyleBackColor = true;
             // 
             // LblEstado
             // 
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstado.Location = new System.Drawing.Point(379, 217);
-            this.LblEstado.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblEstado.Location = new System.Drawing.Point(284, 176);
+            this.LblEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblEstado.Name = "LblEstado";
-            this.LblEstado.Size = new System.Drawing.Size(121, 28);
+            this.LblEstado.Size = new System.Drawing.Size(97, 22);
             this.LblEstado.TabIndex = 82;
             this.LblEstado.Text = "ESTADO:";
             // 
@@ -92,60 +90,57 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(520, 213);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Location = new System.Drawing.Point(390, 173);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(260, 36);
+            this.comboBox2.Size = new System.Drawing.Size(196, 30);
             this.comboBox2.TabIndex = 81;
             // 
-            // label1
+            // LblFechaFin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(281, 335);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 28);
-            this.label1.TabIndex = 77;
-            this.label1.Text = "FECHA DE FIN:";
+            this.LblFechaFin.AutoSize = true;
+            this.LblFechaFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaFin.Location = new System.Drawing.Point(211, 272);
+            this.LblFechaFin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFechaFin.Name = "LblFechaFin";
+            this.LblFechaFin.Size = new System.Drawing.Size(150, 22);
+            this.LblFechaFin.TabIndex = 77;
+            this.LblFechaFin.Text = "FECHA DE FIN:";
             // 
             // dateTimePickerFecInicio
             // 
             this.dateTimePickerFecInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecInicio.Location = new System.Drawing.Point(532, 277);
-            this.dateTimePickerFecInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecInicio.Location = new System.Drawing.Point(399, 225);
             this.dateTimePickerFecInicio.Name = "dateTimePickerFecInicio";
-            this.dateTimePickerFecInicio.Size = new System.Drawing.Size(416, 31);
+            this.dateTimePickerFecInicio.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecInicio.TabIndex = 80;
             // 
-            // LblFechaAlta
+            // LblFechaInicio
             // 
-            this.LblFechaAlta.AutoSize = true;
-            this.LblFechaAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaAlta.Location = new System.Drawing.Point(281, 281);
-            this.LblFechaAlta.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.LblFechaAlta.Name = "LblFechaAlta";
-            this.LblFechaAlta.Size = new System.Drawing.Size(228, 28);
-            this.LblFechaAlta.TabIndex = 78;
-            this.LblFechaAlta.Text = "FECHA DE INICIO:";
+            this.LblFechaInicio.AutoSize = true;
+            this.LblFechaInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaInicio.Location = new System.Drawing.Point(211, 228);
+            this.LblFechaInicio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFechaInicio.Name = "LblFechaInicio";
+            this.LblFechaInicio.Size = new System.Drawing.Size(180, 22);
+            this.LblFechaInicio.TabIndex = 78;
+            this.LblFechaInicio.Text = "FECHA DE INICIO:";
             // 
-            // TxtCedula
+            // TxtIdVac
             // 
-            this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCedula.Location = new System.Drawing.Point(753, 146);
-            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TxtCedula.Name = "TxtCedula";
-            this.TxtCedula.Size = new System.Drawing.Size(243, 34);
-            this.TxtCedula.TabIndex = 76;
+            this.TxtIdVac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIdVac.Location = new System.Drawing.Point(565, 119);
+            this.TxtIdVac.Name = "TxtIdVac";
+            this.TxtIdVac.Size = new System.Drawing.Size(183, 29);
+            this.TxtIdVac.TabIndex = 76;
             // 
             // LblIdVacaciones
             // 
             this.LblIdVacaciones.AutoSize = true;
             this.LblIdVacaciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIdVacaciones.Location = new System.Drawing.Point(576, 151);
-            this.LblIdVacaciones.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblIdVacaciones.Location = new System.Drawing.Point(432, 123);
+            this.LblIdVacaciones.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblIdVacaciones.Name = "LblIdVacaciones";
-            this.LblIdVacaciones.Size = new System.Drawing.Size(160, 28);
+            this.LblIdVacaciones.Size = new System.Drawing.Size(125, 22);
             this.LblIdVacaciones.TabIndex = 75;
             this.LblIdVacaciones.Text = "ID Vacación:";
             // 
@@ -153,62 +148,60 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.lblModificarVacaciones);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1105, 96);
+            this.panel1.Size = new System.Drawing.Size(829, 78);
             this.panel1.TabIndex = 74;
             // 
-            // label2
+            // LblCedula
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(159, 151);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 28);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "CÉDULA:";
+            this.LblCedula.AutoSize = true;
+            this.LblCedula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCedula.Location = new System.Drawing.Point(119, 123);
+            this.LblCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblCedula.Name = "LblCedula";
+            this.LblCedula.Size = new System.Drawing.Size(96, 22);
+            this.LblCedula.TabIndex = 75;
+            this.LblCedula.Text = "CÉDULA:";
             // 
-            // textBox1
+            // TxtCedula
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(297, 146);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 34);
-            this.textBox1.TabIndex = 76;
+            this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCedula.Location = new System.Drawing.Point(223, 119);
+            this.TxtCedula.Name = "TxtCedula";
+            this.TxtCedula.Size = new System.Drawing.Size(183, 29);
+            this.TxtCedula.TabIndex = 76;
             // 
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnCancelar.Location = new System.Drawing.Point(603, 405);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancelar.Location = new System.Drawing.Point(452, 329);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(252, 62);
+            this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
             this.BtnCancelar.TabIndex = 83;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
             // 
             // FrmModificarVacaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 533);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(832, 433);
             this.Controls.Add(this.dateTimePickerFecFin);
             this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BtnResgistrar);
+            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.LblEstado);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblFechaFin);
             this.Controls.Add(this.dateTimePickerFecInicio);
-            this.Controls.Add(this.LblFechaAlta);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LblFechaInicio);
             this.Controls.Add(this.TxtCedula);
+            this.Controls.Add(this.LblCedula);
+            this.Controls.Add(this.TxtIdVac);
             this.Controls.Add(this.LblIdVacaciones);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmModificarVacaciones";
             this.Text = "Modificar vacaciones";
             this.panel1.ResumeLayout(false);
@@ -222,17 +215,17 @@
 
         private System.Windows.Forms.DateTimePicker dateTimePickerFecFin;
         private System.Windows.Forms.Label lblModificarVacaciones;
-        private System.Windows.Forms.Button BtnResgistrar;
+        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Label LblEstado;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblFechaFin;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecInicio;
-        private System.Windows.Forms.Label LblFechaAlta;
-        private System.Windows.Forms.TextBox TxtCedula;
+        private System.Windows.Forms.Label LblFechaInicio;
+        private System.Windows.Forms.TextBox TxtIdVac;
         private System.Windows.Forms.Label LblIdVacaciones;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label LblCedula;
+        private System.Windows.Forms.TextBox TxtCedula;
         private System.Windows.Forms.Button BtnCancelar;
     }
 }

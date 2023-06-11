@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.BtnRegistrar = new System.Windows.Forms.Button();
-            this.CmbTipoModificar = new System.Windows.Forms.ComboBox();
+            this.CmbTipo = new System.Windows.Forms.ComboBox();
             this.CmbPoblacion = new System.Windows.Forms.ComboBox();
-            this.txtNombreModificar = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.TxtNumSegSocial = new System.Windows.Forms.TextBox();
             this.TxtDireccion = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblModificarEmpleado = new System.Windows.Forms.Label();
+            this.lblIngresarEmpleado = new System.Windows.Forms.Label();
             this.LblNumSegSocial = new System.Windows.Forms.Label();
             this.LblCedula = new System.Windows.Forms.Label();
             this.LblPoblacion = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.LblDireccion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.LblFechaNacimiento = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFecNac = new System.Windows.Forms.DateTimePicker();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,14 +60,14 @@
             this.BtnRegistrar.UseVisualStyleBackColor = true;
             this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
-            // CmbTipoModificar
+            // CmbTipo
             // 
-            this.CmbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.CmbTipoModificar.FormattingEnabled = true;
-            this.CmbTipoModificar.Location = new System.Drawing.Point(566, 289);
-            this.CmbTipoModificar.Name = "CmbTipoModificar";
-            this.CmbTipoModificar.Size = new System.Drawing.Size(184, 37);
-            this.CmbTipoModificar.TabIndex = 60;
+            this.CmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.CmbTipo.FormattingEnabled = true;
+            this.CmbTipo.Location = new System.Drawing.Point(566, 289);
+            this.CmbTipo.Name = "CmbTipo";
+            this.CmbTipo.Size = new System.Drawing.Size(184, 32);
+            this.CmbTipo.TabIndex = 60;
             // 
             // CmbPoblacion
             // 
@@ -75,23 +75,23 @@
             this.CmbPoblacion.FormattingEnabled = true;
             this.CmbPoblacion.Location = new System.Drawing.Point(237, 289);
             this.CmbPoblacion.Name = "CmbPoblacion";
-            this.CmbPoblacion.Size = new System.Drawing.Size(184, 37);
+            this.CmbPoblacion.Size = new System.Drawing.Size(184, 32);
             this.CmbPoblacion.TabIndex = 61;
             // 
-            // txtNombreModificar
+            // TxtNombre
             // 
-            this.txtNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreModificar.Location = new System.Drawing.Point(170, 161);
-            this.txtNombreModificar.Name = "txtNombreModificar";
-            this.txtNombreModificar.Size = new System.Drawing.Size(580, 34);
-            this.txtNombreModificar.TabIndex = 56;
+            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNombre.Location = new System.Drawing.Point(170, 161);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(580, 29);
+            this.TxtNombre.TabIndex = 56;
             // 
             // TxtCedula
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCedula.Location = new System.Drawing.Point(400, 98);
             this.TxtCedula.Name = "TxtCedula";
-            this.TxtCedula.Size = new System.Drawing.Size(183, 34);
+            this.TxtCedula.Size = new System.Drawing.Size(183, 29);
             this.TxtCedula.TabIndex = 55;
             // 
             // TxtNumSegSocial
@@ -99,7 +99,7 @@
             this.TxtNumSegSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumSegSocial.Location = new System.Drawing.Point(300, 338);
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
-            this.TxtNumSegSocial.Size = new System.Drawing.Size(183, 34);
+            this.TxtNumSegSocial.Size = new System.Drawing.Size(183, 29);
             this.TxtNumSegSocial.TabIndex = 54;
             // 
             // TxtDireccion
@@ -107,30 +107,30 @@
             this.TxtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtDireccion.Location = new System.Drawing.Point(179, 245);
             this.TxtDireccion.Name = "TxtDireccion";
-            this.TxtDireccion.Size = new System.Drawing.Size(580, 34);
+            this.TxtDireccion.Size = new System.Drawing.Size(580, 29);
             this.TxtDireccion.TabIndex = 53;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.lblModificarEmpleado);
+            this.panel1.Controls.Add(this.lblIngresarEmpleado);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(829, 78);
             this.panel1.TabIndex = 52;
             // 
-            // lblModificarEmpleado
+            // lblIngresarEmpleado
             // 
-            this.lblModificarEmpleado.AutoSize = true;
-            this.lblModificarEmpleado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModificarEmpleado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblModificarEmpleado.Location = new System.Drawing.Point(237, 23);
-            this.lblModificarEmpleado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblModificarEmpleado.Name = "lblModificarEmpleado";
-            this.lblModificarEmpleado.Size = new System.Drawing.Size(411, 38);
-            this.lblModificarEmpleado.TabIndex = 1;
-            this.lblModificarEmpleado.Text = "INGRESAR EMPLEADOS";
+            this.lblIngresarEmpleado.AutoSize = true;
+            this.lblIngresarEmpleado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresarEmpleado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblIngresarEmpleado.Location = new System.Drawing.Point(237, 23);
+            this.lblIngresarEmpleado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblIngresarEmpleado.Name = "lblIngresarEmpleado";
+            this.lblIngresarEmpleado.Size = new System.Drawing.Size(334, 32);
+            this.lblIngresarEmpleado.TabIndex = 1;
+            this.lblIngresarEmpleado.Text = "INGRESAR EMPLEADOS";
             // 
             // LblNumSegSocial
             // 
@@ -139,7 +139,7 @@
             this.LblNumSegSocial.Location = new System.Drawing.Point(81, 334);
             this.LblNumSegSocial.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblNumSegSocial.Name = "LblNumSegSocial";
-            this.LblNumSegSocial.Size = new System.Drawing.Size(265, 56);
+            this.LblNumSegSocial.Size = new System.Drawing.Size(211, 44);
             this.LblNumSegSocial.TabIndex = 51;
             this.LblNumSegSocial.Text = "NÚMERO DE \r\nSEGURIDAD SOCIAL:";
             // 
@@ -150,7 +150,7 @@
             this.LblCedula.Location = new System.Drawing.Point(296, 105);
             this.LblCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblCedula.Name = "LblCedula";
-            this.LblCedula.Size = new System.Drawing.Size(121, 28);
+            this.LblCedula.Size = new System.Drawing.Size(96, 22);
             this.LblCedula.TabIndex = 50;
             this.LblCedula.Text = "CÉDULA:";
             // 
@@ -161,7 +161,7 @@
             this.LblPoblacion.Location = new System.Drawing.Point(97, 293);
             this.LblPoblacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblPoblacion.Name = "LblPoblacion";
-            this.LblPoblacion.Size = new System.Drawing.Size(166, 28);
+            this.LblPoblacion.Size = new System.Drawing.Size(132, 22);
             this.LblPoblacion.TabIndex = 49;
             this.LblPoblacion.Text = "POBLACIÓN:";
             // 
@@ -172,7 +172,7 @@
             this.LblTipo.Location = new System.Drawing.Point(463, 293);
             this.LblTipo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblTipo.Name = "LblTipo";
-            this.LblTipo.Size = new System.Drawing.Size(78, 28);
+            this.LblTipo.Size = new System.Drawing.Size(62, 22);
             this.LblTipo.TabIndex = 46;
             this.LblTipo.Text = "TIPO:";
             // 
@@ -183,7 +183,7 @@
             this.LblDireccion.Location = new System.Drawing.Point(45, 249);
             this.LblDireccion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblDireccion.Name = "LblDireccion";
-            this.LblDireccion.Size = new System.Drawing.Size(160, 28);
+            this.LblDireccion.Size = new System.Drawing.Size(126, 22);
             this.LblDireccion.TabIndex = 48;
             this.LblDireccion.Text = "DIRECCÍON:";
             // 
@@ -194,7 +194,7 @@
             this.lblNombre.Location = new System.Drawing.Point(60, 165);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(127, 28);
+            this.lblNombre.Size = new System.Drawing.Size(102, 22);
             this.lblNombre.TabIndex = 47;
             this.lblNombre.Text = "NOMBRE:";
             // 
@@ -205,16 +205,16 @@
             this.LblFechaNacimiento.Location = new System.Drawing.Point(34, 207);
             this.LblFechaNacimiento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblFechaNacimiento.Name = "LblFechaNacimiento";
-            this.LblFechaNacimiento.Size = new System.Drawing.Size(306, 28);
+            this.LblFechaNacimiento.Size = new System.Drawing.Size(243, 22);
             this.LblFechaNacimiento.TabIndex = 48;
             this.LblFechaNacimiento.Text = "FECHA DE NACIMIENTO:";
             // 
-            // dateTimePicker1
+            // dateTimePickerFecNac
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(298, 204);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(313, 31);
-            this.dateTimePicker1.TabIndex = 62;
+            this.dateTimePickerFecNac.Location = new System.Drawing.Point(298, 204);
+            this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
+            this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
+            this.dateTimePickerFecNac.TabIndex = 62;
             // 
             // BtnCancelar
             // 
@@ -228,14 +228,15 @@
             // 
             // FrmIngresoDatosEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(834, 478);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.CmbTipoModificar);
+            this.Controls.Add(this.dateTimePickerFecNac);
+            this.Controls.Add(this.CmbTipo);
             this.Controls.Add(this.CmbPoblacion);
             this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.txtNombreModificar);
+            this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.TxtNumSegSocial);
             this.Controls.Add(this.TxtDireccion);
@@ -261,14 +262,14 @@
 
         #endregion
         private System.Windows.Forms.Button BtnRegistrar;
-        private System.Windows.Forms.ComboBox CmbTipoModificar;
+        private System.Windows.Forms.ComboBox CmbTipo;
         private System.Windows.Forms.ComboBox CmbPoblacion;
-        private System.Windows.Forms.TextBox txtNombreModificar;
+        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox TxtCedula;
         private System.Windows.Forms.TextBox TxtNumSegSocial;
         private System.Windows.Forms.TextBox TxtDireccion;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblModificarEmpleado;
+        private System.Windows.Forms.Label lblIngresarEmpleado;
         private System.Windows.Forms.Label LblNumSegSocial;
         private System.Windows.Forms.Label LblCedula;
         private System.Windows.Forms.Label LblPoblacion;
@@ -276,7 +277,7 @@
         private System.Windows.Forms.Label LblDireccion;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label LblFechaNacimiento;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecNac;
         private System.Windows.Forms.Button BtnCancelar;
     }
 }

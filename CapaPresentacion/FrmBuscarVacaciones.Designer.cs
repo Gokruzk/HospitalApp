@@ -32,14 +32,14 @@
             this.lblIngresarVacaciones = new System.Windows.Forms.Label();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.LblCedula = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewVacaciones = new System.Windows.Forms.DataGridView();
             this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_VACACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FecInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FecFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVacaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,19 +83,19 @@
             this.LblCedula.TabIndex = 77;
             this.LblCedula.Text = "CÉDULA:";
             // 
-            // dataGridView1
+            // dataGridViewVacaciones
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewVacaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewVacaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cedula,
             this.ID_VACACION,
             this.Estado,
             this.FecInicio,
             this.FecFin});
-            this.dataGridView1.Location = new System.Drawing.Point(118, 165);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(607, 150);
-            this.dataGridView1.TabIndex = 79;
+            this.dataGridViewVacaciones.Location = new System.Drawing.Point(118, 165);
+            this.dataGridViewVacaciones.Name = "dataGridViewVacaciones";
+            this.dataGridViewVacaciones.Size = new System.Drawing.Size(607, 150);
+            this.dataGridViewVacaciones.TabIndex = 79;
             // 
             // Cedula
             // 
@@ -126,8 +126,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(832, 433);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewVacaciones);
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.LblCedula);
             this.Controls.Add(this.panel1);
@@ -135,7 +136,7 @@
             this.Text = "Buscar Vacaciones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVacaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,7 +148,7 @@
         private System.Windows.Forms.Label lblIngresarVacaciones;
         private System.Windows.Forms.TextBox TxtCedula;
         private System.Windows.Forms.Label LblCedula;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewVacaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_VACACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
