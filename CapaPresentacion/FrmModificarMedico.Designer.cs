@@ -71,19 +71,20 @@
             this.lblModificarMedico.AutoSize = true;
             this.lblModificarMedico.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModificarMedico.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblModificarMedico.Location = new System.Drawing.Point(292, 27);
-            this.lblModificarMedico.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblModificarMedico.Location = new System.Drawing.Point(389, 33);
+            this.lblModificarMedico.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.lblModificarMedico.Name = "lblModificarMedico";
-            this.lblModificarMedico.Size = new System.Drawing.Size(283, 32);
+            this.lblModificarMedico.Size = new System.Drawing.Size(347, 38);
             this.lblModificarMedico.TabIndex = 1;
             this.lblModificarMedico.Text = "MODIFICAR MÉDICO";
             // 
             // radioButtonTitular
             // 
             this.radioButtonTitular.AutoSize = true;
-            this.radioButtonTitular.Location = new System.Drawing.Point(24, 43);
+            this.radioButtonTitular.Location = new System.Drawing.Point(32, 53);
+            this.radioButtonTitular.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonTitular.Name = "radioButtonTitular";
-            this.radioButtonTitular.Size = new System.Drawing.Size(158, 26);
+            this.radioButtonTitular.Size = new System.Drawing.Size(199, 32);
             this.radioButtonTitular.TabIndex = 0;
             this.radioButtonTitular.TabStop = true;
             this.radioButtonTitular.Text = "Médico Titular";
@@ -92,9 +93,10 @@
             // BtnModificar
             // 
             this.BtnModificar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnModificar.Location = new System.Drawing.Point(232, 584);
+            this.BtnModificar.Location = new System.Drawing.Point(309, 719);
+            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(189, 50);
+            this.BtnModificar.Size = new System.Drawing.Size(252, 62);
             this.BtnModificar.TabIndex = 97;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
@@ -104,9 +106,10 @@
             // 
             this.CmbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbTipoModificar.FormattingEnabled = true;
-            this.CmbTipoModificar.Location = new System.Drawing.Point(611, 282);
+            this.CmbTipoModificar.Location = new System.Drawing.Point(815, 347);
+            this.CmbTipoModificar.Margin = new System.Windows.Forms.Padding(4);
             this.CmbTipoModificar.Name = "CmbTipoModificar";
-            this.CmbTipoModificar.Size = new System.Drawing.Size(184, 32);
+            this.CmbTipoModificar.Size = new System.Drawing.Size(244, 37);
             this.CmbTipoModificar.TabIndex = 96;
             this.CmbTipoModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbTipoModificar_KeyPress);
             // 
@@ -114,10 +117,10 @@
             // 
             this.LblTipo.AutoSize = true;
             this.LblTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTipo.Location = new System.Drawing.Point(501, 286);
-            this.LblTipo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblTipo.Location = new System.Drawing.Point(668, 352);
+            this.LblTipo.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblTipo.Name = "LblTipo";
-            this.LblTipo.Size = new System.Drawing.Size(62, 22);
+            this.LblTipo.Size = new System.Drawing.Size(78, 28);
             this.LblTipo.TabIndex = 95;
             this.LblTipo.Text = "TIPO:";
             // 
@@ -125,10 +128,10 @@
             // 
             this.LblPoblacion.AutoSize = true;
             this.LblPoblacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPoblacion.Location = new System.Drawing.Point(471, 344);
-            this.LblPoblacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblPoblacion.Location = new System.Drawing.Point(628, 423);
+            this.LblPoblacion.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblPoblacion.Name = "LblPoblacion";
-            this.LblPoblacion.Size = new System.Drawing.Size(132, 22);
+            this.LblPoblacion.Size = new System.Drawing.Size(166, 28);
             this.LblPoblacion.TabIndex = 94;
             this.LblPoblacion.Text = "POBLACIÓN:";
             // 
@@ -136,18 +139,20 @@
             // 
             this.CmbPoblacionModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbPoblacionModificar.FormattingEnabled = true;
-            this.CmbPoblacionModificar.Location = new System.Drawing.Point(611, 340);
+            this.CmbPoblacionModificar.Location = new System.Drawing.Point(815, 418);
+            this.CmbPoblacionModificar.Margin = new System.Windows.Forms.Padding(4);
             this.CmbPoblacionModificar.Name = "CmbPoblacionModificar";
-            this.CmbPoblacionModificar.Size = new System.Drawing.Size(184, 32);
+            this.CmbPoblacionModificar.Size = new System.Drawing.Size(244, 37);
             this.CmbPoblacionModificar.TabIndex = 93;
             this.CmbPoblacionModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbPoblacionModificar_KeyPress);
             // 
             // radioButtonSustituto
             // 
             this.radioButtonSustituto.AutoSize = true;
-            this.radioButtonSustituto.Location = new System.Drawing.Point(115, 87);
+            this.radioButtonSustituto.Location = new System.Drawing.Point(153, 107);
+            this.radioButtonSustituto.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonSustituto.Name = "radioButtonSustituto";
-            this.radioButtonSustituto.Size = new System.Drawing.Size(181, 26);
+            this.radioButtonSustituto.Size = new System.Drawing.Size(225, 32);
             this.radioButtonSustituto.TabIndex = 0;
             this.radioButtonSustituto.TabStop = true;
             this.radioButtonSustituto.Text = "Médico Sustituto";
@@ -156,9 +161,10 @@
             // radioButtonInterino
             // 
             this.radioButtonInterino.AutoSize = true;
-            this.radioButtonInterino.Location = new System.Drawing.Point(216, 43);
+            this.radioButtonInterino.Location = new System.Drawing.Point(288, 53);
+            this.radioButtonInterino.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonInterino.Name = "radioButtonInterino";
-            this.radioButtonInterino.Size = new System.Drawing.Size(169, 26);
+            this.radioButtonInterino.Size = new System.Drawing.Size(213, 32);
             this.radioButtonInterino.TabIndex = 0;
             this.radioButtonInterino.TabStop = true;
             this.radioButtonInterino.Text = "Médico Interino";
@@ -169,9 +175,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.lblModificarMedico);
             this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(877, 78);
+            this.panel1.Size = new System.Drawing.Size(1169, 96);
             this.panel1.TabIndex = 98;
             // 
             // GbxTipo
@@ -181,9 +187,11 @@
             this.GbxTipo.Controls.Add(this.radioButtonInterino);
             this.GbxTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GbxTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.GbxTipo.Location = new System.Drawing.Point(36, 392);
+            this.GbxTipo.Location = new System.Drawing.Point(48, 482);
+            this.GbxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.GbxTipo.Name = "GbxTipo";
-            this.GbxTipo.Size = new System.Drawing.Size(398, 127);
+            this.GbxTipo.Padding = new System.Windows.Forms.Padding(4);
+            this.GbxTipo.Size = new System.Drawing.Size(531, 156);
             this.GbxTipo.TabIndex = 92;
             this.GbxTipo.TabStop = false;
             this.GbxTipo.Text = "TIPO";
@@ -191,27 +199,30 @@
             // dateTimePickerFecBaja
             // 
             this.dateTimePickerFecBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecBaja.Location = new System.Drawing.Point(482, 493);
+            this.dateTimePickerFecBaja.Location = new System.Drawing.Point(643, 607);
+            this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
-            this.dateTimePickerFecBaja.Size = new System.Drawing.Size(313, 26);
+            this.dateTimePickerFecBaja.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecBaja.TabIndex = 91;
             this.dateTimePickerFecBaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecBaja_KeyPress);
             // 
             // dateTimePickerFecAlta
             // 
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecAlta.Location = new System.Drawing.Point(482, 427);
+            this.dateTimePickerFecAlta.Location = new System.Drawing.Point(643, 526);
+            this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
-            this.dateTimePickerFecAlta.Size = new System.Drawing.Size(313, 26);
+            this.dateTimePickerFecAlta.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecAlta.TabIndex = 90;
             this.dateTimePickerFecAlta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecAlta_KeyPress);
             // 
             // dateTimePickerFecNac
             // 
             this.dateTimePickerFecNac.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecNac.Location = new System.Drawing.Point(311, 184);
+            this.dateTimePickerFecNac.Location = new System.Drawing.Point(415, 226);
+            this.dateTimePickerFecNac.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
-            this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
+            this.dateTimePickerFecNac.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecNac.TabIndex = 89;
             this.dateTimePickerFecNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecNac_KeyPress);
             // 
@@ -219,37 +230,40 @@
             // 
             this.LblFechaNacimiento.AutoSize = true;
             this.LblFechaNacimiento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaNacimiento.Location = new System.Drawing.Point(47, 187);
-            this.LblFechaNacimiento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFechaNacimiento.Location = new System.Drawing.Point(63, 230);
+            this.LblFechaNacimiento.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblFechaNacimiento.Name = "LblFechaNacimiento";
-            this.LblFechaNacimiento.Size = new System.Drawing.Size(243, 22);
+            this.LblFechaNacimiento.Size = new System.Drawing.Size(306, 28);
             this.LblFechaNacimiento.TabIndex = 88;
             this.LblFechaNacimiento.Text = "FECHA DE NACIMIENTO:";
             // 
             // txtNombreModificar
             // 
             this.txtNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreModificar.Location = new System.Drawing.Point(190, 142);
+            this.txtNombreModificar.Location = new System.Drawing.Point(253, 175);
+            this.txtNombreModificar.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreModificar.Name = "txtNombreModificar";
-            this.txtNombreModificar.Size = new System.Drawing.Size(580, 29);
+            this.txtNombreModificar.Size = new System.Drawing.Size(772, 34);
             this.txtNombreModificar.TabIndex = 87;
             this.txtNombreModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreModificar_KeyPress);
             // 
             // TxtNumSegSocial
             // 
             this.TxtNumSegSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNumSegSocial.Location = new System.Drawing.Point(266, 282);
+            this.TxtNumSegSocial.Location = new System.Drawing.Point(355, 347);
+            this.TxtNumSegSocial.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
-            this.TxtNumSegSocial.Size = new System.Drawing.Size(183, 29);
+            this.TxtNumSegSocial.Size = new System.Drawing.Size(243, 34);
             this.TxtNumSegSocial.TabIndex = 85;
             this.TxtNumSegSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumSegSocial_KeyPress);
             // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(190, 228);
+            this.txtDireccion.Location = new System.Drawing.Point(253, 281);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(580, 29);
+            this.txtDireccion.Size = new System.Drawing.Size(772, 34);
             this.txtDireccion.TabIndex = 84;
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
@@ -257,10 +271,10 @@
             // 
             this.LblNumSegSocial.AutoSize = true;
             this.LblNumSegSocial.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNumSegSocial.Location = new System.Drawing.Point(47, 278);
-            this.LblNumSegSocial.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblNumSegSocial.Location = new System.Drawing.Point(63, 342);
+            this.LblNumSegSocial.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblNumSegSocial.Name = "LblNumSegSocial";
-            this.LblNumSegSocial.Size = new System.Drawing.Size(211, 44);
+            this.LblNumSegSocial.Size = new System.Drawing.Size(265, 56);
             this.LblNumSegSocial.TabIndex = 83;
             this.LblNumSegSocial.Text = "NÚMERO DE \r\nSEGURIDAD SOCIAL:";
             // 
@@ -268,10 +282,10 @@
             // 
             this.LblFechaBaja.AutoSize = true;
             this.LblFechaBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaBaja.Location = new System.Drawing.Point(478, 462);
-            this.LblFechaBaja.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFechaBaja.Location = new System.Drawing.Point(637, 569);
+            this.LblFechaBaja.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblFechaBaja.Name = "LblFechaBaja";
-            this.LblFechaBaja.Size = new System.Drawing.Size(172, 22);
+            this.LblFechaBaja.Size = new System.Drawing.Size(214, 28);
             this.LblFechaBaja.TabIndex = 81;
             this.LblFechaBaja.Text = "FECHA DE BAJA:";
             // 
@@ -279,10 +293,10 @@
             // 
             this.LblFechaAlta.AutoSize = true;
             this.LblFechaAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaAlta.Location = new System.Drawing.Point(479, 391);
-            this.LblFechaAlta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFechaAlta.Location = new System.Drawing.Point(639, 481);
+            this.LblFechaAlta.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblFechaAlta.Name = "LblFechaAlta";
-            this.LblFechaAlta.Size = new System.Drawing.Size(170, 22);
+            this.LblFechaAlta.Size = new System.Drawing.Size(212, 28);
             this.LblFechaAlta.TabIndex = 80;
             this.LblFechaAlta.Text = "FECHA DE ALTA:";
             // 
@@ -290,10 +304,10 @@
             // 
             this.LblDireccion.AutoSize = true;
             this.LblDireccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDireccion.Location = new System.Drawing.Point(56, 232);
-            this.LblDireccion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblDireccion.Location = new System.Drawing.Point(75, 286);
+            this.LblDireccion.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblDireccion.Name = "LblDireccion";
-            this.LblDireccion.Size = new System.Drawing.Size(126, 22);
+            this.LblDireccion.Size = new System.Drawing.Size(160, 28);
             this.LblDireccion.TabIndex = 79;
             this.LblDireccion.Text = "DIRECCÍON:";
             // 
@@ -301,10 +315,10 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(80, 146);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblNombre.Location = new System.Drawing.Point(107, 180);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(102, 22);
+            this.lblNombre.Size = new System.Drawing.Size(127, 28);
             this.lblNombre.TabIndex = 78;
             this.lblNombre.Text = "NOMBRE:";
             // 
@@ -337,17 +351,19 @@
             "Sucumbíos",
             "Tungurahua",
             "Zamora Chinchipe"});
-            this.comboBoxProvincia.Location = new System.Drawing.Point(262, 889);
+            this.comboBoxProvincia.Location = new System.Drawing.Point(349, 1094);
+            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
-            this.comboBoxProvincia.Size = new System.Drawing.Size(146, 24);
+            this.comboBoxProvincia.Size = new System.Drawing.Size(193, 27);
             this.comboBoxProvincia.TabIndex = 77;
             // 
             // txtNumColegiado
             // 
             this.txtNumColegiado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.txtNumColegiado.Location = new System.Drawing.Point(299, 341);
+            this.txtNumColegiado.Location = new System.Drawing.Point(399, 420);
+            this.txtNumColegiado.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumColegiado.Name = "txtNumColegiado";
-            this.txtNumColegiado.Size = new System.Drawing.Size(150, 29);
+            this.txtNumColegiado.Size = new System.Drawing.Size(199, 35);
             this.txtNumColegiado.TabIndex = 76;
             this.txtNumColegiado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumColegiado_KeyPress);
             // 
@@ -355,9 +371,10 @@
             // 
             this.lblColegio.AutoSize = true;
             this.lblColegio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.lblColegio.Location = new System.Drawing.Point(32, 344);
+            this.lblColegio.Location = new System.Drawing.Point(43, 423);
+            this.lblColegio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColegio.Name = "lblColegio";
-            this.lblColegio.Size = new System.Drawing.Size(261, 22);
+            this.lblColegio.Size = new System.Drawing.Size(328, 28);
             this.lblColegio.TabIndex = 75;
             this.lblColegio.Text = "NÚMERO DE COLEGIADO: ";
             // 
@@ -365,18 +382,20 @@
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvincia.Location = new System.Drawing.Point(101, 889);
+            this.lblProvincia.Location = new System.Drawing.Point(135, 1094);
+            this.lblProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(77, 16);
+            this.lblProvincia.Size = new System.Drawing.Size(102, 20);
             this.lblProvincia.TabIndex = 74;
             this.lblProvincia.Text = "PROVINCIA";
             // 
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnCancelar.Location = new System.Drawing.Point(461, 584);
+            this.BtnCancelar.Location = new System.Drawing.Point(615, 719);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
+            this.BtnCancelar.Size = new System.Drawing.Size(252, 62);
             this.BtnCancelar.TabIndex = 97;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -386,9 +405,13 @@
             // 
             this.CmbHabDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbHabDes.FormattingEnabled = true;
-            this.CmbHabDes.Location = new System.Drawing.Point(343, 535);
+            this.CmbHabDes.Items.AddRange(new object[] {
+            "Habilitado",
+            "Deshabilitado"});
+            this.CmbHabDes.Location = new System.Drawing.Point(457, 658);
+            this.CmbHabDes.Margin = new System.Windows.Forms.Padding(4);
             this.CmbHabDes.Name = "CmbHabDes";
-            this.CmbHabDes.Size = new System.Drawing.Size(184, 32);
+            this.CmbHabDes.Size = new System.Drawing.Size(244, 37);
             this.CmbHabDes.TabIndex = 93;
             this.CmbHabDes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbHabDes_KeyPress);
             // 
@@ -396,10 +419,10 @@
             // 
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstado.Location = new System.Drawing.Point(228, 539);
-            this.LblEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblEstado.Location = new System.Drawing.Point(304, 663);
+            this.LblEstado.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblEstado.Name = "LblEstado";
-            this.LblEstado.Size = new System.Drawing.Size(97, 22);
+            this.LblEstado.Size = new System.Drawing.Size(121, 28);
             this.LblEstado.TabIndex = 103;
             this.LblEstado.Text = "ESTADO:";
             // 
@@ -410,18 +433,20 @@
             this.CmbCampo.Items.AddRange(new object[] {
             "CÉDULA",
             "NUM. SEGURIDAD SOCIAL"});
-            this.CmbCampo.Location = new System.Drawing.Point(174, 95);
+            this.CmbCampo.Location = new System.Drawing.Point(232, 117);
+            this.CmbCampo.Margin = new System.Windows.Forms.Padding(4);
             this.CmbCampo.Name = "CmbCampo";
-            this.CmbCampo.Size = new System.Drawing.Size(226, 32);
+            this.CmbCampo.Size = new System.Drawing.Size(300, 37);
             this.CmbCampo.TabIndex = 107;
             this.CmbCampo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbCampo_KeyPress);
             // 
             // TxtEleccion
             // 
             this.TxtEleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEleccion.Location = new System.Drawing.Point(429, 95);
+            this.TxtEleccion.Location = new System.Drawing.Point(572, 117);
+            this.TxtEleccion.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEleccion.Name = "TxtEleccion";
-            this.TxtEleccion.Size = new System.Drawing.Size(183, 29);
+            this.TxtEleccion.Size = new System.Drawing.Size(243, 34);
             this.TxtEleccion.TabIndex = 105;
             this.TxtEleccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEleccion_KeyPress);
             // 
@@ -429,19 +454,20 @@
             // 
             this.LblCedula.AutoSize = true;
             this.LblCedula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCedula.Location = new System.Drawing.Point(63, 102);
-            this.LblCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblCedula.Location = new System.Drawing.Point(84, 126);
+            this.LblCedula.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblCedula.Name = "LblCedula";
-            this.LblCedula.Size = new System.Drawing.Size(88, 22);
+            this.LblCedula.Size = new System.Drawing.Size(110, 28);
             this.LblCedula.TabIndex = 104;
             this.LblCedula.Text = "CAMPO:";
             // 
             // BtnBuscar
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnBuscar.Location = new System.Drawing.Point(644, 90);
+            this.BtnBuscar.Location = new System.Drawing.Point(859, 111);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(189, 39);
+            this.BtnBuscar.Size = new System.Drawing.Size(252, 48);
             this.BtnBuscar.TabIndex = 106;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
@@ -449,10 +475,10 @@
             // 
             // FrmModificarMedico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(880, 646);
+            this.ClientSize = new System.Drawing.Size(1173, 795);
             this.Controls.Add(this.CmbCampo);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtEleccion);
@@ -483,8 +509,10 @@
             this.Controls.Add(this.txtNumColegiado);
             this.Controls.Add(this.lblColegio);
             this.Controls.Add(this.lblProvincia);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmModificarMedico";
             this.Text = "Modificar Médico";
+            this.Load += new System.EventHandler(this.FrmModificarMedico_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.GbxTipo.ResumeLayout(false);

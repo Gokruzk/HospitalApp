@@ -27,8 +27,6 @@ namespace CapaPresentacion
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
         readonly ClOperacionesPoblacion objOperacionesPoblacion = new ClOperacionesPoblacion();
 
-        
-
         private void FrmIngresoDatosMedico_Load(object sender, EventArgs e)
         {
             List<string> tipos = objOperacionesPoblacion.CargarPoblaciones();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CLogic;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,16 @@ namespace CapaPresentacion
 {
     public partial class FrmModificarMedico : Form
     {
+        Medico objMedico = new Medico();
+        readonly ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+        readonly ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
+        readonly ClOperacionesPoblacion objOperacionesPoblacion = new ClOperacionesPoblacion();
+
         public FrmModificarMedico()
         {
             InitializeComponent();
-            CmbCampo.Enabled = false;
-            TxtEleccion.Enabled = false;
-            BtnBuscar.Enabled = false;
+
 
             txtNombreModificar.Enabled = false;
             dateTimePickerFecNac.Enabled = false;
@@ -57,21 +63,50 @@ namespace CapaPresentacion
             }
         }
 
+        private void visibilizar()
+        {
+            txtNombreModificar.Enabled = true;
+            dateTimePickerFecNac.Enabled = true;
+            txtDireccion.Enabled = true;
+            TxtNumSegSocial.Enabled = true;
+            CmbTipoModificar.Enabled = true;
+            txtNumColegiado.Enabled = true;
+            CmbPoblacionModificar.Enabled = true;
+            GbxTipo.Enabled = true;
+            dateTimePickerFecAlta.Enabled = true;
+            dateTimePickerFecBaja.Enabled = true;
+            CmbHabDes.Enabled = true;
+        }
+
+        private void asignar()
+        {
+            txtNombreModificar.Text = objMedico.Nombre;
+            dateTimePickerFecNac.Value = objMedico.FechaNacimiento;
+            txtDireccion.Text = objMedico.Direccion;
+            TxtNumSegSocial.Text = objMedico.NumSegSocial;
+            CmbTipoModificar.SelectedIndex = objMedico.Tipo - 1;
+            txtNumColegiado.Text = objMedico.NumColegiado;
+            CmbPoblacionModificar.SelectedIndex = objMedico.Poblacion - 1;
+            dateTimePickerFecAlta.Value = objMedico.FechaA;
+            dateTimePickerFecBaja.Value = objMedico.FechaB;
+            CmbHabDes.SelectedIndex = objMedico.Estado - 1;
+        }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                txtNombreModificar.Enabled = true;
-                dateTimePickerFecNac.Enabled = true;
-                txtDireccion.Enabled = true;
-                TxtNumSegSocial.Enabled = true;
-                CmbTipoModificar.Enabled = true;
-                txtNumColegiado.Enabled = true;
-                CmbPoblacionModificar.Enabled = true;
-                GbxTipo.Enabled = true;
-                dateTimePickerFecAlta.Enabled = true;
-                dateTimePickerFecBaja.Enabled = true;
-                CmbHabDes.Enabled = true;
+                if(CmbCampo.SelectedItem.ToString() == "CÉDULA") //|| CmbCampo.SelectedItem.ToString() == "NUM.SEGURIDAD SOCIAL")
+                {
+                    objMedico = objOperacionesMedico.CargarMedicoCedula(TxtEleccion.Text);
+
+                    if (objMedico != null)
+                    {
+                        visibilizar();
+                        asignar();
+                    }
+                }    
+               
             }
             catch (Exception ex)
             {
@@ -222,6 +257,20 @@ namespace CapaPresentacion
             {
                 MessageBox.Show($"Error BtnCancelar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmModificarMedico_Load(object sender, EventArgs e)
+        {
+            List<string> tipos = objOperacionesPoblacion.CargarPoblaciones();
+
+            foreach (string tipo in tipos)
+                CmbPoblacionModificar.Items.Add(tipo);
+            tipos = objOperacionesMedico.CargarTiposMedicos();
+
+            foreach (string tipo in tipos)
+                CmbTipoModificar.Items.Add(tipo);
+
+
         }
     }
 }
