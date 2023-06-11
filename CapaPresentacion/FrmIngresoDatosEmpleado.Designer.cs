@@ -68,6 +68,7 @@
             this.CmbTipo.Name = "CmbTipo";
             this.CmbTipo.Size = new System.Drawing.Size(184, 32);
             this.CmbTipo.TabIndex = 60;
+            this.CmbTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbTipo_KeyPress);
             // 
             // CmbPoblacion
             // 
@@ -77,6 +78,7 @@
             this.CmbPoblacion.Name = "CmbPoblacion";
             this.CmbPoblacion.Size = new System.Drawing.Size(184, 32);
             this.CmbPoblacion.TabIndex = 61;
+            this.CmbPoblacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbPoblacion_KeyPress);
             // 
             // TxtNombre
             // 
@@ -85,6 +87,7 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(580, 29);
             this.TxtNombre.TabIndex = 56;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // TxtCedula
             // 
@@ -93,6 +96,7 @@
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(183, 29);
             this.TxtCedula.TabIndex = 55;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // TxtNumSegSocial
             // 
@@ -101,6 +105,7 @@
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
             this.TxtNumSegSocial.Size = new System.Drawing.Size(183, 29);
             this.TxtNumSegSocial.TabIndex = 54;
+            this.TxtNumSegSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumSegSocial_KeyPress);
             // 
             // TxtDireccion
             // 
@@ -109,6 +114,7 @@
             this.TxtDireccion.Name = "TxtDireccion";
             this.TxtDireccion.Size = new System.Drawing.Size(580, 29);
             this.TxtDireccion.TabIndex = 53;
+            this.TxtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
             // panel1
             // 
@@ -215,6 +221,7 @@
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecNac.TabIndex = 62;
+            this.dateTimePickerFecNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecNac_KeyPress);
             // 
             // BtnCancelar
             // 
@@ -225,6 +232,7 @@
             this.BtnCancelar.TabIndex = 58;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // FrmIngresoDatosEmpleado
             // 

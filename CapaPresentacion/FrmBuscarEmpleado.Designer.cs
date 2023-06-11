@@ -161,6 +161,7 @@
             this.TxtEleccion.Name = "TxtEleccion";
             this.TxtEleccion.Size = new System.Drawing.Size(183, 29);
             this.TxtEleccion.TabIndex = 55;
+            this.TxtEleccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEleccion_KeyPress);
             // 
             // BtnBuscar
             // 
@@ -171,6 +172,7 @@
             this.BtnBuscar.TabIndex = 57;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // CmbCampo
             // 
@@ -183,6 +185,7 @@
             this.CmbCampo.Name = "CmbCampo";
             this.CmbCampo.Size = new System.Drawing.Size(226, 32);
             this.CmbCampo.TabIndex = 102;
+            this.CmbCampo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbCampo_KeyPress);
             // 
             // FrmBuscarEmpleado
             // 

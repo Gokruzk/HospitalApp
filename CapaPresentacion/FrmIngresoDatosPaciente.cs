@@ -16,5 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

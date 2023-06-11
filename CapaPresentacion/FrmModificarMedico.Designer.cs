@@ -98,6 +98,7 @@
             this.BtnModificar.TabIndex = 97;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // CmbTipoModificar
             // 
@@ -107,6 +108,7 @@
             this.CmbTipoModificar.Name = "CmbTipoModificar";
             this.CmbTipoModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbTipoModificar.TabIndex = 96;
+            this.CmbTipoModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbTipoModificar_KeyPress);
             // 
             // LblTipo
             // 
@@ -138,6 +140,7 @@
             this.CmbPoblacionModificar.Name = "CmbPoblacionModificar";
             this.CmbPoblacionModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbPoblacionModificar.TabIndex = 93;
+            this.CmbPoblacionModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbPoblacionModificar_KeyPress);
             // 
             // radioButtonSustituto
             // 
@@ -192,6 +195,7 @@
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecBaja.TabIndex = 91;
+            this.dateTimePickerFecBaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecBaja_KeyPress);
             // 
             // dateTimePickerFecAlta
             // 
@@ -200,6 +204,7 @@
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
             this.dateTimePickerFecAlta.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecAlta.TabIndex = 90;
+            this.dateTimePickerFecAlta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecAlta_KeyPress);
             // 
             // dateTimePickerFecNac
             // 
@@ -208,6 +213,7 @@
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecNac.TabIndex = 89;
+            this.dateTimePickerFecNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecNac_KeyPress);
             // 
             // LblFechaNacimiento
             // 
@@ -227,6 +233,7 @@
             this.txtNombreModificar.Name = "txtNombreModificar";
             this.txtNombreModificar.Size = new System.Drawing.Size(580, 29);
             this.txtNombreModificar.TabIndex = 87;
+            this.txtNombreModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreModificar_KeyPress);
             // 
             // TxtNumSegSocial
             // 
@@ -235,6 +242,7 @@
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
             this.TxtNumSegSocial.Size = new System.Drawing.Size(183, 29);
             this.TxtNumSegSocial.TabIndex = 85;
+            this.TxtNumSegSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumSegSocial_KeyPress);
             // 
             // txtDireccion
             // 
@@ -243,6 +251,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(580, 29);
             this.txtDireccion.TabIndex = 84;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // LblNumSegSocial
             // 
@@ -340,6 +349,7 @@
             this.txtNumColegiado.Name = "txtNumColegiado";
             this.txtNumColegiado.Size = new System.Drawing.Size(150, 29);
             this.txtNumColegiado.TabIndex = 76;
+            this.txtNumColegiado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumColegiado_KeyPress);
             // 
             // lblColegio
             // 
@@ -370,6 +380,7 @@
             this.BtnCancelar.TabIndex = 97;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // CmbHabDes
             // 
@@ -379,6 +390,7 @@
             this.CmbHabDes.Name = "CmbHabDes";
             this.CmbHabDes.Size = new System.Drawing.Size(184, 32);
             this.CmbHabDes.TabIndex = 93;
+            this.CmbHabDes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbHabDes_KeyPress);
             // 
             // LblEstado
             // 
@@ -402,6 +414,7 @@
             this.CmbCampo.Name = "CmbCampo";
             this.CmbCampo.Size = new System.Drawing.Size(226, 32);
             this.CmbCampo.TabIndex = 107;
+            this.CmbCampo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbCampo_KeyPress);
             // 
             // TxtEleccion
             // 
@@ -410,6 +423,7 @@
             this.TxtEleccion.Name = "TxtEleccion";
             this.TxtEleccion.Size = new System.Drawing.Size(183, 29);
             this.TxtEleccion.TabIndex = 105;
+            this.TxtEleccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEleccion_KeyPress);
             // 
             // LblCedula
             // 
@@ -431,6 +445,7 @@
             this.BtnBuscar.TabIndex = 106;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // FrmModificarMedico
             // 
