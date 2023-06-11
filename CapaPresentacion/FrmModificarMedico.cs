@@ -32,7 +32,6 @@ namespace CapaPresentacion
             CmbTipoModificar.Enabled = false;
             txtNumColegiado.Enabled = false;
             CmbPoblacionModificar.Enabled = false;
-            GbxTipo.Enabled = false;
             dateTimePickerFecAlta.Enabled = false;
             dateTimePickerFecBaja.Enabled = false;
             CmbHabDes.Enabled = false;
@@ -40,27 +39,35 @@ namespace CapaPresentacion
 
         private void CmbCampo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                TxtEleccion.Enabled = true;
-                TxtEleccion.Focus();
+                try
+                {
+                    TxtEleccion.Enabled = true;
+                    TxtEleccion.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error CmbCampo: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error CmbCampo: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void TxtEleccion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                BtnBuscar.Enabled = true;
+                try
+                {
+                    BtnBuscar.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error TxtEleccion: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error TxtEleccion: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void visibilizar()
@@ -116,122 +123,156 @@ namespace CapaPresentacion
 
         private void txtNombreModificar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
 
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error txtNombreModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void dateTimePickerFecNac_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    txtDireccion.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error DateTimeFechaNaciemiento: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error DateTimeFechaNaciemiento: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    TxtNumSegSocial.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error TxtDireccion: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error TxtDireccion: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void TxtNumSegSocial_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    CmbTipoModificar.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error TxtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error TxtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void CmbTipoModificar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    txtNumColegiado.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error CmbTipoModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error CmbTipoModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void txtNumColegiado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    CmbPoblacionModificar.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error TxtNumeroColediado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error TxtNumeroColediado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void CmbPoblacionModificar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    dateTimePickerFecAlta.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error CmbPoblacionModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error CmbPoblacionModificar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void dateTimePickerFecAlta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    dateTimePickerFecBaja.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error DateTimeFechaAlta: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error DateTimeFechaAlta: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void dateTimePickerFecBaja_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    CmbHabDes.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error DateTimeFechaBaja: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error DateTimeFechaBaja: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void CmbHabDes_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-
+                try
+                {
+                    BtnModificar.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error CmbHabilitadoDeshabilitado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error CmbHabilitadoDeshabilitado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -250,7 +291,7 @@ namespace CapaPresentacion
         {
             try
             {
-                MessageBox.Show($"El medico no ha sido modificado", "Cancalar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"El medico no ha sido modificado", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             catch (Exception ex)

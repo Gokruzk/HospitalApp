@@ -111,6 +111,15 @@ namespace CapaPresentacion
             }
         }
 
+<<<<<<< HEAD
+        private void BtnRegistrar_Click(object sender, EventArgs e) {
+            objEmpleado.Cedula = "0503959447";
+            objEmpleado.Nombre = "Kevin Tapia";
+            objEmpleado.Direccion = "Av. Canonigo Ramos";
+            objEmpleado.NumSegSocial = "433-69-6684";
+            //objEmpleado.Tipo = "Administrativo";
+            objEmpleado.Poblacion = 1;
+=======
         private void TxtNumSegSocial_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
@@ -123,25 +132,26 @@ namespace CapaPresentacion
             {
                 MessageBox.Show($"Error txtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+>>>>>>> Agregado KeyPress en formularios de Ingreso, Modificacion y Busqueda.
         }
 
-        private void BtnRegistrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        //private void BtnRegistrar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            //objEmpleado.Cedula = "0503959447";
-            //objEmpleado.Nombre = "Kevin Tapia";
-            //objEmpleado.Direccion = "Av. Canonigo Ramos";
-            //objEmpleado.NumSegSocial = "433-69-6684";
-            //objEmpleado.Tipo = "Administrativo";
-            //objEmpleado.Poblacion = 1;
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    //objEmpleado.Cedula = "0503959447";
+        //    //objEmpleado.Nombre = "Kevin Tapia";
+        //    //objEmpleado.Direccion = "Av. Canonigo Ramos";
+        //    //objEmpleado.NumSegSocial = "433-69-6684";
+        //    //objEmpleado.Tipo = "Administrativo";
+        //    //objEmpleado.Poblacion = 1;
+        //}
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
@@ -156,6 +166,23 @@ namespace CapaPresentacion
             }
         }
 
-        
+        private void BtnRegistrar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtNumSegSocial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                BtnRegistrar.Enabled = true;
+                BtnRegistrar.Focus();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error txtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

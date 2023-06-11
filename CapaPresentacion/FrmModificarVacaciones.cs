@@ -23,26 +23,34 @@ namespace CapaPresentacion
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                TxtIdVac.Focus();
+                try
+                {
+                    TxtIdVac.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error TxtCedula: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error TxtCedula: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void TxtIdVac_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                CmbEstado.Focus();
+                try
+                {
+                    CmbEstado.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error TxtIdVacaciones: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error TxtIdVacaciones: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -62,38 +70,50 @@ namespace CapaPresentacion
 
         private void CmbEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                dateTimePickerFecInicio.Focus();
+                try
+                {
+                    dateTimePickerFecInicio.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error CmbEstado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error CmbEstado: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void dateTimePickerFecInicio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                dateTimePickerFecFin.Focus();
+                try
+                {
+                    dateTimePickerFecFin.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error DateTimeFechaInicio: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error DateTimeFechaInicio: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void dateTimePickerFecFin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                BtnModificar.Focus();
+                try
+                {
+                    BtnModificar.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error DateTimefechaFin: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error DateTimefechaFin: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

@@ -172,7 +172,7 @@
             this.LblDireccion.Name = "LblDireccion";
             this.LblDireccion.Size = new System.Drawing.Size(126, 22);
             this.LblDireccion.TabIndex = 83;
-            this.LblDireccion.Text = "DIRECCÍON:";
+            this.LblDireccion.Text = "DIRECCIÓN:";
             // 
             // lblNombre
             // 

@@ -68,11 +68,11 @@ namespace Entidades
 
     public class Consulta
     {
-        public int CID { get; set; }
-        public string Descripcion { get; set; }
-        public string Medico { get; set; }
-        public string Paciente { get; set; }
-        public DateTime Fecha { get; set; }
+        public int CID { get; set; }    //identificador consulta
+        public string Descripcion { get; set; } //descripcion de la consulta
+        public string Medico { get; set; }  //nombre del medico en combo
+        public string Paciente { get; set; } // nombre paciente en combo
+        public DateTime Fecha { get; set; } //fecha consulta
     }
 
     public class Tipo
