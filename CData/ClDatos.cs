@@ -27,7 +27,7 @@ namespace CData
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         NumColegiado = Convert.ToString(reader["NumeroColegiado"]),
-                        Tipo = Convert.ToString(reader["TipoMedico"]),
+                        Tipo = Convert.ToInt16(reader["TipoMedico"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         FechaA = Convert.ToDateTime(reader["FechaA"]),
                         FechaB = Convert.ToDateTime(reader["FechaB"]),
@@ -82,6 +82,22 @@ namespace CData
             }
         }
 
+        public void DeleteMedicoNS(string ns)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"DELETE FROM Medicos WHERE NumeroSeguridadSocial = '{@ns}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
         public void UpdateMedico(Medico datoMed)
         {
             try
@@ -104,7 +120,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"SELECT * FROM Medicos WHERE Cedula = '{@id}";
+                string query = $"SELECT * FROM Medicos WHERE Cedula = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -119,7 +135,48 @@ namespace CData
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         NumColegiado = Convert.ToString(reader["NumeroColegiado"]),
-                        Tipo = Convert.ToString(reader["TipoMedico"]),
+                        Tipo = Convert.ToInt16(reader["TipoMedico"]),
+                        Poblacion = Convert.ToInt16(reader["Poblacion"]),
+                        FechaA = Convert.ToDateTime(reader["FechaA"]),
+                        FechaB = Convert.ToDateTime(reader["FechaB"]),
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
+                    };
+                    datoMed = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                datoMed = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoMed;
+        }
+
+        public Medico SearchMedicoNS(string ns)
+        {
+            Medico datoMed = new Medico();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Medicos WHERE NumeroSeguridadSocial = '{@ns}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Medico objEnt = new Medico()
+                    {
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        Nombre = Convert.ToString(reader["Nombre"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
+                        NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
+                        NumColegiado = Convert.ToString(reader["NumeroColegiado"]),
+                        Tipo = Convert.ToInt16(reader["TipoMedico"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         FechaA = Convert.ToDateTime(reader["FechaA"]),
                         FechaB = Convert.ToDateTime(reader["FechaB"]),
@@ -156,7 +213,7 @@ namespace CData
                         Nombre = Convert.ToString(reader["Nombre"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
-                        Tipo = Convert.ToString(reader["Tipo"]),
+                        Tipo = Convert.ToInt16(reader["TipoEmpleado"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         Estado = Convert.ToInt16(reader["Estado"]),
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
@@ -181,8 +238,11 @@ namespace CData
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
-            } catch (SqlException ex) {
-                if (ex.Number == 2627) {
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                {
                     return "2627";
                 }
             }
@@ -206,12 +266,28 @@ namespace CData
             }
         }
 
+        public void DeleteEmpleadoNS(string ns)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"DELETE FROM Empleados WHERE NumeroSeguridadSocial = '{@ns}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
         public void UpdateEmpleado(Empleado datoEmp)
         {
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', Tipo = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', Estado = '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}' WHERE Cedula = '{@datoEmp.Cedula}'";
+                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', TipoEmpleado = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', Estado = '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}' WHERE Cedula = '{@datoEmp.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -242,7 +318,45 @@ namespace CData
                         Nombre = Convert.ToString(reader["Nombre"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
-                        Tipo = Convert.ToString(reader["Tipo"]),
+                        Tipo = Convert.ToInt16(reader["TipoEmpleado"]),
+                        Poblacion = Convert.ToInt16(reader["Poblacion"]),
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
+                    };
+                    datoEmp = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                datoEmp = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoEmp;
+        }
+
+        public Empleado SearchEmpleadoNS(string ns)
+        {
+            Empleado datoEmp = new Empleado();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Empleados WHERE NumeroSeguridadSocial = '{@ns}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Empleado objEnt = new Empleado()
+                    {
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        Nombre = Convert.ToString(reader["Nombre"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
+                        NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
+                        Tipo = Convert.ToInt16(reader["TipoEmpleado"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         Estado = Convert.ToInt16(reader["Estado"]),
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
@@ -329,6 +443,22 @@ namespace CData
             }
         }
 
+        public void DeletePacienteNS(string ns)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"DELETE FROM Pacientes WHERE NumeroSeguridadSocial = '{@ns}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
         public void UpdatePaciente(Paciente datoPac)
         {
             try
@@ -382,6 +512,42 @@ namespace CData
             return datoPac;
         }
 
+        public Paciente SearchPacienteNS(string ns)
+        {
+            Paciente datoPac = new Paciente();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Pacientes WHERE NumeroSeguridadSocial = '{@ns}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Paciente objEnt = new Paciente()
+                    {
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        Nombre = Convert.ToString(reader["Nombre"]),
+                        Direccion = Convert.ToString(reader["Direccion"]),
+                        NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
+                        Medico = Convert.ToString(reader["CedulaMedico"]),
+                        Estado = Convert.ToInt16(reader["Estado"]),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
+                    };
+                    datoPac = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                datoPac = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoPac;
+        }
         //Poblacion
         public List<Poblacion> GetPoblaciones()
         {

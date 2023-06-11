@@ -15,18 +15,19 @@ namespace Entidades
         public string NumSegSocial { get; set; }
         public string Direccion { get; set; }
         public int Estado { get; set; }
+        public int Tipo { get; set; }
         public DateTime FechaNacimiento { get; set; }
     }
 
+    //TipoEmpleado = ['Administrativo', 'Celador', 'Auxiliar de Enfermería', 'ATS de Zona', 'ATS']
     public class Empleado : Persona
     {
-        public string Tipo { get; set; }
         public int Poblacion { get; set; }
     }
 
+    //TipoMedico = ['Titular', 'Interino', 'Sustituto']
     public class Medico : Persona
     {
-        public string Tipo { get; set; }
         public DateTime FechaA { get; set; }
         public DateTime FechaB { get; set; }
         public string NumColegiado { get; set; }
