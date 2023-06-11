@@ -24,7 +24,7 @@ namespace CapaPresentacion
         readonly ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
         readonly ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
-        readonly ClOperacionesPoblacion objOperacionesPoblacion = new ClOperacionesPoblacion();
+        readonly ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -49,27 +49,15 @@ namespace CapaPresentacion
         {
             try
             {
-                objPaciente.Nombre = txtNombre.Text;
+                objPaciente.Nombre = TxtNombre.Text;
                 objPaciente.Cedula = TxtCedula.Text;
                 objPaciente.NumSegSocial = TxtNumSegSocial.Text;
-                objPaciente.NumColegiado = txtNumColegiado.Text;
-                objPaciente.Tipo = CmbTipo.SelectedIndex + 1;
 
-                if (objPaciente.Tipo == 3)
-                {
-                    objPaciente.FechaA = dateTimePickerFecAlta.Value;
-                    objPaciente.FechaB = dateTimePickerFecBaja.Value;
-                }
-                else
-                {
-                    objPaciente.FechaA = DateTime.Now;
-                    objPaciente.FechaB = DateTime.Now;
-                }
                 objPaciente.FechaNacimiento = dateTimePickerFecNac.Value;
 
-                objPaciente.Poblacion = CmbPoblacion.SelectedIndex + 1; //debe ser de un combobox;
                 objPaciente.Estado = 1;
                 objPaciente.Direccion = TxtDireccion.Text;
+                objPaciente.Medico = objOperacionesMedico.CargarCedulasMedicos()[CmbMedicoAsignado.SelectedIndex];
 
                 string estado = objOperacionesPaciente.RegistrarPaciente(objPaciente).ToString();
                 if (estado == "CORRECTO")

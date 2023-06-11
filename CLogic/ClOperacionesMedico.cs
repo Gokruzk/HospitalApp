@@ -47,7 +47,7 @@ namespace CLogic
             objDatos.UpdateMedico(datos);
         }
 
-        public string EliminarMedico(string cedula)
+        /* public string EliminarMedico(string cedula)
         {
             if (objPersona.ValidarCedula(cedula))
             {
@@ -57,18 +57,18 @@ namespace CLogic
                 return objMensajes.errores[0];
 
             return "CORRECTO";
-        }
+        } */
 
         public List<string> CargarTiposMedicos()
         {
             List<TipoMedico> objTipos = objDatos.GetTipoMedico();
             List<string> tipos = new List<string>();
 
-            foreach(Tipo medico in objTipos)
+            foreach (Tipo medico in objTipos)
                 tipos.Add(medico.Descripcion);
 
             return tipos;
-        }  
+        }
 
         public List<string> CargarNombresMedicos()
         {
@@ -80,7 +80,18 @@ namespace CLogic
 
             return nombres;
         }
-        
+
+        public List<string> CargarCedulasMedicos()
+        {
+            List<Medico> objCedulasMedicos = objDatos.GetMedicos();
+            List<string> cedulas = new List<string>();
+
+            foreach (Medico medico in objCedulasMedicos)
+                cedulas.Add(medico.Cedula);
+
+            return cedulas;
+        }
+
         public Medico CargarMedicoCedula(string cedula)
         {
             return objDatos.SearchMedico(cedula);

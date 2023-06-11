@@ -433,6 +433,10 @@ namespace CData
                     // Clave primaria duplicada
                     return "2627";
                 }
+                else
+                {
+                    return ex.Message; 
+                }
             }
             objBD.Cerrar();
             return "CORRECTO";
