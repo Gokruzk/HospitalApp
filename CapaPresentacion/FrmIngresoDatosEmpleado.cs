@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CLogic;
 using Entidades;
+using CLogic;
 
 namespace CapaPresentacion
 {
@@ -29,6 +29,13 @@ namespace CapaPresentacion
             objEmpleado.NumSegSocial = "433-69-6684";
             objEmpleado.Tipo = "Administrativo";
             objEmpleado.Poblacion = 1;
+
+            string estado = objValidacionEmpleado.RegistrarEmpleado(objEmpleado);
+
+            if (estado == "CORRECTO")
+                MessageBox.Show("Registro realizado correctamente", "Registro realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

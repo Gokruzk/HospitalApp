@@ -10,81 +10,62 @@ namespace CLogic
 {
     public class ClOperacionesEmpleado
     {
-        //Validación de datos entidad EMPLEADO
-        ClDatos objDatos = new ClDatos();
-        ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClDatos objDatos = new ClDatos();
+        readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
         public bool ValidartipoEmpleado(string tipo)
         {
-            if (string.IsNullOrWhiteSpace(tipo))
-            {
-                return false;
-            }
+            string[] tipoEmpleado = { "Administrativo", "Celador", "Auxiliar de Enfermería", "ATS de Zona", "ATS" };
 
-            return true;
+            return tipoEmpleado.Contains(tipo);
         }
 
-        
-        //Función de validación de datos EMPLEADO
-        public int RegistrarEmpleado(Empleado datos)
+        public string ValidarTodoEmpleado(Empleado datos)
         {
-            int validaciones = 0;
+            if (!objPersona.ValidarCedula(datos.Cedula))
+                return objMensajes.errores[0];
 
-            if (objPersona.ValidarCedula(datos.Cedula))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
+            if (!objPersona.ValidarNombre(datos.Nombre))
+                return objMensajes.errores[1];
 
-            if (objPersona.ValidarNombre(datos.Nombre))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
+            if (!objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
+                return objMensajes.errores[2];
 
-            if (objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
+            if (!objPersona.ValidarDireccion(datos.Direccion))
+                return objMensajes.errores[3];
 
-            if (objPersona.ValidarDireccion(datos.Direccion))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
+            if (!ValidartipoEmpleado(datos.Tipo))
+                return objMensajes.errores[7];
 
-            if (ValidartipoEmpleado(datos.Tipo))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
+            return objMensajes.errores[15];
+        }
 
-            if (validaciones == 9)
-            {
+        public string RegistrarEmpleado(Empleado datos) {
+            string validacion = ValidarTodoEmpleado(datos);
+
+            if (validacion == "CORRECTO")
                 objDatos.RegistroEmpleado(datos);
-            }
-            else
-            {
-                return 0;
-            }
 
-            return 0;
+            return validacion;
+        }
+
+        public string ActualizarEmpleado(Empleado datos) {
+            string validacion = ValidarTodoEmpleado(datos);
+
+            if (validacion == "CORRECTO")
+                objDatos.UpdateEmpleado(datos);
+
+            return validacion;
+        }
+
+        public string EliminarEmpleado(string cedula) {
+            if (objPersona.ValidarCedula(cedula)) {
+                objDatos.DeleteEmpleado(cedula);
+            } else
+                return objMensajes.errores[0];
+
+            return "CORRECTO";
         }
     }
 }

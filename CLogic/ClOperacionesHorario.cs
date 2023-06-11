@@ -11,8 +11,9 @@ namespace CLogic
     public class ClOperacionesHorario
     {
         //Validación de datos entidad HORARIOS
-        ClDatos objDatos = new ClDatos();
-        ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClDatos objDatos = new ClDatos();
+        readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
         public bool ValidarDia(string dia)
         {
@@ -26,44 +27,41 @@ namespace CLogic
             return DateTime.Compare(horaI, horaF) < 0;
         }
 
-        //Función de validación de datos Horario
-        public int RegistrarHorario(Horarios datos)
+        public string ValidarTodoHorario(Horarios datos)
         {
-            int validaciones = 0;
+            if (!objPersona.ValidarCedula(datos.CedulaMedico))
+                return objMensajes.errores[0];
 
-            if (objPersona.ValidarCedula(datos.CedulaMedico))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
+            if (!ValidarDia(datos.DiaSemana))
+                return objMensajes.errores[12];
 
-            if (ValidarDia(datos.DiaSemana))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
+            if (!ValidarHoras(datos.HoraInicio, datos.HoraFin))
+                return objMensajes.errores[13];
 
-            if (ValidarHoras(datos.HoraInicio, datos.HoraFin))
-            {
-                validaciones++;
-            }
-            else
-            {
-                return 0;
-            }
-
-            if (validaciones == 3)
-            {
-                objDatos.RegistroHorario(datos);
-            }
-            return 0;
+            return objMensajes.errores[15];
         }
 
+        public string RegistrarHorario(Horarios datos) {
+            string validacion = ValidarTodoHorario(datos);
+
+            if (validacion == "CORRECTO")
+                objDatos.RegistroHorario(datos);
+
+            return validacion;
+        }
+
+        public string ActualizarHorario(Horarios datos) {
+            string validacion = ValidarTodoHorario(datos);
+
+            if (validacion == "CORRECTO")
+                objDatos.UpdateHorario(datos);
+
+            return validacion;
+        }
+
+        public string EliminarHorario(int id) {
+            //Falta xd
+            return "CORRECTO";
+        }
     }
 }

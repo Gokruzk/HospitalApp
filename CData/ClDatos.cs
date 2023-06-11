@@ -166,7 +166,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion) VALUES ('{@datoEmp.Cedula}', {@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}')";
+                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}', '{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}', '{@datoEmp.Tipo}', '{@datoEmp.Poblacion}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
