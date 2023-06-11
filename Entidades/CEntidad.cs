@@ -65,4 +65,13 @@ namespace Entidades
         public DateTime FechaFin { get; set; }
         public int Estado { get; set; }
     }
+
+    public class Consulta
+    {
+        public int CID { get; set; }
+        public string Descripcion { get; set; }
+        public string Medico { get; set; }
+        public string Paciente { get; set; }
+        public DateTime Fecha { get; set; }
+    }
 }
