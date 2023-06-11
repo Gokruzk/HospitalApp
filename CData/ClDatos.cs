@@ -65,7 +65,7 @@ namespace CData
                 }
                 else
                 {
-                    return ex.Message;
+                    return ex.Message; 
                 }
             }
             objBD.Cerrar();
