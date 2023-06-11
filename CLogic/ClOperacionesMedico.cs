@@ -37,25 +37,25 @@ namespace CLogic
 
         private string ValidarTodoMedico(Medico datos)
         {
-            if (objPersona.ValidarCedula(datos.Cedula))
+            if (!objPersona.ValidarCedula(datos.Cedula))
                 return objMensajes.errores[0];
 
-            if (objPersona.ValidarNombre(datos.Nombre))
+            if (!objPersona.ValidarNombre(datos.Nombre))
                 return objMensajes.errores[1];
 
-            if (objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
+            if (!objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
                 return objMensajes.errores[2];
 
-            if (objPersona.ValidarDireccion(datos.Direccion))
+            if (!objPersona.ValidarDireccion(datos.Direccion))
                 return objMensajes.errores[3];
 
-            if (ValidarTipoMedico(datos.Tipo))
+            if (!ValidarTipoMedico(datos.Tipo))
                 return objMensajes.errores[9];
 
-            if (ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
+            if (!ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
                 return objMensajes.errores[13];
 
-            if (ValidarNumColegiado(datos.NumColegiado))
+            if (!ValidarNumColegiado(datos.NumColegiado))
                 return objMensajes.errores[11];
 
             return objMensajes.errores[15];
