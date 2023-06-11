@@ -1071,5 +1071,59 @@ namespace CData
             }
             return datoConsulta;
         }
+
+        //TipoEmpleado
+        public List<TipoEmpleado> GetTipoEmpleado()
+        {
+            List<TipoEmpleado> datosTipoEmpleado = new List<TipoEmpleado>();
+            try
+            {
+                objBD.Abrir();
+                SqlCommand sql = new SqlCommand("SELECT * FROM TipoEmpleado", objBD.connect);
+                SqlDataReader reader = sql.ExecuteReader();
+                while (reader.Read())
+                {
+                    TipoEmpleado objEnt = new TipoEmpleado()
+                    {
+                        ID = Convert.ToInt16(reader["Id"]),
+                        Descripcion = Convert.ToString(reader["Descripcion"]),
+                    };
+                    datosTipoEmpleado.Add(objEnt);
+                }
+            }
+            catch
+            {
+                datosTipoEmpleado = null;
+                objBD.Cerrar();
+            }
+            return datosTipoEmpleado;
+        }
+
+        //TipoMedico
+        public List<TipoMedico> GetTipoMedico()
+        {
+            List<TipoMedico> datosTipoMedico = new List<TipoMedico>();
+            try
+            {
+                objBD.Abrir();
+                SqlCommand sql = new SqlCommand("SELECT * FROM TipoMedico", objBD.connect);
+                SqlDataReader reader = sql.ExecuteReader();
+                while (reader.Read())
+                {
+                    TipoMedico objEnt = new TipoMedico()
+                    {
+                        ID = Convert.ToInt16(reader["Id"]),
+                        Descripcion = Convert.ToString(reader["Descripcion"]),
+                    };
+                    datosTipoMedico.Add(objEnt);
+                }
+            }
+            catch
+            {
+                datosTipoMedico = null;
+                objBD.Cerrar();
+            }
+            return datosTipoMedico;
+        }
     }
 }

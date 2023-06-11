@@ -74,4 +74,13 @@ namespace Entidades
         public string Paciente { get; set; }
         public DateTime Fecha { get; set; }
     }
+
+    public class Tipo
+    {
+        public int ID { get; set; }
+        public string Descripcion { get; set; }
+    }
+
+    public class TipoEmpleado : Tipo { }
+    public class TipoMedico : Tipo { }
 }
