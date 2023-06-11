@@ -17,9 +17,9 @@ namespace CLogic
         readonly ClOperacionesEstadoVacacion objEstado = new ClOperacionesEstadoVacacion();
 
         //Validación de datos entidad VACACIONES
-        private bool ValidarEstado(string estado)
+        private bool ValidarEstadoVacacion(int estado)
         {
-            string[] estadosVa = { "Planificada", "Realizada" };
+            int[] estadosVa = { 1, 2 };
 
             return estadosVa.Contains(estado);
         }
@@ -32,7 +32,7 @@ namespace CLogic
 
         private string ValidarTodoVacacion(Vacaciones datos)
         {
-            if (objEstado.ValidarEstado(datos.Estado))
+            if (ValidarEstadoVacacion(datos.Estado))
                 return objMensajes.errores[14];
 
             if (!objPersona.ValidarCedula(datos.Cedula))
@@ -52,8 +52,8 @@ namespace CLogic
             {
                 string estado = "";//objDatos.RegistroVacacion();
 
-                if(estado == "CORRECTO")
-                    return estado; 
+                if (estado == "CORRECTO")
+                    return estado;
             }
 
             return validacion;
