@@ -17,40 +17,24 @@ namespace CLogic
 
         private string ValidarTodoPaciente(Paciente datos)
         {
-            if (objPersona.ValidarCedula(datos.Cedula))
-            {; }
-            else
-            {
+            if (!objPersona.ValidarCedula(datos.Cedula))
                 return objMensajes.errores[0];
-            }
 
-            if (objPersona.ValidarNombre(datos.Nombre))
-            {; }
-            else
-            {
+
+            if (!objPersona.ValidarNombre(datos.Nombre))
                 return objMensajes.errores[1];
-            }
 
-            if (objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-            {; }
-            else
-            {
+
+            if (!objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
                 return objMensajes.errores[2];
-            }
 
-            if (objPersona.ValidarCedula(datos.Medico))
-            {; }
-            else
-            {
+
+            if (!objPersona.ValidarCedula(datos.Medico))
                 return objMensajes.errores[0];
-            }
 
-            if (objPersona.ValidarDireccion(datos.Direccion))
-            {; }
-            else
-            {
+
+            if (!objPersona.ValidarDireccion(datos.Direccion))
                 return objMensajes.errores[3];
-            }
 
             return objMensajes.errores[15];
         }
@@ -76,13 +60,13 @@ namespace CLogic
 
         public string EliminarPaciente(string cedula)
         {
-            if (objPersona.ValidarCedula(cedula))
+            if (!objPersona.ValidarCedula(cedula))
             {
                 objDatos.DeletePaciente(cedula);
             }
             else
                 return objMensajes.errores[0];
-            
+
             return "CORRECTO";
         }
     }
