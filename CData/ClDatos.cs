@@ -109,7 +109,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}', Estado = '{@datoMed.Estado}' FechaNacimiento = '{@datoMed.FechaNacimiento}' WHERE Cedula = '{@datoMed.Cedula}'";
+                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA.ToShortDateString()}', FechaB = '{@datoMed.FechaB.ToShortDateString()}', Estado = '{@datoMed.Estado}' FechaNacimiento = '{@datoMed.FechaNacimiento.ToShortDateString()}' WHERE Cedula = '{@datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -241,7 +241,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado, FechaNacimiento) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}')";
+                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado, FechaNacimiento) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento.ToShortDateString()}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 ;
@@ -296,7 +296,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', TipoEmpleado = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', Estado = '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento}' WHERE Cedula = '{@datoEmp.Cedula}'";
+                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', TipoEmpleado = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', Estado = '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento.ToShortDateString()}' WHERE Cedula = '{@datoEmp.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -421,7 +421,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico, Estado, FechaNacimiento) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}', '{@datoPac.Estado}', '{@datoPac.FechaNacimiento}')";
+                string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico, Estado, FechaNacimiento) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}', '{@datoPac.Estado}', '{@datoPac.FechaNacimiento.ToShortDateString()}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -477,7 +477,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}', Estado = '{@datoPac.Estado}', FechaNacimiento = '{@datoPac.FechaNacimiento}' WHERE Cedula = '{@datoPac.Cedula}'";
+                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}', Estado = '{@datoPac.Estado}', FechaNacimiento = '{@datoPac.FechaNacimiento.ToShortDateString()}' WHERE Cedula = '{@datoPac.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -838,7 +838,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Vacaciones(Cedula, FechaInicio, FechaFin, Estado) VALUES ('{@datoVac.Cedula}', '{@datoVac.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoVac.FechaFin.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoVac.Estado}')";
+                string query = $"INSERT INTO Vacaciones(Cedula, FechaInicio, FechaFin, Estado) VALUES ('{@datoVac.Cedula}', '{@datoVac.FechaInicio.ToShortDateString()}', '{@datoVac.FechaFin.ToShortDateString()}', '{@datoVac.Estado}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -876,7 +876,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Vacaciones SET Cedula = '{@datoVac.Cedula}', FechaInicio = '{@datoVac.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss")}', FechaFin = '{@datoVac.FechaFin.ToString("yyyy-MM-dd HH:mm:ss")}', Estado = '{@datoVac.Estado}' WHERE VacacionesID = '{@datoVac.VID}'";
+                string query = $"UPDATE Vacaciones SET Cedula = '{@datoVac.Cedula}', FechaInicio = '{@datoVac.FechaInicio.ToShortDateString()}', FechaFin = '{@datoVac.FechaFin.ToShortDateString()}', Estado = '{@datoVac.Estado}' WHERE VacacionesID = '{@datoVac.VID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -993,7 +993,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Consultas(Descripcion, Medico, Paciente, Fecha) VALUES ('{@datoConsulta.Descripcion}', '{@datoConsulta.Medico}', '{@datoConsulta.Paciente}', '{@datoConsulta.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}')";
+                string query = $"INSERT INTO Consultas(Descripcion, Medico, Paciente, Fecha) VALUES ('{@datoConsulta.Descripcion}', '{@datoConsulta.Medico}', '{@datoConsulta.Paciente}', '{@datoConsulta.Fecha.ToShortDateString()}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -1015,7 +1015,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Consultas SET Descripcion = '{@datoConsulta.Descripcion}', Medico = '{@datoConsulta.Medico}', Paciente = '{@datoConsulta.Paciente}', Fecha = '{@datoConsulta.Fecha.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE ConsultaID = '{@datoConsulta.CID}'";
+                string query = $"UPDATE Consultas SET Descripcion = '{@datoConsulta.Descripcion}', Medico = '{@datoConsulta.Medico}', Paciente = '{@datoConsulta.Paciente}', Fecha = '{@datoConsulta.Fecha.ToShortDateString()}' WHERE ConsultaID = '{@datoConsulta.CID}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
