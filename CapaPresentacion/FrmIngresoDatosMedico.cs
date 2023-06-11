@@ -23,16 +23,24 @@ namespace CapaPresentacion
         }
 
         readonly Medico objMedico = new Medico();
-        readonly ClOperacionesMedico objOperaciones = new ClOperacionesMedico();
+        readonly ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+        readonly ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
         readonly ClOperacionesPoblacion objCargaPoblacion = new ClOperacionesPoblacion();
+
         List<string> tiposPoblacion = new List<string>();
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
-                txtNombre.Focus();
+                if(e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarCedula(TxtCedula.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[0], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNombre.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -44,7 +52,13 @@ namespace CapaPresentacion
         {
             try
             {
-                dateTimePickerFecNac.Focus();
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarNombre(txtNombre.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[1], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dateTimePickerFecNac.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -68,7 +82,13 @@ namespace CapaPresentacion
         {
             try
             {
-                TxtNumSegSocial.Focus();
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarDireccion(TxtDireccion.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[3], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TxtNumSegSocial.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -80,7 +100,13 @@ namespace CapaPresentacion
         {
             try
             {
-                CmbTipo.Focus();
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarNumeroSeguroSocial(TxtNumSegSocial.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[2], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CmbTipo.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -171,6 +197,11 @@ namespace CapaPresentacion
             {
                 MessageBox.Show($"Error BtnCancelar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmIngresoDatosMedico_Load(object sender, EventArgs e)
+        {
+
         }
 
         //private void txtNIF_TextChanged(object sender, EventArgs e)

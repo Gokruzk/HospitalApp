@@ -16,14 +16,14 @@ namespace CLogic
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
-        private bool ValidarTipoMedico(int tipo)
+        public bool ValidarTipoMedico(int tipo)
         {
             int[] tipoMedico = { 1, 2, 3 };
 
             return tipoMedico.Contains(tipo);
         }
 
-        private bool ValidarFechasSutituto(int tipo, DateTime fechaA, DateTime fechaB)
+        public bool ValidarFechasSutituto(int tipo, DateTime fechaA, DateTime fechaB)
         {
             if (tipo == 3)
                 return DateTime.Compare(fechaA, fechaB) < 0;
@@ -31,12 +31,12 @@ namespace CLogic
             return true;
         }
 
-        private bool ValidarNumColegiado(string numCol)
+        public bool ValidarNumColegiado(string numCol)
         {
             return numCol.Length == 9;
         }
 
-        private string ValidarTodoMedico(Medico datos)
+        public string ValidarTodoMedico(Medico datos)
         {
             if (!objPersona.ValidarCedula(datos.Cedula))
                 return objMensajes.errores[0];
@@ -99,6 +99,16 @@ namespace CLogic
             return "CORRECTO";
         }
 
+        /* public List<string> CargarTiposMedicos()
+        {
+            List<> objMedicos = objDatos.GetPoblaciones();
+            List<string> tipos = new List<string>();
+
+            foreach(Poblacion poblano in objPoblaciones)
+                tipos.Add(poblano.Descripcion);
+
+            return tipos;
+        }  */
         public Medico CargarMedicoCedula(string cedula)
         {
             return objDatos.SearchMedico(cedula);
