@@ -8,6 +8,7 @@ namespace Entidades
 {
     using System;
 
+    //Estado = [ Habilitado, No habilitado ]
     public class Persona
     {
         public string Cedula { get; set; }
@@ -19,13 +20,13 @@ namespace Entidades
         public DateTime FechaNacimiento { get; set; }
     }
 
-    //TipoEmpleado = ['Administrativo', 'Celador', 'Auxiliar de Enfermería', 'ATS de Zona', 'ATS']
+    //TipoEmpleado = [ Administrativo, Celador, Auxiliar de Enfermería, ATS de Zona, ATS ]
     public class Empleado : Persona
     {
         public int Poblacion { get; set; }
     }
 
-    //TipoMedico = ['Titular', 'Interino', 'Sustituto']
+    //TipoMedico = [ Titular, Interino, Sustituto ]
     public class Medico : Persona
     {
         public DateTime FechaA { get; set; }
@@ -39,6 +40,7 @@ namespace Entidades
         public string Medico { get; set; }
     }
 
+    //Poblacion = [ Mestiza, Montubia, Afroecutoriana, Blanca, Indígena, Otra ]
     public class Poblacion
     {
         public int PID { get; set; }
@@ -54,6 +56,7 @@ namespace Entidades
         public DateTime HoraFin { get; set; }
     }
 
+    //Estado = [ Realizada, Planificada ]
     public class Vacaciones
     {
         public int VID { get; set; }
