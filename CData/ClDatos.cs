@@ -30,7 +30,8 @@ namespace CData
                         Tipo = Convert.ToString(reader["TipoMedico"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         FechaA = Convert.ToDateTime(reader["FechaA"]),
-                        FechaB = Convert.ToDateTime(reader["FechaB"])
+                        FechaB = Convert.ToDateTime(reader["FechaB"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datosMedicos.Add(objEnt);
                 }
@@ -48,7 +49,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Medicos(Cedula, Nombre, Direccion,  NumeroSeguridadSocial, NumeroColegiado, TipoMedico, Poblacion, FechaA, FechaB) VALUES ('{@datoMed.Cedula}','{@datoMed.Nombre}','{@datoMed.Direccion}','{@datoMed.NumSegSocial}','{@datoMed.NumColegiado}','{@datoMed.Tipo}','{@datoMed.Poblacion}','{@datoMed.FechaA}','{@datoMed.FechaB}')";
+                string query = $"INSERT INTO Medicos(Cedula, Nombre, Direccion,  NumeroSeguridadSocial, NumeroColegiado, TipoMedico, Poblacion, FechaA, FechaB, Estado) VALUES ('{@datoMed.Cedula}','{@datoMed.Nombre}','{@datoMed.Direccion}','{@datoMed.NumSegSocial}','{@datoMed.NumColegiado}','{@datoMed.Tipo}','{@datoMed.Poblacion}','{@datoMed.FechaA}','{@datoMed.FechaB}', '{@datoMed.Estado}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -80,7 +81,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}' WHERE Cedula = '{@datoMed.Cedula}'";
+                string query = $"UPDATE Medicos SET Nombre = '{@datoMed.Nombre}', Direccion = '{@datoMed.Direccion}', NumeroSeguridadSocial = '{@datoMed.NumSegSocial}', NumeroColegiado = '{@datoMed.NumColegiado}', TipoMedico = '{@datoMed.Tipo}', Poblacion = '{@datoMed.Poblacion}', FechaA = '{@datoMed.FechaA}', FechaB = '{@datoMed.FechaB}', Estado = '{@datoMed.Estado}' WHERE Cedula = '{@datoMed.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -115,7 +116,8 @@ namespace CData
                         Tipo = Convert.ToString(reader["TipoMedico"]),
                         Poblacion = Convert.ToInt16(reader["Poblacion"]),
                         FechaA = Convert.ToDateTime(reader["FechaA"]),
-                        FechaB = Convert.ToDateTime(reader["FechaB"])
+                        FechaB = Convert.ToDateTime(reader["FechaB"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datoMed = objEnt;
                 }
@@ -148,7 +150,8 @@ namespace CData
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Tipo = Convert.ToString(reader["Tipo"]),
-                        Poblacion = Convert.ToInt16(reader["Poblacion"])
+                        Poblacion = Convert.ToInt16(reader["Poblacion"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datosEmpleados.Add(objEnt);
                 }
@@ -166,7 +169,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion) VALUES ('{@datoEmp.Cedula}', {@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}')";
+                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado) VALUES ('{@datoEmp.Cedula}', {@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -198,7 +201,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', Tipo = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}' WHERE Cedula = '{@datoEmp.Cedula}'";
+                string query = $"UPDATE Empleados SET Nombre = '{@datoEmp.Nombre}', Direccion = '{@datoEmp.Direccion}', NumeroSeguridadSocial = '{@datoEmp.NumSegSocial}', Tipo = '{@datoEmp.Tipo}', Poblacion = '{@datoEmp.Poblacion}', '{@datoEmp.Estado}' WHERE Cedula = '{@datoEmp.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -230,7 +233,8 @@ namespace CData
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
                         Tipo = Convert.ToString(reader["Tipo"]),
-                        Poblacion = Convert.ToInt16(reader["Poblacion"])
+                        Poblacion = Convert.ToInt16(reader["Poblacion"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datoEmp = objEnt;
                 }
@@ -262,7 +266,8 @@ namespace CData
                         Nombre = Convert.ToString(reader["Nombre"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
-                        Medico = Convert.ToString(reader["CedulaMedico"])
+                        Medico = Convert.ToString(reader["CedulaMedico"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datosPacientes.Add(objEnt);
                 }
@@ -280,7 +285,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}')";
+                string query = $"INSERT INTO Pacientes(Cedula, Nombre, Direccion, NumeroSeguridadSocial, CedulaMedico, Estado) VALUES ('{@datoPac.Cedula}','{@datoPac.Nombre}','{@datoPac.Direccion}','{@datoPac.NumSegSocial}','{@datoPac.Medico}', {@datoPac.Estado})";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -312,7 +317,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}' WHERE Cedula = '{@datoPac.Cedula}'";
+                string query = $"UPDATE Pacientes SET Nombre = '{@datoPac.Nombre}', Direccion = '{@datoPac.Direccion}', NumeroSeguridadSocial = '{@datoPac.NumSegSocial}', CedulaMedico = '{@datoPac.Medico}', Estado = '{@datoPac.Estado}' WHERE Cedula = '{@datoPac.Cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
                 objBD.Cerrar();
@@ -343,7 +348,8 @@ namespace CData
                         Nombre = Convert.ToString(reader["Nombre"]),
                         Direccion = Convert.ToString(reader["Direccion"]),
                         NumSegSocial = Convert.ToString(reader["NumeroSeguridadSocial"]),
-                        Medico = Convert.ToString(reader["CedulaMedico"])
+                        Medico = Convert.ToString(reader["CedulaMedico"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datoPac = objEnt;
                 }
@@ -577,5 +583,119 @@ namespace CData
             }
             return datoHor;
         }
+
+        //Vacaciones
+        public List<Vacaciones> GetVacaciones()
+        {
+            List<Vacaciones> datosVacaciones = new List<Vacaciones>();
+            try
+            {
+                objBD.Abrir();
+                SqlCommand sql = new SqlCommand("SELECT * FROM Vacaciones");
+                SqlDataReader reader = sql.ExecuteReader();
+                while (reader.Read())
+                {
+                    Vacaciones objEnt = new Vacaciones()
+                    {
+                        VID = Convert.ToInt32(reader["VacacionesID"]),
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
+                        FechaFin = Convert.ToDateTime(reader["FechaFin"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
+                    };
+                    datosVacaciones.Add(objEnt);
+                }
+            }
+            catch
+            {
+                datosVacaciones = null;
+                objBD.Cerrar();
+            }
+            return datosVacaciones;
+        }
+
+        public void RegistroVacacion(Vacaciones datoVac)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"INSERT INTO Vacaciones(Cedula, FechaInicio, FechaFin, Estado) VALUES ('{@datoVac.Cedula}', '{@datoVac.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoVac.FechaFin.ToString("yyyy-MM-dd HH:mm:ss")}', '{@datoVac.Estado}')";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void DeleteVacacion(int id)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"DELETE FROM Vacaciones WHERE VacacionesID = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void UpdateVacacion(Vacaciones datoVac)
+        {
+            try
+            {
+                objBD.Abrir();
+                string query = $"UPDATE Vacaciones SET Cedula = '{@datoVac.Cedula}', FechaInicio = '{@datoVac.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss")}', FechaFin = '{@datoVac.FechaFin.ToString("yyyy-MM-dd HH:mm:ss")}', Estado = '{@datoVac.Estado}' WHERE VacacionesID = '{@datoVac.VID}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public Vacaciones SearchVacacion(int id)
+        {
+            Vacaciones datoVac = new Vacaciones();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Vacaciones WHERE VacacionesID = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Vacaciones objEnt = new Vacaciones()
+                    {
+                        VID = Convert.ToInt32(reader["VacacionesID"]),
+                        Cedula = Convert.ToString(reader["Cedula"]),
+                        FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
+                        FechaFin = Convert.ToDateTime(reader["FechaFin"]),
+                        Estado = Convert.ToInt16(reader["Estado"])
+                    };
+                    datoVac = objEnt;
+                }
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                datoVac = null;
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return datoVac;
+        }
+
     }
 }
