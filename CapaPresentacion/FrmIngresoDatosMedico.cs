@@ -36,31 +36,11 @@ namespace CapaPresentacion
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-
-            /*
-            objMedico.Nombre = txtNombre.Text;
-            objMedico.Cedula = txtNIF.Text;
-            objMedico.NumSegSocial = txtSeguridadSocial.Text;
-            objMedico.NumColegiado = txtNumColegiado.Text;
-            objMedico.Tipo = comboBoxTipoMed.Text;
-            objMedico.FechaA = DateTime.Now.AddDays(-6);
-            objMedico.FechaB = DateTime.Now;
-            objMedico.Poblacion = 1; //debe ser de un combobox;
-            objMedico.Direccion = txtDireccion.Text;
-
-            //MessageBox.Show(objOperaciones.ActualizarMedico(objMedico).ToString());
-            string estado = objOperaciones.RegistrarMedico(objMedico).ToString();
-            if(estado == "CORRECTO")
-                MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            */
-
             objMedico.Nombre = "Fern";
             objMedico.Cedula = "0604401919";
             objMedico.NumSegSocial = "546-53-9380";
             objMedico.NumColegiado = "123456789";
-            objMedico.Tipo = "Médico Sustituto";
+            objMedico.Tipo = 1;
             objMedico.FechaA = DateTime.Now.AddDays(-9);
             objMedico.FechaB = DateTime.Now;
             objMedico.Poblacion = 1;
@@ -80,6 +60,27 @@ namespace CapaPresentacion
 
         private void LblTituloInicio_Click(object sender, EventArgs e)
         {
+        }
+
+        private void BtnRegistrar_Click(object sender, EventArgs e)
+        {
+            //objMedico.Nombre = txtNombre.Text;
+            //objMedico.Cedula = txtNIF.Text;
+            //objMedico.NumSegSocial = txtSeguridadSocial.Text;
+            //objMedico.NumColegiado = txtNumColegiado.Text;
+            //objMedico.Tipo = cm;
+            //objMedico.FechaNacimiento = dateTimePickerFecNac.Value;
+            //objMedico.FechaA = DateTime.Now.AddDays(-6);
+            //objMedico.FechaB = DateTime.Now;
+            //objMedico.Poblacion = 1; //debe ser de un combobox;
+            //objMedico.Estado = 1;
+            //objMedico.Direccion = txtDireccion.Text;
+
+            string estado = objOperaciones.RegistrarMedico(objMedico).ToString();
+            if (estado == "CORRECTO")
+                MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
     }

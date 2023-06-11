@@ -14,9 +14,9 @@ namespace CLogic
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
-        public bool ValidartipoEmpleado(string tipo)
+        public bool ValidartipoEmpleado(int tipo)
         {
-            string[] tipoEmpleado = { "Administrativo", "Celador", "Auxiliar de Enfermería", "ATS de Zona", "ATS" };
+            int[] tipoEmpleado = { 1, 2, 3, 4, 5 };
 
             return tipoEmpleado.Contains(tipo);
         }
@@ -41,10 +41,12 @@ namespace CLogic
             return objMensajes.errores[15];
         }
 
-        public string RegistrarEmpleado(Empleado datos) {
+        public string RegistrarEmpleado(Empleado datos)
+        {
             string validacion = ValidarTodoEmpleado(datos);
 
-            if (validacion == "CORRECTO") {
+            if (validacion == "CORRECTO")
+            {
                 string estado = objDatos.RegistroEmpleado(datos);
 
                 if (estado == "2627")
@@ -54,7 +56,8 @@ namespace CLogic
             return validacion;
         }
 
-        public string ActualizarEmpleado(Empleado datos) {
+        public string ActualizarEmpleado(Empleado datos)
+        {
             string validacion = ValidarTodoEmpleado(datos);
 
             if (validacion == "CORRECTO")
@@ -63,11 +66,14 @@ namespace CLogic
             return validacion;
         }
 
-        public string EliminarEmpleado(string cedula) {
-            if (objPersona.ValidarCedula(cedula)) {
+        public string EliminarEmpleado(string cedula)
+        {
+            if (objPersona.ValidarCedula(cedula))
+            {
                 objDatos.DeleteEmpleado(cedula);
 
-            } else
+            }
+            else
                 return objMensajes.errores[0];
 
             return "CORRECTO";

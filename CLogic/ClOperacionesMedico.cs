@@ -16,16 +16,16 @@ namespace CLogic
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
-        private bool ValidarTipoMedico(string tipo)
+        private bool ValidarTipoMedico(int tipo)
         {
-            string[] tipoMedico = { "Médico Titular", "Médico Interino", "Médico Sustituto" };
+            int[] tipoMedico = { 1, 2, 3 };
 
             return tipoMedico.Contains(tipo);
         }
 
-        private bool ValidarFechasSutituto(string tipo, DateTime fechaA, DateTime fechaB)
+        private bool ValidarFechasSutituto(int tipo, DateTime fechaA, DateTime fechaB)
         {
-            if (tipo == "Médico Sustituto")
+            if (tipo == 3)
                 return DateTime.Compare(fechaA, fechaB) < 0;
 
             return true;
