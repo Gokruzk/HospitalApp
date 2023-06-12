@@ -43,6 +43,7 @@ namespace CapaPresentacion
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+            ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
             if (comboBox1.SelectedItem.ToString() == "Medicos con tipos")
             {
                 RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosTipos());
@@ -51,6 +52,8 @@ namespace CapaPresentacion
             {
                 RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosVacaciones());
             }
+
+            //objOperacionesPaciente.CargarPacientesAD()
         }
     }
 }
