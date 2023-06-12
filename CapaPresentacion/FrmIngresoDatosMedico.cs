@@ -18,6 +18,7 @@ namespace CapaPresentacion
         public FrmIngresoDatosMedico()
         {
             InitializeComponent();
+            GbxFechas.Visible = false;
 
         }
 
@@ -255,6 +256,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -277,9 +279,11 @@ namespace CapaPresentacion
 
         private void CmbTipo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (CmbTipo.SelectedIndex == 3)
+            if (CmbTipo.SelectedIndex == 2)
             {
                 GbxFechas.Visible = true;
+                dateTimePickerFecAlta.Enabled = true;
+                dateTimePickerFecBaja.Enabled = true;
             }
             else
             {

@@ -88,6 +88,12 @@
     <Compile Include="FrmIngresarVacaciones.Designer.cs">
       <DependentUpon>FrmIngresarVacaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngreso.Designer.cs">
+      <DependentUpon>FrmIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIngresoDatosEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresarVacaciones.resx">
       <DependentUpon>FrmIngresarVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngreso.resx">
+      <DependentUpon>FrmIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresoDatosEmpleado.resx">
       <DependentUpon>FrmIngresoDatosEmpleado.cs</DependentUpon>

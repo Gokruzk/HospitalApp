@@ -113,6 +113,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
             catch (Exception ex)
             {

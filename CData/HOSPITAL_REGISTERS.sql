@@ -34,3 +34,5 @@ INSERT INTO Administrador(UserID, Psw) VALUES
             ('nigell', '12345'),
             ('fer', '12345'),
             ('kevin', '12345')
+
+Alter table Consultas add Fecha date

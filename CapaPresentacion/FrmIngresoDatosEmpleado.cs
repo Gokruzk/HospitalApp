@@ -176,6 +176,7 @@ namespace CapaPresentacion
                 else
                     MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                this.Close();
             } catch (Exception ex) {
                 MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

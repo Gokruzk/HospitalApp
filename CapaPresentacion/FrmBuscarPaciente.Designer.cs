@@ -48,7 +48,7 @@
             this.lblBuscarPaciente.AutoSize = true;
             this.lblBuscarPaciente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscarPaciente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblBuscarPaciente.Location = new System.Drawing.Point(237, 23);
+            this.lblBuscarPaciente.Location = new System.Drawing.Point(265, 26);
             this.lblBuscarPaciente.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblBuscarPaciente.Name = "lblBuscarPaciente";
             this.lblBuscarPaciente.Size = new System.Drawing.Size(276, 32);
@@ -59,7 +59,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.lblBuscarPaciente);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(829, 78);
@@ -179,6 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(834, 441);
             this.Controls.Add(this.CmbCampo);
@@ -192,6 +193,7 @@
             this.Controls.Add(this.LblFechaNacimiento);
             this.Controls.Add(this.LblDireccion);
             this.Controls.Add(this.lblNombre);
+            this.MaximizeBox = false;
             this.Name = "FrmBuscarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Paciente";

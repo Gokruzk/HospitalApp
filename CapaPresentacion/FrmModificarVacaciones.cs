@@ -66,6 +66,9 @@ namespace CapaPresentacion
                     CmbEstado.SelectedIndex = objVacacion.Estado - 1;
                     dateTimePickerFecInicio.Value = objVacacion.FechaInicio;
                     dateTimePickerFecFin.Value = objVacacion.FechaFin;
+
+                    TxtCedula.Enabled = false;
+                    TxtIdVac.Enabled = false;
                 }
                 else
                 {
@@ -142,6 +145,7 @@ namespace CapaPresentacion
 
                     objOperacionesVacacion.ActualizarVacacion(objVacacion);
                     MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

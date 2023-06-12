@@ -100,6 +100,8 @@ namespace CapaPresentacion
                     {
                         visibilizar();
                         asignar();
+                        CmbCampo.Enabled = false;
+                        TxtEleccion.Enabled = false;
                     }
                     else
                     {
@@ -251,6 +253,7 @@ namespace CapaPresentacion
 
                     objOperacionesPaciente.ActualizarPaciente(objPaciente);
                     MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

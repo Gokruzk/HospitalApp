@@ -42,10 +42,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.dateTimePickerFecNac = new System.Windows.Forms.DateTimePicker();
             this.LblFechaNacimiento = new System.Windows.Forms.Label();
-            this.GbxTipo = new System.Windows.Forms.GroupBox();
-            this.radioButtonSustituto = new System.Windows.Forms.RadioButton();
-            this.radioButtonTitular = new System.Windows.Forms.RadioButton();
-            this.radioButtonInterino = new System.Windows.Forms.RadioButton();
             this.dateTimePickerFecAlta = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFecBaja = new System.Windows.Forms.DateTimePicker();
             this.LblFechaAlta = new System.Windows.Forms.Label();
@@ -59,7 +55,6 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnRegistrar = new System.Windows.Forms.Button();
             this.GbxFechas = new System.Windows.Forms.GroupBox();
-            this.GbxTipo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.GbxFechas.SuspendLayout();
             this.SuspendLayout();
@@ -230,53 +225,6 @@
             this.LblFechaNacimiento.TabIndex = 65;
             this.LblFechaNacimiento.Text = "FECHA DE NACIMIENTO:";
             // 
-            // GbxTipo
-            // 
-            this.GbxTipo.Controls.Add(this.radioButtonSustituto);
-            this.GbxTipo.Controls.Add(this.radioButtonTitular);
-            this.GbxTipo.Controls.Add(this.radioButtonInterino);
-            this.GbxTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GbxTipo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.GbxTipo.Location = new System.Drawing.Point(36, 392);
-            this.GbxTipo.Name = "GbxTipo";
-            this.GbxTipo.Size = new System.Drawing.Size(398, 127);
-            this.GbxTipo.TabIndex = 67;
-            this.GbxTipo.TabStop = false;
-            this.GbxTipo.Text = "TIPO DE MÉDICO";
-            // 
-            // radioButtonSustituto
-            // 
-            this.radioButtonSustituto.AutoSize = true;
-            this.radioButtonSustituto.Location = new System.Drawing.Point(115, 87);
-            this.radioButtonSustituto.Name = "radioButtonSustituto";
-            this.radioButtonSustituto.Size = new System.Drawing.Size(181, 26);
-            this.radioButtonSustituto.TabIndex = 0;
-            this.radioButtonSustituto.TabStop = true;
-            this.radioButtonSustituto.Text = "Médico Sustituto";
-            this.radioButtonSustituto.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTitular
-            // 
-            this.radioButtonTitular.AutoSize = true;
-            this.radioButtonTitular.Location = new System.Drawing.Point(24, 43);
-            this.radioButtonTitular.Name = "radioButtonTitular";
-            this.radioButtonTitular.Size = new System.Drawing.Size(158, 26);
-            this.radioButtonTitular.TabIndex = 0;
-            this.radioButtonTitular.TabStop = true;
-            this.radioButtonTitular.Text = "Médico Titular";
-            this.radioButtonTitular.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonInterino
-            // 
-            this.radioButtonInterino.AutoSize = true;
-            this.radioButtonInterino.Location = new System.Drawing.Point(216, 43);
-            this.radioButtonInterino.Name = "radioButtonInterino";
-            this.radioButtonInterino.Size = new System.Drawing.Size(169, 26);
-            this.radioButtonInterino.TabIndex = 0;
-            this.radioButtonInterino.TabStop = true;
-            this.radioButtonInterino.Text = "Médico Interino";
-            this.radioButtonInterino.UseVisualStyleBackColor = true;
-            // 
             // dateTimePickerFecAlta
             // 
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
@@ -389,7 +337,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnCancelar.Location = new System.Drawing.Point(252, 548);
+            this.BtnCancelar.Location = new System.Drawing.Point(661, 449);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
             this.BtnCancelar.TabIndex = 60;
@@ -400,7 +348,7 @@
             // BtnRegistrar
             // 
             this.BtnRegistrar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnRegistrar.Location = new System.Drawing.Point(57, 549);
+            this.BtnRegistrar.Location = new System.Drawing.Point(466, 450);
             this.BtnRegistrar.Name = "BtnRegistrar";
             this.BtnRegistrar.Size = new System.Drawing.Size(189, 50);
             this.BtnRegistrar.TabIndex = 59;
@@ -415,7 +363,7 @@
             this.GbxFechas.Controls.Add(this.LblFechaBaja);
             this.GbxFechas.Controls.Add(this.dateTimePickerFecBaja);
             this.GbxFechas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.GbxFechas.Location = new System.Drawing.Point(475, 392);
+            this.GbxFechas.Location = new System.Drawing.Point(75, 389);
             this.GbxFechas.Name = "GbxFechas";
             this.GbxFechas.Size = new System.Drawing.Size(352, 182);
             this.GbxFechas.TabIndex = 74;
@@ -426,6 +374,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(880, 637);
             this.Controls.Add(this.GbxFechas);
             this.Controls.Add(this.BtnCancelar);
@@ -435,7 +384,6 @@
             this.Controls.Add(this.LblTipo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CmbPoblacion);
-            this.Controls.Add(this.GbxTipo);
             this.Controls.Add(this.dateTimePickerFecNac);
             this.Controls.Add(this.LblFechaNacimiento);
             this.Controls.Add(this.txtNombre);
@@ -450,11 +398,11 @@
             this.Controls.Add(this.txtNumColegiado);
             this.Controls.Add(this.lblColegio);
             this.Controls.Add(this.lblProvincia);
+            this.MaximizeBox = false;
             this.Name = "FrmIngresoDatosMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Médico";
             this.Load += new System.EventHandler(this.FrmIngresoDatosMedico_Load);
-            this.GbxTipo.ResumeLayout(false);
-            this.GbxTipo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.GbxFechas.ResumeLayout(false);
@@ -479,9 +427,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecNac;
         private System.Windows.Forms.Label LblFechaNacimiento;
-        private System.Windows.Forms.GroupBox GbxTipo;
-        private System.Windows.Forms.RadioButton radioButtonSustituto;
-        private System.Windows.Forms.RadioButton radioButtonInterino;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecAlta;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecBaja;
         private System.Windows.Forms.Label LblFechaAlta;
@@ -490,7 +435,6 @@
         private System.Windows.Forms.ComboBox CmbPoblacion;
         private System.Windows.Forms.ComboBox CmbTipo;
         private System.Windows.Forms.Label LblTipo;
-        private System.Windows.Forms.RadioButton radioButtonTitular;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblINgresarMEdico;
         private System.Windows.Forms.Button BtnCancelar;

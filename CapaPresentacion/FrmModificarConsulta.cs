@@ -70,6 +70,8 @@ namespace CapaPresentacion
                 if (objConsulta != null) {
                     visibilizar();
                     asignar();
+                   
+                    TxtEleccion.Enabled = false;
 
                 } else {
                     MessageBox.Show("No se encuentra la consulta con el id ingresado en la base de datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -148,6 +150,8 @@ namespace CapaPresentacion
 
                 objOperacionesConsulta.ActualizarConsulta(objConsulta);
                 MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                this.Close();
             }
             catch (Exception ex)
             {

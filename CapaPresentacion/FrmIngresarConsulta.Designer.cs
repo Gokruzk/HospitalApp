@@ -176,6 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(831, 487);
             this.Controls.Add(this.BtnCancelar);
@@ -189,7 +190,9 @@
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "FrmIngresarConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Consulta";
             this.Load += new System.EventHandler(this.FrmIngresarConsulta_Load);
             this.panel1.ResumeLayout(false);

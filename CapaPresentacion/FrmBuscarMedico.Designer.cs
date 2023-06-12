@@ -54,10 +54,10 @@
             this.LblBuscarMedico.AutoSize = true;
             this.LblBuscarMedico.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBuscarMedico.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblBuscarMedico.Location = new System.Drawing.Point(389, 33);
-            this.LblBuscarMedico.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblBuscarMedico.Location = new System.Drawing.Point(292, 27);
+            this.LblBuscarMedico.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblBuscarMedico.Name = "LblBuscarMedico";
-            this.LblBuscarMedico.Size = new System.Drawing.Size(301, 38);
+            this.LblBuscarMedico.Size = new System.Drawing.Size(246, 32);
             this.LblBuscarMedico.TabIndex = 1;
             this.LblBuscarMedico.Text = "BUSCAR MÉDICO";
             // 
@@ -65,10 +65,10 @@
             // 
             this.LblPoblacion.AutoSize = true;
             this.LblPoblacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPoblacion.Location = new System.Drawing.Point(623, 370);
-            this.LblPoblacion.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblPoblacion.Location = new System.Drawing.Point(467, 301);
+            this.LblPoblacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblPoblacion.Name = "LblPoblacion";
-            this.LblPoblacion.Size = new System.Drawing.Size(388, 28);
+            this.LblPoblacion.Size = new System.Drawing.Size(317, 22);
             this.LblPoblacion.TabIndex = 94;
             this.LblPoblacion.Text = "POBLACIÓN: __________________";
             // 
@@ -76,20 +76,20 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.LblBuscarMedico);
-            this.panel1.Location = new System.Drawing.Point(3, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1169, 96);
+            this.panel1.Size = new System.Drawing.Size(877, 78);
             this.panel1.TabIndex = 98;
             // 
             // LblFechaNacimiento
             // 
             this.LblFechaNacimiento.AutoSize = true;
             this.LblFechaNacimiento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaNacimiento.Location = new System.Drawing.Point(64, 230);
-            this.LblFechaNacimiento.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblFechaNacimiento.Location = new System.Drawing.Point(48, 187);
+            this.LblFechaNacimiento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblFechaNacimiento.Name = "LblFechaNacimiento";
-            this.LblFechaNacimiento.Size = new System.Drawing.Size(804, 28);
+            this.LblFechaNacimiento.Size = new System.Drawing.Size(658, 22);
             this.LblFechaNacimiento.TabIndex = 88;
             this.LblFechaNacimiento.Text = "FECHA DE NACIMIENTO: _________________________________________";
             // 
@@ -97,10 +97,10 @@
             // 
             this.LblNumSegSocial.AutoSize = true;
             this.LblNumSegSocial.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNumSegSocial.Location = new System.Drawing.Point(64, 342);
-            this.LblNumSegSocial.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblNumSegSocial.Location = new System.Drawing.Point(48, 278);
+            this.LblNumSegSocial.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblNumSegSocial.Name = "LblNumSegSocial";
-            this.LblNumSegSocial.Size = new System.Drawing.Size(487, 56);
+            this.LblNumSegSocial.Size = new System.Drawing.Size(396, 44);
             this.LblNumSegSocial.TabIndex = 83;
             this.LblNumSegSocial.Text = "NÚMERO DE \r\nSEGURIDAD SOCIAL: __________________";
             // 
@@ -108,10 +108,10 @@
             // 
             this.LblFechaBaja.AutoSize = true;
             this.LblFechaBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaBaja.Location = new System.Drawing.Point(871, 481);
-            this.LblFechaBaja.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblFechaBaja.Location = new System.Drawing.Point(653, 391);
+            this.LblFechaBaja.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblFechaBaja.Name = "LblFechaBaja";
-            this.LblFechaBaja.Size = new System.Drawing.Size(228, 56);
+            this.LblFechaBaja.Size = new System.Drawing.Size(190, 44);
             this.LblFechaBaja.TabIndex = 81;
             this.LblFechaBaja.Text = "FECHA DE BAJA:\r\n__________________";
             // 
@@ -119,10 +119,10 @@
             // 
             this.LblFechaAlta.AutoSize = true;
             this.LblFechaAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaAlta.Location = new System.Drawing.Point(575, 481);
-            this.LblFechaAlta.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblFechaAlta.Location = new System.Drawing.Point(431, 391);
+            this.LblFechaAlta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblFechaAlta.Name = "LblFechaAlta";
-            this.LblFechaAlta.Size = new System.Drawing.Size(228, 56);
+            this.LblFechaAlta.Size = new System.Drawing.Size(190, 44);
             this.LblFechaAlta.TabIndex = 80;
             this.LblFechaAlta.Text = "FECHA DE ALTA:\r\n__________________";
             // 
@@ -130,10 +130,10 @@
             // 
             this.LblDireccion.AutoSize = true;
             this.LblDireccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDireccion.Location = new System.Drawing.Point(76, 286);
-            this.LblDireccion.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblDireccion.Location = new System.Drawing.Point(57, 232);
+            this.LblDireccion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblDireccion.Name = "LblDireccion";
-            this.LblDireccion.Size = new System.Drawing.Size(886, 28);
+            this.LblDireccion.Size = new System.Drawing.Size(731, 22);
             this.LblDireccion.TabIndex = 79;
             this.LblDireccion.Text = "DIRECCÍON: ____________________________________________________________";
             // 
@@ -141,10 +141,10 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(108, 180);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblNombre.Location = new System.Drawing.Point(81, 146);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(853, 28);
+            this.lblNombre.Size = new System.Drawing.Size(707, 22);
             this.lblNombre.TabIndex = 78;
             this.lblNombre.Text = "NOMBRE: ____________________________________________________________";
             // 
@@ -177,20 +177,18 @@
             "Sucumbíos",
             "Tungurahua",
             "Zamora Chinchipe"});
-            this.comboBoxProvincia.Location = new System.Drawing.Point(351, 1094);
-            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxProvincia.Location = new System.Drawing.Point(263, 889);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
-            this.comboBoxProvincia.Size = new System.Drawing.Size(193, 27);
+            this.comboBoxProvincia.Size = new System.Drawing.Size(146, 24);
             this.comboBoxProvincia.TabIndex = 77;
             // 
             // lblColegiado
             // 
             this.lblColegiado.AutoSize = true;
             this.lblColegiado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.lblColegiado.Location = new System.Drawing.Point(44, 423);
-            this.lblColegiado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColegiado.Location = new System.Drawing.Point(33, 344);
             this.lblColegiado.Name = "lblColegiado";
-            this.lblColegiado.Size = new System.Drawing.Size(520, 28);
+            this.lblColegiado.Size = new System.Drawing.Size(421, 22);
             this.lblColegiado.TabIndex = 75;
             this.lblColegiado.Text = "NÚMERO DE COLEGIADO: ________________";
             // 
@@ -198,10 +196,9 @@
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvincia.Location = new System.Drawing.Point(136, 1094);
-            this.lblProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProvincia.Location = new System.Drawing.Point(102, 889);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(102, 20);
+            this.lblProvincia.Size = new System.Drawing.Size(77, 16);
             this.lblProvincia.TabIndex = 74;
             this.lblProvincia.Text = "PROVINCIA";
             // 
@@ -209,10 +206,9 @@
             // 
             this.LblTipoMedico.AutoSize = true;
             this.LblTipoMedico.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.LblTipoMedico.Location = new System.Drawing.Point(76, 508);
-            this.LblTipoMedico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTipoMedico.Location = new System.Drawing.Point(57, 413);
             this.LblTipoMedico.Name = "LblTipoMedico";
-            this.LblTipoMedico.Size = new System.Drawing.Size(421, 28);
+            this.LblTipoMedico.Size = new System.Drawing.Size(342, 22);
             this.LblTipoMedico.TabIndex = 75;
             this.LblTipoMedico.Text = "TIPO DE MÉÐICO: ________________";
             // 
@@ -220,10 +216,10 @@
             // 
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstado.Location = new System.Drawing.Point(383, 571);
-            this.LblEstado.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblEstado.Location = new System.Drawing.Point(287, 464);
+            this.LblEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblEstado.Name = "LblEstado";
-            this.LblEstado.Size = new System.Drawing.Size(343, 28);
+            this.LblEstado.Size = new System.Drawing.Size(282, 22);
             this.LblEstado.TabIndex = 102;
             this.LblEstado.Text = "ESTADO: __________________";
             // 
@@ -235,20 +231,18 @@
             this.CmbCampo.Items.AddRange(new object[] {
             "CÉDULA",
             "NUM. SEGURIDAD SOCIAL"});
-            this.CmbCampo.Location = new System.Drawing.Point(221, 122);
-            this.CmbCampo.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbCampo.Location = new System.Drawing.Point(166, 99);
             this.CmbCampo.Name = "CmbCampo";
-            this.CmbCampo.Size = new System.Drawing.Size(300, 37);
+            this.CmbCampo.Size = new System.Drawing.Size(226, 32);
             this.CmbCampo.TabIndex = 111;
             this.CmbCampo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbCampo_KeyPress);
             // 
             // BtnBuscar
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnBuscar.Location = new System.Drawing.Point(848, 116);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBuscar.Location = new System.Drawing.Point(636, 94);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(252, 48);
+            this.BtnBuscar.Size = new System.Drawing.Size(189, 39);
             this.BtnBuscar.TabIndex = 110;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
@@ -257,10 +251,9 @@
             // TxtEleccion
             // 
             this.TxtEleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtEleccion.Location = new System.Drawing.Point(561, 122);
-            this.TxtEleccion.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtEleccion.Location = new System.Drawing.Point(421, 99);
             this.TxtEleccion.Name = "TxtEleccion";
-            this.TxtEleccion.Size = new System.Drawing.Size(243, 34);
+            this.TxtEleccion.Size = new System.Drawing.Size(183, 29);
             this.TxtEleccion.TabIndex = 109;
             this.TxtEleccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEleccion_KeyPress);
             // 
@@ -268,19 +261,20 @@
             // 
             this.LblCedula.AutoSize = true;
             this.LblCedula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCedula.Location = new System.Drawing.Point(73, 130);
-            this.LblCedula.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblCedula.Location = new System.Drawing.Point(55, 106);
+            this.LblCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblCedula.Name = "LblCedula";
-            this.LblCedula.Size = new System.Drawing.Size(110, 28);
+            this.LblCedula.Size = new System.Drawing.Size(88, 22);
             this.LblCedula.TabIndex = 108;
             this.LblCedula.Text = "CAMPO:";
             // 
             // FrmBuscarMedico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1173, 631);
+            this.ClientSize = new System.Drawing.Size(880, 513);
             this.Controls.Add(this.CmbCampo);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtEleccion);
@@ -298,8 +292,9 @@
             this.Controls.Add(this.LblTipoMedico);
             this.Controls.Add(this.lblColegiado);
             this.Controls.Add(this.lblProvincia);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FrmBuscarMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Médico";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

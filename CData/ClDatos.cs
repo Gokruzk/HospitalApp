@@ -1278,7 +1278,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"SELECT * FROM Administrador WHERE UserID = '{@id}' AND Cedula = '{@psw}'";
+                string query = $"SELECT * FROM Administrador WHERE UserID = '{@id}' AND Psw = '{@psw}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 

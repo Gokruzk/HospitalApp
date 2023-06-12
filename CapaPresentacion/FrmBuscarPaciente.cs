@@ -44,7 +44,7 @@ namespace CapaPresentacion
             {
                 try
                 {
-
+                    BtnBuscar.Focus();
                 }
                 catch (Exception ex)
                 {

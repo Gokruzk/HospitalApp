@@ -36,6 +36,7 @@ namespace CapaPresentacion
             dateTimePickerFecBaja.Enabled = false;
             CmbHabDes.Enabled = false;
 
+            GbxFechas.Visible = false;
             
         }
 
@@ -81,8 +82,8 @@ namespace CapaPresentacion
             CmbTipoModificar.Enabled = true;
             txtNumColegiado.Enabled = true;
             CmbPoblacionModificar.Enabled = true;
-            //dateTimePickerFecAlta.Enabled = true;
-            //dateTimePickerFecBaja.Enabled = true;
+            dateTimePickerFecAlta.Enabled = true;
+            dateTimePickerFecBaja.Enabled = true;
             CmbHabDes.Enabled = true;
         }
 
@@ -112,6 +113,8 @@ namespace CapaPresentacion
                     {
                         visibilizar();
                         asignar();
+                        CmbCampo.Enabled = false;
+                        TxtEleccion.Enabled = false;
                     }
                     else
                     {
@@ -350,6 +353,7 @@ namespace CapaPresentacion
 
                     objOperacionesMedico.ActualizarMedico(objMedico);
                         MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -402,9 +406,11 @@ namespace CapaPresentacion
 
         private void CmbTipoModificar_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (CmbTipoModificar.SelectedIndex == 3)
+            if (CmbTipoModificar.SelectedIndex == 2)
             {
                 GbxFechas.Visible = true;
+                dateTimePickerFecAlta.Enabled = true;   
+                dateTimePickerFecBaja.Enabled = true;
             }
             else
             {

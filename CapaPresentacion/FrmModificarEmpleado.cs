@@ -98,6 +98,8 @@ namespace CapaPresentacion
                     if (objEmpleado != null) {
                         visibilizar();
                         asignar();
+                        CmbCampo.Enabled = false;
+                        TxtEleccion.Enabled = false;
 
                     } else {
                         MessageBox.Show("No se encuentra a un empleado con la cédula ingresada en la base de datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -276,6 +278,7 @@ namespace CapaPresentacion
                 objOperacionesEmpleado.ActualizarEmpleado(objEmpleado);
 
                 MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {

@@ -79,7 +79,7 @@
             // 
             this.BtnModificar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnModificar.Location = new System.Drawing.Point(233, 490);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(189, 50);
             this.BtnModificar.TabIndex = 97;
@@ -92,7 +92,7 @@
             this.CmbTipoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbTipoModificar.FormattingEnabled = true;
             this.CmbTipoModificar.Location = new System.Drawing.Point(567, 265);
-            this.CmbTipoModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbTipoModificar.Margin = new System.Windows.Forms.Padding(2);
             this.CmbTipoModificar.Name = "CmbTipoModificar";
             this.CmbTipoModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbTipoModificar.TabIndex = 96;
@@ -126,7 +126,7 @@
             this.CmbPoblacionModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbPoblacionModificar.FormattingEnabled = true;
             this.CmbPoblacionModificar.Location = new System.Drawing.Point(216, 269);
-            this.CmbPoblacionModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbPoblacionModificar.Margin = new System.Windows.Forms.Padding(2);
             this.CmbPoblacionModificar.Name = "CmbPoblacionModificar";
             this.CmbPoblacionModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbPoblacionModificar.TabIndex = 93;
@@ -146,7 +146,7 @@
             // 
             this.dateTimePickerFecBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.dateTimePickerFecBaja.Location = new System.Drawing.Point(36, 111);
-            this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecBaja.TabIndex = 91;
@@ -157,7 +157,7 @@
             // 
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.dateTimePickerFecAlta.Location = new System.Drawing.Point(36, 58);
-            this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
             this.dateTimePickerFecAlta.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecAlta.TabIndex = 90;
@@ -332,7 +332,7 @@
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnCancelar.Location = new System.Drawing.Point(479, 490);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
             this.BtnCancelar.TabIndex = 97;
@@ -348,7 +348,7 @@
             "Habilitado",
             "No habilitado"});
             this.CmbHabDes.Location = new System.Drawing.Point(238, 418);
-            this.CmbHabDes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbHabDes.Margin = new System.Windows.Forms.Padding(2);
             this.CmbHabDes.Name = "CmbHabDes";
             this.CmbHabDes.Size = new System.Drawing.Size(184, 32);
             this.CmbHabDes.TabIndex = 93;
@@ -427,6 +427,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(881, 561);
             this.Controls.Add(this.GbxFechas);
@@ -455,7 +456,9 @@
             this.Controls.Add(this.txtNumColegiado);
             this.Controls.Add(this.lblColegio);
             this.Controls.Add(this.lblProvincia);
+            this.MaximizeBox = false;
             this.Name = "FrmModificarMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Médico";
             this.Load += new System.EventHandler(this.FrmModificarMedico_Load);
             this.panel1.ResumeLayout(false);

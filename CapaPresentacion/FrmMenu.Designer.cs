@@ -284,13 +284,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(985, 609);
+            this.ClientSize = new System.Drawing.Size(985, 508);
             this.Controls.Add(this.GbxBusqueda);
             this.Controls.Add(this.GbxModificacion);
             this.Controls.Add(this.GbxRegistros);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "FrmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
