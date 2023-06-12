@@ -87,7 +87,7 @@
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(363, 29);
             this.dateTimePickerFecha.TabIndex = 75;
-            this.dateTimePickerFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecha_KeyPress);
+            this.dateTimePickerFecha.ValueChanged += new System.EventHandler(this.dateTimePickerFecha_ValueChanged);
             // 
             // CmbMedicoAsignado
             // 
@@ -226,6 +226,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmModificarConsulta";
             this.Text = "FrmModificarConsulta";
+            this.Load += new System.EventHandler(this.FrmModificarConsulta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

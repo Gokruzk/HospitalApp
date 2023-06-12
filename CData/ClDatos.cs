@@ -1025,6 +1025,8 @@ namespace CData
                 {
                     // Clave primaria duplicada
                     return "No se puede ingresar 2 veces la misma cédula";
+                } else {
+                    return e.Message;
                 }
             }
             objBD.Cerrar();
@@ -1046,6 +1048,35 @@ namespace CData
                 Console.WriteLine(e.Message);
             }
             objBD.Cerrar();
+        }
+
+        public Consulta SearchConsulta(string id) {
+            Consulta datoConsulta = new Consulta();
+            try {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Consultas WHERE ConsultaID = '{@id}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read()) {
+                    Consulta objEnt = new Consulta() {
+                        CID = Convert.ToInt16(reader["ConsultaID"]),
+                        Descripcion = Convert.ToString(reader["Descripcion"]),
+                        Medico = Convert.ToString(reader["Medico"]),
+                        Paciente = Convert.ToString(reader["Paciente"]),
+                        Fecha = Convert.ToDateTime(reader["Fecha"])
+                    };
+                    datoConsulta = objEnt;
+                } else
+                    datoConsulta = null;
+            } catch (SqlException e) {
+                datoConsulta = null;
+                Console.WriteLine(e.Message);
+            }
+            objBD.Cerrar();
+            return datoConsulta;
         }
 
         public Consulta SearchConsultaPaciente(string id)

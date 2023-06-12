@@ -48,10 +48,10 @@
             this.lblIngresarEmpleado.AutoSize = true;
             this.lblIngresarEmpleado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresarEmpleado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIngresarEmpleado.Location = new System.Drawing.Point(316, 28);
-            this.lblIngresarEmpleado.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblIngresarEmpleado.Location = new System.Drawing.Point(237, 23);
+            this.lblIngresarEmpleado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblIngresarEmpleado.Name = "lblIngresarEmpleado";
-            this.lblIngresarEmpleado.Size = new System.Drawing.Size(389, 38);
+            this.lblIngresarEmpleado.Size = new System.Drawing.Size(317, 32);
             this.lblIngresarEmpleado.TabIndex = 1;
             this.lblIngresarEmpleado.Text = "INGRESAR CONSULTA";
             // 
@@ -59,20 +59,19 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.lblIngresarEmpleado);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1105, 96);
+            this.panel1.Size = new System.Drawing.Size(829, 78);
             this.panel1.TabIndex = 53;
             // 
             // TxtDescripcion
             // 
             this.TxtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescripcion.Location = new System.Drawing.Point(312, 311);
-            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDescripcion.Location = new System.Drawing.Point(234, 253);
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(428, 178);
+            this.TxtDescripcion.Size = new System.Drawing.Size(322, 145);
             this.TxtDescripcion.TabIndex = 58;
             this.TxtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDescripcion_KeyPress);
             // 
@@ -80,10 +79,10 @@
             // 
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDescripcion.Location = new System.Drawing.Point(309, 270);
-            this.LblDescripcion.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblDescripcion.Location = new System.Drawing.Point(232, 219);
+            this.LblDescripcion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblDescripcion.Name = "LblDescripcion";
-            this.LblDescripcion.Size = new System.Drawing.Size(410, 28);
+            this.LblDescripcion.Size = new System.Drawing.Size(326, 22);
             this.LblDescripcion.TabIndex = 57;
             this.LblDescripcion.Text = "DESCRIPCIÓN DE LA CONSULTA:";
             // 
@@ -92,10 +91,9 @@
             this.CmbPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbPaciente.FormattingEnabled = true;
-            this.CmbPaciente.Location = new System.Drawing.Point(271, 117);
-            this.CmbPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbPaciente.Location = new System.Drawing.Point(203, 95);
             this.CmbPaciente.Name = "CmbPaciente";
-            this.CmbPaciente.Size = new System.Drawing.Size(568, 37);
+            this.CmbPaciente.Size = new System.Drawing.Size(427, 32);
             this.CmbPaciente.TabIndex = 63;
             this.CmbPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbPaciente_KeyPress);
             // 
@@ -103,10 +101,10 @@
             // 
             this.LblPoblacion.AutoSize = true;
             this.LblPoblacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPoblacion.Location = new System.Drawing.Point(84, 122);
-            this.LblPoblacion.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.LblPoblacion.Location = new System.Drawing.Point(63, 99);
+            this.LblPoblacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblPoblacion.Name = "LblPoblacion";
-            this.LblPoblacion.Size = new System.Drawing.Size(144, 28);
+            this.LblPoblacion.Size = new System.Drawing.Size(115, 22);
             this.LblPoblacion.TabIndex = 62;
             this.LblPoblacion.Text = "PACIENTE:";
             // 
@@ -114,10 +112,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 170);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label1.Location = new System.Drawing.Point(63, 138);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 28);
+            this.label1.Size = new System.Drawing.Size(204, 22);
             this.label1.TabIndex = 62;
             this.label1.Text = "MÉÐICO ASIGNADO:";
             // 
@@ -126,10 +124,9 @@
             this.CmbMedicoAsignado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbMedicoAsignado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbMedicoAsignado.FormattingEnabled = true;
-            this.CmbMedicoAsignado.Location = new System.Drawing.Point(367, 164);
-            this.CmbMedicoAsignado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbMedicoAsignado.Location = new System.Drawing.Point(275, 133);
             this.CmbMedicoAsignado.Name = "CmbMedicoAsignado";
-            this.CmbMedicoAsignado.Size = new System.Drawing.Size(568, 37);
+            this.CmbMedicoAsignado.Size = new System.Drawing.Size(427, 32);
             this.CmbMedicoAsignado.TabIndex = 63;
             this.CmbMedicoAsignado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbMedicoAsignado_KeyPress);
             // 
@@ -137,30 +134,28 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(84, 222);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label2.Location = new System.Drawing.Point(63, 180);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 28);
+            this.label2.Size = new System.Drawing.Size(82, 22);
             this.label2.TabIndex = 62;
             this.label2.Text = "FECHA:";
             // 
             // dateTimePickerFecha
             // 
             this.dateTimePickerFecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
-            this.dateTimePickerFecha.Location = new System.Drawing.Point(204, 215);
-            this.dateTimePickerFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(153, 175);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
-            this.dateTimePickerFecha.Size = new System.Drawing.Size(483, 35);
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(363, 29);
             this.dateTimePickerFecha.TabIndex = 64;
-            this.dateTimePickerFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecha_KeyPress);
+            this.dateTimePickerFecha.ValueChanged += new System.EventHandler(this.dateTimePickerFecha_ValueChanged);
             // 
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnCancelar.Location = new System.Drawing.Point(528, 510);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancelar.Location = new System.Drawing.Point(396, 414);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(252, 62);
+            this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
             this.BtnCancelar.TabIndex = 66;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -169,10 +164,9 @@
             // BtnRegistrar
             // 
             this.BtnRegistrar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnRegistrar.Location = new System.Drawing.Point(268, 510);
-            this.BtnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnRegistrar.Location = new System.Drawing.Point(201, 414);
             this.BtnRegistrar.Name = "BtnRegistrar";
-            this.BtnRegistrar.Size = new System.Drawing.Size(252, 62);
+            this.BtnRegistrar.Size = new System.Drawing.Size(189, 50);
             this.BtnRegistrar.TabIndex = 65;
             this.BtnRegistrar.Text = "REGISTRAR";
             this.BtnRegistrar.UseVisualStyleBackColor = true;
@@ -180,10 +174,10 @@
             // 
             // FrmIngresarConsulta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1108, 599);
+            this.ClientSize = new System.Drawing.Size(831, 487);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.dateTimePickerFecha);
@@ -195,7 +189,6 @@
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmIngresarConsulta";
             this.Text = "Ingresar Consulta";
             this.Load += new System.EventHandler(this.FrmIngresarConsulta_Load);

@@ -1,4 +1,5 @@
 ﻿using CLogic;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,12 @@ namespace CapaPresentacion
 {
     public partial class FrmIngresarConsulta : Form
     {
+        Consulta objConsulta = new Consulta();
+        ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
         ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
         ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
+        ClOperacionesConsultas objOperacionesConsulta = new ClOperacionesConsultas();
+
         public FrmIngresarConsulta()
         {
             InitializeComponent();
@@ -50,18 +55,14 @@ namespace CapaPresentacion
             }
         }
 
-        private void dateTimePickerFecha_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                try
-                {
-                    TxtDescripcion.Focus();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error DateTimeFecha: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e) {
+            try {
+                dateTimePickerFecha.MinDate = DateTime.Today;
+                dateTimePickerFecha.Format = DateTimePickerFormat.Short;
+                TxtDescripcion.Focus();
+
+            } catch (Exception ex) {
+                MessageBox.Show($"Error DateTimeFecha: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,7 +72,10 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    BtnRegistrar.Focus();
+                    if (objOperacionesConsulta.ValidarDescripcion(TxtDescripcion.Text))
+                        BtnRegistrar.Focus();
+                    else
+                        MessageBox.Show($"Error --: " + objMensajes.errores[8], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
@@ -84,7 +88,17 @@ namespace CapaPresentacion
         {
             try
             {
+                objConsulta.Paciente = objOperacionesPaciente.CargarCedulasPacientes()[CmbPaciente.SelectedIndex];
+                objConsulta.Medico = objOperacionesMedico.CargarCedulasMedicos()[CmbMedicoAsignado.SelectedIndex];
+                objConsulta.Fecha = dateTimePickerFecha.Value;
+                objConsulta.Descripcion = TxtDescripcion.Text;
 
+                string estado = objOperacionesConsulta.RegistrarConsulta(objConsulta);
+
+                if(estado == "CORRECTO")
+                    MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

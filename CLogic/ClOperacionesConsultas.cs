@@ -21,44 +21,16 @@ namespace CLogic {
             return true;
         }
 
-        private string ValidarTodoConsulta(Consulta datos) {
-            if(ValidarDescripcion(datos.Descripcion))
-                return objMensajes.errores[8];
-
-            if (!objPersona.ValidarCedula(datos.Medico))
-                return objMensajes.errores[0];
-
-            if (!objPersona.ValidarCedula(datos.Paciente))
-                return objMensajes.errores[0];
-
-            return objMensajes.errores[15];
-        }
-
         public string RegistrarConsulta(Consulta datos) {
-            string validacion = ValidarTodoConsulta(datos);
-
-            if (validacion == "CORRECTO") {
-                objDatos.RegistroConsulta(datos);
-            }
-
-            return validacion;
+            return objDatos.RegistroConsulta(datos);
         }
 
-        public string ActualizarConsulta(Consulta datos) {
-            string validacion = ValidarTodoConsulta(datos);
-
-            if (validacion == "CORRECTO")
-                objDatos.UpdateConsulta(datos);
-
-            return validacion;
+        public Consulta BuscarConsulta(string id) {
+            return objDatos.SearchConsulta(id);
         }
 
-        public Consulta BuscarConsultaPaciente(string cedula) {
-            return objDatos.SearchConsultaPaciente(cedula);
-        }
-
-        public Consulta BuscarConsultaMedico(string cedula) {
-            return objDatos.SearchConsultaMedico(cedula);
+        public void ActualizarConsulta(Consulta datos) {
+            objDatos.UpdateConsulta(datos);
         }
     }
 }

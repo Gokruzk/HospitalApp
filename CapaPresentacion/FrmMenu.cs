@@ -99,5 +99,15 @@ namespace CapaPresentacion
             FrmBuscarEmpleado objE = new FrmBuscarEmpleado();
             objE.ShowDialog();
         }
+
+        private void BtnBuscarConsulta_Click(object sender, EventArgs e) {
+            FrmBuscarConsulta objC = new FrmBuscarConsulta();
+            objC.ShowDialog();
+        }
+
+        private void BtnModificarConsulta_Click(object sender, EventArgs e) {
+            FrmModificarConsulta objC = new FrmModificarConsulta();
+            objC.ShowDialog();
+        }
     }
 }

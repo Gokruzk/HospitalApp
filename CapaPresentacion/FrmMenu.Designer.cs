@@ -162,6 +162,7 @@
             this.BtnModificarConsulta.TabIndex = 3;
             this.BtnModificarConsulta.Text = "Modificar horario de consulta";
             this.BtnModificarConsulta.UseVisualStyleBackColor = true;
+            this.BtnModificarConsulta.Click += new System.EventHandler(this.BtnModificarConsulta_Click);
             // 
             // BtnModificarVacaciones
             // 
@@ -237,6 +238,7 @@
             this.BtnBuscarConsulta.TabIndex = 3;
             this.BtnBuscarConsulta.Text = "Buscar horario de consulta";
             this.BtnBuscarConsulta.UseVisualStyleBackColor = true;
+            this.BtnBuscarConsulta.Click += new System.EventHandler(this.BtnBuscarConsulta_Click);
             // 
             // BtnBuscarVacaciones
             // 

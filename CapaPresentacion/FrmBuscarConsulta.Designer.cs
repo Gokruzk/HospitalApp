@@ -32,9 +32,9 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TxtEleccion = new System.Windows.Forms.TextBox();
             this.LblCampo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LblPoblacion = new System.Windows.Forms.Label();
+            this.LblFecha = new System.Windows.Forms.Label();
+            this.LblMedico = new System.Windows.Forms.Label();
+            this.LblPaciente = new System.Windows.Forms.Label();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,6 +62,7 @@
             this.BtnBuscar.TabIndex = 128;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtEleccion
             // 
@@ -70,6 +71,7 @@
             this.TxtEleccion.Name = "TxtEleccion";
             this.TxtEleccion.Size = new System.Drawing.Size(183, 29);
             this.TxtEleccion.TabIndex = 127;
+            this.TxtEleccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEleccion_KeyPress);
             // 
             // LblCampo
             // 
@@ -82,38 +84,38 @@
             this.LblCampo.TabIndex = 126;
             this.LblCampo.Text = "ID CONSULTA:";
             // 
-            // label2
+            // LblFecha
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(75, 236);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(437, 22);
-            this.label2.TabIndex = 118;
-            this.label2.Text = "FECHA: ___________________________________";
+            this.LblFecha.AutoSize = true;
+            this.LblFecha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.Location = new System.Drawing.Point(75, 236);
+            this.LblFecha.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.Size = new System.Drawing.Size(437, 22);
+            this.LblFecha.TabIndex = 118;
+            this.LblFecha.Text = "FECHA: ___________________________________";
             // 
-            // label1
+            // LblMedico
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(75, 194);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(729, 22);
-            this.label1.TabIndex = 119;
-            this.label1.Text = "MÉDICO ASIGNADO: ____________________________________________________";
+            this.LblMedico.AutoSize = true;
+            this.LblMedico.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMedico.Location = new System.Drawing.Point(75, 194);
+            this.LblMedico.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblMedico.Name = "LblMedico";
+            this.LblMedico.Size = new System.Drawing.Size(729, 22);
+            this.LblMedico.TabIndex = 119;
+            this.LblMedico.Text = "MÉDICO ASIGNADO: ____________________________________________________";
             // 
-            // LblPoblacion
+            // LblPaciente
             // 
-            this.LblPoblacion.AutoSize = true;
-            this.LblPoblacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPoblacion.Location = new System.Drawing.Point(75, 155);
-            this.LblPoblacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LblPoblacion.Name = "LblPoblacion";
-            this.LblPoblacion.Size = new System.Drawing.Size(640, 22);
-            this.LblPoblacion.TabIndex = 120;
-            this.LblPoblacion.Text = "PACIENTE: ____________________________________________________";
+            this.LblPaciente.AutoSize = true;
+            this.LblPaciente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPaciente.Location = new System.Drawing.Point(75, 155);
+            this.LblPaciente.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblPaciente.Name = "LblPaciente";
+            this.LblPaciente.Size = new System.Drawing.Size(640, 22);
+            this.LblPaciente.TabIndex = 120;
+            this.LblPaciente.Text = "PACIENTE: ____________________________________________________";
             // 
             // TxtDescripcion
             // 
@@ -155,9 +157,9 @@
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtEleccion);
             this.Controls.Add(this.LblCampo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.LblPoblacion);
+            this.Controls.Add(this.LblFecha);
+            this.Controls.Add(this.LblMedico);
+            this.Controls.Add(this.LblPaciente);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.panel1);
@@ -176,9 +178,9 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.TextBox TxtEleccion;
         private System.Windows.Forms.Label LblCampo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LblPoblacion;
+        private System.Windows.Forms.Label LblFecha;
+        private System.Windows.Forms.Label LblMedico;
+        private System.Windows.Forms.Label LblPaciente;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.Panel panel1;
