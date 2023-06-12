@@ -44,6 +44,7 @@ namespace CapaPresentacion
         {
             ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
             ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
+            ClOperacionesEmpleado objOperacionesEmpleado = new ClOperacionesEmpleado();
             if (comboBox1.SelectedItem.ToString() == "Medicos con tipos")
             {
                 RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosTipos());

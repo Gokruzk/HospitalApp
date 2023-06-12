@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -68,6 +69,16 @@ namespace CLogic
 
         public Empleado BuscarEmpleadoNumSocial(string numeroSeguroSocial) {
             return objDatos.SearchEmpleadoNS(numeroSeguroSocial);
+        }
+
+        public SqlDataAdapter CargarEmpleadosTipos()
+        {
+            return objDatos.GetEmpleadoTipos();
+        }
+
+        public SqlDataAdapter CargarEmpleadosVacaciones()
+        {
+            return objDatos.GetEmpleadoVacaciones();
         }
     }
 }
