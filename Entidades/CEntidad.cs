@@ -82,5 +82,12 @@ namespace Entidades
     }
 
     public class TipoEmpleado : Tipo { }
+
     public class TipoMedico : Tipo { }
+
+    public class Administrador
+    {
+        public string UserID { get; set; }
+        public string Psw { get; set;}
+    }
 }
