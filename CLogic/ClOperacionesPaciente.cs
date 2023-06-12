@@ -39,7 +39,7 @@ namespace CLogic
         {
             return objDatos.GetPacientesAD();
         }
-        
+
         public Paciente CargarPacienteCedula(string cedula)
         {
             return objDatos.SearchPaciente(cedula);
@@ -48,6 +48,17 @@ namespace CLogic
         public Paciente CargarPacienteNS(string numSeg)
         {
             return objDatos.SearchPacienteNS(numSeg);
+        }
+
+        public List<string> CargarCedulasPacientes()
+        {
+            List<Paciente> objCedulasPacientes = objDatos.GetPacientes();
+            List<string> cedulas = new List<string>();
+
+            foreach (Paciente paciente in objCedulasPacientes)
+                cedulas.Add(paciente.Cedula);
+
+            return cedulas;
         }
     }
 }
