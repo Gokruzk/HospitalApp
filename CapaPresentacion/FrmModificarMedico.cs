@@ -305,7 +305,7 @@ namespace CapaPresentacion
                         if (!objOperacionesPersona.ValidarEstado(CmbHabDes.SelectedIndex + 1)) 
                             MessageBox.Show($"Error --: " + objMensajes.errores[6], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         else
-                            BtnModificar.Focus(); ;
+                            BtnModificar.Focus();
                     }
                 }
                 catch (Exception ex)
