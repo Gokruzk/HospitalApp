@@ -49,45 +49,31 @@ namespace CapaPresentacion
             }
         }
 
-        private void TxtIdVac_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                if (e.KeyChar == (char)Keys.Enter)
-                {
-                    e.Handled = true;
-                    if (objOperacionesEmpleado.BuscarEmpleado(TxtCedula.Text) == null && objOperacionesMedico.CargarMedicoCedula(TxtCedula.Text) == null)
-                    {
-                        CmbEstado.Enabled = false;
-                        dateTimePickerFecInicio.Enabled = false;
-                        dateTimePickerFecFin.Enabled = false;
-                        MessageBox.Show("No se encuentra la vacación con el ID ingresado ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
-                    else
-                    {
-                        CmbEstado.Enabled = true;
-                        dateTimePickerFecInicio.Enabled = true;
-                        dateTimePickerFecFin.Enabled = true;
-                        CmbEstado.Focus();
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error TxtCedula: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             
             try
             {
-                CmbEstado.Enabled = true;
-                dateTimePickerFecInicio.Enabled = true;
-                dateTimePickerFecFin.Enabled = true;
+                objVacacion = objOperacionesVacacion.CargarVacacionCedulaId(TxtCedula.Text, int.Parse(TxtIdVac.Text));
+
+                if (objVacacion != null)
+                {
+                    CmbEstado.Enabled = true;
+                    dateTimePickerFecInicio.Enabled = true;
+                    dateTimePickerFecFin.Enabled = true;
+
+                    string[] estado = { "Realizada", "Planificada" };
+                    CmbEstado.SelectedIndex = objVacacion.Estado - 1;
+                    dateTimePickerFecInicio.Value = objVacacion.FechaInicio;
+                    dateTimePickerFecFin.Value = objVacacion.FechaFin;
+                }
+                else
+                {
+                    CmbEstado.Enabled = false;
+                    dateTimePickerFecInicio.Enabled = false;
+                    dateTimePickerFecFin.Enabled = false;
+                    MessageBox.Show("No se encuentra en la base de datos un registro de vacación correspondiente a la cédula y id ingresados", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }   
             }
             catch (Exception ex)
             {
@@ -147,7 +133,20 @@ namespace CapaPresentacion
         {
             try
             {
-                
+                try
+                {
+                    objVacacion.FechaInicio = dateTimePickerFecInicio.Value;
+                    objVacacion.FechaFin = dateTimePickerFecFin.Value;
+                    objVacacion.Estado = CmbEstado.SelectedIndex + 1;
+
+
+                    objOperacionesVacacion.ActualizarVacacion(objVacacion);
+                    MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -168,6 +167,15 @@ namespace CapaPresentacion
             }
         }
 
-        
+        private void dateTimePickerFecFin_CloseUp(object sender, EventArgs e)
+        {
+            if (!objOperacionesVacacion.ValidarFechas(dateTimePickerFecInicio.Value, dateTimePickerFecFin.Value))
+            {
+                MessageBox.Show($"Error --: " + objMensajes.errores[13], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dateTimePickerFecFin.Value = DateTime.Today;
+            }
+            else
+                BtnModificar.Focus();
+        }
     }
 }

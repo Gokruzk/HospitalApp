@@ -183,6 +183,7 @@
             this.BtnModificarVacaciones.TabIndex = 2;
             this.BtnModificarVacaciones.Text = "Modificar Vacacinoes";
             this.BtnModificarVacaciones.UseVisualStyleBackColor = true;
+            this.BtnModificarVacaciones.Click += new System.EventHandler(this.BtnModificarVacaciones_Click);
             // 
             // BtnModificarPaciente
             // 

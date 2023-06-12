@@ -28,21 +28,6 @@ namespace CLogic
             return DateTime.Compare(fechaI, fechaF) < 0;
         }
 
-
-        public string ValidarTodoVacacion(Vacaciones datos)
-        {
-            if (ValidarEstadoVacacion(datos.Estado))
-                return objMensajes.errores[14];
-
-            if (!objPersona.ValidarCedula(datos.Cedula))
-                return objMensajes.errores[0];
-
-            if (ValidarFechas(datos.FechaInicio, datos.FechaFin))
-                return objMensajes.errores[13];
-
-            return objMensajes.errores[15];
-        }
-
         public List<Vacaciones> CargarVacacionesCedula(string cedula)
         {
             List<Vacaciones> vacas = objDatos.GetVacaciones();
@@ -62,14 +47,19 @@ namespace CLogic
             return objDatos.RegistroVacacion(datos);
         }
 
+        public void ActualizarVacacion(Vacaciones datos)
+        {
+            objDatos.UpdateVacacion(datos);
+        }
+
         public Vacaciones CargarVacacionCedula(string cedula)
         {
             return objDatos.SearchVacacionCedula(cedula);
         }
 
-        public Vacaciones CargarVacacionesEstado(int estado)
+        public Vacaciones CargarVacacionCedulaId(string cedula, int id)
         {
-            return objDatos.SearchVacacionEstado(estado);
+            return objDatos.SearchVacacion(id, cedula);
         }
 
     }
