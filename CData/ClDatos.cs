@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Entidades;
+using System.Data;
 
 namespace CData
 {
@@ -150,7 +151,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoMed = objEnt;
-                }else
+                }
+                else
                     datoMed = null;
             }
             catch (SqlException e)
@@ -191,7 +193,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoMed = objEnt;
-                }else
+                }
+                else
                     datoMed = null;
             }
             catch (SqlException e)
@@ -334,8 +337,9 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoEmp = objEnt;
-                }else
-                    datoEmp = null;    
+                }
+                else
+                    datoEmp = null;
             }
             catch (SqlException e)
             {
@@ -372,7 +376,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoEmp = objEnt;
-                }else
+                }
+                else
                     datoEmp = null;
             }
             catch (SqlException e)
@@ -518,8 +523,9 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoPac = objEnt;
-                }else
-                    datoPac = null;    
+                }
+                else
+                    datoPac = null;
             }
             catch (SqlException e)
             {
@@ -555,7 +561,8 @@ namespace CData
                         FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"])
                     };
                     datoPac = objEnt;
-                }else
+                }
+                else
                     datoPac = null;
             }
             catch (SqlException e)
@@ -673,7 +680,8 @@ namespace CData
                         Descripcion = Convert.ToString(reader["descripcion"])
                     };
                     datoPob = objEnt;
-                }else
+                }
+                else
                     datoPob = null;
             }
             catch (SqlException e)
@@ -794,7 +802,8 @@ namespace CData
                         HoraFin = Convert.ToDateTime(reader["HoraFin"])
                     };
                     datoHor = objEnt;
-                }else
+                }
+                else
                     datoHor = null;
             }
             catch (SqlException e)
@@ -918,7 +927,8 @@ namespace CData
                         Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datoVac = objEnt;
-                }else
+                }
+                else
                     datoVac = null;
             }
             catch (SqlException e)
@@ -953,8 +963,9 @@ namespace CData
                         Estado = Convert.ToInt16(reader["Estado"])
                     };
                     datoVac = objEnt;
-                }else
-                    datoVac = null;    
+                }
+                else
+                    datoVac = null;
             }
             catch (SqlException e)
             {
@@ -1057,7 +1068,8 @@ namespace CData
                         Fecha = Convert.ToDateTime(reader["Fecha"])
                     };
                     datoConsulta = objEnt;
-                }else
+                }
+                else
                     datoConsulta = null;
             }
             catch (SqlException e)
@@ -1092,7 +1104,8 @@ namespace CData
                         Fecha = Convert.ToDateTime(reader["Fecha"])
                     };
                     datoConsulta = objEnt;
-                }else
+                }
+                else
                     datoConsulta = null;
             }
             catch (SqlException e)
@@ -1156,6 +1169,50 @@ namespace CData
             }
             objBD.Cerrar();
             return datosTipoMedico;
+        }
+
+        //MedicoVacaciones
+        public SqlDataAdapter GetMedicoVacaciones()
+        {
+            Medico datosMed = new Medico();
+            SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
+            try
+            {
+                objBD.Abrir();
+                string query = "SELECT Nombre, FechaInicio, FechaFin, M.Estado FROM Vacaciones JOIN Medicos M on Vacaciones.Estado = M.Estado";
+                adp = new SqlDataAdapter(query, objBD.connect);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return adp;
+        }
+
+        //MedicoTipos
+        public SqlDataAdapter GetMedicoTipos()
+        {
+            Medico datosMed = new Medico();
+            SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
+            try
+            {
+                objBD.Abrir();
+                string query = "SELECT Cedula,Nombre,NumeroSeguridadSocial,NumeroColegiado,Descripcion AS TipoMedico FROM Medicos JOIN TipoMedico TM on Medicos.TipoMedico = TM.Id";
+                adp = new SqlDataAdapter(query, objBD.connect);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return adp;
         }
     }
 }
