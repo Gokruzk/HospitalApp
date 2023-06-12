@@ -1241,13 +1241,13 @@ namespace CData
         }
 
         //Administrador
-        public Administrador GetAdministrador(string id, string psw)
+        public bool GetAdministrador(string id, string psw)
         {
             Administrador datoAdm = new Administrador();
             try
             {
                 objBD.Abrir();
-                string query = $"SELECT * FROM Administrado WHERE UserID = '{@id}' AND Cedula = '{@psw}'";
+                string query = $"SELECT * FROM Administrador WHERE UserID = '{@id}' AND Cedula = '{@psw}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
@@ -1263,15 +1263,15 @@ namespace CData
                     datoAdm = objEnt;
                 }
                 else
-                    datoAdm = null;
+                    return false;
             }
             catch (SqlException e)
             {
-                datoAdm = null;
                 Console.WriteLine(e.Message);
+                return false;
             }
             objBD.Cerrar();
-            return datoAdm;
+            return true;;
         }
     }
 }
