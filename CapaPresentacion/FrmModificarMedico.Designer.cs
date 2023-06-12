@@ -58,7 +58,9 @@
             this.TxtEleccion = new System.Windows.Forms.TextBox();
             this.LblCedula = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
+            this.GbxFechas = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
+            this.GbxFechas.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblModificarMedico
@@ -76,7 +78,7 @@
             // BtnModificar
             // 
             this.BtnModificar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnModificar.Location = new System.Drawing.Point(233, 478);
+            this.BtnModificar.Location = new System.Drawing.Point(233, 490);
             this.BtnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(189, 50);
@@ -94,6 +96,7 @@
             this.CmbTipoModificar.Name = "CmbTipoModificar";
             this.CmbTipoModificar.Size = new System.Drawing.Size(184, 32);
             this.CmbTipoModificar.TabIndex = 96;
+            this.CmbTipoModificar.SelectionChangeCommitted += new System.EventHandler(this.CmbTipoModificar_SelectionChangeCommitted);
             this.CmbTipoModificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbTipoModificar_KeyPress);
             // 
             // LblTipo
@@ -142,7 +145,7 @@
             // dateTimePickerFecBaja
             // 
             this.dateTimePickerFecBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecBaja.Location = new System.Drawing.Point(509, 399);
+            this.dateTimePickerFecBaja.Location = new System.Drawing.Point(36, 111);
             this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
             this.dateTimePickerFecBaja.Size = new System.Drawing.Size(313, 26);
@@ -153,7 +156,7 @@
             // dateTimePickerFecAlta
             // 
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecAlta.Location = new System.Drawing.Point(509, 346);
+            this.dateTimePickerFecAlta.Location = new System.Drawing.Point(36, 58);
             this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
             this.dateTimePickerFecAlta.Size = new System.Drawing.Size(313, 26);
@@ -222,7 +225,7 @@
             // 
             this.LblFechaBaja.AutoSize = true;
             this.LblFechaBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaBaja.Location = new System.Drawing.Point(506, 374);
+            this.LblFechaBaja.Location = new System.Drawing.Point(33, 86);
             this.LblFechaBaja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblFechaBaja.Name = "LblFechaBaja";
             this.LblFechaBaja.Size = new System.Drawing.Size(172, 22);
@@ -233,7 +236,7 @@
             // 
             this.LblFechaAlta.AutoSize = true;
             this.LblFechaAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaAlta.Location = new System.Drawing.Point(507, 317);
+            this.LblFechaAlta.Location = new System.Drawing.Point(34, 29);
             this.LblFechaAlta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblFechaAlta.Name = "LblFechaAlta";
             this.LblFechaAlta.Size = new System.Drawing.Size(170, 22);
@@ -328,7 +331,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnCancelar.Location = new System.Drawing.Point(479, 478);
+            this.BtnCancelar.Location = new System.Drawing.Point(479, 490);
             this.BtnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
@@ -344,7 +347,7 @@
             this.CmbHabDes.Items.AddRange(new object[] {
             "Habilitado",
             "No habilitado"});
-            this.CmbHabDes.Location = new System.Drawing.Point(301, 430);
+            this.CmbHabDes.Location = new System.Drawing.Point(238, 418);
             this.CmbHabDes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CmbHabDes.Name = "CmbHabDes";
             this.CmbHabDes.Size = new System.Drawing.Size(184, 32);
@@ -355,7 +358,7 @@
             // 
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstado.Location = new System.Drawing.Point(188, 434);
+            this.LblEstado.Location = new System.Drawing.Point(125, 422);
             this.LblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblEstado.Name = "LblEstado";
             this.LblEstado.Size = new System.Drawing.Size(97, 22);
@@ -406,12 +409,27 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
+            // GbxFechas
+            // 
+            this.GbxFechas.Controls.Add(this.dateTimePickerFecBaja);
+            this.GbxFechas.Controls.Add(this.LblFechaAlta);
+            this.GbxFechas.Controls.Add(this.LblFechaBaja);
+            this.GbxFechas.Controls.Add(this.dateTimePickerFecAlta);
+            this.GbxFechas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
+            this.GbxFechas.Location = new System.Drawing.Point(479, 304);
+            this.GbxFechas.Name = "GbxFechas";
+            this.GbxFechas.Size = new System.Drawing.Size(388, 168);
+            this.GbxFechas.TabIndex = 108;
+            this.GbxFechas.TabStop = false;
+            this.GbxFechas.Text = "FECHAS";
+            // 
             // FrmModificarMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(881, 539);
+            this.ClientSize = new System.Drawing.Size(881, 561);
+            this.Controls.Add(this.GbxFechas);
             this.Controls.Add(this.CmbCampo);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.TxtEleccion);
@@ -425,16 +443,12 @@
             this.Controls.Add(this.CmbHabDes);
             this.Controls.Add(this.CmbPoblacionModificar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dateTimePickerFecBaja);
-            this.Controls.Add(this.dateTimePickerFecAlta);
             this.Controls.Add(this.dateTimePickerFecNac);
             this.Controls.Add(this.LblFechaNacimiento);
             this.Controls.Add(this.txtNombreModificar);
             this.Controls.Add(this.TxtNumSegSocial);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.LblNumSegSocial);
-            this.Controls.Add(this.LblFechaBaja);
-            this.Controls.Add(this.LblFechaAlta);
             this.Controls.Add(this.LblDireccion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.comboBoxProvincia);
@@ -446,6 +460,8 @@
             this.Load += new System.EventHandler(this.FrmModificarMedico_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.GbxFechas.ResumeLayout(false);
+            this.GbxFechas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,5 +499,6 @@
         private System.Windows.Forms.TextBox TxtEleccion;
         private System.Windows.Forms.Label LblCedula;
         private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.GroupBox GbxFechas;
     }
 }
