@@ -248,6 +248,7 @@ namespace CapaPresentacion
                     objPaciente.Medico = objOperacionesMedico.CargarCedulasMedicos()[CmbMedicoAsignado.SelectedIndex];
                     objPaciente.Direccion = TxtDireccion.Text;
 
+
                     objOperacionesPaciente.ActualizarPaciente(objPaciente);
                     MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

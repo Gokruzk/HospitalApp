@@ -88,5 +88,11 @@ namespace CapaPresentacion
             Reportes objR = new Reportes();
             objR.ShowDialog();
         }
+
+        private void BtnModificarEmpleado_Click(object sender, EventArgs e)
+        {
+            FrmModificarEmpleado objE = new FrmModificarEmpleado();
+            objE.ShowDialog();
+        }
     }
 }

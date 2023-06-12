@@ -43,12 +43,12 @@
             this.BtnModificarEmpleado = new System.Windows.Forms.Button();
             this.BtnModificarMedico = new System.Windows.Forms.Button();
             this.GbxBusqueda = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.BtnBuscarConsulta = new System.Windows.Forms.Button();
             this.BtnBuscarVacaciones = new System.Windows.Forms.Button();
             this.BtnBuscarPaciente = new System.Windows.Forms.Button();
             this.BtnBuscarEmpleado = new System.Windows.Forms.Button();
             this.BtnBuscarMedico = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.GbxRegistros.SuspendLayout();
             this.GbxModificacion.SuspendLayout();
@@ -60,7 +60,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.LblTituloInicio);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1312, 121);
             this.panel1.TabIndex = 0;
@@ -85,9 +85,9 @@
             this.GbxRegistros.Controls.Add(this.BtnIngresarMedico);
             this.GbxRegistros.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxRegistros.Location = new System.Drawing.Point(48, 143);
-            this.GbxRegistros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxRegistros.Margin = new System.Windows.Forms.Padding(4);
             this.GbxRegistros.Name = "GbxRegistros";
-            this.GbxRegistros.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxRegistros.Padding = new System.Windows.Forms.Padding(4);
             this.GbxRegistros.Size = new System.Drawing.Size(381, 382);
             this.GbxRegistros.TabIndex = 1;
             this.GbxRegistros.TabStop = false;
@@ -96,7 +96,7 @@
             // BtnIngresarConsulta
             // 
             this.BtnIngresarConsulta.Location = new System.Drawing.Point(64, 305);
-            this.BtnIngresarConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnIngresarConsulta.Margin = new System.Windows.Forms.Padding(4);
             this.BtnIngresarConsulta.Name = "BtnIngresarConsulta";
             this.BtnIngresarConsulta.Size = new System.Drawing.Size(252, 62);
             this.BtnIngresarConsulta.TabIndex = 1;
@@ -107,7 +107,7 @@
             // BtnIngresarVacaciones
             // 
             this.BtnIngresarVacaciones.Location = new System.Drawing.Point(56, 242);
-            this.BtnIngresarVacaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnIngresarVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.BtnIngresarVacaciones.Name = "BtnIngresarVacaciones";
             this.BtnIngresarVacaciones.Size = new System.Drawing.Size(268, 55);
             this.BtnIngresarVacaciones.TabIndex = 1;
@@ -118,7 +118,7 @@
             // BtnIngresarPaciente
             // 
             this.BtnIngresarPaciente.Location = new System.Drawing.Point(64, 180);
-            this.BtnIngresarPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnIngresarPaciente.Margin = new System.Windows.Forms.Padding(4);
             this.BtnIngresarPaciente.Name = "BtnIngresarPaciente";
             this.BtnIngresarPaciente.Size = new System.Drawing.Size(252, 55);
             this.BtnIngresarPaciente.TabIndex = 0;
@@ -129,7 +129,7 @@
             // BtnIngresarEmpleado
             // 
             this.BtnIngresarEmpleado.Location = new System.Drawing.Point(64, 117);
-            this.BtnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnIngresarEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.BtnIngresarEmpleado.Name = "BtnIngresarEmpleado";
             this.BtnIngresarEmpleado.Size = new System.Drawing.Size(252, 55);
             this.BtnIngresarEmpleado.TabIndex = 0;
@@ -140,7 +140,7 @@
             // BtnIngresarMedico
             // 
             this.BtnIngresarMedico.Location = new System.Drawing.Point(64, 54);
-            this.BtnIngresarMedico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnIngresarMedico.Margin = new System.Windows.Forms.Padding(4);
             this.BtnIngresarMedico.Name = "BtnIngresarMedico";
             this.BtnIngresarMedico.Size = new System.Drawing.Size(252, 55);
             this.BtnIngresarMedico.TabIndex = 0;
@@ -157,9 +157,9 @@
             this.GbxModificacion.Controls.Add(this.BtnModificarMedico);
             this.GbxModificacion.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxModificacion.Location = new System.Drawing.Point(876, 143);
-            this.GbxModificacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxModificacion.Margin = new System.Windows.Forms.Padding(4);
             this.GbxModificacion.Name = "GbxModificacion";
-            this.GbxModificacion.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxModificacion.Padding = new System.Windows.Forms.Padding(4);
             this.GbxModificacion.Size = new System.Drawing.Size(379, 382);
             this.GbxModificacion.TabIndex = 1;
             this.GbxModificacion.TabStop = false;
@@ -168,7 +168,7 @@
             // BtnModificarConsulta
             // 
             this.BtnModificarConsulta.Location = new System.Drawing.Point(64, 306);
-            this.BtnModificarConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnModificarConsulta.Margin = new System.Windows.Forms.Padding(4);
             this.BtnModificarConsulta.Name = "BtnModificarConsulta";
             this.BtnModificarConsulta.Size = new System.Drawing.Size(252, 62);
             this.BtnModificarConsulta.TabIndex = 3;
@@ -178,7 +178,7 @@
             // BtnModificarVacaciones
             // 
             this.BtnModificarVacaciones.Location = new System.Drawing.Point(51, 244);
-            this.BtnModificarVacaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnModificarVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.BtnModificarVacaciones.Name = "BtnModificarVacaciones";
             this.BtnModificarVacaciones.Size = new System.Drawing.Size(280, 55);
             this.BtnModificarVacaciones.TabIndex = 2;
@@ -189,7 +189,7 @@
             // BtnModificarPaciente
             // 
             this.BtnModificarPaciente.Location = new System.Drawing.Point(64, 181);
-            this.BtnModificarPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnModificarPaciente.Margin = new System.Windows.Forms.Padding(4);
             this.BtnModificarPaciente.Name = "BtnModificarPaciente";
             this.BtnModificarPaciente.Size = new System.Drawing.Size(252, 55);
             this.BtnModificarPaciente.TabIndex = 0;
@@ -200,7 +200,7 @@
             // BtnModificarEmpleado
             // 
             this.BtnModificarEmpleado.Location = new System.Drawing.Point(57, 118);
-            this.BtnModificarEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnModificarEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.BtnModificarEmpleado.Name = "BtnModificarEmpleado";
             this.BtnModificarEmpleado.Size = new System.Drawing.Size(265, 55);
             this.BtnModificarEmpleado.TabIndex = 0;
@@ -211,7 +211,7 @@
             // BtnModificarMedico
             // 
             this.BtnModificarMedico.Location = new System.Drawing.Point(64, 55);
-            this.BtnModificarMedico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnModificarMedico.Margin = new System.Windows.Forms.Padding(4);
             this.BtnModificarMedico.Name = "BtnModificarMedico";
             this.BtnModificarMedico.Size = new System.Drawing.Size(252, 55);
             this.BtnModificarMedico.TabIndex = 0;
@@ -229,66 +229,13 @@
             this.GbxBusqueda.Controls.Add(this.BtnBuscarMedico);
             this.GbxBusqueda.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxBusqueda.Location = new System.Drawing.Point(468, 143);
-            this.GbxBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.GbxBusqueda.Name = "GbxBusqueda";
-            this.GbxBusqueda.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxBusqueda.Padding = new System.Windows.Forms.Padding(4);
             this.GbxBusqueda.Size = new System.Drawing.Size(379, 450);
             this.GbxBusqueda.TabIndex = 1;
             this.GbxBusqueda.TabStop = false;
             this.GbxBusqueda.Text = "Búsqueda de Datos";
-            // 
-            // BtnBuscarConsulta
-            // 
-            this.BtnBuscarConsulta.Location = new System.Drawing.Point(64, 305);
-            this.BtnBuscarConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnBuscarConsulta.Name = "BtnBuscarConsulta";
-            this.BtnBuscarConsulta.Size = new System.Drawing.Size(252, 62);
-            this.BtnBuscarConsulta.TabIndex = 3;
-            this.BtnBuscarConsulta.Text = "Buscar horario de consulta";
-            this.BtnBuscarConsulta.UseVisualStyleBackColor = true;
-            // 
-            // BtnBuscarVacaciones
-            // 
-            this.BtnBuscarVacaciones.Location = new System.Drawing.Point(64, 242);
-            this.BtnBuscarVacaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnBuscarVacaciones.Name = "BtnBuscarVacaciones";
-            this.BtnBuscarVacaciones.Size = new System.Drawing.Size(252, 55);
-            this.BtnBuscarVacaciones.TabIndex = 2;
-            this.BtnBuscarVacaciones.Text = "Buscar Vacaciones";
-            this.BtnBuscarVacaciones.UseVisualStyleBackColor = true;
-            this.BtnBuscarVacaciones.Click += new System.EventHandler(this.BtnBuscarVacaciones_Click);
-            // 
-            // BtnBuscarPaciente
-            // 
-            this.BtnBuscarPaciente.Location = new System.Drawing.Point(64, 180);
-            this.BtnBuscarPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnBuscarPaciente.Name = "BtnBuscarPaciente";
-            this.BtnBuscarPaciente.Size = new System.Drawing.Size(252, 55);
-            this.BtnBuscarPaciente.TabIndex = 0;
-            this.BtnBuscarPaciente.Text = "Buscar Paciente";
-            this.BtnBuscarPaciente.UseVisualStyleBackColor = true;
-            this.BtnBuscarPaciente.Click += new System.EventHandler(this.BtnBuscarPaciente_Click);
-            // 
-            // BtnBuscarEmpleado
-            // 
-            this.BtnBuscarEmpleado.Location = new System.Drawing.Point(64, 117);
-            this.BtnBuscarEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnBuscarEmpleado.Name = "BtnBuscarEmpleado";
-            this.BtnBuscarEmpleado.Size = new System.Drawing.Size(252, 55);
-            this.BtnBuscarEmpleado.TabIndex = 0;
-            this.BtnBuscarEmpleado.Text = "Buscar Empleado";
-            this.BtnBuscarEmpleado.UseVisualStyleBackColor = true;
-            // 
-            // BtnBuscarMedico
-            // 
-            this.BtnBuscarMedico.Location = new System.Drawing.Point(64, 54);
-            this.BtnBuscarMedico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnBuscarMedico.Name = "BtnBuscarMedico";
-            this.BtnBuscarMedico.Size = new System.Drawing.Size(252, 55);
-            this.BtnBuscarMedico.TabIndex = 0;
-            this.BtnBuscarMedico.Text = "Buscar Medico";
-            this.BtnBuscarMedico.UseVisualStyleBackColor = true;
-            this.BtnBuscarMedico.Click += new System.EventHandler(this.BtnBuscarMedico_Click);
             // 
             // button1
             // 
@@ -301,6 +248,59 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // BtnBuscarConsulta
+            // 
+            this.BtnBuscarConsulta.Location = new System.Drawing.Point(64, 305);
+            this.BtnBuscarConsulta.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBuscarConsulta.Name = "BtnBuscarConsulta";
+            this.BtnBuscarConsulta.Size = new System.Drawing.Size(252, 62);
+            this.BtnBuscarConsulta.TabIndex = 3;
+            this.BtnBuscarConsulta.Text = "Buscar horario de consulta";
+            this.BtnBuscarConsulta.UseVisualStyleBackColor = true;
+            // 
+            // BtnBuscarVacaciones
+            // 
+            this.BtnBuscarVacaciones.Location = new System.Drawing.Point(64, 242);
+            this.BtnBuscarVacaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBuscarVacaciones.Name = "BtnBuscarVacaciones";
+            this.BtnBuscarVacaciones.Size = new System.Drawing.Size(252, 55);
+            this.BtnBuscarVacaciones.TabIndex = 2;
+            this.BtnBuscarVacaciones.Text = "Buscar Vacaciones";
+            this.BtnBuscarVacaciones.UseVisualStyleBackColor = true;
+            this.BtnBuscarVacaciones.Click += new System.EventHandler(this.BtnBuscarVacaciones_Click);
+            // 
+            // BtnBuscarPaciente
+            // 
+            this.BtnBuscarPaciente.Location = new System.Drawing.Point(64, 180);
+            this.BtnBuscarPaciente.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBuscarPaciente.Name = "BtnBuscarPaciente";
+            this.BtnBuscarPaciente.Size = new System.Drawing.Size(252, 55);
+            this.BtnBuscarPaciente.TabIndex = 0;
+            this.BtnBuscarPaciente.Text = "Buscar Paciente";
+            this.BtnBuscarPaciente.UseVisualStyleBackColor = true;
+            this.BtnBuscarPaciente.Click += new System.EventHandler(this.BtnBuscarPaciente_Click);
+            // 
+            // BtnBuscarEmpleado
+            // 
+            this.BtnBuscarEmpleado.Location = new System.Drawing.Point(64, 117);
+            this.BtnBuscarEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBuscarEmpleado.Name = "BtnBuscarEmpleado";
+            this.BtnBuscarEmpleado.Size = new System.Drawing.Size(252, 55);
+            this.BtnBuscarEmpleado.TabIndex = 0;
+            this.BtnBuscarEmpleado.Text = "Buscar Empleado";
+            this.BtnBuscarEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // BtnBuscarMedico
+            // 
+            this.BtnBuscarMedico.Location = new System.Drawing.Point(64, 54);
+            this.BtnBuscarMedico.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBuscarMedico.Name = "BtnBuscarMedico";
+            this.BtnBuscarMedico.Size = new System.Drawing.Size(252, 55);
+            this.BtnBuscarMedico.TabIndex = 0;
+            this.BtnBuscarMedico.Text = "Buscar Medico";
+            this.BtnBuscarMedico.UseVisualStyleBackColor = true;
+            this.BtnBuscarMedico.Click += new System.EventHandler(this.BtnBuscarMedico_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,7 +311,7 @@
             this.Controls.Add(this.GbxModificacion);
             this.Controls.Add(this.GbxRegistros);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMenu";
             this.Text = "Menú";
             this.panel1.ResumeLayout(false);
