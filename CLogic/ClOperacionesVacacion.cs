@@ -43,12 +43,26 @@ namespace CLogic
             return objMensajes.errores[15];
         }
 
+        public List<Vacaciones> CargarVacacionesCedula(string cedula)
+        {
+            List<Vacaciones> vacas = objDatos.GetVacaciones();
+            List<Vacaciones> vacasCedula = new List<Vacaciones>();
+
+            foreach(Vacaciones vaca in vacas )
+            {
+                if(vaca.Cedula == cedula)
+                    vacasCedula.Add(vaca);
+            }
+
+            return vacasCedula;
+        }
+
         public string RegistrarVacacion(Vacaciones datos)
         {
             return objDatos.RegistroVacacion(datos);
         }
 
-        public Vacaciones CargarVacacionesCedula(string cedula)
+        public Vacaciones CargarVacacionCedula(string cedula)
         {
             return objDatos.SearchVacacionCedula(cedula);
         }

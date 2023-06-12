@@ -69,7 +69,7 @@
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCedula.Location = new System.Drawing.Point(343, 128);
-            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(243, 34);
             this.TxtCedula.TabIndex = 78;
@@ -96,7 +96,7 @@
             this.FecInicio,
             this.FecFin});
             this.dataGridViewVacaciones.Location = new System.Drawing.Point(157, 203);
-            this.dataGridViewVacaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewVacaciones.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewVacaciones.Name = "dataGridViewVacaciones";
             this.dataGridViewVacaciones.RowHeadersWidth = 51;
             this.dataGridViewVacaciones.Size = new System.Drawing.Size(809, 185);
@@ -136,12 +136,13 @@
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnBuscar.Location = new System.Drawing.Point(641, 123);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(252, 48);
             this.BtnBuscar.TabIndex = 111;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // FrmBuscarVacaciones
             // 
@@ -154,7 +155,7 @@
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.LblCedula);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBuscarVacaciones";
             this.Text = "Buscar Vacaciones";
             this.panel1.ResumeLayout(false);

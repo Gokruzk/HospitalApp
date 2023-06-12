@@ -252,6 +252,7 @@
             this.BtnBuscarVacaciones.TabIndex = 2;
             this.BtnBuscarVacaciones.Text = "Buscar Vacaciones";
             this.BtnBuscarVacaciones.UseVisualStyleBackColor = true;
+            this.BtnBuscarVacaciones.Click += new System.EventHandler(this.BtnBuscarVacaciones_Click);
             // 
             // BtnBuscarPaciente
             // 
