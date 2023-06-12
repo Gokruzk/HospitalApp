@@ -27,3 +27,10 @@ INSERT INTO TipoMedico(Descripcion) VALUES
             ('Titular'),
             ('Interino'),
             ('Sustituto')
+
+INSERT INTO Administrador(User, Pasw) VALUES
+            ('sky', '12345'),
+            ('cris', '12345'),
+            ('nigell', '12345'),
+            ('fer', '12345'),
+            ('kevin', '12345')
