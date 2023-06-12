@@ -46,5 +46,29 @@ namespace CapaPresentacion
             FrmModificarPaciente ojbP = new FrmModificarPaciente();
             ojbP.ShowDialog();
         }
+
+        private void BtnBuscarMedico_Click(object sender, EventArgs e)
+        {
+            FrmBuscarMedico objM = new FrmBuscarMedico();
+            objM.ShowDialog();
+        }
+
+        private void BtnBuscarPaciente_Click(object sender, EventArgs e)
+        {
+            FrmBuscarPaciente objP = new FrmBuscarPaciente();
+            objP.ShowDialog();
+        }
+
+        private void BtnIngresarConsulta_Click(object sender, EventArgs e)
+        {
+            FrmIngresarConsulta obC = new FrmIngresarConsulta();
+            obC.ShowDialog();
+        }
+
+        private void BtnIngresarVacaciones_Click(object sender, EventArgs e)
+        {
+            FrmIngresarVacaciones objV = new FrmIngresarVacaciones();
+            objV.ShowDialog();
+        }
     }
 }

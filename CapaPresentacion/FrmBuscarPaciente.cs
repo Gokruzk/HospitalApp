@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CLogic;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace CapaPresentacion
 {
     public partial class FrmBuscarPaciente : Form
     {
+        Paciente objPaciente = new Paciente();
+        readonly ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
+        readonly ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
         public FrmBuscarPaciente()
         {
             InitializeComponent();
@@ -49,11 +54,51 @@ namespace CapaPresentacion
             
         }
 
+        private void asignar()
+        {
+            lblNombre.Text = "NOMBRE:     " + objPaciente.Nombre;
+            LblFechaNacimiento.Text = "FECHA DE NACIMIENTO:     " + objPaciente.FechaNacimiento.ToShortDateString();
+            LblDireccion.Text = "DIRECCIÓN:     " + objPaciente.Direccion;
+            LblNumSegSocial.Text = "NÚMERO DE SEGURIDAD SOCIAL:    " + objPaciente.NumSegSocial;
+            LblMedicoAsignado.Text = "MÉDICO ASIGNADO:      " + objOperacionesMedico.CargarMedicoCedula(objPaciente.Medico).Nombre;
+            string[] estado = { "Habilitado", "No habilitado" };
+
+            LblEstado.Text = "ESTADO:     " + estado[objPaciente.Estado - 1];
+
+
+        }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                
+                if (CmbCampo.SelectedIndex == 0)
+                {
+                    objPaciente = objOperacionesPaciente.CargarPacienteCedula(TxtEleccion.Text);
+
+                    if (objPaciente != null)
+                    {
+                        asignar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra a un paciente con la cédula ingresada en la base de datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                if (CmbCampo.SelectedIndex == 1)
+                {
+                    objPaciente = objOperacionesPaciente.CargarPacienteNS(TxtEleccion.Text);
+
+                    if (objPaciente != null)
+                    {
+                        asignar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encuentra a un paciente con el NSS ingresado en la base de datos", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
             }
             catch (Exception ex)
             {

@@ -846,12 +846,16 @@ namespace CData
                 sql.ExecuteNonQuery();
 
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
-                if (e.Number == 2627)
+                if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
                     return "2627";
+                }
+                else
+                {
+                    return ex.Message;
                 }
             }
             objBD.Cerrar();

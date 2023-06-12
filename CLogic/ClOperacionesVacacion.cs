@@ -16,20 +16,20 @@ namespace CLogic
         readonly ClDatos objDatos = new ClDatos();
 
         //Validación de datos entidad VACACIONES
-        private bool ValidarEstadoVacacion(int estado)
+        public bool ValidarEstadoVacacion(int estado)
         {
             int[] estadosVa = { 1, 2 };
 
             return estadosVa.Contains(estado);
         }
 
-        private bool ValidarFechas(DateTime fechaI, DateTime fechaF)
+        public bool ValidarFechas(DateTime fechaI, DateTime fechaF)
         {
             return DateTime.Compare(fechaI, fechaF) < 0;
         }
 
 
-        private string ValidarTodoVacacion(Vacaciones datos)
+        public string ValidarTodoVacacion(Vacaciones datos)
         {
             if (ValidarEstadoVacacion(datos.Estado))
                 return objMensajes.errores[14];
@@ -45,17 +45,7 @@ namespace CLogic
 
         public string RegistrarVacacion(Vacaciones datos)
         {
-            string validacion = ValidarTodoVacacion(datos);
-
-            if (ValidarTodoVacacion(datos) == "CORRECTO")
-            {
-                objDatos.RegistroVacacion(datos);
-
-                /* if (estado == "CORRECTO")
-                    return estado; */
-            }
-
-            return validacion;
+            return objDatos.RegistroVacacion(datos);
         }
 
         public Vacaciones CargarVacacionesCedula(string cedula)

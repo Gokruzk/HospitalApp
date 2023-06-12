@@ -101,6 +101,7 @@
             this.BtnIngresarConsulta.TabIndex = 1;
             this.BtnIngresarConsulta.Text = "Ingresar horario de consulta";
             this.BtnIngresarConsulta.UseVisualStyleBackColor = true;
+            this.BtnIngresarConsulta.Click += new System.EventHandler(this.BtnIngresarConsulta_Click);
             // 
             // BtnIngresarVacaciones
             // 
@@ -111,6 +112,7 @@
             this.BtnIngresarVacaciones.TabIndex = 1;
             this.BtnIngresarVacaciones.Text = "Ingresar Vacaciones";
             this.BtnIngresarVacaciones.UseVisualStyleBackColor = true;
+            this.BtnIngresarVacaciones.Click += new System.EventHandler(this.BtnIngresarVacaciones_Click);
             // 
             // BtnIngresarPaciente
             // 
@@ -260,6 +262,7 @@
             this.BtnBuscarPaciente.TabIndex = 0;
             this.BtnBuscarPaciente.Text = "Buscar Paciente";
             this.BtnBuscarPaciente.UseVisualStyleBackColor = true;
+            this.BtnBuscarPaciente.Click += new System.EventHandler(this.BtnBuscarPaciente_Click);
             // 
             // BtnBuscarEmpleado
             // 
@@ -280,6 +283,7 @@
             this.BtnBuscarMedico.TabIndex = 0;
             this.BtnBuscarMedico.Text = "Buscar Medico";
             this.BtnBuscarMedico.UseVisualStyleBackColor = true;
+            this.BtnBuscarMedico.Click += new System.EventHandler(this.BtnBuscarMedico_Click);
             // 
             // FrmMenu
             // 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CLogic;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,13 @@ namespace CapaPresentacion
 {
     public partial class FrmModificarVacaciones : Form
     {
+        Vacaciones objVacacion = new Vacaciones();
+        ClOperacionesVacacion objOperacionesVacacion = new ClOperacionesVacacion();
+        ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
+        ClOperacionesEmpleado objOperacionesEmpleado = new ClOperacionesEmpleado();
+        ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+        ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
+
         public FrmModificarVacaciones()
         {
             InitializeComponent();
@@ -23,34 +32,52 @@ namespace CapaPresentacion
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                try
+                if (e.KeyChar == (char)Keys.Enter)
                 {
-                    TxtIdVac.Focus();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error TxtCedula: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarCedula(TxtCedula.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[0], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        TxtIdVac.Focus();
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void TxtIdVac_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                try
+                if (e.KeyChar == (char)Keys.Enter)
                 {
-                    CmbEstado.Focus();
+                    e.Handled = true;
+                    if (objOperacionesEmpleado.BuscarEmpleado(TxtCedula.Text) == null && objOperacionesMedico.CargarMedicoCedula(TxtCedula.Text) == null)
+                    {
+                        CmbEstado.Enabled = false;
+                        dateTimePickerFecInicio.Enabled = false;
+                        dateTimePickerFecFin.Enabled = false;
+                        MessageBox.Show("No se encuentra la vacación con el ID ingresado ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        CmbEstado.Enabled = true;
+                        dateTimePickerFecInicio.Enabled = true;
+                        dateTimePickerFecFin.Enabled = true;
+                        CmbEstado.Focus();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error TxtIdVacaciones: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error TxtCedula: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
