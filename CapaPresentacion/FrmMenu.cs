@@ -82,5 +82,11 @@ namespace CapaPresentacion
             FrmModificarVacaciones obV = new FrmModificarVacaciones();
             obV.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           ReportMedicoTipo objR = new ReportMedicoTipo();
+            objR.ShowDialog();
+        }
     }
 }
