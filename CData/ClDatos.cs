@@ -1182,7 +1182,7 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = "SELECT Nombre, FechaInicio, FechaFin, M.Estado FROM Vacaciones JOIN Medicos M on Vacaciones.Estado = M.Estado";
+                string query = "SELECT Nombre, FechaInicio, FechaFin, M.Estado FROM Vacaciones JOIN Medicos M on Vacaciones.Cedula = M.Cedula";
                 adp = new SqlDataAdapter(query, objBD.connect);
                 DataTable dt = new DataTable();
                 adp.Fill(dt);
