@@ -19,12 +19,14 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+
         public void RefreshDataGrid(DataGridView d)
         {
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter();
-                //adp = objOP.SearchDataAll();
+                adp = objOperacionesMedico.CargarMedicosVacaciones();
                 DataTable dt = new DataTable();
                 adp.Fill(dt);
                 d.DataSource = dt;
@@ -37,8 +39,7 @@ namespace CapaPresentacion
 
         private void ReportMedicoVacaciones_Load(object sender, EventArgs e)
         {
-            ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
-            objOperacionesMedico.CargarMedicosVacaciones();
+            RefreshDataGrid(dataGridView1);
         }
     }
 }

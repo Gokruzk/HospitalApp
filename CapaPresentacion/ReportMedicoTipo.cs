@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,10 +19,27 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+        
+        public void RefreshDataGrid(DataGridView d)
+        {
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter();
+                adp = objOperacionesMedico.CargarMedicosTipos();
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                d.DataSource = dt;
+            }
+            catch
+            {
+                MessageBox.Show("No hay datos", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void ReportMedicoTipo_Load(object sender, EventArgs e)
         {
-            ClOperacionesMedico objOperacionesMedico  = new ClOperacionesMedico();
-            objOperacionesMedico.CargarMedicosTipos();
+            RefreshDataGrid(dataGridView1);
         }
     }
 }
