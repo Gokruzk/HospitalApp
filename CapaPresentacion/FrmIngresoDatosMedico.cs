@@ -277,7 +277,14 @@ namespace CapaPresentacion
 
         private void CmbTipo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Console.WriteLine(CmbTipo.SelectedIndex.ToString());
+            if (CmbTipo.SelectedIndex == 3)
+            {
+                GbxFechas.Visible = true;
+            }
+            else
+            {
+                GbxFechas.Visible = false;
+            }
         }
 
         
