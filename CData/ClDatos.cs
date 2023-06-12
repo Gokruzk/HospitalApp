@@ -61,7 +61,7 @@ namespace CData
                 if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "2627";
+                    return "No se puede ingresar 2 veces la misma cédula";
                 }
                 else
                 {
@@ -241,16 +241,19 @@ namespace CData
             try
             {
                 objBD.Abrir();
-                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado, FechaNacimiento) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}', FechaNacimiento = '{@datoEmp.FechaNacimiento.ToShortDateString()}')";
+                string query = $"INSERT INTO Empleados(Cedula, Nombre, Direccion, NumeroSeguridadSocial, TipoEmpleado, Poblacion, Estado, FechaNacimiento) VALUES ('{@datoEmp.Cedula}', '{@datoEmp.Nombre}','{@datoEmp.Direccion}', '{@datoEmp.NumSegSocial}','{@datoEmp.Tipo}','{@datoEmp.Poblacion}', '{@datoEmp.Estado}', '{@datoEmp.FechaNacimiento.ToShortDateString()}')";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
-                ;
             }
             catch (SqlException ex)
             {
                 if (ex.Number == 2627)
                 {
-                    return "2627";
+                    return "No se puede ingresar 2 veces la misma cédula";
+                }
+                else
+                {
+                    return ex.Message;
                 }
             }
             objBD.Cerrar();
@@ -431,7 +434,7 @@ namespace CData
                 if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "2627";
+                    return "No se puede ingresar 2 veces la misma cédula";
                 }
                 else
                 {
@@ -612,7 +615,7 @@ namespace CData
                 if (e.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "2627";
+                    return "No se puede ingresar 2 veces la misma cédula";
                 }
             }
             objBD.Cerrar();
@@ -730,7 +733,7 @@ namespace CData
                 if (e.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "2627";
+                    return "No se puede ingresar 2 veces la misma cédula";
                 }
             }
             objBD.Cerrar();
@@ -851,7 +854,7 @@ namespace CData
                 if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "2627";
+                    return "No se puede ingresar 2 veces la misma cédula";
                 }
                 else
                 {
@@ -1010,7 +1013,7 @@ namespace CData
                 if (e.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "2627";
+                    return "No se puede ingresar 2 veces la misma cédula";
                 }
             }
             objBD.Cerrar();

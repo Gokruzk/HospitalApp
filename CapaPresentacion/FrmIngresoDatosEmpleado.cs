@@ -167,6 +167,7 @@ namespace CapaPresentacion
                 objEmpleado.Poblacion = CmbPoblacion.SelectedIndex + 1;
                 objEmpleado.Tipo = CmbTipo.SelectedIndex + 1;
                 objEmpleado.NumSegSocial = TxtNumSegSocial.Text;
+                objEmpleado.Estado = 1;
 
                 string estado = objOperacionesEmpleado.RegistrarEmpleado(objEmpleado).ToString();
 
