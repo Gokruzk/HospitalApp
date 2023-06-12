@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9958019-3CC2-4545-B29A-325A61216192}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmBuscarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarConsulta.Designer.cs">
+      <DependentUpon>FrmBuscarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarEmpleado.Designer.cs">
+      <DependentUpon>FrmBuscarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarMedico.Designer.cs">
+      <DependentUpon>FrmBuscarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPaciente.Designer.cs">
+      <DependentUpon>FrmBuscarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarVacaciones.Designer.cs">
+      <DependentUpon>FrmBuscarVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresarConsulta.Designer.cs">
+      <DependentUpon>FrmIngresarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresarVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresarVacaciones.Designer.cs">
+      <DependentUpon>FrmIngresarVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresoDatosEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresoDatosEmpleado.Designer.cs">
+      <DependentUpon>FrmIngresoDatosEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresoDatosMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresoDatosMedico.Designer.cs">
+      <DependentUpon>FrmIngresoDatosMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresoDatosPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresoDatosPaciente.Designer.cs">
+      <DependentUpon>FrmIngresoDatosPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarConsulta.Designer.cs">
+      <DependentUpon>FrmModificarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarEmpleado.Designer.cs">
+      <DependentUpon>FrmModificarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarMedico.Designer.cs">
+      <DependentUpon>FrmModificarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarPaciente.Designer.cs">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarVacaciones.Designer.cs">
+      <DependentUpon>FrmModificarVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmBuscarConsulta.resx">
+      <DependentUpon>FrmBuscarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarEmpleado.resx">
+      <DependentUpon>FrmBuscarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarMedico.resx">
+      <DependentUpon>FrmBuscarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarPaciente.resx">
+      <DependentUpon>FrmBuscarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarVacaciones.resx">
+      <DependentUpon>FrmBuscarVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresarConsulta.resx">
+      <DependentUpon>FrmIngresarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresarVacaciones.resx">
+      <DependentUpon>FrmIngresarVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresoDatosEmpleado.resx">
+      <DependentUpon>FrmIngresoDatosEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresoDatosMedico.resx">
+      <DependentUpon>FrmIngresoDatosMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresoDatosPaciente.resx">
+      <DependentUpon>FrmIngresoDatosPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarConsulta.resx">
+      <DependentUpon>FrmModificarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarEmpleado.resx">
+      <DependentUpon>FrmModificarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarMedico.resx">
+      <DependentUpon>FrmModificarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarPaciente.resx">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarVacaciones.resx">
+      <DependentUpon>FrmModificarVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CLogic\CapaLogica.csproj">
+      <Project>{da4dc785-78f0-4d54-9830-6cb5b5a41010}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{be0f0cae-1b40-46b5-87d7-b3e07a5603a8}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
