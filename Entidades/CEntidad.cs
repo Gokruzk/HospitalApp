@@ -81,14 +81,13 @@ namespace Entidades
         public string Descripcion { get; set; }
     }
 
-        public class Usuarios
-    {
-        public string Usuario {get;set;}
-        public string Pass {get; set;}
-    }
-
     public class TipoEmpleado : Tipo { }
+
     public class TipoMedico : Tipo { }
 
-
+    public class Administrador
+    {
+        public string UserID { get; set; }
+        public string Psw { get; set;}
+    }
 }

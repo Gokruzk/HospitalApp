@@ -1217,5 +1217,61 @@ namespace CData
             }
             return adp;
         }
+
+        //PacientesReport
+        public SqlDataAdapter GetPacientesAD()
+        {
+            Paciente datosPac = new Paciente();
+            SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
+            try
+            {
+                objBD.Abrir();
+                string query = "SELECT * FROM Pacientes";
+                adp = new SqlDataAdapter(query, objBD.connect);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return adp;
+        }
+
+        //Administrador
+        public Administrador GetAdministrador(string id, string psw)
+        {
+            Administrador datoAdm = new Administrador();
+            try
+            {
+                objBD.Abrir();
+                string query = $"SELECT * FROM Administrado WHERE UserID = '{@id}' AND Cedula = '{@psw}'";
+                SqlCommand sql = new SqlCommand(query, objBD.connect);
+                sql.ExecuteNonQuery();
+
+                SqlDataReader reader = sql.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Administrador objEnt = new Administrador()
+                    {
+                        UserID = Convert.ToString(reader["UserID"]),
+                        Psw = Convert.ToString(reader["Psw"])
+                    };
+                    datoAdm = objEnt;
+                }
+                else
+                    datoAdm = null;
+            }
+            catch (SqlException e)
+            {
+                datoAdm = null;
+                Console.WriteLine(e.Message);
+            }
+            objBD.Cerrar();
+            return datoAdm;
+        }
     }
 }
