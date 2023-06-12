@@ -25,7 +25,7 @@ namespace CapaPresentacion
 
         private void BtnIngresarEmpleado_Click(object sender, EventArgs e)
         {
-            FrmIngresoDatosEmpleado objEmpl= new FrmIngresoDatosEmpleado();
+            FrmIngresoDatosEmpleado objEmpl = new FrmIngresoDatosEmpleado();
             objEmpl.ShowDialog();
         }
 
@@ -85,7 +85,7 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-           Reportes objR = new Reportes();
+            Reportes objR = new Reportes();
             objR.ShowDialog();
         }
     }

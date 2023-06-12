@@ -1,4 +1,5 @@
 ﻿using CLogic;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class Reportes: Form
+    public partial class Reportes : Form
     {
         public Reportes()
         {
@@ -37,9 +38,19 @@ namespace CapaPresentacion
 
         private void Reportes_Load(object sender, EventArgs e)
         {
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
-            RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosTipos());
-            RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosVacaciones());
+            if (comboBox1.SelectedItem.ToString() == "Medicos con tipos")
+            {
+                RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosTipos());
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Medicos y sus vacaciones")
+            {
+                RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosVacaciones());
+            }
         }
     }
 }
