@@ -22,39 +22,19 @@ namespace CLogic
             return tipoEmpleado.Contains(tipo);
         }
 
-        public string ValidarTodoEmpleado(Empleado datos)
-        {
-            if (!objPersona.ValidarCedula(datos.Cedula))
-                return objMensajes.errores[0];
+        public List<string> CargarTiposEmpleado() {
+            List<TipoEmpleado> objTipos = objDatos.GetTipoEmpleado();
+            List<string> tipos = new List<string>();
 
-            if (!objPersona.ValidarNombre(datos.Nombre))
-                return objMensajes.errores[1];
+            foreach (Tipo empleado in objTipos)
+                tipos.Add(empleado.Descripcion);
 
-            if (!objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
-                return objMensajes.errores[2];
-
-            if (!objPersona.ValidarDireccion(datos.Direccion))
-                return objMensajes.errores[3];
-
-            if (!ValidartipoEmpleado(datos.Tipo))
-                return objMensajes.errores[7];
-
-            return objMensajes.errores[15];
+            return tipos;
         }
 
         public string RegistrarEmpleado(Empleado datos)
         {
-            string validacion = ValidarTodoEmpleado(datos);
-
-            if (validacion == "CORRECTO")
-            {
-                string estado = objDatos.RegistroEmpleado(datos);
-
-                if (estado == "2627")
-                    return estado;
-            }
-
-            return validacion;
+            return objDatos.RegistroEmpleado(datos);
         }
 
         public string EliminarEmpleado(string cedula) {
@@ -77,14 +57,9 @@ namespace CLogic
             return "CORRECTO";
         }
 
-        public string ActualizarEmpleado(Empleado datos)
+        public void ActualizarEmpleado(Empleado datos)
         {
-            string validacion = ValidarTodoEmpleado(datos);
-
-            if (validacion == "CORRECTO")
-                objDatos.UpdateEmpleado(datos);
-
-            return validacion;
+            objDatos.UpdateEmpleado(datos);
         }
 
         public Empleado BuscarEmpleado(string cedula) {

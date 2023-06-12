@@ -14,35 +14,43 @@ namespace CapaPresentacion
 {
     public partial class FrmIngresoDatosEmpleado : Form
     {
-        Empleado objEmpleado = new Empleado();
-        ClOperacionesEmpleado objValidacionEmpleado = new ClOperacionesEmpleado();
+        readonly Empleado objEmpleado = new Empleado();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
+        readonly ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
+        readonly ClOperacionesEmpleado objOperacionesEmpleado = new ClOperacionesEmpleado();
+        readonly ClOperacionesPoblacion objOperacionesPoblacion = new ClOperacionesPoblacion();
 
         public FrmIngresoDatosEmpleado()
         {
             InitializeComponent();
-            
-            TxtNombre.Enabled = false;
-            dateTimePickerFecNac.Enabled = false;
-            TxtDireccion.Enabled = false;
-            CmbPoblacion.Enabled = false;
-            CmbTipo.Enabled = false;
-            TxtNumSegSocial.Enabled = false;
-
-            BtnRegistrar.Enabled = false;   
         }
 
-        
+        private void FrmIngresoDatosEmpleado_Load(object sender, EventArgs e) {
+            List<string> tipos = objOperacionesPoblacion.CargarPoblaciones();
+
+            foreach (string tipo in tipos)
+                CmbPoblacion.Items.Add(tipo);
+            tipos = objOperacionesEmpleado.CargarTiposEmpleado();
+
+            foreach (string tipo in tipos)
+                CmbTipo.Items.Add(tipo);
+        }
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
-                TxtNombre.Enabled = true;
-                TxtNombre.Focus();
+                if (e.KeyChar == (char)Keys.Enter) {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarCedula(TxtCedula.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[0], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        TxtNombre.Focus();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error TxtCedula: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -50,25 +58,30 @@ namespace CapaPresentacion
         {
             try
             {
-                dateTimePickerFecNac.Enabled= true;
-                dateTimePickerFecNac.Focus();
+                if (e.KeyChar == (char)Keys.Enter) {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarNombre(TxtNombre.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[1], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        dateTimePickerFecNac.Focus();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error txtNombre: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void dateTimePickerFecNac_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                TxtDireccion.Enabled= true;
+        private void dateTimePickerFecNac_ValueChanged(object sender, EventArgs e) {
+            try {
+                dateTimePickerFecNac.MaxDate = DateTime.Today.AddYears(-18);
+                dateTimePickerFecNac.MinDate = DateTime.Today.AddYears(-100);
+
+                dateTimePickerFecNac.Format = DateTimePickerFormat.Short;
+
                 TxtDireccion.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error DateTimeFechaNacimiento: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } catch (Exception ex) {
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -76,12 +89,17 @@ namespace CapaPresentacion
         {
             try
             {
-                CmbPoblacion.Enabled= true;
-                CmbPoblacion.Focus();
+                if (e.KeyChar == (char)Keys.Enter) {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarDireccion(TxtDireccion.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[3], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        CmbPoblacion.Focus();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error txtDireccion: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error --: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -89,8 +107,13 @@ namespace CapaPresentacion
         {
             try
             {
-                CmbTipo.Enabled= true;
-                CmbTipo.Focus();
+                if (e.KeyChar == (char)Keys.Enter) {
+                    e.Handled = true;
+                    if (!objOperacionesPoblacion.ValidarPoblacion(CmbTipo.SelectedIndex + 1))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[11], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        CmbTipo.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -102,8 +125,13 @@ namespace CapaPresentacion
         {
             try
             {
-                TxtNumSegSocial.Enabled= true;
-                TxtNumSegSocial.Focus();
+                if (e.KeyChar == (char)Keys.Enter) {
+                    e.Handled = true;
+                    if (!objOperacionesEmpleado.ValidartipoEmpleado(CmbTipo.SelectedIndex + 1))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[7], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        TxtNumSegSocial.Focus();
+                }
             }
             catch (Exception ex)
             {
@@ -115,64 +143,51 @@ namespace CapaPresentacion
         {
             try
             {
-                BtnRegistrar.Enabled= true;
-                BtnRegistrar.Focus();
-
+                if (e.KeyChar == (char)Keys.Enter) {
+                    e.Handled = true;
+                    if (!objOperacionesPersona.ValidarNumeroSeguroSocial(TxtNumSegSocial.Text))
+                        MessageBox.Show($"Error --: " + objMensajes.errores[2], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        BtnRegistrar.Focus();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error txtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //private void BtnRegistrar_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    //objEmpleado.Cedula = "0503959447";
-        //    //objEmpleado.Nombre = "Kevin Tapia";
-        //    //objEmpleado.Direccion = "Av. Canonigo Ramos";
-        //    //objEmpleado.NumSegSocial = "433-69-6684";
-        //    //objEmpleado.Tipo = "Administrativo";
-        //    //objEmpleado.Poblacion = 1;
-        //}
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MessageBox.Show($"El empleado no ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error BtnCancelar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void BtnRegistrar_Click_1(object sender, EventArgs e)
         {
+            try {
+                objEmpleado.Cedula = TxtCedula.Text;
+                objEmpleado.Nombre = TxtNombre.Text;
+                objEmpleado.FechaNacimiento = dateTimePickerFecNac.Value;
+                objEmpleado.Direccion = TxtDireccion.Text;
+                objEmpleado.Poblacion = CmbPoblacion.SelectedIndex + 1;
+                objEmpleado.Tipo = CmbTipo.SelectedIndex + 1;
+                objEmpleado.NumSegSocial = TxtNumSegSocial.Text;
 
+                string estado = objOperacionesEmpleado.RegistrarEmpleado(objEmpleado).ToString();
+
+                if (estado == "CORRECTO")
+                    MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            } catch (Exception ex) {
+                MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        /* private void TxtNumSegSocial_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                BtnRegistrar.Enabled = true;
-                BtnRegistrar.Focus();
+        private void BtnCancelar_Click(object sender, EventArgs e) {
+            try {
+                MessageBox.Show($"El empleado no ha sido registrado", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
 
+            } catch (Exception ex) {
+                MessageBox.Show($"Error BtnCancelar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error txtNumeroSeguridadSocial: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        } */
+        }
     }
 }

@@ -221,7 +221,7 @@
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecNac.TabIndex = 62;
-            this.dateTimePickerFecNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecNac_KeyPress);
+            this.dateTimePickerFecNac.ValueChanged += new System.EventHandler(this.dateTimePickerFecNac_ValueChanged);
             // 
             // BtnCancelar
             // 
@@ -261,6 +261,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FrmIngresoDatosEmpleado";
             this.Text = "Ingresar Empleado";
+            this.Load += new System.EventHandler(this.FrmIngresoDatosEmpleado_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
