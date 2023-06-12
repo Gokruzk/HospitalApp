@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class ReportMedicoVacaciones
+    partial class Reportes
     {
         /// <summary>
         /// Required designer variable.
@@ -40,15 +40,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(466, 256);
             this.dataGridView1.TabIndex = 0;
             // 
-            // ReportMedicoVacaciones
+            // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ReportMedicoVacaciones";
-            this.Text = "ReportMedicoVacaciones";
-            this.Load += new System.EventHandler(this.ReportMedicoVacaciones_Load);
+            this.Name = "Reportes";
+            this.Text = "Reportes";
+            this.Load += new System.EventHandler(this.Reportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

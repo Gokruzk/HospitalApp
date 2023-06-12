@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,25 +9,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CLogic;
 
 namespace CapaPresentacion
 {
-    public partial class ReportMedicoTipo : Form
+    public partial class Reportes: Form
     {
-        public ReportMedicoTipo()
+        public Reportes()
         {
             InitializeComponent();
         }
 
-        ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
-        
-        public void RefreshDataGrid(DataGridView d)
+        public void RefreshDataGrid(DataGridView d, SqlDataAdapter obj)
         {
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter();
-                adp = objOperacionesMedico.CargarMedicosTipos();
+                adp = obj;
                 DataTable dt = new DataTable();
                 adp.Fill(dt);
                 d.DataSource = dt;
@@ -37,9 +35,11 @@ namespace CapaPresentacion
             }
         }
 
-        private void ReportMedicoTipo_Load(object sender, EventArgs e)
+        private void Reportes_Load(object sender, EventArgs e)
         {
-            RefreshDataGrid(dataGridView1);
+            ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+            RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosTipos());
+            RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosVacaciones());
         }
     }
 }

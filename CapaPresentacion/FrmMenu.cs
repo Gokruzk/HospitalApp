@@ -85,7 +85,7 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-           ReportMedicoTipo objR = new ReportMedicoTipo();
+           Reportes objR = new Reportes();
             objR.ShowDialog();
         }
     }
