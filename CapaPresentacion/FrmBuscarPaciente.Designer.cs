@@ -193,6 +193,7 @@
             this.Controls.Add(this.LblDireccion);
             this.Controls.Add(this.lblNombre);
             this.Name = "FrmBuscarPaciente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Paciente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

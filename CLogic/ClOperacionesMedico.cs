@@ -102,5 +102,15 @@ namespace CLogic
             Console.WriteLine("" + numSeg);
             return objDatos.SearchMedicoNS(numSeg);
         }
+
+        public SqlDataAdapter CargarMedicosTipos()
+        {
+            return objDatos.GetMedicoTipos();
+        }
+
+        public SqlDataAdapter CargarMedicosVacaciones()
+        {
+            return objDatos.GetMedicoVacaciones();
+        }
     }
 }
