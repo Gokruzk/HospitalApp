@@ -102,7 +102,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(729, 22);
             this.label1.TabIndex = 119;
-            this.label1.Text = "MÉÐICO ASIGNADO: ____________________________________________________";
+            this.label1.Text = "MÉDICO ASIGNADO: ____________________________________________________";
             // 
             // LblPoblacion
             // 
