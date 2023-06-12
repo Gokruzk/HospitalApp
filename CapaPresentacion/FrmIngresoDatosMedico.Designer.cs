@@ -346,6 +346,7 @@
             // 
             // CmbPoblacion
             // 
+            this.CmbPoblacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbPoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbPoblacion.FormattingEnabled = true;
             this.CmbPoblacion.Location = new System.Drawing.Point(815, 418);
@@ -357,6 +358,7 @@
             // 
             // CmbTipo
             // 
+            this.CmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.CmbTipo.FormattingEnabled = true;
             this.CmbTipo.Location = new System.Drawing.Point(815, 347);
