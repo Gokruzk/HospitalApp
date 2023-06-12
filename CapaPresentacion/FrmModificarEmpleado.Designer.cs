@@ -206,7 +206,7 @@
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(313, 26);
             this.dateTimePickerFecNac.TabIndex = 68;
-            this.dateTimePickerFecNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecNac_KeyPress);
+            this.dateTimePickerFecNac.ValueChanged += new System.EventHandler(this.dateTimePickerFecNac_ValueChanged);
             // 
             // LblFechaNacimiento
             // 
@@ -313,6 +313,7 @@
             this.Controls.Add(this.LblTipo);
             this.Name = "FrmModificarEmpleado";
             this.Text = "Modificar Empleado";
+            this.Load += new System.EventHandler(this.FrmModificarEmpleado_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

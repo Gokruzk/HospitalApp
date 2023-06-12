@@ -190,6 +190,7 @@
             this.BtnModificarEmpleado.TabIndex = 0;
             this.BtnModificarEmpleado.Text = "Modificar Empleado";
             this.BtnModificarEmpleado.UseVisualStyleBackColor = true;
+            this.BtnModificarEmpleado.Click += new System.EventHandler(this.BtnModificarEmpleado_Click);
             // 
             // BtnModificarMedico
             // 

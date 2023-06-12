@@ -82,5 +82,10 @@ namespace CapaPresentacion
             FrmModificarVacaciones obV = new FrmModificarVacaciones();
             obV.ShowDialog();
         }
+
+        private void BtnModificarEmpleado_Click(object sender, EventArgs e) {
+            FrmModificarEmpleado objE = new FrmModificarEmpleado();
+            objE.ShowDialog();
+        }
     }
 }

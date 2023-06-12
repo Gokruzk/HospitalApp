@@ -127,7 +127,7 @@ namespace CapaPresentacion
             {
                 if (e.KeyChar == (char)Keys.Enter) {
                     e.Handled = true;
-                    if (!objOperacionesEmpleado.ValidartipoEmpleado(CmbTipo.SelectedIndex + 1))
+                    if (!objOperacionesEmpleado.ValidarTipoEmpleado(CmbTipo.SelectedIndex + 1))
                         MessageBox.Show($"Error --: " + objMensajes.errores[7], "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                         TxtNumSegSocial.Focus();

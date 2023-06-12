@@ -15,7 +15,7 @@ namespace CLogic
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
-        public bool ValidartipoEmpleado(int tipo)
+        public bool ValidarTipoEmpleado(int tipo)
         {
             int[] tipoEmpleado = { 1, 2, 3, 4, 5 };
 
