@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,7 +37,8 @@ namespace CapaPresentacion
 
         private void ReportMedicoVacaciones_Load(object sender, EventArgs e)
         {
-            
+            ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+            objOperacionesMedico.CargarMedicosVacaciones();
         }
     }
 }

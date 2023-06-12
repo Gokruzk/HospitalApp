@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CLogic;
 
 namespace CapaPresentacion
 {
@@ -15,6 +16,12 @@ namespace CapaPresentacion
         public ReportMedicoTipo()
         {
             InitializeComponent();
+        }
+
+        private void ReportMedicoTipo_Load(object sender, EventArgs e)
+        {
+            ClOperacionesMedico objOperacionesMedico  = new ClOperacionesMedico();
+            objOperacionesMedico.CargarMedicosTipos();
         }
     }
 }
