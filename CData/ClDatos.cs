@@ -930,13 +930,13 @@ namespace CData
             return datoVac;
         }
 
-        public Vacaciones SearchVacacionEstado(int id)
+        public Vacaciones SearchVacacion(int id, string cedula)
         {
             Vacaciones datoVac = new Vacaciones();
             try
             {
                 objBD.Abrir();
-                string query = $"SELECT * FROM Vacaciones WHERE Estado = '{@id}'";
+                string query = $"SELECT * FROM Vacaciones WHERE VacacionesID = {@id} AND Cedula = '{@cedula}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
                 sql.ExecuteNonQuery();
 
