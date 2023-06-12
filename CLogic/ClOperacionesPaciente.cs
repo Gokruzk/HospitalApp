@@ -13,6 +13,16 @@ namespace CLogic
         //Función de validación de datos PACIENTE
         readonly ClDatos objDatos = new ClDatos();
 
+        public List<string> CargarNombresPacientes()
+        {
+            List<Paciente> objNombresPacientes = objDatos.GetPacientes();
+            List<string> nombres = new List<string>();
+
+            foreach (Paciente paciente in objNombresPacientes)
+                nombres.Add(paciente.Nombre);
+
+            return nombres;
+        }
 
         public string RegistrarPaciente(Paciente datos)
         {

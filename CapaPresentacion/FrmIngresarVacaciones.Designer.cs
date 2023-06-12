@@ -48,10 +48,10 @@
             this.lblIngresarVacaciones.AutoSize = true;
             this.lblIngresarVacaciones.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresarVacaciones.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIngresarVacaciones.Location = new System.Drawing.Point(242, 22);
-            this.lblIngresarVacaciones.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblIngresarVacaciones.Location = new System.Drawing.Point(323, 27);
+            this.lblIngresarVacaciones.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.lblIngresarVacaciones.Name = "lblIngresarVacaciones";
-            this.lblIngresarVacaciones.Size = new System.Drawing.Size(347, 32);
+            this.lblIngresarVacaciones.Size = new System.Drawing.Size(426, 38);
             this.lblIngresarVacaciones.TabIndex = 1;
             this.lblIngresarVacaciones.Text = "INGRESAR VACACIONES";
             // 
@@ -59,49 +59,57 @@
             // 
             this.LblEstado.AutoSize = true;
             this.LblEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEstado.Location = new System.Drawing.Point(260, 169);
-            this.LblEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblEstado.Location = new System.Drawing.Point(347, 208);
+            this.LblEstado.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblEstado.Name = "LblEstado";
-            this.LblEstado.Size = new System.Drawing.Size(97, 22);
+            this.LblEstado.Size = new System.Drawing.Size(121, 28);
             this.LblEstado.TabIndex = 82;
             this.LblEstado.Text = "ESTADO:";
             // 
             // CmbEstado
             // 
+            this.CmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.CmbEstado.FormattingEnabled = true;
-            this.CmbEstado.Location = new System.Drawing.Point(366, 166);
+            this.CmbEstado.Items.AddRange(new object[] {
+            "Realizada",
+            "Planificada"});
+            this.CmbEstado.Location = new System.Drawing.Point(488, 204);
+            this.CmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmbEstado.Name = "CmbEstado";
-            this.CmbEstado.Size = new System.Drawing.Size(196, 30);
+            this.CmbEstado.Size = new System.Drawing.Size(260, 36);
             this.CmbEstado.TabIndex = 81;
             this.CmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbEstado_KeyPress);
             // 
             // dateTimePickerFecFin
             // 
             this.dateTimePickerFecFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecFin.Location = new System.Drawing.Point(366, 258);
+            this.dateTimePickerFecFin.Location = new System.Drawing.Point(488, 318);
+            this.dateTimePickerFecFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerFecFin.Name = "dateTimePickerFecFin";
-            this.dateTimePickerFecFin.Size = new System.Drawing.Size(313, 26);
+            this.dateTimePickerFecFin.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecFin.TabIndex = 79;
+            this.dateTimePickerFecFin.CloseUp += new System.EventHandler(this.dateTimePickerFecFin_CloseUp);
             this.dateTimePickerFecFin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecFin_KeyPress);
             // 
             // LblFechaFin
             // 
             this.LblFechaFin.AutoSize = true;
             this.LblFechaFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaFin.Location = new System.Drawing.Point(178, 261);
-            this.LblFechaFin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFechaFin.Location = new System.Drawing.Point(237, 321);
+            this.LblFechaFin.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblFechaFin.Name = "LblFechaFin";
-            this.LblFechaFin.Size = new System.Drawing.Size(150, 22);
+            this.LblFechaFin.Size = new System.Drawing.Size(189, 28);
             this.LblFechaFin.TabIndex = 77;
             this.LblFechaFin.Text = "FECHA DE FIN:";
             // 
             // dateTimePickerFecInicio
             // 
             this.dateTimePickerFecInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.dateTimePickerFecInicio.Location = new System.Drawing.Point(366, 214);
+            this.dateTimePickerFecInicio.Location = new System.Drawing.Point(488, 263);
+            this.dateTimePickerFecInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerFecInicio.Name = "dateTimePickerFecInicio";
-            this.dateTimePickerFecInicio.Size = new System.Drawing.Size(313, 26);
+            this.dateTimePickerFecInicio.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecInicio.TabIndex = 80;
             this.dateTimePickerFecInicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePickerFecInicio_KeyPress);
             // 
@@ -109,19 +117,20 @@
             // 
             this.LblFechaInicio.AutoSize = true;
             this.LblFechaInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaInicio.Location = new System.Drawing.Point(178, 217);
-            this.LblFechaInicio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblFechaInicio.Location = new System.Drawing.Point(237, 267);
+            this.LblFechaInicio.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblFechaInicio.Name = "LblFechaInicio";
-            this.LblFechaInicio.Size = new System.Drawing.Size(180, 22);
+            this.LblFechaInicio.Size = new System.Drawing.Size(228, 28);
             this.LblFechaInicio.TabIndex = 78;
             this.LblFechaInicio.Text = "FECHA DE INICIO:";
             // 
             // TxtCedula
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCedula.Location = new System.Drawing.Point(366, 120);
+            this.TxtCedula.Location = new System.Drawing.Point(488, 148);
+            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtCedula.Name = "TxtCedula";
-            this.TxtCedula.Size = new System.Drawing.Size(196, 29);
+            this.TxtCedula.Size = new System.Drawing.Size(260, 34);
             this.TxtCedula.TabIndex = 76;
             this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
@@ -129,10 +138,10 @@
             // 
             this.LblCedula.AutoSize = true;
             this.LblCedula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCedula.Location = new System.Drawing.Point(262, 124);
-            this.LblCedula.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblCedula.Location = new System.Drawing.Point(349, 153);
+            this.LblCedula.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.LblCedula.Name = "LblCedula";
-            this.LblCedula.Size = new System.Drawing.Size(96, 22);
+            this.LblCedula.Size = new System.Drawing.Size(121, 28);
             this.LblCedula.TabIndex = 75;
             this.LblCedula.Text = "CÉDULA:";
             // 
@@ -140,18 +149,19 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.lblIngresarVacaciones);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(829, 78);
+            this.panel1.Size = new System.Drawing.Size(1105, 96);
             this.panel1.TabIndex = 74;
             // 
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnCancelar.Location = new System.Drawing.Point(421, 322);
+            this.BtnCancelar.Location = new System.Drawing.Point(561, 396);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(189, 50);
+            this.BtnCancelar.Size = new System.Drawing.Size(252, 62);
             this.BtnCancelar.TabIndex = 84;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = true;
@@ -160,9 +170,10 @@
             // BtnRegistrar
             // 
             this.BtnRegistrar.Font = new System.Drawing.Font("Rockwell", 14.25F);
-            this.BtnRegistrar.Location = new System.Drawing.Point(226, 323);
+            this.BtnRegistrar.Location = new System.Drawing.Point(301, 398);
+            this.BtnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnRegistrar.Name = "BtnRegistrar";
-            this.BtnRegistrar.Size = new System.Drawing.Size(189, 50);
+            this.BtnRegistrar.Size = new System.Drawing.Size(252, 62);
             this.BtnRegistrar.TabIndex = 83;
             this.BtnRegistrar.Text = "REGISTRAR";
             this.BtnRegistrar.UseVisualStyleBackColor = true;
@@ -170,10 +181,10 @@
             // 
             // FrmIngresarVacaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(832, 433);
+            this.ClientSize = new System.Drawing.Size(1109, 533);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.LblEstado);
@@ -185,6 +196,7 @@
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.LblCedula);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmIngresarVacaciones";
             this.Text = "Ingresar Vacaciones";
             this.panel1.ResumeLayout(false);

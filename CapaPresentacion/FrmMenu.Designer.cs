@@ -101,6 +101,7 @@
             this.BtnIngresarConsulta.TabIndex = 1;
             this.BtnIngresarConsulta.Text = "Ingresar horario de consulta";
             this.BtnIngresarConsulta.UseVisualStyleBackColor = true;
+            this.BtnIngresarConsulta.Click += new System.EventHandler(this.BtnIngresarConsulta_Click);
             // 
             // BtnIngresarVacaciones
             // 
@@ -111,6 +112,7 @@
             this.BtnIngresarVacaciones.TabIndex = 1;
             this.BtnIngresarVacaciones.Text = "Ingresar Vacaciones";
             this.BtnIngresarVacaciones.UseVisualStyleBackColor = true;
+            this.BtnIngresarVacaciones.Click += new System.EventHandler(this.BtnIngresarVacaciones_Click);
             // 
             // BtnIngresarPaciente
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace CapaPresentacion
 {
     public partial class FrmIngresarConsulta : Form
     {
+        ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+        ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
         public FrmIngresarConsulta()
         {
             InitializeComponent();
@@ -100,6 +103,19 @@ namespace CapaPresentacion
             {
                 MessageBox.Show($"Error BtnCancelar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmIngresarConsulta_Load(object sender, EventArgs e)
+        {
+            List<string> tipos = objOperacionesMedico.CargarNombresMedicos();
+
+            foreach (string tipo in tipos)
+                CmbMedicoAsignado.Items.Add(tipo);
+
+            tipos = objOperacionesPaciente.CargarNombresPacientes();
+
+            foreach(string tipo in tipos)
+                CmbPaciente.Items.Add(tipo);    
         }
     }
 }
