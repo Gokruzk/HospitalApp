@@ -1271,7 +1271,49 @@ namespace CData
                 return false;
             }
             objBD.Cerrar();
-            return true;;
+            return true; ;
+        }
+
+        public SqlDataAdapter GetEmpleadoTipos()
+        {
+            Paciente datosPac = new Paciente();
+            SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
+            try
+            {
+                objBD.Abrir();
+                string query = "SELECT Cedula, Nombre, Descripcion AS 'Tipo de Empleado' FROM Empleados JOIN TipoEmpleado TE on TE.Id = Empleados.TipoEmpleado";
+                adp = new SqlDataAdapter(query, objBD.connect);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return adp;
+        }
+
+        public SqlDataAdapter GetEmpleadoVacaciones()
+        {
+            Paciente datosPac = new Paciente();
+            SqlDataAdapter adp = new SqlDataAdapter("SELECT Nombre, FechaInicio, FechaFin, PE.Descripcion AS Estado FROM Vacaciones JOIN Empleados E on Vacaciones.Cedula = E.Cedula JOIN PersonaEstado PE on E.Estado = PE.Id", objBD.connect);
+            try
+            {
+                objBD.Abrir();
+                string query = "";
+                adp = new SqlDataAdapter(query, objBD.connect);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                objBD.Cerrar();
+            }
+            catch (Exception e)
+            {
+                objBD.Cerrar();
+                Console.WriteLine(e.Message);
+            }
+            return adp;
         }
     }
 }
