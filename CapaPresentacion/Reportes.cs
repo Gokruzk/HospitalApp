@@ -59,10 +59,10 @@ namespace CapaPresentacion
                 RefreshDataGrid(dataGridView1, objOperacionesPaciente.CargarPacientesAD());
             }else if (comboBox1.SelectedItem.ToString() == "Empleados con tipos")
             {
-                RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosVacaciones());
+                RefreshDataGrid(dataGridView1, objOperacionesEmpleado.CargarEmpleadosTipos());
             }else if (comboBox1.SelectedItem.ToString() == "Empleados y sus vacaciones")
             {
-                RefreshDataGrid(dataGridView1, objOperacionesMedico.CargarMedicosVacaciones());
+                RefreshDataGrid(dataGridView1, objOperacionesEmpleado.CargarEmpleadosVacaciones());
             }
         }
     }
