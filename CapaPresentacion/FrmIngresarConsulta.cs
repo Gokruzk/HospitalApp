@@ -14,11 +14,11 @@ namespace CapaPresentacion
 {
     public partial class FrmIngresarConsulta : Form
     {
-        Consulta objConsulta = new Consulta();
-        ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
-        ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
-        ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
-        ClOperacionesConsultas objOperacionesConsulta = new ClOperacionesConsultas();
+        readonly Consulta objConsulta = new Consulta();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
+        readonly ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
+        readonly ClOperacionesPaciente objOperacionesPaciente = new ClOperacionesPaciente();
+        readonly ClOperacionesConsultas objOperacionesConsulta = new ClOperacionesConsultas();
 
         public FrmIngresarConsulta()
         {
