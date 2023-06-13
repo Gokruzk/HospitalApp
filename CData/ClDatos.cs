@@ -1302,6 +1302,7 @@ namespace CData
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
+                objBD.Cerrar();
                 return false;
             }
             objBD.Cerrar();
