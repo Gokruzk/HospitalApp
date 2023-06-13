@@ -150,5 +150,11 @@ namespace CapaPresentacion
             else
                 BtnRegistrar.Focus();
         }
+
+        private void FrmIngresarVacaciones_Load(object sender, EventArgs e)
+        {
+            dateTimePickerFecInicio.MinDate = DateTime.Today;
+            dateTimePickerFecFin.MinDate = DateTime.Today.AddDays(1);
+        }
     }
 }
