@@ -15,6 +15,7 @@ namespace CLogic
         readonly ClDatos objDatos = new ClDatos();
         readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
+        readonly ClOperacionesPoblacion objOperacionesPoblacion = new ClOperacionesPoblacion();
 
         public bool ValidarTipoMedico(int tipo)
         {
@@ -39,25 +40,14 @@ namespace CLogic
 
         public string RegistrarMedico(Medico datos)
         {
-            return objDatos.RegistroMedico(datos);
+            return ValidarTodoMedico(datos, 1);
         }
 
-        public void ActualizarMedico(Medico datos)
+        public string ActualizarMedico(Medico datos)
         {
-            objDatos.UpdateMedico(datos);
+            return ValidarTodoMedico(datos, 2);
+
         }
-
-        /* public string EliminarMedico(string cedula)
-        {
-            if (objPersona.ValidarCedula(cedula))
-            {
-                objDatos.DeleteMedico(cedula);
-            }
-            else
-                return objMensajes.errores[0];
-
-            return "CORRECTO";
-        } */
 
         public List<string> CargarTiposMedicos()
         {
@@ -111,6 +101,35 @@ namespace CLogic
         public SqlDataAdapter CargarMedicosVacaciones()
         {
             return objDatos.GetMedicoVacaciones();
+
+        }
+
+        public string ValidarTodoMedico(Medico datos, int i)
+        {
+            if (!objPersona.ValidarCedula(datos.Cedula))
+                return objMensajes.errores[0];
+            if (!objPersona.ValidarNombre(datos.Nombre))
+                return objMensajes.errores[1];
+            if (!objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
+                return objMensajes.errores[2];
+            if (!objPersona.ValidarDireccion(datos.Direccion))
+                return objMensajes.errores[3];
+            if (!ValidarTipoMedico(datos.Tipo))
+                return objMensajes.errores[9];
+            if (datos.Tipo == 3)
+            {
+                if (!ValidarFechasSutituto(datos.Tipo, datos.FechaA, datos.FechaB))
+                    return objMensajes.errores[13];
+            }
+            if (!ValidarNumColegiado(datos.NumColegiado))
+                return objMensajes.errores[11];
+            if (!objOperacionesPoblacion.ValidarPoblacion(datos.Poblacion))
+                return objMensajes.errores[18];
+
+            if (i == 1)
+                return objDatos.RegistroMedico(datos);
+            else
+                return objDatos.UpdateMedico(datos);
         }
     }
 }

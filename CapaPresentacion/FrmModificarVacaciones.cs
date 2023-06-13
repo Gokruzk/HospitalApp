@@ -142,10 +142,14 @@ namespace CapaPresentacion
                     objVacacion.FechaFin = dateTimePickerFecFin.Value;
                     objVacacion.Estado = CmbEstado.SelectedIndex + 1;
 
-
-                    objOperacionesVacacion.ActualizarVacacion(objVacacion);
-                    MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    string estado = objOperacionesVacacion.ActualizarVacacion(objVacacion);
+                    if (estado == "CORRECTO")
+                    {
+                        MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {

@@ -351,9 +351,15 @@ namespace CapaPresentacion
                     objMedico.Estado = CmbHabDes.SelectedIndex + 1;
                     objMedico.Direccion = txtDireccion.Text;
 
-                    objOperacionesMedico.ActualizarMedico(objMedico);
+                    string estado = objOperacionesMedico.ActualizarMedico(objMedico);
+                    if (estado == "CORRECTO")
+                    {
                         MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
                 }
                 catch (Exception ex)
                 {

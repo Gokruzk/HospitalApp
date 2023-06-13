@@ -62,7 +62,7 @@ namespace CData
                 if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "No se puede ingresar 2 veces la misma cédula";
+                    return "2627";
                 }
                 else
                 {
@@ -105,7 +105,7 @@ namespace CData
             objBD.Cerrar();
         }
 
-        public void UpdateMedico(Medico datoMed)
+        public string UpdateMedico(Medico datoMed)
         {
             try
             {
@@ -117,9 +117,10 @@ namespace CData
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                return e.Message;
             }
             objBD.Cerrar();
+            return "CORRECTO";
         }
 
         public Medico SearchMedico(string id)
@@ -439,7 +440,7 @@ namespace CData
                 if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "No se puede ingresar 2 veces la misma cédula";
+                    return "2627";
                 }
                 else
                 {
@@ -484,7 +485,7 @@ namespace CData
             objBD.Cerrar();
         }
 
-        public void UpdatePaciente(Paciente datoPac)
+        public string UpdatePaciente(Paciente datoPac)
         {
             try
             {
@@ -496,9 +497,10 @@ namespace CData
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                return e.Message;
             }
             objBD.Cerrar();
+            return "CORRECTO";
         }
 
         public Paciente SearchPaciente(string id)
@@ -863,7 +865,7 @@ namespace CData
                 if (ex.Number == 2627)
                 {
                     // Clave primaria duplicada
-                    return "No se puede ingresar 2 veces la misma cédula";
+                    return "2627";
                 }
                 else
                 {
@@ -890,7 +892,7 @@ namespace CData
         //     }
         // }
 
-        public void UpdateVacacion(Vacaciones datoVac)
+        public string UpdateVacacion(Vacaciones datoVac)
         {
             try
             {
@@ -902,9 +904,10 @@ namespace CData
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                return e.Message;
             }
             objBD.Cerrar();
+            return "CORRECTO";
         }
 
         public Vacaciones SearchVacacionCedula(string id)

@@ -13,6 +13,8 @@ namespace CLogic
     {
         //Función de validación de datos PACIENTE
         readonly ClDatos objDatos = new ClDatos();
+        readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
         public List<string> CargarNombresPacientes()
         {
@@ -27,13 +29,13 @@ namespace CLogic
 
         public string RegistrarPaciente(Paciente datos)
         {
-            return objDatos.RegistroPaciente(datos);
+            return ValidarTodoPaciente(datos, 1);
         }
 
-        public void ActualizarPaciente(Paciente datos)
+        public string ActualizarPaciente(Paciente datos)
         {
 
-            objDatos.UpdatePaciente(datos);
+            return ValidarTodoPaciente(datos, 2);
         }
         public SqlDataAdapter CargarPacientesAD()
         {
@@ -59,6 +61,23 @@ namespace CLogic
                 cedulas.Add(paciente.Cedula);
 
             return cedulas;
+        }
+
+        public string ValidarTodoPaciente(Paciente datos, int i)
+        {
+            if (!objPersona.ValidarCedula(datos.Cedula))
+                return objMensajes.errores[0];
+            if (!objPersona.ValidarNombre(datos.Nombre))
+                return objMensajes.errores[1];
+            if (!objPersona.ValidarNumeroSeguroSocial(datos.NumSegSocial))
+                return objMensajes.errores[2];
+            if (!objPersona.ValidarDireccion(datos.Direccion))
+                return objMensajes.errores[3];
+
+            if(i == 1)
+                return objDatos.RegistroPaciente(datos);
+            else
+                return objDatos.UpdatePaciente(datos);
         }
     }
 }

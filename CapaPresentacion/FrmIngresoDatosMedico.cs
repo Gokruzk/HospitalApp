@@ -253,10 +253,14 @@ namespace CapaPresentacion
 
                 string estado = objOperacionesMedico.RegistrarMedico(objMedico).ToString();
                 if (estado == "CORRECTO")
+                {
                     MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else if (estado == "2627")
+                    MessageBox.Show(objMensajes.errores[19], "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
-                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
             catch (Exception ex)
             {

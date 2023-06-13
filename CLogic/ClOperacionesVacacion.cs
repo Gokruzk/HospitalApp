@@ -44,12 +44,12 @@ namespace CLogic
 
         public string RegistrarVacacion(Vacaciones datos)
         {
-            return objDatos.RegistroVacacion(datos);
+            return ValidarTodoVacacion(datos, 1);
         }
 
-        public void ActualizarVacacion(Vacaciones datos)
+        public string ActualizarVacacion(Vacaciones datos)
         {
-            objDatos.UpdateVacacion(datos);
+            return ValidarTodoVacacion(datos, 2);
         }
 
         public Vacaciones CargarVacacionCedula(string cedula)
@@ -62,5 +62,19 @@ namespace CLogic
             return objDatos.SearchVacacion(id, cedula);
         }
 
+        public string ValidarTodoVacacion(Vacaciones datos, int i)
+        {
+            if (!objPersona.ValidarCedula(datos.Cedula))
+                return objMensajes.errores[0];
+            if(!ValidarEstadoVacacion(datos.Estado))
+                return objMensajes.errores[14];
+            if(ValidarFechas(datos.FechaInicio, datos.FechaFin))
+                return objMensajes.errores[13];
+
+            if(i == 1)
+                return objDatos.RegistroVacacion(datos);
+            else
+                return objDatos.UpdateVacacion(datos); 
+        }
     }
 }
