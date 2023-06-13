@@ -75,7 +75,7 @@
             "Realizada",
             "Planificada"});
             this.CmbEstado.Location = new System.Drawing.Point(488, 204);
-            this.CmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbEstado.Margin = new System.Windows.Forms.Padding(4);
             this.CmbEstado.Name = "CmbEstado";
             this.CmbEstado.Size = new System.Drawing.Size(260, 36);
             this.CmbEstado.TabIndex = 81;
@@ -83,9 +83,11 @@
             // 
             // dateTimePickerFecFin
             // 
+            this.dateTimePickerFecFin.CustomFormat = "MM/dd/yyyy";
             this.dateTimePickerFecFin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.dateTimePickerFecFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerFecFin.Location = new System.Drawing.Point(488, 318);
-            this.dateTimePickerFecFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecFin.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecFin.Name = "dateTimePickerFecFin";
             this.dateTimePickerFecFin.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecFin.TabIndex = 79;
@@ -105,9 +107,11 @@
             // 
             // dateTimePickerFecInicio
             // 
+            this.dateTimePickerFecInicio.CustomFormat = "MM/dd/yyyy";
             this.dateTimePickerFecInicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.dateTimePickerFecInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerFecInicio.Location = new System.Drawing.Point(488, 263);
-            this.dateTimePickerFecInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecInicio.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecInicio.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFecInicio.MinDate = new System.DateTime(2023, 6, 13, 0, 0, 0, 0);
             this.dateTimePickerFecInicio.Name = "dateTimePickerFecInicio";
@@ -130,7 +134,7 @@
             // 
             this.TxtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCedula.Location = new System.Drawing.Point(488, 148);
-            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCedula.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(260, 34);
             this.TxtCedula.TabIndex = 76;
@@ -161,7 +165,7 @@
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnCancelar.Location = new System.Drawing.Point(561, 396);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(252, 62);
             this.BtnCancelar.TabIndex = 84;
@@ -173,7 +177,7 @@
             // 
             this.BtnRegistrar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnRegistrar.Location = new System.Drawing.Point(301, 398);
-            this.BtnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRegistrar.Name = "BtnRegistrar";
             this.BtnRegistrar.Size = new System.Drawing.Size(252, 62);
             this.BtnRegistrar.TabIndex = 83;
@@ -199,7 +203,7 @@
             this.Controls.Add(this.TxtCedula);
             this.Controls.Add(this.LblCedula);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmIngresarVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -38,6 +38,8 @@ namespace CapaPresentacion
 
             foreach (string tipo in tipos)
                 CmbTipo.Items.Add(tipo);
+
+
         }
 
         private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
@@ -234,7 +236,7 @@ namespace CapaPresentacion
                 objMedico.NumSegSocial = TxtNumSegSocial.Text;
                 objMedico.NumColegiado = txtNumColegiado.Text;
                 objMedico.Tipo = CmbTipo.SelectedIndex + 1;
-
+                Console.WriteLine(dateTimePickerFecNac.Value);
                 if(objMedico.Tipo == 3)
                 {
                     objMedico.FechaA = dateTimePickerFecAlta.Value;

@@ -144,7 +144,9 @@
             // 
             // dateTimePickerFecBaja
             // 
+            this.dateTimePickerFecBaja.CustomFormat = "MM/dd/yyyy";
             this.dateTimePickerFecBaja.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.dateTimePickerFecBaja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerFecBaja.Location = new System.Drawing.Point(48, 137);
             this.dateTimePickerFecBaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFecBaja.Name = "dateTimePickerFecBaja";
@@ -155,7 +157,9 @@
             // 
             // dateTimePickerFecAlta
             // 
+            this.dateTimePickerFecAlta.CustomFormat = "MM/dd/yyyy";
             this.dateTimePickerFecAlta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.dateTimePickerFecAlta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerFecAlta.Location = new System.Drawing.Point(48, 71);
             this.dateTimePickerFecAlta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerFecAlta.Name = "dateTimePickerFecAlta";
@@ -165,9 +169,11 @@
             // 
             // dateTimePickerFecNac
             // 
+            this.dateTimePickerFecNac.CustomFormat = "MM/dd/yyyy";
             this.dateTimePickerFecNac.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.dateTimePickerFecNac.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerFecNac.Location = new System.Drawing.Point(415, 226);
-            this.dateTimePickerFecNac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerFecNac.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
             this.dateTimePickerFecNac.Size = new System.Drawing.Size(416, 31);
             this.dateTimePickerFecNac.TabIndex = 89;
@@ -188,7 +194,7 @@
             // 
             this.txtNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreModificar.Location = new System.Drawing.Point(253, 175);
-            this.txtNombreModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreModificar.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreModificar.Name = "txtNombreModificar";
             this.txtNombreModificar.Size = new System.Drawing.Size(772, 34);
             this.txtNombreModificar.TabIndex = 87;
@@ -198,7 +204,7 @@
             // 
             this.TxtNumSegSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumSegSocial.Location = new System.Drawing.Point(357, 390);
-            this.TxtNumSegSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtNumSegSocial.Margin = new System.Windows.Forms.Padding(4);
             this.TxtNumSegSocial.Name = "TxtNumSegSocial";
             this.TxtNumSegSocial.Size = new System.Drawing.Size(243, 34);
             this.TxtNumSegSocial.TabIndex = 85;
@@ -208,7 +214,7 @@
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(253, 281);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(772, 34);
             this.txtDireccion.TabIndex = 84;
@@ -299,7 +305,7 @@
             "Tungurahua",
             "Zamora Chinchipe"});
             this.comboBoxProvincia.Location = new System.Drawing.Point(349, 1094);
-            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxProvincia.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(193, 27);
             this.comboBoxProvincia.TabIndex = 77;
@@ -308,7 +314,7 @@
             // 
             this.txtNumColegiado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.txtNumColegiado.Location = new System.Drawing.Point(401, 463);
-            this.txtNumColegiado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumColegiado.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumColegiado.Name = "txtNumColegiado";
             this.txtNumColegiado.Size = new System.Drawing.Size(199, 35);
             this.txtNumColegiado.TabIndex = 76;
@@ -382,7 +388,7 @@
             "CÉDULA",
             "NUM. SEGURIDAD SOCIAL"});
             this.CmbCampo.Location = new System.Drawing.Point(232, 117);
-            this.CmbCampo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbCampo.Margin = new System.Windows.Forms.Padding(4);
             this.CmbCampo.Name = "CmbCampo";
             this.CmbCampo.Size = new System.Drawing.Size(300, 37);
             this.CmbCampo.TabIndex = 107;
@@ -392,7 +398,7 @@
             // 
             this.TxtEleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtEleccion.Location = new System.Drawing.Point(572, 117);
-            this.TxtEleccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtEleccion.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEleccion.Name = "TxtEleccion";
             this.TxtEleccion.Size = new System.Drawing.Size(243, 34);
             this.TxtEleccion.TabIndex = 105;
@@ -413,7 +419,7 @@
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Rockwell", 14.25F);
             this.BtnBuscar.Location = new System.Drawing.Point(859, 111);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(252, 48);
             this.BtnBuscar.TabIndex = 106;
@@ -429,9 +435,9 @@
             this.GbxFechas.Controls.Add(this.dateTimePickerFecAlta);
             this.GbxFechas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F);
             this.GbxFechas.Location = new System.Drawing.Point(639, 374);
-            this.GbxFechas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxFechas.Margin = new System.Windows.Forms.Padding(4);
             this.GbxFechas.Name = "GbxFechas";
-            this.GbxFechas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GbxFechas.Padding = new System.Windows.Forms.Padding(4);
             this.GbxFechas.Size = new System.Drawing.Size(517, 207);
             this.GbxFechas.TabIndex = 108;
             this.GbxFechas.TabStop = false;
@@ -470,7 +476,7 @@
             this.Controls.Add(this.txtNumColegiado);
             this.Controls.Add(this.lblColegio);
             this.Controls.Add(this.lblProvincia);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmModificarMedico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -183,5 +183,11 @@ namespace CapaPresentacion
             else
                 BtnModificar.Focus();
         }
+
+        private void FrmModificarVacaciones_Load(object sender, EventArgs e)
+        {
+            dateTimePickerFecInicio.MinDate = DateTime.Today;
+            dateTimePickerFecFin.MinDate = DateTime.Today.AddDays(1);
+        }
     }
 }
