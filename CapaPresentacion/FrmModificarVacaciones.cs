@@ -15,11 +15,9 @@ namespace CapaPresentacion
     public partial class FrmModificarVacaciones : Form
     {
         Vacaciones objVacacion = new Vacaciones();
-        ClOperacionesVacacion objOperacionesVacacion = new ClOperacionesVacacion();
-        ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
-        ClOperacionesEmpleado objOperacionesEmpleado = new ClOperacionesEmpleado();
-        ClOperacionesMedico objOperacionesMedico = new ClOperacionesMedico();
-        ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
+        readonly ClOperacionesVacacion objOperacionesVacacion = new ClOperacionesVacacion();
+        readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
+        readonly ClOperacionesPersona objOperacionesPersona = new ClOperacionesPersona();
 
         public FrmModificarVacaciones()
         {

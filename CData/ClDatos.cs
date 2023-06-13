@@ -117,6 +117,7 @@ namespace CData
             }
             catch (SqlException e)
             {
+                objBD.Cerrar();
                 return e.Message;
             }
             objBD.Cerrar();
@@ -125,7 +126,7 @@ namespace CData
 
         public Medico SearchMedico(string id)
         {
-            Medico datoMed = new Medico();
+            Medico datoMed;
             try
             {
                 objBD.Abrir();
@@ -167,7 +168,7 @@ namespace CData
 
         public Medico SearchMedicoNS(string ns)
         {
-            Medico datoMed = new Medico();
+            Medico datoMed;
             try
             {
                 objBD.Abrir();
@@ -298,7 +299,7 @@ namespace CData
             objBD.Cerrar();
         }
 
-        public void UpdateEmpleado(Empleado datoEmp)
+        public string UpdateEmpleado(Empleado datoEmp)
         {
             try
             {
@@ -310,14 +311,16 @@ namespace CData
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                objBD.Cerrar();
+                return e.Message;
             }
             objBD.Cerrar();
+            return "CORRECTO";
         }
 
         public Empleado SearchEmpleado(string id)
         {
-            Empleado datoEmp = new Empleado();
+            Empleado datoEmp;
             try
             {
                 objBD.Abrir();
@@ -356,7 +359,7 @@ namespace CData
 
         public Empleado SearchEmpleadoNS(string ns)
         {
-            Empleado datoEmp = new Empleado();
+            Empleado datoEmp;
             try
             {
                 objBD.Abrir();
@@ -497,6 +500,7 @@ namespace CData
             }
             catch (SqlException e)
             {
+                objBD.Cerrar();
                 return e.Message;
             }
             objBD.Cerrar();
@@ -505,7 +509,7 @@ namespace CData
 
         public Paciente SearchPaciente(string id)
         {
-            Paciente datoPac = new Paciente();
+            Paciente datoPac;
             try
             {
                 objBD.Abrir();
@@ -543,7 +547,7 @@ namespace CData
 
         public Paciente SearchPacienteNS(string ns)
         {
-            Paciente datoPac = new Paciente();
+            Paciente datoPac;
             try
             {
                 objBD.Abrir();
@@ -667,7 +671,7 @@ namespace CData
 
         public Poblacion SearchPoblacion(int id)
         {
-            Poblacion datoPob = new Poblacion();
+            Poblacion datoPob;
             try
             {
                 objBD.Abrir();
@@ -786,7 +790,7 @@ namespace CData
 
         public Horarios SearchHorario(int id)
         {
-            Horarios datoHor = new Horarios();
+            Horarios datoHor;
             try
             {
                 objBD.Abrir();
@@ -904,6 +908,7 @@ namespace CData
             }
             catch (SqlException e)
             {
+                objBD.Cerrar();
                 return e.Message;
             }
             objBD.Cerrar();
@@ -912,7 +917,7 @@ namespace CData
 
         public Vacaciones SearchVacacionCedula(string id)
         {
-            Vacaciones datoVac = new Vacaciones();
+            Vacaciones datoVac;
             try
             {
                 objBD.Abrir();
@@ -948,7 +953,7 @@ namespace CData
 
         public Vacaciones SearchVacacion(int id, string cedula)
         {
-            Vacaciones datoVac = new Vacaciones();
+            Vacaciones datoVac;
             try
             {
                 objBD.Abrir();
@@ -1028,7 +1033,9 @@ namespace CData
                 {
                     // Clave primaria duplicada
                     return "No se puede ingresar 2 veces la misma cédula";
-                } else {
+                }
+                else
+                {
                     return e.Message;
                 }
             }
@@ -1036,7 +1043,7 @@ namespace CData
             return "CORRECTO";
         }
 
-        public void UpdateConsulta(Consulta datoConsulta)
+        public string UpdateConsulta(Consulta datoConsulta)
         {
             try
             {
@@ -1048,14 +1055,18 @@ namespace CData
             }
             catch (SqlException e)
             {
-                Console.WriteLine(e.Message);
+                objBD.Cerrar();
+                return e.Message;
             }
             objBD.Cerrar();
+            return "CORRECTO";
         }
 
-        public Consulta SearchConsulta(string id) {
-            Consulta datoConsulta = new Consulta();
-            try {
+        public Consulta SearchConsulta(string id)
+        {
+            Consulta datoConsulta;
+            try
+            {
                 objBD.Abrir();
                 string query = $"SELECT * FROM Consultas WHERE ConsultaID = '{@id}'";
                 SqlCommand sql = new SqlCommand(query, objBD.connect);
@@ -1063,8 +1074,10 @@ namespace CData
 
                 SqlDataReader reader = sql.ExecuteReader();
 
-                if (reader.Read()) {
-                    Consulta objEnt = new Consulta() {
+                if (reader.Read())
+                {
+                    Consulta objEnt = new Consulta()
+                    {
                         CID = Convert.ToInt16(reader["ConsultaID"]),
                         Descripcion = Convert.ToString(reader["Descripcion"]),
                         Medico = Convert.ToString(reader["Medico"]),
@@ -1072,9 +1085,12 @@ namespace CData
                         Fecha = Convert.ToDateTime(reader["Fecha"])
                     };
                     datoConsulta = objEnt;
-                } else
+                }
+                else
                     datoConsulta = null;
-            } catch (SqlException e) {
+            }
+            catch (SqlException e)
+            {
                 datoConsulta = null;
                 Console.WriteLine(e.Message);
             }
@@ -1084,7 +1100,7 @@ namespace CData
 
         public Consulta SearchConsultaPaciente(string id)
         {
-            Consulta datoConsulta = new Consulta();
+            Consulta datoConsulta;
             try
             {
                 objBD.Abrir();
@@ -1120,7 +1136,7 @@ namespace CData
 
         public Consulta SearchConsultaMedico(string id)
         {
-            Consulta datoConsulta = new Consulta();
+            Consulta datoConsulta;
             try
             {
                 objBD.Abrir();
@@ -1211,7 +1227,6 @@ namespace CData
         //MedicoVacaciones
         public SqlDataAdapter GetMedicoVacaciones()
         {
-            Medico datosMed = new Medico();
             SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
             try
             {
@@ -1233,7 +1248,6 @@ namespace CData
         //MedicoTipos
         public SqlDataAdapter GetMedicoTipos()
         {
-            Medico datosMed = new Medico();
             SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
             try
             {
@@ -1255,7 +1269,6 @@ namespace CData
         //PacientesReport
         public SqlDataAdapter GetPacientesAD()
         {
-            Paciente datosPac = new Paciente();
             SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
             try
             {
@@ -1277,7 +1290,6 @@ namespace CData
         //Administrador
         public bool GetAdministrador(string id, string psw)
         {
-            Administrador datoAdm = new Administrador();
             try
             {
                 objBD.Abrir();
@@ -1294,7 +1306,6 @@ namespace CData
                         UserID = Convert.ToString(reader["UserID"]),
                         Psw = Convert.ToString(reader["Psw"])
                     };
-                    datoAdm = objEnt;
                 }
                 else
                     return false;
@@ -1311,7 +1322,6 @@ namespace CData
 
         public SqlDataAdapter GetEmpleadoTipos()
         {
-            Paciente datosPac = new Paciente();
             SqlDataAdapter adp = new SqlDataAdapter("", objBD.connect);
             try
             {
@@ -1332,7 +1342,6 @@ namespace CData
 
         public SqlDataAdapter GetEmpleadoVacaciones()
         {
-            Paciente datosPac = new Paciente();
             SqlDataAdapter adp = new SqlDataAdapter("SELECT Nombre, FechaInicio, FechaFin, PE.Descripcion AS Estado FROM Vacaciones JOIN Empleados E on Vacaciones.Cedula = E.Cedula JOIN PersonaEstado PE on E.Estado = PE.Id", objBD.connect);
             try
             {

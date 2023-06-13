@@ -93,13 +93,16 @@ namespace CapaPresentacion
                 objConsulta.Fecha = dateTimePickerFecha.Value;
                 objConsulta.Descripcion = TxtDescripcion.Text;
 
-                string estado = objOperacionesConsulta.RegistrarConsulta(objConsulta);
-
-                if(estado == "CORRECTO")
+                string estado = objOperacionesConsulta.RegistrarConsulta(objConsulta).ToString();
+                if (estado == "CORRECTO")
+                {
                     MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else if (estado == "2627")
+                    MessageBox.Show(objMensajes.errores[19], "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
             }
             catch (Exception ex)
             {

@@ -148,10 +148,14 @@ namespace CapaPresentacion
                 objConsulta.Fecha = dateTimePickerFecha.Value;
                 objConsulta.Descripcion = TxtDescripcion.Text;
 
-                objOperacionesConsulta.ActualizarConsulta(objConsulta);
-                MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                this.Close();
+                string estado = objOperacionesConsulta.ActualizarConsulta(objConsulta);
+                if (estado == "CORRECTO")
+                {
+                    MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

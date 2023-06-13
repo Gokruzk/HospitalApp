@@ -169,14 +169,16 @@ namespace CapaPresentacion
                 objEmpleado.NumSegSocial = TxtNumSegSocial.Text;
                 objEmpleado.Estado = 1;
 
-                string estado = objOperacionesEmpleado.RegistrarEmpleado(objEmpleado).ToString();
-
+                string estado = objOperacionesEmpleado.RegistrarEmpleado(objEmpleado);
                 if (estado == "CORRECTO")
+                {
                     MessageBox.Show("Registro realizado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else if (estado == "2627")
+                    MessageBox.Show(objMensajes.errores[19], "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                this.Close();
             } catch (Exception ex) {
                 MessageBox.Show($"Error BtnRegistrar: " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

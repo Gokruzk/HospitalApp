@@ -275,10 +275,14 @@ namespace CapaPresentacion
                 objEmpleado.NumSegSocial = TxtNumSegSocialModificar.Text;
                 objEmpleado.Estado = CmbHabilDeshabil.SelectedIndex + 1;
 
-                objOperacionesEmpleado.ActualizarEmpleado(objEmpleado);
-
-                MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                string estado = objOperacionesEmpleado.ActualizarEmpleado(objEmpleado);
+                if (estado == "CORRECTO")
+                {
+                    MessageBox.Show("Modificación realizada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                    MessageBox.Show(estado, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

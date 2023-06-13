@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 namespace CLogic {
     public class ClOperacionesConsultas {
         readonly ClDatos objDatos = new ClDatos();
-        readonly ClOperacionesPersona objPersona = new ClOperacionesPersona();
         readonly ClOperacionesGenerales objMensajes = new ClOperacionesGenerales();
 
         public bool ValidarDescripcion(string descripcion) {
@@ -29,8 +28,18 @@ namespace CLogic {
             return objDatos.SearchConsulta(id);
         }
 
-        public void ActualizarConsulta(Consulta datos) {
-            objDatos.UpdateConsulta(datos);
+        public string ActualizarConsulta(Consulta datos) {
+            return objDatos.UpdateConsulta(datos);
+        }
+
+        public string ValidarTodoConsulta(Consulta datos, int i) {
+            if (!ValidarDescripcion(datos.Descripcion))
+                return objMensajes.errores[8];
+
+            if (i == 1)
+                return objDatos.RegistroConsulta(datos);
+            else
+                return objDatos.UpdateConsulta(datos);
         }
     }
 }
